@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Preview | Apollo Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .preview-header {
+            background-color: #23282d;
+            padding: 24px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #faa523;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .preview-header h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .preview-header .preview-meta {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .page-selector {
+            display: flex;
+            gap: 8px;
+            padding: 20px 40px;
+            background-color: #222;
+            border-bottom: 1px solid #333;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #ccc;
+            border: 1px solid #444;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .page-btn:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .page-btn.active {
+            background-color: #faa523;
+            color: #fff;
+            border-color: #faa523;
+        }
+
+        .preview-controls {
+            display: flex;
+            gap: 8px;
+            padding: 16px 40px;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+
+        .view-btn {
+            padding: 8px 16px;
+            background-color: transparent;
+            color: #999;
+            border: 1px solid #444;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .view-btn:hover {
+            color: #fff;
+            border-color: #666;
+        }
+
+        .view-btn.active {
+            color: #faa523;
+            border-color: #faa523;
+        }
+
+        .preview-container {
+            padding: 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: calc(100vh - 140px);
+        }
+
+        .preview-container.single-view {
+            justify-content: center;
+        }
+
+        .device-frame {
+            background-color: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            flex-shrink: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .device-frame.hidden {
+            display: none;
+        }
+
+        .device-label {
+            background-color: #333;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .device-label h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .device-label span {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .device-screen {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .device-screen iframe {
+            border: none;
+            display: block;
+        }
+
+        /* Desktop frame */
+        .frame-desktop .device-screen {
+            width: 1200px;
+            height: 800px;
+            transform: scale(0.42);
+            transform-origin: top left;
+        }
+
+        .frame-desktop {
+            width: calc(1200px * 0.42);
+            height: calc(800px * 0.42 + 42px);
+        }
+
+        .frame-desktop .device-screen iframe {
+            width: 1200px;
+            height: 4000px;
+        }
+
+        /* Tablet frame */
+        .frame-tablet .device-screen {
+            width: 768px;
+            height: 700px;
+            transform: scale(0.48);
+            transform-origin: top left;
+        }
+
+        .frame-tablet {
+            width: calc(768px * 0.48);
+            height: calc(700px * 0.48 + 42px);
+        }
+
+        .frame-tablet .device-screen iframe {
+            width: 768px;
+            height: 4000px;
+        }
+
+        /* Mobile frame */
+        .frame-mobile .device-screen {
+            width: 375px;
+            height: 667px;
+            transform: scale(0.65);
+            transform-origin: top left;
+        }
+
+        .frame-mobile {
+            width: calc(375px * 0.65);
+            height: calc(667px * 0.65 + 42px);
+            border-radius: 24px;
+        }
+
+        .frame-mobile .device-label {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .frame-mobile .device-screen iframe {
+            width: 375px;
+            height: 4000px;
+        }
+
+        /* Single view modes — full scale */
+        .preview-container.single-view .frame-desktop {
+            width: calc(1200px * 0.7);
+            height: calc(800px * 0.7 + 42px);
+        }
+
+        .preview-container.single-view .frame-desktop .device-screen {
+            transform: scale(0.7);
+        }
+
+        .preview-container.single-view .frame-tablet {
+            width: calc(768px * 0.75);
+            height: calc(700px * 0.75 + 42px);
+        }
+
+        .preview-container.single-view .frame-tablet .device-screen {
+            transform: scale(0.75);
+        }
+
+        .preview-container.single-view .frame-mobile {
+            width: calc(375px * 0.9);
+            height: calc(667px * 0.9 + 42px);
+        }
+
+        .preview-container.single-view .frame-mobile .device-screen {
+            transform: scale(0.9);
+        }
+
+        /* Footer */
+        .preview-footer {
+            padding: 20px 40px;
+            background-color: #23282d;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .preview-footer span {
+            color: #faa523;
+        }
+
+        @media (max-width: 1200px) {
+            .preview-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="preview-header">
+    <h1>Apollo Marketing — Layout Preview</h1>
+    <div class="preview-meta" id="datestamp"></div>
+</div>
+
+<div class="page-selector" id="pageSelector">
+    <button class="page-btn active" data-page="research-hub.html">Research Hub</button>
+    <button class="page-btn" data-page="seo-research.html">SEO Research</button>
+    <button class="page-btn" data-page="ppc-research.html">PPC Research</button>
+    <button class="page-btn" data-page="aio-research.html">AIO Research</button>
+</div>
+
+<div class="preview-controls" id="viewControls">
+    <button class="view-btn active" data-view="all">All Devices</button>
+    <button class="view-btn" data-view="desktop">Desktop Only</button>
+    <button class="view-btn" data-view="tablet">Tablet Only</button>
+    <button class="view-btn" data-view="mobile">Mobile Only</button>
+</div>
+
+<div class="preview-container" id="previewContainer">
+    <!-- Desktop -->
+    <div class="device-frame frame-desktop" id="frameDesktop">
+        <div class="device-label">
+            <h3>Desktop</h3>
+            <span>1200 x 800</span>
+        </div>
+        <div class="device-screen">
+            <iframe id="iframeDesktop" src="research-hub.html"></iframe>
+        </div>
+    </div>
+
+    <!-- Tablet -->
+    <div class="device-frame frame-tablet" id="frameTablet">
+        <div class="device-label">
+            <h3>Tablet</h3>
+            <span>768 x 700</span>
+        </div>
+        <div class="device-screen">
+            <iframe id="iframeTablet" src="research-hub.html"></iframe>
+        </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="device-frame frame-mobile" id="frameMobile">
+        <div class="device-label">
+            <h3>Mobile</h3>
+            <span>375 x 667</span>
+        </div>
+        <div class="device-screen">
+            <iframe id="iframeMobile" src="research-hub.html"></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="preview-footer">
+    <span>Apollo Marketing</span> — Responsive Layout Preview — For Internal Review & Client Approval
+</div>
+
+<script>
+    // Date stamp
+    document.getElementById('datestamp').textContent = new Date().toLocaleDateString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    // Page switching
+    const pageBtns = document.querySelectorAll('.page-btn');
+    const iframeDesktop = document.getElementById('iframeDesktop');
+    const iframeTablet = document.getElementById('iframeTablet');
+    const iframeMobile = document.getElementById('iframeMobile');
+
+    pageBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            pageBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const page = btn.dataset.page;
+            iframeDesktop.src = page;
+            iframeTablet.src = page;
+            iframeMobile.src = page;
+        });
+    });
+
+    // View switching
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const container = document.getElementById('previewContainer');
+    const frameDesktop = document.getElementById('frameDesktop');
+    const frameTablet = document.getElementById('frameTablet');
+    const frameMobile = document.getElementById('frameMobile');
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            viewBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const view = btn.dataset.view;
+
+            frameDesktop.classList.toggle('hidden', view !== 'all' && view !== 'desktop');
+            frameTablet.classList.toggle('hidden', view !== 'all' && view !== 'tablet');
+            frameMobile.classList.toggle('hidden', view !== 'all' && view !== 'mobile');
+            container.classList.toggle('single-view', view !== 'all');
+        });
+    });
+</script>
+
+</body>
+</html>

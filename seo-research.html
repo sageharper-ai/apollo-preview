@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SEO Research | Apollo Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+            line-height: 1.7;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        /* ============ NAVIGATION ============ */
+        nav {
+            background-color: #ffffff;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #faa523;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e08f10;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #faa523;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-phone a {
+            color: #faa523;
+            text-decoration: none;
+        }
+
+        .phone-icon {
+            width: 18px;
+            height: 18px;
+            fill: #faa523;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-basis: 100%;
+                justify-content: flex-start;
+                order: 3;
+            }
+
+            .nav-phone {
+                font-size: 13px;
+            }
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background-color: #23282d;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="geo" patternUnits="userSpaceOnUse" width="100" height="100"><polygon points="0,0 25,0 50,25 50,75 25,100 0,100" fill="none" stroke="rgba(250,165,35,0.03)" stroke-width="1"/><polygon points="50,0 75,0 100,25 100,75 75,100 50,100" fill="none" stroke="rgba(250,165,35,0.05)" stroke-width="1"/><polygon points="0,50 25,75 25,125 0,150" fill="none" stroke="rgba(250,165,35,0.02)" stroke-width="0.5"/></pattern></defs><rect width="1200" height="600" fill="%2323282d"/><rect width="1200" height="600" fill="url(%23geo)"/><circle cx="100" cy="150" r="80" fill="rgba(250,165,35,0.08)"/><circle cx="1100" cy="500" r="120" fill="rgba(250,165,35,0.06)"/></svg>');
+            background-size: cover;
+            padding: 120px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0px;
+        }
+
+        .btn-gold {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        .btn-gold:hover {
+            background-color: #e08f10;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(250, 165, 35, 0.3);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: #faa523;
+            border: 2px solid #faa523;
+        }
+
+        .btn-ghost:hover {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============ FEATURE BAR ============ */
+        .feature-bar {
+            background-color: #ffffff;
+            padding: 50px 60px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-bar-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            padding: 0 30px;
+            border-right: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .feature-bar {
+                padding: 30px 20px;
+                margin-top: -30px;
+            }
+
+            .feature-bar-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-item {
+                padding: 0;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 20px;
+            }
+
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* ============ WHAT YOU GET SECTION ============ */
+        .what-you-get {
+            background-color: #3d3d3d;
+            padding: 80px 60px;
+        }
+
+        .section-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: #2a2a2a;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #444444;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-icon-circle {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #faa523;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(250, 165, 35, 0.05);
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            stroke: #faa523;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #faa523;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .what-you-get {
+                padding: 60px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* ============ WHY THIS IS DIFFERENT SECTION ============ */
+        .why-different {
+            background-color: #ffffff;
+            padding: 80px 60px;
+        }
+
+        .why-different-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .why-different-left h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .why-different-left p {
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .why-different-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .stat-block {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #faa523;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #faa523;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 8px;
+        }
+
+        .rating-block {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #faa523;
+            text-align: center;
+        }
+
+        .rating-stars {
+            font-size: 28px;
+            color: #faa523;
+            margin-bottom: 8px;
+        }
+
+        .rating-count {
+            font-size: 18px;
+            font-weight: 700;
+            color: #23282d;
+        }
+
+        @media (max-width: 768px) {
+            .why-different {
+                padding: 60px 20px;
+            }
+
+            .why-different-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* ============ HOW IT WORKS SECTION ============ */
+        .how-it-works {
+            padding: 80px 60px;
+            background-color: #f5f5f5;
+        }
+
+        .how-it-works-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-block {
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-block:nth-child(even) {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .step-block:nth-child(odd) {
+            background-color: #faa523;
+            color: #000000;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-block:nth-child(odd) .step-number {
+            background-color: #ffffff;
+            color: #faa523;
+        }
+
+        .step-block:nth-child(even) .step-number {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        .step-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-content p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 60px 20px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-block {
+                padding: 40px 20px;
+                gap: 20px;
+            }
+        }
+
+        /* ============ FORM SECTION ============ */
+        .form-section {
+            background-color: #ffffff;
+            padding: 80px 60px;
+        }
+
+        .form-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 50px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        input,
+        textarea {
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+            border: 1px solid #d0d0d0;
+            background-color: #ffffff;
+            color: #000000;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #faa523;
+            box-shadow: 0 0 0 3px rgba(250, 165, 35, 0.1);
+        }
+
+        input::placeholder {
+            color: #999999;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .form-section {
+                padding: 60px 20px;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-submit {
+            background-color: #faa523;
+            color: #ffffff;
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0px;
+            margin-top: 12px;
+        }
+
+        .form-submit:hover {
+            background-color: #e08f10;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(250, 165, 35, 0.3);
+        }
+
+        /* ============ CROSS-SELL SECTION ============ */
+        .cross-sell {
+            background-color: #f5f5f5;
+            padding: 80px 60px;
+        }
+
+        .cross-sell-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .cross-sell-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cross-sell-card {
+            background-color: #2a2a2a;
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #444444;
+        }
+
+        .cross-sell-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cross-sell-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #faa523;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cross-sell-card p {
+            font-size: 15px;
+            color: #cccccc;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cross-sell-card .btn {
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .cross-sell {
+                padding: 60px 20px;
+            }
+
+            .cross-sell-cards {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* ============ CTA BANNER SECTION ============ */
+        .cta-banner {
+            background-color: #faa523;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="banner-pattern" patternUnits="userSpaceOnUse" width="80" height="80"><polygon points="0,0 20,0 40,20 40,60 20,80 0,80" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><polygon points="40,0 60,0 80,20 80,60 60,80 40,80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="%23faa523"/><rect width="1200" height="400" fill="url(%23banner-pattern)"/></svg>');
+            padding: 70px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-banner-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #faa523;
+            padding: 16px 40px;
+            font-weight: 700;
+            border-radius: 0px;
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        .cta-banner-phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+            display: block;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-banner {
+                padding: 50px 20px;
+            }
+
+            .cta-banner h2 {
+                font-size: 28px;
+            }
+
+            .cta-banner-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background-color: #23282d;
+            padding: 60px;
+            color: #cccccc;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #faa523;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 16px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(250, 165, 35, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #faa523;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #faa523;
+            color: #23282d;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: #faa523;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            margin-top: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #999999;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* ============ UTILITY ============ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* ============ RESPONSIVE ADJUSTMENTS ============ */
+        @media (max-width: 1024px) {
+            .cross-sell-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-bar-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-item {
+                padding: 0;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 20px;
+            }
+
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-block:nth-child(odd) {
+                background-color: #faa523;
+            }
+
+            .step-block:nth-child(even) {
+                background-color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-logo">
+        <img src="https://apollollc.com/wp-content/uploads/2019/01/Logo.png" alt="Apollo Marketing">
+    </div>
+    <ul class="nav-links">
+        <li><a href="https://apollollc.com">HOME</a></li>
+        <li><a href="https://apollollc.com/services">SERVICES</a></li>
+        <li><a href="https://apollollc.com/blog">BLOG</a></li>
+        <li><a href="https://apollollc.com/contact">CONTACT</a></li>
+    </ul>
+    <div class="nav-phone">
+        <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <a href="tel:3017449697">CALL: 301-744-9697</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>YOUR COMPETITORS ARE OUTRANKING YOU. WE'LL SHOW YOU EXACTLY WHY.</h1>
+        <p class="hero-subtitle">Free, in-depth SEO research for your business — 15+ point technical analysis, keyword gaps, and a head-to-head comparison against your local competition.</p>
+        <div class="hero-buttons">
+            <a href="#form" class="btn btn-gold">REQUEST YOUR RESEARCH</a>
+            <a href="tel:3017449697" class="btn btn-ghost">CALL: 301-744-9697</a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE BAR -->
+<section class="feature-bar">
+    <div class="feature-bar-content">
+        <div class="feature-item">
+            <h3>15+ POINT ANALYSIS</h3>
+            <p>Technical audit covering indexing, canonicals, sitemaps, robots.txt, SSL, speed, and URL structure.</p>
+        </div>
+        <div class="feature-item">
+            <h3>COMPETITOR COMPARISON</h3>
+            <p>Head-to-head analysis against 2-3 local competitors with domain rating, traffic, and backlink data.</p>
+        </div>
+        <div class="feature-item">
+            <h3>LIVE WALKTHROUGH</h3>
+            <p>We present every finding via screen share. You ask questions. Zero sales pressure — just clarity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT YOU GET SECTION -->
+<section class="what-you-get">
+    <h2 class="section-heading">WHAT YOU GET</h2>
+    <div class="features-grid">
+        <!-- Technical SEO Audit -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M2 17h20M6 21h12"/>
+                </svg>
+            </div>
+            <h3>TECHNICAL AUDIT</h3>
+            <p>Comprehensive review of indexing status, canonical tags, sitemap health, robots.txt configuration, SSL setup, page speed, and URL structure.</p>
+        </div>
+
+        <!-- Page-Level Analysis -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 10h18M3 14h18M3 18h8"/>
+                </svg>
+            </div>
+            <h3>PAGE-LEVEL ANALYSIS</h3>
+            <p>Title tags, meta descriptions, H1 optimization, image alt tags, heading hierarchy, and on-page content gaps.</p>
+        </div>
+
+        <!-- Link Health Check -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="6" cy="12" r="3"/>
+                    <circle cx="18" cy="12" r="3"/>
+                    <path d="M9 12h6M3 12h2M19 12h2"/>
+                </svg>
+            </div>
+            <h3>LINK HEALTH CHECK</h3>
+            <p>Broken links, redirect chains, internal linking structure, external link audits, and backlink analysis.</p>
+        </div>
+
+        <!-- Keyword Analysis -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="10" cy="10" r="6"/>
+                    <path d="M14.5 14.5l5 5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>KEYWORD ANALYSIS</h3>
+            <p>Target keywords with local search volume, competition levels, and your current rankings for each keyword.</p>
+        </div>
+
+        <!-- Competitor Comparison -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5M7 6l5 5 5-5"/>
+                </svg>
+            </div>
+            <h3>COMPETITOR COMPARISON</h3>
+            <p>Your site vs. 2-3 local competitors: indexed pages, domain rating, estimated traffic, backlinks, and organic keywords.</p>
+        </div>
+
+        <!-- Live Screen Share -->
+        <div class="feature-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="15" rx="2"/>
+                    <path d="M6 18h12M8 21h8"/>
+                </svg>
+            </div>
+            <h3>LIVE SCREEN SHARE</h3>
+            <p>We walk you through every finding, answer every question, and explain what this means for your business.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY THIS IS DIFFERENT SECTION -->
+<section class="why-different">
+    <div class="why-different-content">
+        <div class="why-different-left">
+            <h2>THIS ISN'T AN AUTOMATED REPORT FROM A WIDGET.</h2>
+            <p>Most agencies use tools like SEOptimer to generate instant templated reports. You get a PDF in hours.</p>
+            <p>Apollo's research is produced by real human analysts over approximately 5 days. We cover dimensions no automated tool can touch — competitor strategy, market gaps, content opportunities, and what it would actually take to compete.</p>
+            <p>That's why 60-70% of prospects we research decide not to move forward with SEO services. Because we tell them the truth.</p>
+        </div>
+        <div class="why-different-right">
+            <div class="stat-block">
+                <div class="stat-value">60-70%</div>
+                <div class="stat-label">of prospects decide not to move forward</div>
+                <div class="stat-description">Because we show them whether SEO is actually the right move for their business.</div>
+            </div>
+            <div class="rating-block">
+                <div class="rating-stars">★★★★★</div>
+                <div class="rating-count">5.0 Rating</div>
+                <div class="stat-description">36 Google Reviews</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="how-it-works">
+    <h2 class="how-it-works-heading">HOW IT WORKS</h2>
+    <div class="steps-grid">
+        <div class="step-block">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>FILL OUT THE FORM</h3>
+                <p>2 minutes of your time. Tell us about your business, your website, and your location.</p>
+            </div>
+        </div>
+        <div class="step-block">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>WE RESEARCH YOUR MARKET</h3>
+                <p>Our team analyzes your website and your competitors over approximately 5 days. We build an audit spreadsheet with every finding.</p>
+            </div>
+        </div>
+        <div class="step-block">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>WE WALK YOU THROUGH IT</h3>
+                <p>Live screen share walkthrough of every finding. We answer your questions. You decide what's next.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="form">
+    <h2 class="form-heading">REQUEST YOUR FREE SEO RESEARCH</h2>
+    <div class="form-container">
+        <form method="POST" action="#">
+            <div class="form-group">
+                <label for="business-name">Business Name</label>
+                <input type="text" id="business-name" name="business_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="website-url">Website URL</label>
+                <input type="url" id="website-url" name="website_url" placeholder="https://example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="industry">Primary Service or Industry</label>
+                <input type="text" id="industry" name="industry" placeholder="e.g., Roofing, HVAC, Law Firm" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">City & State</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Frederick, MD" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="your-name">Your Name</label>
+                    <input type="text" id="your-name" name="your_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <button type="submit" class="form-submit">REQUEST MY RESEARCH</button>
+        </form>
+    </div>
+</section>
+
+<!-- CROSS-SELL SECTION -->
+<section class="cross-sell">
+    <h2 class="cross-sell-heading">LOOKING FOR MORE?</h2>
+    <div class="cross-sell-cards">
+        <div class="cross-sell-card">
+            <h3>PPC RESEARCH</h3>
+            <p>Considering Google Ads? See the exact cost, competition, and profit math before you spend a dollar.</p>
+            <a href="ppc-research.html" class="btn btn-gold">EXPLORE PPC RESEARCH</a>
+        </div>
+        <div class="cross-sell-card">
+            <h3>AIO RESEARCH</h3>
+            <p>AI is changing how people find businesses. We'll show you if your website is visible to ChatGPT, Perplexity, and other AI systems.</p>
+            <a href="aio-research.html" class="btn btn-gold">EXPLORE AIO RESEARCH</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER SECTION -->
+<section class="cta-banner">
+    <h2>READY TO KNOW THE TRUTH ABOUT YOUR SEO?</h2>
+    <div class="cta-banner-buttons">
+        <a href="#form" class="btn btn-white">REQUEST YOUR RESEARCH</a>
+    </div>
+    <div class="cta-banner-phone">
+        <a href="tel:3017449697" style="color: #ffffff; text-decoration: none;">OR CALL: 301-744-9697</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>RESOURCES</h3>
+            <ul class="footer-links">
+                <li><a href="https://apollollc.com/blog">Blog</a></li>
+                <li><a href="https://apollollc.com/services">Services</a></li>
+                <li><a href="https://apollollc.com/about">About Apollo</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>SERVICES</h3>
+            <ul class="footer-links">
+                <li><a href="https://apollollc.com/services/seo">SEO</a></li>
+                <li><a href="https://apollollc.com/services/ppc">Google Ads</a></li>
+                <li><a href="https://apollollc.com/services/web-development">Web Development</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>CONTACT</h3>
+            <div class="footer-contact">
+                <p>5100 Buckeystown Pike #250<br>Frederick, MD 21704</p>
+                <p style="margin-top: 16px;">
+                    <a href="tel:3017449697">301-744-9697</a><br>
+                    <a href="mailto:info@apollollc.com">info@apollollc.com</a>
+                </p>
+                <p style="margin-top: 16px; font-size: 13px;">Follow us on social</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/apollomktg" class="social-icon" title="Facebook">f</a>
+                    <a href="https://instagram.com/apollomrkting" class="social-icon" title="Instagram">📷</a>
+                    <a href="https://linkedin.com/company/apollo-marketing" class="social-icon" title="LinkedIn">in</a>
+                    <a href="https://twitter.com/apollo_llc" class="social-icon" title="Twitter">𝕏</a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <img src="https://apollollc.com/wp-content/uploads/2019/01/Logo.png" alt="Apollo Marketing">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Apollo LLC. All rights reserved. | <a href="https://apollollc.com/privacy" style="color: #999999; text-decoration: none;">Privacy Policy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

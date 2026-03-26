@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Hub | Apollo Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+            line-height: 1.7;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        /* ============ NAVIGATION ============ */
+        nav {
+            background-color: #ffffff;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #faa523;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-phone a {
+            color: #faa523;
+            text-decoration: none;
+        }
+
+        .phone-icon {
+            width: 18px;
+            height: 18px;
+            fill: #faa523;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background-color: #23282d;
+            padding: 120px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated floating geometric shapes */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .geo-shape {
+            position: absolute;
+            opacity: 0;
+            animation: floatShape 12s ease-in-out infinite;
+        }
+
+        .geo-shape:nth-child(1) {
+            top: 15%;
+            left: 8%;
+            animation-delay: 0s;
+            animation-duration: 14s;
+        }
+        .geo-shape:nth-child(2) {
+            top: 60%;
+            left: 5%;
+            animation-delay: 2s;
+            animation-duration: 16s;
+        }
+        .geo-shape:nth-child(3) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 4s;
+            animation-duration: 13s;
+        }
+        .geo-shape:nth-child(4) {
+            top: 70%;
+            right: 8%;
+            animation-delay: 1s;
+            animation-duration: 15s;
+        }
+        .geo-shape:nth-child(5) {
+            top: 40%;
+            left: 15%;
+            animation-delay: 6s;
+            animation-duration: 11s;
+        }
+        .geo-shape:nth-child(6) {
+            top: 35%;
+            right: 15%;
+            animation-delay: 3s;
+            animation-duration: 17s;
+        }
+        .geo-shape:nth-child(7) {
+            bottom: 15%;
+            left: 25%;
+            animation-delay: 5s;
+            animation-duration: 12s;
+        }
+        .geo-shape:nth-child(8) {
+            bottom: 20%;
+            right: 25%;
+            animation-delay: 7s;
+            animation-duration: 14s;
+        }
+
+        @keyframes floatShape {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) rotate(0deg) scale(0.8);
+            }
+            15% {
+                opacity: 0.12;
+            }
+            50% {
+                opacity: 0.08;
+                transform: translateY(-20px) rotate(180deg) scale(1.1);
+            }
+            85% {
+                opacity: 0.12;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(30px) rotate(360deg) scale(0.8);
+            }
+        }
+
+        /* Slow pulsing gold orbs */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(250, 165, 35, 0.12) 0%, transparent 70%);
+            animation: pulseOrb 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .hero-orb:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -80px;
+            left: -60px;
+            animation-delay: 0s;
+        }
+
+        .hero-orb:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -120px;
+            right: -100px;
+            animation-delay: 4s;
+        }
+
+        .hero-orb:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 2s;
+        }
+
+        @keyframes pulseOrb {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-orb:nth-child(3) {
+            animation-name: pulseOrbCenter;
+        }
+
+        @keyframes pulseOrbCenter {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.4);
+                opacity: 0.6;
+            }
+        }
+
+        /* Single animated scan line — sweeps down then back up */
+        .hero-scanline {
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, rgba(250, 165, 35, 0.15) 15%, rgba(250, 165, 35, 0.5) 50%, rgba(250, 165, 35, 0.15) 85%, transparent 100%);
+            box-shadow: 0 0 14px 4px rgba(250, 165, 35, 0.18), 0 0 36px 8px rgba(250, 165, 35, 0.07);
+            animation: scanSweep 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes scanSweep {
+            0% {
+                top: -3px;
+                opacity: 0;
+            }
+            3% {
+                opacity: 1;
+            }
+            48% {
+                top: 100%;
+                opacity: 1;
+            }
+            52% {
+                top: 100%;
+                opacity: 1;
+            }
+            97% {
+                top: -3px;
+                opacity: 1;
+            }
+            100% {
+                top: -3px;
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0px;
+        }
+
+        .btn-gold {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        .btn-gold:hover {
+            background-color: #e08f10;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(250, 165, 35, 0.3);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: #faa523;
+            border: 2px solid #faa523;
+        }
+
+        .btn-ghost:hover {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============ FEATURE BAR ============ */
+        .feature-bar {
+            background-color: #ffffff;
+            padding: 50px 60px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-bar-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            padding: 0 30px;
+            border-right: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .feature-bar {
+                padding: 30px 20px;
+                margin-top: -30px;
+            }
+
+            .feature-bar-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-item {
+                padding: 0;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding-bottom: 20px;
+            }
+
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* ============ RESEARCH CARDS SECTION ============ */
+        .research-section {
+            background-color: #3d3d3d;
+            padding: 80px 60px;
+        }
+
+        .section-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .research-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .research-card {
+            background-color: #2a2a2a;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #444444;
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-icon-circle {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #faa523;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(250, 165, 35, 0.05);
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            stroke: #faa523;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .research-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #faa523;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        /* Price sticker — old-school round tag */
+        .price-sticker {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fcc44d, #faa523 50%, #e08f10);
+            margin: 0 auto 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(250, 165, 35, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            transform: rotate(-6deg);
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover .price-sticker {
+            transform: rotate(0deg) scale(1.06);
+        }
+
+        /* Inner dashed circle for vintage feel */
+        .price-sticker::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(255, 255, 255, 0.35);
+        }
+
+        .price-sticker .price-main {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-sticker .price-original {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: line-through;
+            line-height: 1;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2px;
+        }
+
+        .price-sticker .price-label {
+            font-size: 9px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            margin-top: 1px;
+        }
+
+        /* AIO sticker — slightly larger since higher price */
+        .price-sticker.sticker-premium {
+            width: 110px;
+            height: 110px;
+            transform: rotate(4deg);
+        }
+
+        .research-card:hover .price-sticker.sticker-premium {
+            transform: rotate(0deg) scale(1.06);
+        }
+
+        .price-sticker.sticker-premium .price-main {
+            font-size: 24px;
+        }
+
+        .price-sticker.sticker-premium .price-label {
+            font-size: 8px;
+        }
+
+        .research-card p {
+            font-size: 15px;
+            color: #cccccc;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .card-features {
+            text-align: left;
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #444444;
+        }
+
+        .card-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: #d0d0d0;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .card-feature:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkmark {
+            color: #faa523;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .research-card .btn {
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .research-section {
+                padding: 60px 20px;
+            }
+
+            .research-cards {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .research-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-cards .research-card:nth-child(3) {
+                grid-column: 1 / -1;
+                max-width: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .research-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .research-cards .research-card:nth-child(3) {
+                max-width: 100%;
+            }
+        }
+
+        /* ============ HOW IT WORKS SECTION ============ */
+        .how-it-works {
+            padding: 80px 60px;
+            background-color: #f5f5f5;
+        }
+
+        .how-it-works-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #23282d;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .steps-vertical {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 280px;
+        }
+
+        .step-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .step-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .step-text {
+            padding: 50px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .step-row:nth-child(odd) .step-text {
+            background-color: #faa523;
+            color: #000000;
+        }
+
+        .step-row:nth-child(even) .step-text {
+            background-color: #23282d;
+            color: #ffffff;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-row:nth-child(odd) .step-number {
+            background-color: #ffffff;
+            color: #faa523;
+        }
+
+        .step-row:nth-child(even) .step-number {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        .step-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-info p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .step-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-image-placeholder {
+            width: 100%;
+            max-width: 360px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 60px 20px;
+            }
+
+            .step-row {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .step-row:nth-child(even) {
+                direction: ltr;
+            }
+
+            .step-image {
+                padding: 20px;
+                min-height: 200px;
+            }
+
+            .step-text {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ============ TESTIMONIALS SECTION ============ */
+        .testimonials-section {
+            background: linear-gradient(135deg, #23282d 0%, #2a2a2a 100%);
+            background-attachment: fixed;
+            padding: 80px 60px;
+            position: relative;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%2323282d"/><circle cx="200" cy="200" r="150" fill="rgba(250,165,35,0.04)"/><circle cx="1000" cy="450" r="200" fill="rgba(250,165,35,0.03)"/></svg>');
+            pointer-events: none;
+        }
+
+        .testimonials-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-card {
+            background-color: rgba(42, 42, 42, 0.8);
+            padding: 40px;
+            border: 1px solid rgba(250, 165, 35, 0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(250, 165, 35, 0.5);
+        }
+
+        .quote-mark {
+            font-size: 48px;
+            color: #faa523;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #e0e0e0;
+            margin-bottom: 24px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .testimonial-rating {
+            font-size: 14px;
+            color: #faa523;
+            margin-top: 8px;
+        }
+
+        .testimonials-cta {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials-cta .google-stars {
+            font-size: 20px;
+            color: #faa523;
+            margin-bottom: 8px;
+        }
+
+        .testimonials-cta p {
+            color: #d0d0d0;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-review {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: transparent;
+            color: #faa523;
+            border: 2px solid #faa523;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-review:hover {
+            background-color: #faa523;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-section {
+                padding: 60px 20px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ CTA BANNER SECTION ============ */
+        .cta-banner {
+            background-color: #faa523;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="banner-pattern" patternUnits="userSpaceOnUse" width="80" height="80"><polygon points="0,0 20,0 40,20 40,60 20,80 0,80" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/><polygon points="40,0 60,0 80,20 80,60 60,80 40,80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="%23faa523"/><rect width="1200" height="400" fill="url(%23banner-pattern)"/></svg>');
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-contrast {
+            max-width: 700px;
+            margin: 0 auto 36px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.92);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-banner-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-dark {
+            background-color: #23282d;
+            color: #ffffff;
+            padding: 16px 40px;
+            font-weight: 700;
+        }
+
+        .btn-dark:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #faa523;
+            padding: 16px 40px;
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        .cta-banner-phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+            display: block;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-banner {
+                padding: 50px 20px;
+            }
+
+            .cta-banner h2 {
+                font-size: 28px;
+            }
+
+            .cta-banner-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background-color: #23282d;
+            padding: 40px 60px;
+            color: #cccccc;
+        }
+
+        .footer-simple {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand img {
+            height: 36px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-info {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #999999;
+        }
+
+        .footer-info a {
+            color: #faa523;
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 30px 20px;
+            }
+
+            .footer-simple {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-brand {
+                flex-direction: column;
+            }
+        }
+
+        /* ============ SMALL PHONE (below 400px) ============ */
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .price-sticker {
+                width: 90px;
+                height: 90px;
+            }
+
+            .price-sticker .price-main {
+                font-size: 24px;
+            }
+
+            .price-sticker.sticker-premium {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cta-banner h2 {
+                font-size: 24px;
+            }
+
+            .section-heading,
+            .how-it-works-heading,
+            .testimonials-heading {
+                font-size: 26px;
+            }
+        }
+
+        /* ============ TABLET BREAKPOINT (768-1023px) ============ */
+        @media (min-width: 769px) and (max-width: 1023px) {
+            nav {
+                padding: 18px 30px;
+            }
+
+            .hero {
+                padding: 100px 40px;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .feature-bar {
+                padding: 40px 30px;
+                margin-top: -35px;
+            }
+
+            .research-section {
+                padding: 70px 30px;
+            }
+
+            .section-heading {
+                font-size: 32px;
+            }
+
+            .how-it-works {
+                padding: 70px 30px;
+            }
+
+            .how-it-works-heading {
+                font-size: 32px;
+            }
+
+            .step-row {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+
+            .step-text {
+                padding: 40px 30px;
+            }
+
+            .testimonials-section {
+                padding: 70px 30px;
+            }
+
+            .testimonials-heading {
+                font-size: 32px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .testimonial-card {
+                padding: 30px;
+            }
+
+            .cta-banner {
+                padding: 60px 30px;
+            }
+
+            .cta-banner h2 {
+                font-size: 34px;
+            }
+
+            footer {
+                padding: 30px;
+            }
+        }
+
+        /* ============ UTILITY ============ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* ============ HOVER MICROINTERACTIONS ============ */
+
+        /* Feature bar items — subtle lift and gold underline */
+        .feature-item {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-item h3 {
+            transition: letter-spacing 0.3s ease;
+        }
+
+        .feature-item:hover h3 {
+            letter-spacing: 1.5px;
+        }
+
+        /* Research card icon circles — grow and fill on card hover */
+        .card-icon-circle {
+            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .research-card:hover .card-icon-circle {
+            transform: scale(1.1);
+            background-color: rgba(250, 165, 35, 0.12);
+        }
+
+        .card-icon {
+            transition: stroke 0.3s ease, transform 0.3s ease;
+        }
+
+        .research-card:hover .card-icon {
+            transform: scale(1.08);
+        }
+
+        /* Checkmarks pulse on card hover */
+        .research-card:hover .checkmark {
+            animation: checkPulse 0.4s ease;
+        }
+
+        @keyframes checkPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* Step images — slight scale on hover */
+        .step-image-placeholder {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .step-row:hover .step-image-placeholder {
+            transform: scale(1.03);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Step number — invert colors on row hover */
+        .step-number {
+            transition: transform 0.3s ease;
+        }
+
+        .step-row:hover .step-number {
+            transform: scale(1.1);
+        }
+
+        /* Testimonial quote marks — grow on hover */
+        .quote-mark {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover .quote-mark {
+            transform: scale(1.2);
+        }
+
+        /* Google stars in testimonial CTA — subtle glow */
+        .testimonials-cta .google-stars {
+            transition: text-shadow 0.3s ease;
+        }
+
+        .testimonials-cta:hover .google-stars {
+            text-shadow: 0 0 12px rgba(250, 165, 35, 0.4);
+        }
+
+        /* CTA buttons — gold underline slide on hover */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-dark::after,
+        .btn-white::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background-color: #faa523;
+            transition: left 0.3s ease;
+        }
+
+        .btn-dark:hover::after,
+        .btn-white:hover::after {
+            left: 0;
+        }
+
+        /* Nav phone — subtle scale */
+        .nav-phone {
+            transition: transform 0.2s ease;
+        }
+
+        .nav-phone:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION — Logo + Phone Only -->
+<nav>
+    <div class="nav-logo">
+        <img src="https://apollollc.com/wp-content/uploads/2019/01/Logo.png" alt="Apollo Marketing">
+    </div>
+    <div class="nav-phone">
+        <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <a href="tel:3017449697">CALL: 301-744-9697</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION — With Animated Background -->
+<section class="hero">
+    <!-- Floating geometric shapes -->
+    <div class="hero-bg">
+        <svg class="geo-shape" width="60" height="60" viewBox="0 0 60 60">
+            <polygon points="30,5 55,20 55,50 30,65 5,50 5,20" fill="none" stroke="rgba(250,165,35,0.25)" stroke-width="1"/>
+        </svg>
+        <svg class="geo-shape" width="40" height="40" viewBox="0 0 40 40">
+            <rect x="5" y="5" width="30" height="30" fill="none" stroke="rgba(250,165,35,0.2)" stroke-width="1" transform="rotate(45 20 20)"/>
+        </svg>
+        <svg class="geo-shape" width="50" height="50" viewBox="0 0 50 50">
+            <polygon points="25,2 48,18 40,45 10,45 2,18" fill="none" stroke="rgba(250,165,35,0.2)" stroke-width="1"/>
+        </svg>
+        <svg class="geo-shape" width="35" height="35" viewBox="0 0 35 35">
+            <circle cx="17.5" cy="17.5" r="14" fill="none" stroke="rgba(250,165,35,0.18)" stroke-width="1"/>
+        </svg>
+        <svg class="geo-shape" width="45" height="45" viewBox="0 0 45 45">
+            <polygon points="22.5,3 42,15 42,35 22.5,47 3,35 3,15" fill="none" stroke="rgba(250,165,35,0.15)" stroke-width="1"/>
+        </svg>
+        <svg class="geo-shape" width="55" height="55" viewBox="0 0 55 55">
+            <polygon points="27.5,5 50,20 50,45 27.5,60 5,45 5,20" fill="none" stroke="rgba(250,165,35,0.2)" stroke-width="1"/>
+        </svg>
+        <svg class="geo-shape" width="30" height="30" viewBox="0 0 30 30">
+            <rect x="3" y="3" width="24" height="24" fill="none" stroke="rgba(250,165,35,0.15)" stroke-width="1" transform="rotate(15 15 15)"/>
+        </svg>
+        <svg class="geo-shape" width="42" height="42" viewBox="0 0 42 42">
+            <polygon points="21,2 40,14 40,34 21,46 2,34 2,14" fill="none" stroke="rgba(250,165,35,0.22)" stroke-width="1"/>
+        </svg>
+    </div>
+
+    <!-- Pulsing orbs -->
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+
+    <!-- Scan line -->
+    <div class="hero-scanline"></div>
+
+    <div class="hero-content">
+        <h1>BEFORE WE PITCH, WE RESEARCH</h1>
+        <p class="hero-subtitle">Three paths to clarity. Every one starts with real data about your business — not a sales deck.</p>
+        <div class="hero-buttons">
+            <a href="#research-cards" class="btn btn-gold">SEE YOUR OPTIONS</a>
+            <a href="tel:3017449697" class="btn btn-ghost">CALL US</a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE BAR -->
+<section class="feature-bar">
+    <div class="feature-bar-content">
+        <div class="feature-item">
+            <h3>REAL HUMAN ANALYSIS</h3>
+            <p>No automated tools. No templated reports. We research your market, your competitors, and your website — then show you what we found.</p>
+        </div>
+        <div class="feature-item">
+            <h3>TRANSPARENT PRICING</h3>
+            <p>You always know the cost. No hidden fees, no surprise charges. If we quote it, that's the price.</p>
+        </div>
+        <div class="feature-item">
+            <h3>NO OBLIGATIONS</h3>
+            <p>Get clarity on your options. Decide what's next. You're never pressured into anything you don't want.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH CARDS SECTION -->
+<section class="research-section" id="research-cards">
+    <h2 class="section-heading">PICK YOUR RESEARCH PATH</h2>
+    <div class="research-cards">
+        <!-- SEO Research Card -->
+        <div class="research-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="10" cy="10" r="6"/>
+                    <path d="M14.5 14.5l5 5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>SEO RESEARCH</h3>
+            <div class="card-subtitle">Search Engine Optimization</div>
+            <div class="price-sticker">
+                <span class="price-original">$150</span>
+                <span class="price-main">$75</span>
+                <span class="price-label">Research</span>
+            </div>
+            <p>A complete audit of your website and organic search performance. We analyze your content, technical setup, and competitors, then walk you through the findings live.</p>
+            <div class="card-features">
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Full website audit across 15+ ranking factors</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Competitor analysis & keyword research</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Live presentation of findings</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Honest assessment of next steps</span>
+                </div>
+            </div>
+            <a href="seo-research.html" class="btn btn-gold">GET YOUR SEO RESEARCH</a>
+        </div>
+
+        <!-- PPC Research Card -->
+        <div class="research-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <polyline points="23 6 13 6 8 11 8 16 18 16 23 11"/>
+                    <path d="M1 11h5M1 16h5"/>
+                </svg>
+            </div>
+            <h3>PPC RESEARCH</h3>
+            <div class="card-subtitle">Pay-Per-Click Advertising</div>
+            <div class="price-sticker">
+                <span class="price-original">$150</span>
+                <span class="price-main">$75</span>
+                <span class="price-label">Research</span>
+            </div>
+            <p>A full paid search market analysis showing exactly what it would cost to compete in your space. Real numbers. Real competitors. Real budgets.</p>
+            <div class="card-features">
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Budget estimation at all price tiers</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Complete keyword list with bid ranges</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Competitor spending & strategy breakdown</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Competitor ad copy, landing pages & estimated ROAS</span>
+                </div>
+            </div>
+            <a href="ppc-research.html" class="btn btn-gold">GET YOUR PPC RESEARCH</a>
+        </div>
+
+        <!-- AIO Research Card -->
+        <div class="research-card">
+            <div class="card-icon-circle">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M2 17h20M8 21h8"/>
+                </svg>
+            </div>
+            <h3>AIO RESEARCH</h3>
+            <div class="card-subtitle">AI Optimization</div>
+            <div class="price-sticker sticker-premium">
+                <span class="price-main">$297</span>
+                <span class="price-label">Per Location</span>
+            </div>
+            <p>When someone asks AI for a recommendation in your industry, will it mention you? We build a custom package that puts your business, services, and FAQs where AI systems can find them.</p>
+            <div class="card-features">
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Complete AI visibility assessment</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Custom AIO Blueprint with full FAQ integration</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>Before/after visibility comparison</span>
+                </div>
+                <div class="card-feature">
+                    <span class="checkmark">✓</span>
+                    <span>JSON-LD deployment guide & installation support</span>
+                </div>
+            </div>
+            <a href="aio-research.html" class="btn btn-gold">GET YOUR AIO RESEARCH</a>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION — Vertical, Offset Layout -->
+<section class="how-it-works">
+    <h2 class="how-it-works-heading">HOW IT WORKS</h2>
+    <div class="steps-vertical">
+
+        <!-- Step 1 — Text Left, Image Right -->
+        <div class="step-row">
+            <div class="step-text">
+                <div class="step-number">1</div>
+                <div class="step-info">
+                    <h3>CHOOSE YOUR RESEARCH</h3>
+                    <p>Pick SEO, PPC, or AIO research based on where you need clarity most. No pressure — just pick the path that makes sense for your business right now.</p>
+                </div>
+            </div>
+            <div class="step-image">
+                <!-- Research snippet preview — keyword/market overview -->
+                <svg class="step-image-placeholder" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="360" height="220" fill="#f9f9f9"/>
+                    <rect x="20" y="16" width="140" height="12" rx="2" fill="#23282d"/>
+                    <rect x="20" y="36" width="90" height="8" rx="2" fill="#e0e0e0"/>
+                    <rect x="20" y="60" width="320" height="1" fill="#e0e0e0"/>
+                    <!-- Table header -->
+                    <rect x="20" y="72" width="100" height="10" rx="2" fill="#faa523" opacity="0.3"/>
+                    <rect x="140" y="72" width="60" height="10" rx="2" fill="#faa523" opacity="0.3"/>
+                    <rect x="220" y="72" width="50" height="10" rx="2" fill="#faa523" opacity="0.3"/>
+                    <rect x="290" y="72" width="50" height="10" rx="2" fill="#faa523" opacity="0.3"/>
+                    <!-- Table rows -->
+                    <rect x="20" y="92" width="80" height="8" rx="2" fill="#ccc"/>
+                    <rect x="140" y="92" width="40" height="8" rx="2" fill="#ccc"/>
+                    <rect x="220" y="92" width="35" height="8" rx="2" fill="#ccc"/>
+                    <rect x="290" y="92" width="30" height="8" rx="2" fill="#4CAF50"/>
+                    <rect x="20" y="112" width="95" height="8" rx="2" fill="#ccc"/>
+                    <rect x="140" y="112" width="45" height="8" rx="2" fill="#ccc"/>
+                    <rect x="220" y="112" width="30" height="8" rx="2" fill="#ccc"/>
+                    <rect x="290" y="112" width="40" height="8" rx="2" fill="#faa523"/>
+                    <rect x="20" y="132" width="70" height="8" rx="2" fill="#ccc"/>
+                    <rect x="140" y="132" width="50" height="8" rx="2" fill="#ccc"/>
+                    <rect x="220" y="132" width="40" height="8" rx="2" fill="#ccc"/>
+                    <rect x="290" y="132" width="35" height="8" rx="2" fill="#4CAF50"/>
+                    <rect x="20" y="152" width="85" height="8" rx="2" fill="#ccc"/>
+                    <rect x="140" y="152" width="35" height="8" rx="2" fill="#ccc"/>
+                    <rect x="220" y="152" width="45" height="8" rx="2" fill="#ccc"/>
+                    <rect x="290" y="152" width="28" height="8" rx="2" fill="#f44336"/>
+                    <!-- Chart area -->
+                    <rect x="20" y="172" width="320" height="1" fill="#e0e0e0"/>
+                    <rect x="20" y="185" width="30" height="20" fill="#faa523" opacity="0.6"/>
+                    <rect x="60" y="178" width="30" height="27" fill="#faa523" opacity="0.8"/>
+                    <rect x="100" y="190" width="30" height="15" fill="#faa523" opacity="0.5"/>
+                    <rect x="140" y="175" width="30" height="30" fill="#faa523"/>
+                    <rect x="180" y="182" width="30" height="23" fill="#23282d" opacity="0.6"/>
+                    <rect x="220" y="188" width="30" height="17" fill="#23282d" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 2 — Image Left, Text Right (reversed) -->
+        <div class="step-row">
+            <div class="step-text">
+                <div class="step-number">2</div>
+                <div class="step-info">
+                    <h3>WE DO THE WORK</h3>
+                    <p>Our team digs into your market, your competitors, and your current strategy. We build a complete picture of where you stand and what's possible — with real numbers, not assumptions.</p>
+                </div>
+            </div>
+            <div class="step-image">
+                <!-- Research snippet preview — competitor analysis -->
+                <svg class="step-image-placeholder" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="360" height="220" fill="#f9f9f9"/>
+                    <rect x="20" y="16" width="160" height="12" rx="2" fill="#23282d"/>
+                    <rect x="20" y="36" width="110" height="8" rx="2" fill="#e0e0e0"/>
+                    <rect x="20" y="56" width="320" height="1" fill="#e0e0e0"/>
+                    <!-- Pie chart -->
+                    <circle cx="80" cy="130" r="50" fill="none" stroke="#faa523" stroke-width="20" stroke-dasharray="80 234" transform="rotate(-90 80 130)"/>
+                    <circle cx="80" cy="130" r="50" fill="none" stroke="#23282d" stroke-width="20" stroke-dasharray="60 254" stroke-dashoffset="-80" transform="rotate(-90 80 130)"/>
+                    <circle cx="80" cy="130" r="50" fill="none" stroke="#e0e0e0" stroke-width="20" stroke-dasharray="40 274" stroke-dashoffset="-140" transform="rotate(-90 80 130)"/>
+                    <circle cx="80" cy="130" r="50" fill="none" stroke="#999" stroke-width="20" stroke-dasharray="34 280" stroke-dashoffset="-180" transform="rotate(-90 80 130)"/>
+                    <!-- Legend -->
+                    <rect x="160" y="80" width="12" height="12" fill="#faa523"/>
+                    <rect x="180" y="82" width="80" height="8" rx="2" fill="#ccc"/>
+                    <rect x="160" y="100" width="12" height="12" fill="#23282d"/>
+                    <rect x="180" y="102" width="70" height="8" rx="2" fill="#ccc"/>
+                    <rect x="160" y="120" width="12" height="12" fill="#e0e0e0"/>
+                    <rect x="180" y="122" width="90" height="8" rx="2" fill="#ccc"/>
+                    <rect x="160" y="140" width="12" height="12" fill="#999"/>
+                    <rect x="180" y="142" width="60" height="8" rx="2" fill="#ccc"/>
+                    <!-- Bottom stat boxes -->
+                    <rect x="160" y="170" width="75" height="35" rx="2" fill="#faa523" opacity="0.1" stroke="#faa523" stroke-width="1"/>
+                    <rect x="172" y="178" width="50" height="8" rx="2" fill="#faa523"/>
+                    <rect x="176" y="192" width="42" height="6" rx="2" fill="#ccc"/>
+                    <rect x="250" y="170" width="75" height="35" rx="2" fill="#23282d" opacity="0.1" stroke="#23282d" stroke-width="1"/>
+                    <rect x="262" y="178" width="50" height="8" rx="2" fill="#23282d"/>
+                    <rect x="266" y="192" width="42" height="6" rx="2" fill="#ccc"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 3 — Text Left, Image Right -->
+        <div class="step-row">
+            <div class="step-text">
+                <div class="step-number">3</div>
+                <div class="step-info">
+                    <h3>YOU GET CLARITY</h3>
+                    <p>We walk you through the data. You see exactly what we found, why it matters, and what your real options are. Then you decide what's next — with confidence, not guesswork.</p>
+                </div>
+            </div>
+            <div class="step-image">
+                <!-- Research snippet preview — results/action items -->
+                <svg class="step-image-placeholder" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="360" height="220" fill="#f9f9f9"/>
+                    <rect x="20" y="16" width="120" height="12" rx="2" fill="#23282d"/>
+                    <rect x="20" y="36" width="80" height="8" rx="2" fill="#e0e0e0"/>
+                    <rect x="20" y="56" width="320" height="1" fill="#e0e0e0"/>
+                    <!-- Action items with checkmarks -->
+                    <circle cx="34" cy="76" r="10" fill="#4CAF50" opacity="0.15"/>
+                    <text x="30" y="80" font-size="12" fill="#4CAF50">✓</text>
+                    <rect x="52" y="72" width="180" height="8" rx="2" fill="#23282d"/>
+                    <circle cx="34" cy="102" r="10" fill="#4CAF50" opacity="0.15"/>
+                    <text x="30" y="106" font-size="12" fill="#4CAF50">✓</text>
+                    <rect x="52" y="98" width="150" height="8" rx="2" fill="#23282d"/>
+                    <circle cx="34" cy="128" r="10" fill="#faa523" opacity="0.15"/>
+                    <text x="29" y="132" font-size="12" fill="#faa523">→</text>
+                    <rect x="52" y="124" width="200" height="8" rx="2" fill="#faa523"/>
+                    <circle cx="34" cy="154" r="10" fill="#faa523" opacity="0.15"/>
+                    <text x="29" y="158" font-size="12" fill="#faa523">→</text>
+                    <rect x="52" y="150" width="170" height="8" rx="2" fill="#faa523"/>
+                    <!-- Score bar -->
+                    <rect x="20" y="180" width="320" height="1" fill="#e0e0e0"/>
+                    <rect x="20" y="192" width="60" height="10" rx="2" fill="#ccc"/>
+                    <rect x="90" y="192" width="200" height="10" rx="4" fill="#e0e0e0"/>
+                    <rect x="90" y="192" width="140" height="10" rx="4" fill="#faa523"/>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+    <h2 class="testimonials-heading">WHAT CLIENTS SAY</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p class="testimonial-text">They know marketing on the web inside and out. Call them.</p>
+            <div class="testimonial-author">Air Doctor Heating & Air</div>
+            <div class="testimonial-rating">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p class="testimonial-text">Sage was great to work with. He stuck with it until my website was just the way I wanted it. Couldn't be happier.</p>
+            <div class="testimonial-author">Jesse Pilcher</div>
+            <div class="testimonial-rating">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="quote-mark">&ldquo;</div>
+            <p class="testimonial-text">Sage is an expert in internet marketing and reaching potential customers.</p>
+            <div class="testimonial-author">Carrie Karn</div>
+            <div class="testimonial-rating">★★★★★</div>
+        </div>
+    </div>
+    <div class="testimonials-cta">
+        <div class="google-stars">5.0 ★★★★★</div>
+        <p>36 five-star reviews on Google</p>
+        <a href="https://share.google/Umg00OC9XHbGNpvlb" target="_blank" rel="noopener noreferrer" class="btn-review">READ ALL REVIEWS</a>
+    </div>
+</section>
+
+<!-- CTA BANNER SECTION — StoryBrand: Clarity + Contrast -->
+<section class="cta-banner">
+    <h2>KNOW YOUR MARKET BEFORE YOU SPEND A DIME</h2>
+    <p class="cta-contrast">You've seen the proposals — pages of buzzwords, vague promises, and packages you need a translator to understand. None of that tells you whether it will actually work. Research does. Start with the data, see exactly where you stand, and make your next move with confidence — not hope.</p>
+    <div class="cta-banner-buttons">
+        <a href="#research-cards" class="btn btn-dark">CHOOSE YOUR RESEARCH</a>
+        <a href="tel:3017449697" class="btn btn-white">CALL: 301-744-9697</a>
+    </div>
+</section>
+
+<!-- FOOTER — Standalone, No Site Navigation -->
+<footer>
+    <div class="footer-simple">
+        <div class="footer-brand">
+            <img src="https://apollollc.com/wp-content/uploads/2019/01/Logo.png" alt="Apollo Marketing">
+            <div class="footer-info">
+                <a href="tel:3017449697">301-744-9697</a> &nbsp;|&nbsp; <a href="mailto:info@apollollc.com">info@apollollc.com</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Apollo Marketing. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Scroll-triggered fade-in for sections
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.step-row, .research-card, .testimonial-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
