@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faa523;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#23282d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="96" fill="url(#bg)" filter="url(#shadow)"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.25"/>
+  <!-- AI brain/circuit node pattern -->
+  <!-- Central node -->
+  <circle cx="100" cy="82" r="6" fill="#ffffff"/>
+  <!-- Surrounding nodes -->
+  <circle cx="68" cy="68" r="4" fill="#faa523"/>
+  <circle cx="132" cy="68" r="4" fill="#faa523"/>
+  <circle cx="60" cy="100" r="4" fill="#faa523"/>
+  <circle cx="140" cy="100" r="4" fill="#faa523"/>
+  <circle cx="76" cy="118" r="4" fill="#faa523"/>
+  <circle cx="124" cy="118" r="4" fill="#faa523"/>
+  <!-- Connections -->
+  <line x1="100" y1="82" x2="68" y2="68" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="82" x2="132" y2="68" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="82" x2="60" y2="100" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+  <line x1="100" y1="82" x2="140" y2="100" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+  <line x1="100" y1="82" x2="76" y2="118" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <line x1="100" y1="82" x2="124" y2="118" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  <!-- Cross connections -->
+  <line x1="68" y1="68" x2="60" y2="100" stroke="#faa523" stroke-width="1.5" opacity="0.3"/>
+  <line x1="132" y1="68" x2="140" y2="100" stroke="#faa523" stroke-width="1.5" opacity="0.3"/>
+  <line x1="60" y1="100" x2="76" y2="118" stroke="#faa523" stroke-width="1.5" opacity="0.3"/>
+  <line x1="140" y1="100" x2="124" y2="118" stroke="#faa523" stroke-width="1.5" opacity="0.3"/>
+  <!-- Document icon overlay bottom-right -->
+  <rect x="108" y="96" width="22" height="28" rx="2" fill="#ffffff" opacity="0.15"/>
+  <rect x="112" y="102" width="14" height="2" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="112" y="108" width="10" height="2" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="112" y="114" width="14" height="2" rx="1" fill="#ffffff" opacity="0.3"/>
+  <!-- Label -->
+  <text x="100" y="158" text-anchor="middle" font-family="'Nunito Sans', Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff" letter-spacing="2">AIO</text>
+</svg>

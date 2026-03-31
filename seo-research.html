@@ -1146,7 +1146,7 @@
 <section class="form-section" id="form">
     <h2 class="form-heading">REQUEST YOUR FREE SEO RESEARCH</h2>
     <div class="form-container">
-        <form method="POST" action="#">
+        <form id="seo-intake-form" method="POST" action="https://forms.clickup.com/90141074129/f/2kyd78ph-674/FA5X2WADAC5F49TW7V" novalidate>
             <div class="form-group">
                 <label for="business-name">Business Name</label>
                 <input type="text" id="business-name" name="business_name" required>
@@ -1183,8 +1183,17 @@
                 <input type="tel" id="phone" name="phone" required>
             </div>
 
-            <button type="submit" class="form-submit">REQUEST MY RESEARCH</button>
+            <button type="submit" class="form-submit" id="submit-btn">REQUEST MY RESEARCH</button>
         </form>
+        <div id="form-success" style="display:none; text-align:center; padding:60px 20px;">
+            <div style="font-size:48px; margin-bottom:20px;">&#10003;</div>
+            <h3 style="font-size:28px; font-weight:700; color:#23282d; margin-bottom:16px;">YOU'RE IN.</h3>
+            <p style="font-size:18px; color:#666; max-width:500px; margin:0 auto 24px;">We've received your request and will have your custom SEO research ready within 2 business days. Check your inbox for a confirmation.</p>
+            <p style="font-size:14px; color:#999;">Questions? Call <a href="tel:3017449697" style="color:#faa523; text-decoration:none; font-weight:700;">301-744-9697</a></p>
+        </div>
+        <div id="form-error" style="display:none; text-align:center; padding:20px; margin-top:16px; background:#fff0f0; border:1px solid #ffcccc; border-radius:4px;">
+            <p style="color:#cc0000; margin:0;">Something went wrong. Please try again or call us at <a href="tel:3017449697" style="color:#faa523; font-weight:700;">301-744-9697</a>.</p>
+        </div>
     </div>
 </section>
 
@@ -1260,6 +1269,60 @@
         <p>&copy; 2026 Apollo LLC. All rights reserved. | <a href="https://apollollc.com/privacy" style="color: #999999; text-decoration: none;">Privacy Policy</a></p>
     </div>
 </footer>
+
+<script>
+document.getElementById('seo-intake-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const btn = document.getElementById('submit-btn');
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+
+    // Basic validation
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // Disable button, show loading
+    btn.disabled = true;
+    btn.textContent = 'SUBMITTING...';
+    errorEl.style.display = 'none';
+
+    const payload = {
+        business_name: form.business_name.value,
+        website_url: form.website_url.value,
+        industry: form.industry.value,
+        location: form.location.value,
+        your_name: form.your_name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service_tier: 'SEO Research',
+        source: 'seo-landing-page',
+        submitted_at: new Date().toISOString()
+    };
+
+    try {
+        await fetch('https://hook.us2.make.com/atno13huc2ncgf1gbyjxlr1ldexcf5ob', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            mode: 'no-cors'
+        });
+
+        // Hide form, show success
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+        // Show error, re-enable button
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'REQUEST MY RESEARCH';
+    }
+});
+</script>
 
 </body>
 </html>

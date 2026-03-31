@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faa523;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e08f10;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="96" fill="url(#bg)" filter="url(#shadow)"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3"/>
+  <!-- Magnifying glass -->
+  <circle cx="88" cy="85" r="30" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="110" y1="107" x2="132" y2="129" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <!-- Bar chart inside magnifying glass -->
+  <rect x="74" y="88" width="8" height="16" rx="1" fill="#ffffff" opacity="0.9"/>
+  <rect x="84" y="78" width="8" height="26" rx="1" fill="#ffffff" opacity="0.9"/>
+  <rect x="94" y="83" width="8" height="21" rx="1" fill="#ffffff" opacity="0.9"/>
+  <!-- Up arrow -->
+  <polyline points="72,95 88,72 104,80" fill="none" stroke="#23282d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <!-- Label -->
+  <text x="100" y="158" text-anchor="middle" font-family="'Nunito Sans', Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff" letter-spacing="2">SEO</text>
+</svg>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Session Briefing | March 27, 2026</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        :root {
+            --apollo: #faa523;
+            --apollo-bg: rgba(250, 165, 35, 0.08);
+            --apollo-border: rgba(250, 165, 35, 0.25);
+            --newton: #3b82f6;
+            --newton-bg: rgba(59, 130, 246, 0.08);
+            --newton-border: rgba(59, 130, 246, 0.25);
+            --mlc: #10b981;
+            --mlc-bg: rgba(16, 185, 129, 0.08);
+            --mlc-border: rgba(16, 185, 129, 0.25);
+            --status-active: #10b981;
+            --status-warning: #f59e0b;
+            --status-critical: #ef4444;
+            --status-paused: #6b7280;
+            --priority-now: #ef4444;
+            --priority-next: #f59e0b;
+            --priority-later: #3b82f6;
+            --priority-someday: #6b7280;
+            --bg-primary: #0a0e17;
+            --bg-card: #111827;
+            --bg-card-hover: #1a2332;
+            --border: rgba(255, 255, 255, 0.06);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .briefing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        .briefing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-left h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-left .session-meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .header-left .session-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .meta-session::before { background: var(--apollo) !important; }
+        .meta-date::before { background: var(--newton) !important; }
+        .meta-review::before { background: var(--mlc) !important; }
+
+        .header-right { text-align: right; }
+        .header-right .brand {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .header-right .tagline {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .color-key {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 28px;
+            padding: 14px 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .key-group { display: flex; align-items: center; gap: 16px; }
+        .key-group-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-right: 4px; }
+        .key-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+        .key-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .key-divider { width: 1px; height: 24px; background: var(--border); }
+
+        .briefing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+        }
+
+        .venture-health {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .venture-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+
+        .venture-card:hover { transform: translateY(-2px); }
+        .venture-card.apollo { border-left: 3px solid var(--apollo); }
+        .venture-card.newton { border-left: 3px solid var(--newton); }
+        .venture-card.mlc { border-left: 3px solid var(--mlc); }
+
+        .venture-card .venture-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .venture-name { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .venture-card.apollo .venture-name { color: var(--apollo); }
+        .venture-card.newton .venture-name { color: var(--newton); }
+        .venture-card.mlc .venture-name { color: var(--mlc); }
+
+        .status-badge { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+        .status-active { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .status-top-priority { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .status-evolving { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+
+        .venture-detail { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .venture-metric { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .metric-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .metric-value { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; }
+
+        .section-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 22px 24px;
+            border: 1px solid var(--border);
+        }
+
+        .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .section-title .icon { font-size: 14px; }
+
+        .action-items { grid-column: 1 / 3; }
+        .action-list { list-style: none; }
+        .action-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+        .action-item:last-child { border-bottom: none; }
+        .priority-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+        .priority-now { background: var(--priority-now); box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+        .priority-next { background: var(--priority-next); box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+        .priority-later { background: var(--priority-later); box-shadow: 0 0 8px rgba(59, 130, 246, 0.3); }
+        .priority-someday { background: var(--priority-someday); }
+        .action-text { color: var(--text-secondary); flex: 1; }
+        .action-text strong { color: var(--text-primary); font-weight: 600; }
+        .action-venture { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; }
+        .av-apollo { background: var(--apollo-bg); color: var(--apollo); border: 1px solid var(--apollo-border); }
+        .av-newton { background: var(--newton-bg); color: var(--newton); border: 1px solid var(--newton-border); }
+        .av-mlc { background: var(--mlc-bg); color: var(--mlc); border: 1px solid var(--mlc-border); }
+        .av-system { background: rgba(139, 92, 246, 0.08); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.25); }
+
+        .time-chart { grid-column: 3; }
+        .chart-container { position: relative; width: 100%; max-width: 220px; margin: 0 auto; }
+
+        /* CALENDAR */
+        .calendar-section { grid-column: 1 / -1; }
+        .cal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+        .cal-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 8px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border); font-size: 13px; }
+        .cal-time { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); white-space: nowrap; min-width: 100px; }
+        .cal-name { color: var(--text-secondary); flex: 1; }
+        .cal-tag { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; }
+
+        .fourth-wall {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(250, 165, 35, 0.04) 0%, rgba(59, 130, 246, 0.04) 100%);
+            border: 1px solid rgba(250, 165, 35, 0.15);
+        }
+
+        .insight-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .insight-card { padding: 16px; border-radius: 8px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); }
+        .insight-type { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+        .type-drift { color: var(--status-warning); }
+        .type-pattern { color: var(--apollo); }
+        .type-connection { color: var(--mlc); }
+        .insight-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+        .briefing-footer {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .footer-quote { font-style: italic; max-width: 500px; }
+
+        /* STARTUP PROMPT */
+        .startup-prompt {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0%, rgba(59, 130, 246, 0.06) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 22px 24px;
+            border-radius: 12px;
+        }
+        .startup-prompt .section-title { color: #34d399; }
+        .prompt-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-secondary); line-height: 1.8; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 8px; white-space: pre-wrap; }
+
+        @media (max-width: 1024px) {
+            .briefing-grid { grid-template-columns: 1fr 1fr; }
+            .venture-health { grid-template-columns: 1fr; }
+            .action-items { grid-column: 1 / -1; }
+            .time-chart { grid-column: 1 / -1; }
+            .insight-cards { grid-template-columns: 1fr; }
+            .cal-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .briefing-grid { grid-template-columns: 1fr; }
+            .briefing-container { padding: 20px; }
+            .color-key { flex-direction: column; gap: 12px; }
+            .briefing-header { flex-direction: column; gap: 16px; }
+            .header-right { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <div class="briefing-container">
+
+        <header class="briefing-header">
+            <div class="header-left">
+                <h1>Session Briefing</h1>
+                <div class="session-meta">
+                    <span class="meta-session">Session #6</span>
+                    <span class="meta-date">March 27, 2026 — Friday</span>
+                    <span class="meta-review">Monthly review: April 24</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="brand">Business OS</div>
+                <div class="tagline">Hold the emergence. Track the real.</div>
+            </div>
+        </header>
+
+        <div class="color-key">
+            <div class="key-group">
+                <span class="key-group-label">Ventures</span>
+                <div class="key-item"><span class="key-dot" style="background: var(--apollo)"></span> Apollo Marketing</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--newton)"></span> Newton Foundation</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--mlc)"></span> Mindful Living</div>
+            </div>
+            <div class="key-divider"></div>
+            <div class="key-group">
+                <span class="key-group-label">Priority</span>
+                <div class="key-item"><span class="key-dot" style="background: var(--priority-now)"></span> Now</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--priority-next)"></span> Next</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--priority-later)"></span> Later</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--priority-someday)"></span> Someday</div>
+            </div>
+            <div class="key-divider"></div>
+            <div class="key-group">
+                <span class="key-group-label">Status</span>
+                <div class="key-item"><span class="key-dot" style="background: var(--status-active)"></span> Active</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--status-warning)"></span> Needs Attention</div>
+                <div class="key-item"><span class="key-dot" style="background: var(--status-critical)"></span> Critical / Blocked</div>
+            </div>
+        </div>
+
+        <div class="briefing-grid">
+
+            <!-- CALENDAR -->
+            <div class="section-card calendar-section">
+                <div class="section-title"><span class="icon">📅</span> Tomorrow's Schedule — Friday March 27</div>
+                <div class="cal-grid">
+                    <div class="cal-item">
+                        <span class="cal-time">9:00–9:30</span>
+                        <span class="cal-name">Regen Center - Post updates</span>
+                        <span class="cal-tag av-apollo">Apollo</span>
+                    </div>
+                    <div class="cal-item">
+                        <span class="cal-time">9:30–10:00</span>
+                        <span class="cal-name">Alignment, Accountability, & Growth Session</span>
+                        <span class="cal-tag av-mlc">Mingle</span>
+                    </div>
+                    <div class="cal-item">
+                        <span class="cal-time">10:00–1:00</span>
+                        <span class="cal-name">The Corner Table</span>
+                        <span class="cal-tag av-apollo">Apollo</span>
+                    </div>
+                    <div class="cal-item">
+                        <span class="cal-time">11:00–12:00</span>
+                        <span class="cal-name">GRC: On Animism and Regeneration</span>
+                        <span class="cal-tag av-mlc">GRC</span>
+                    </div>
+                    <div class="cal-item">
+                        <span class="cal-time">12:15–12:45</span>
+                        <span class="cal-name">Lunch</span>
+                        <span class="cal-tag" style="background: rgba(107,114,128,0.15); color: #9ca3af; border: 1px solid rgba(107,114,128,0.25);">Break</span>
+                    </div>
+                    <div class="cal-item">
+                        <span class="cal-time">1:00–3:00</span>
+                        <span class="cal-name" style="color: var(--text-primary); font-weight: 600;">My Clone & Sage — Blocked Time with Brook</span>
+                        <span class="cal-tag av-apollo">Apollo</span>
+                    </div>
+                    <div class="cal-item" style="opacity: 0.5;">
+                        <span class="cal-time">1:00–2:00</span>
+                        <span class="cal-name">GRC: Open Office Hours — Nikki Wall</span>
+                        <span class="cal-tag av-mlc">Optional</span>
+                    </div>
+                </div>
+                <div style="margin-top: 12px; font-size: 12px; color: var(--text-muted);">
+                    Best work window: <strong style="color: var(--text-primary);">Before 9 AM</strong> or <strong style="color: var(--text-primary);">during Corner Table (10-1 PM)</strong> &nbsp;|&nbsp; No Calendly bookings
+                </div>
+            </div>
+
+            <!-- VENTURE HEALTH -->
+            <div class="venture-health">
+                <div class="venture-card apollo">
+                    <div class="venture-top">
+                        <span class="venture-name">Apollo Marketing</span>
+                        <span class="status-badge status-active">Active</span>
+                    </div>
+                    <div class="venture-detail">
+                        Funnel nearly end-to-end. Kartra checkout live (3 products published). NiftyPM forms are the last missing link. Pure Pilates closed out — ad copy done, budget set, April 3 Meta call scheduled.
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Funnel Status</span>
+                        <span class="metric-value" style="color: var(--status-warning);">NiftyPM Forms Pending</span>
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Session Focus (Sessions 4-5)</span>
+                        <span class="metric-value" style="color: var(--apollo);">100%</span>
+                    </div>
+                </div>
+
+                <div class="venture-card newton">
+                    <div class="venture-top">
+                        <span class="venture-name">Newton Foundation</span>
+                        <span class="status-badge status-top-priority">Top Priority</span>
+                    </div>
+                    <div class="venture-detail">
+                        Blueprint sent to 5 co-investors — still awaiting responses. No session work in current cycle. Sponsorship materials pending feedback.
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Blocking</span>
+                        <span class="metric-value" style="color: var(--status-critical);">Co-investor Response</span>
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Session Focus</span>
+                        <span class="metric-value" style="color: var(--text-muted);">0%</span>
+                    </div>
+                </div>
+
+                <div class="venture-card mlc">
+                    <div class="venture-top">
+                        <span class="venture-name">Mindful Living</span>
+                        <span class="status-badge status-evolving">Evolving</span>
+                    </div>
+                    <div class="venture-detail">
+                        Community cooperative model in development. Exchange network platform undecided. Intern program running Loop 1. Content operations designed but not yet active.
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Content Pipeline</span>
+                        <span class="metric-value" style="color: var(--status-warning);">Not Active</span>
+                    </div>
+                    <div class="venture-metric">
+                        <span class="metric-label">Session Focus</span>
+                        <span class="metric-value" style="color: var(--text-muted);">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTION ITEMS -->
+            <div class="section-card action-items">
+                <div class="section-title"><span class="icon">⚡</span> Action Items</div>
+                <ul class="action-list">
+                    <li class="action-item">
+                        <span class="priority-dot priority-now"></span>
+                        <span class="action-text"><strong>Build 3 paid NiftyPM forms</strong> — SEO, PPC, AIO intake forms that redirect to Kartra checkout URLs on submit.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-now"></span>
+                        <span class="action-text"><strong>Create AIO NiftyPM intake form</strong> — Free version. Only research product without a request form.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-now"></span>
+                        <span class="action-text"><strong>Push thank-you page to GitHub Pages</strong> — research-thank-you.html built, needs deploy + verify at apollollc.com/research-thank-you/</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-next"></span>
+                        <span class="action-text"><strong>Add Kartra tracking pixels</strong> to SEO, PPC, AIO landing pages. Embed codes saved in kartra-embed-codes.md.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-next"></span>
+                        <span class="action-text"><strong>Apply structural updates</strong> to individual landing pages — hero motion, hover animations, responsive breakpoints.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-next"></span>
+                        <span class="action-text"><strong>Tighten CTA contrast copy</strong> — Currently ~50 words, target under 30.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-later"></span>
+                        <span class="action-text"><strong>Map Search Atlas workflow</strong> — Grading thresholds, content pipeline activation.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                    <li class="action-item">
+                        <span class="priority-dot priority-someday"></span>
+                        <span class="action-text"><strong>Carol Pure Pilates — April 3 call</strong> — Meta recruitment ad discussion with Brook, 1-3 PM.</span>
+                        <span class="action-venture av-apollo">Apollo</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- TIME ALLOCATION CHART -->
+            <div class="section-card time-chart">
+                <div class="section-title"><span class="icon">◐</span> Session Focus</div>
+                <div class="chart-container">
+                    <canvas id="ventureChart"></canvas>
+                </div>
+                <div style="margin-top: 16px; font-size: 12px; color: var(--text-muted); text-align: center; line-height: 1.6;">
+                    5 sessions running and <span style="color: var(--apollo); font-weight: 600;">Apollo has taken 95%</span>.<br>
+                    Newton remains <span style="color: var(--status-critical); font-weight: 600;">Top Priority</span> with <span style="color: var(--text-primary); font-weight: 600;">0%</span> focus.
+                </div>
+            </div>
+
+            <!-- FOURTH WALL -->
+            <div class="section-card fourth-wall">
+                <div class="section-title"><span class="icon">◈</span> Fourth Wall — Patterns & Emergence</div>
+                <div class="insight-cards">
+                    <div class="insight-card">
+                        <div class="insight-type type-drift">Attention Drift</div>
+                        <div class="insight-text">
+                            Newton Foundation is still flagged TOP PRIORITY but hasn't been touched in any session. Apollo is consuming all bandwidth. The co-investor responses remain the blocker — passive waiting continues. When does follow-up happen?
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-type type-pattern">Momentum Pattern</div>
+                        <div class="insight-text">
+                            Apollo's funnel infrastructure went from zero to nearly complete in 3 sessions. Kartra built in 30 minutes. The bottleneck was never the tools — it was getting dedicated session time. NiftyPM forms are the last gap. One session closes the loop.
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-type type-connection">Connection Point</div>
+                        <div class="insight-text">
+                            Pure Pilates client folder pattern (CLIENT.md as master context) is replicable across all Apollo clients. This is an operating system for client management, not just a one-off. Could become an Apollo skill.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STARTUP PROMPT -->
+            <div class="startup-prompt">
+                <div class="section-title"><span class="icon">▶</span> Startup Prompt — Copy This To Begin</div>
+                <div class="prompt-text">Good morning. It's Friday March 27. Here's what I need:
+
+1. Read these files first:
+   → reality/COORDINATION.md (Session 5 handoff at the bottom)
+   → workspace/apollo/funnel/kartra-embed-codes.md
+   → workspace/apollo/CONTEXT.md
+
+2. Today's focus: Build NiftyPM forms (3 paid + 1 free AIO).
+   Reference: Kartra checkout URLs are in kartra-embed-codes.md.
+   The paid forms redirect to Kartra checkout on submit.
+
+3. After NiftyPM: Push research-thank-you.html to GitHub Pages,
+   add Kartra tracking pixels to landing pages.
+
+4. Calendar: Corner Table 10-1, Brook 1-3. Best work window
+   is before 9 AM or during Corner Table.</div>
+            </div>
+
+        </div>
+
+        <footer class="briefing-footer">
+            <div class="footer-quote">"The question is not what you look at, but what you see." — Henry David Thoreau</div>
+            <div>Generated by Business OS • Session Curator v0.2</div>
+        </footer>
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('ventureChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Apollo', 'Newton', 'Mindful Living', 'System/Infra'],
+                datasets: [{
+                    data: [90, 0, 0, 10],
+                    backgroundColor: [
+                        'rgba(250, 165, 35, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(139, 92, 246, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(250, 165, 35, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(16, 185, 129, 1)',
+                        'rgba(139, 92, 246, 1)'
+                    ],
+                    borderWidth: 1,
+                    hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: '#94a3b8',
+                            font: { family: "'Inter', sans-serif", size: 11 },
+                            padding: 12,
+                            usePointStyle: true,
+                            pointStyleWidth: 8
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleColor: '#f1f5f9',
+                        bodyColor: '#94a3b8',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                return ' ' + context.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

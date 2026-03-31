@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Landing Page Review | Apollo Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Nunito Sans", system-ui, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .header {
+            background: #23282d;
+            padding: 24px 40px;
+            border-bottom: 3px solid #faa523;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #faa523;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .header .meta { font-size: 13px; color: #999; }
+
+        .instructions {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 24px 32px;
+            background: #23282d;
+            border-left: 4px solid #faa523;
+            border-radius: 0 8px 8px 0;
+        }
+        .instructions h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #faa523;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .instructions p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .instructions ol {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .mockups {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .mockup-card {
+            background: #23282d;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #333;
+            transition: border-color 0.3s;
+        }
+        .mockup-card:hover { border-color: #faa523; }
+
+        .card-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #333;
+        }
+        .card-header h3 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+        .card-header .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(250,165,35,0.15);
+            color: #faa523;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card-header p {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .preview-frame {
+            position: relative;
+            background: #fff;
+            height: 500px;
+            overflow: hidden;
+        }
+        .preview-frame iframe {
+            width: 1200px;
+            height: 4000px;
+            border: none;
+            transform: scale(0.335);
+            transform-origin: top left;
+        }
+
+        .card-actions {
+            padding: 16px 24px;
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+            text-align: center;
+            flex: 1;
+        }
+        .btn-gold {
+            background: #faa523;
+            color: #fff;
+        }
+        .btn-gold:hover { background: #e08f10; }
+        .btn-outline {
+            background: transparent;
+            color: #faa523;
+            border: 1px solid #faa523;
+        }
+        .btn-outline:hover { background: rgba(250,165,35,0.1); }
+
+        .device-toggle {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px 20px;
+            display: flex;
+            gap: 8px;
+        }
+        .device-btn {
+            padding: 8px 16px;
+            background: transparent;
+            color: #999;
+            border: 1px solid #444;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .device-btn:hover { color: #fff; border-color: #666; }
+        .device-btn.active { color: #faa523; border-color: #faa523; }
+
+        .footer-bar {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+        .footer-bar span { color: #faa523; }
+
+        @media (max-width: 1200px) {
+            .mockups { grid-template-columns: 1fr; max-width: 700px; }
+            .preview-frame iframe { transform: scale(0.5); }
+            .preview-frame { height: 600px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Apollo Marketing — SEO Landing Page Review</h1>
+    <div class="meta" id="datestamp"></div>
+</div>
+
+<div class="instructions">
+    <h2>Review Instructions</h2>
+    <p>Three design directions for the new SEO Research landing page. Each is fully responsive and functional.</p>
+    <ol>
+        <li>Click <strong>"Open Full Page"</strong> to see each mockup at full size on any device</li>
+        <li>Note what you like from each — hero layout, color scheme, copy tone, form placement</li>
+        <li>We can mix elements from different versions into the final page</li>
+        <li>Reply with your feedback or drop comments in the ClickUp task</li>
+    </ol>
+</div>
+
+<div class="mockups">
+    <!-- V1 -->
+    <div class="mockup-card">
+        <div class="card-header">
+            <div class="tag">Version 1</div>
+            <h3>Bold Editorial</h3>
+            <p>Magazine-style layout. Split-panel hero with form built into the structure. Oversized statistics, asymmetric grids, alternating dark/light sections.</p>
+        </div>
+        <div class="preview-frame">
+            <iframe src="seo-mockup-v1.html" loading="lazy"></iframe>
+        </div>
+        <div class="card-actions">
+            <a href="seo-mockup-v1.html" class="btn btn-gold" target="_blank">Open Full Page</a>
+        </div>
+    </div>
+
+    <!-- V2 -->
+    <div class="mockup-card">
+        <div class="card-header">
+            <div class="tag">Version 2</div>
+            <h3>Dark Mode Premium</h3>
+            <p>Sleek dark aesthetic with glassmorphism cards. Orange used surgically as accent. Dot-grid textures, glowing hover states. Feels like a premium SaaS product.</p>
+        </div>
+        <div class="preview-frame">
+            <iframe src="seo-mockup-v2.html" loading="lazy"></iframe>
+        </div>
+        <div class="card-actions">
+            <a href="seo-mockup-v2.html" class="btn btn-gold" target="_blank">Open Full Page</a>
+        </div>
+    </div>
+
+    <!-- V3 -->
+    <div class="mockup-card">
+        <div class="card-header">
+            <div class="tag">Version 3</div>
+            <h3>Warm & Approachable</h3>
+            <p>Cream backgrounds, rounded corners, conversational copy. Mock SEO report card in hero makes the offer tangible. FAQ accordion. Zero intimidation factor.</p>
+        </div>
+        <div class="preview-frame">
+            <iframe src="seo-mockup-v3.html" loading="lazy"></iframe>
+        </div>
+        <div class="card-actions">
+            <a href="seo-mockup-v3.html" class="btn btn-gold" target="_blank">Open Full Page</a>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bar">
+    <span>Apollo Marketing</span> — Internal Review — Not for public distribution
+</div>
+
+<script>
+    document.getElementById('datestamp').textContent = new Date().toLocaleDateString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+</script>
+
+</body>
+</html>
