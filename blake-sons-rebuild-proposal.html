@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Blake &amp; Sons Moving &amp; Storage — Site Refresh Working Session | Apollo Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #B71234;
+    --red-dark: #8B0E27;
+    --navy: #0a3e60;
+    --navy-dark: #072844;
+    --cream: #FAF6F1;
+    --cream-warm: #F3EDE4;
+    --ink: #1a1a1a;
+    --gray: #5a5a5a;
+    --gray-soft: #8a8a8a;
+    --light-gray: #e8e4df;
+    --accent: #D4A043;
+    --green: #2d7a3e;
+    --amber: #c87d1a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; overflow: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--ink); color: var(--ink);
+  }
+  .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5vh 6vw;
+    background: var(--cream);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+    overflow: hidden;
+  }
+  .slide.active { opacity: 1; pointer-events: auto; }
+
+  .act-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 0.8rem;
+  }
+  .act-tag::before { content: ''; width: 28px; height: 2px; background: var(--red); }
+  .act-tag.navy { color: var(--navy); }
+  .act-tag.navy::before { background: var(--navy); }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5.8vw, 6rem);
+    line-height: 1.02; font-weight: 900; color: var(--navy);
+    margin-bottom: 1.1rem; letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    line-height: 1.12; font-weight: 800; color: var(--navy);
+    margin-bottom: 1.1rem; letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+    font-weight: 700; color: var(--navy);
+    margin-bottom: 0.55rem; letter-spacing: -0.005em;
+  }
+  .lead {
+    font-size: clamp(1.1rem, 1.45vw, 1.55rem);
+    line-height: 1.45; color: var(--ink);
+    max-width: 72ch; margin-bottom: 1.6rem;
+  }
+  p { font-size: clamp(0.92rem, 1.08vw, 1.08rem); line-height: 1.55; color: var(--ink); }
+  .muted { color: var(--gray); }
+  strong { font-weight: 700; color: var(--navy); }
+
+  /* Cover */
+  .slide-cover {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--cream);
+    justify-content: center; align-items: flex-start;
+  }
+  .slide-cover::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(183, 18, 52, 0.28) 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(212, 160, 67, 0.15) 0%, transparent 60%);
+  }
+  .slide-cover .act-tag { color: var(--accent); }
+  .slide-cover .act-tag::before { background: var(--accent); }
+  .slide-cover h1 { color: var(--cream); font-size: clamp(3.3rem, 7vw, 7rem); max-width: 15ch; }
+  .slide-cover .lead { color: rgba(250, 246, 241, 0.85); max-width: 52ch; }
+  .cover-meta {
+    position: absolute; bottom: 5vh; left: 6vw;
+    display: flex; align-items: center; gap: 1.2rem;
+    color: rgba(250, 246, 241, 0.7);
+    font-size: 0.8rem; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .cover-meta .dot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+  .stars { position: absolute; top: 5vh; right: 6vw; display: flex; gap: 0.5rem; }
+  .stars span {
+    display: inline-block; width: 12px; height: 12px; background: var(--red);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+  .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+
+  /* Stat blocks */
+  .stat-block {
+    padding: 1.4rem 1.6rem; background: white;
+    border-left: 4px solid var(--red); border-radius: 4px;
+  }
+  .stat-block .label {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--gray); font-weight: 600; margin-bottom: 0.45rem;
+  }
+  .stat-block .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+    font-weight: 900; line-height: 1; color: var(--red);
+    margin-bottom: 0.3rem;
+  }
+  .stat-block .sub { font-size: 0.82rem; color: var(--gray); line-height: 1.45; }
+  .stat-block.navy { border-left-color: var(--navy); }
+  .stat-block.navy .stat-number { color: var(--navy); }
+
+  /* DR/Traffic/Reviews triple */
+  .metric-row {
+    display: grid; grid-template-columns: 6.5rem 1fr;
+    gap: 0.6rem; margin-bottom: 0.75rem; align-items: center;
+  }
+  .metric-row .who { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+  .metric-row.blake .who { color: var(--red); font-weight: 800; }
+  .metric-row .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .metric-cell {
+    background: white; padding: 0.5rem 0.65rem; border-radius: 4px;
+    display: flex; flex-direction: column; gap: 0.15rem;
+    border: 1px solid var(--light-gray);
+  }
+  .metric-row.blake .metric-cell { border-color: var(--red); background: #fff8f5; }
+  .metric-cell .lab {
+    font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--gray-soft); font-weight: 600;
+  }
+  .metric-cell .val {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 1.15rem; color: var(--navy); line-height: 1;
+  }
+  .metric-row.blake .metric-cell .val { color: var(--red); }
+
+  /* Apr 15 summary card */
+  .shipped-summary {
+    background: white; padding: 1.5rem 1.75rem; border-radius: 6px;
+    border-left: 4px solid var(--navy);
+  }
+  .shipped-summary h3 { margin-bottom: 0.75rem; }
+  .shipped-summary ul { list-style: none; padding: 0; }
+  .shipped-summary li {
+    font-size: 0.92rem; line-height: 1.5; padding-left: 1.35rem;
+    position: relative; margin-bottom: 0.45rem;
+  }
+  .shipped-summary li::before {
+    content: '✓'; position: absolute; left: 0; top: 0;
+    color: var(--green); font-weight: 900;
+  }
+  .shipped-summary li.pending::before { content: '◔'; color: var(--amber); }
+  .shipped-summary .note {
+    font-size: 0.8rem; color: var(--gray); margin-top: 0.75rem;
+    padding-top: 0.75rem; border-top: 1px solid var(--light-gray);
+    font-style: italic;
+  }
+
+  /* Canvas visual */
+  .canvas-viz {
+    background: #0e1824;
+    border-radius: 8px;
+    padding: 1.25rem;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .canvas-viz .cv-legend {
+    display: flex; gap: 1rem; margin-bottom: 0.9rem;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.6);
+  }
+  .canvas-viz .lk { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .canvas-viz .lk::before {
+    content: ''; width: 10px; height: 10px; border-radius: 2px;
+    background: var(--navy);
+  }
+  .canvas-viz .lk.new::before { background: var(--red); }
+  .canvas-viz .lk.existing::before { background: var(--green); }
+  .canvas-viz .lk.data::before { background: var(--accent); }
+  .canvas-viz .cv-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.65rem;
+  }
+  .cv-silo {
+    background: rgba(255,255,255,0.04);
+    border-radius: 5px;
+    padding: 0.65rem 0.7rem;
+    border-top: 3px solid var(--green);
+    position: relative;
+  }
+  .cv-silo.new { border-top-color: var(--red); }
+  .cv-silo.partial { border-top-color: var(--amber); }
+  .cv-silo .city {
+    font-size: 0.78rem; color: white; font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.35rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .cv-silo .badge {
+    font-size: 0.55rem; padding: 0.1rem 0.35rem; border-radius: 2px;
+    background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);
+    letter-spacing: 0.12em; font-weight: 700; text-transform: uppercase;
+  }
+  .cv-silo.new .badge { background: var(--red); color: white; }
+  .cv-silo.partial .badge { background: var(--amber); color: white; }
+  .cv-silo.existing .badge { background: var(--green); color: white; }
+  .cv-silo .nodes {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    margin-top: 0.3rem;
+  }
+  .cv-silo .nd {
+    width: 10px; height: 10px; border-radius: 2px;
+    background: rgba(255,255,255,0.15);
+  }
+  .cv-silo .nd.hub { background: rgba(255,255,255,0.55); }
+  .cv-silo .nd.missing { background: transparent; border: 1px dashed rgba(255, 30, 60, 0.7); }
+  .cv-silo .nd.blog { background: rgba(212, 160, 67, 0.55); }
+  .cv-silo .meta {
+    font-size: 0.65rem; color: rgba(255,255,255,0.5);
+    margin-top: 0.35rem; letter-spacing: 0.02em;
+  }
+  .canvas-viz .data-panel {
+    background: rgba(212, 160, 67, 0.08);
+    border-top: 3px solid var(--accent);
+    border-radius: 5px;
+    padding: 0.65rem 0.7rem;
+    margin-top: 0.75rem;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .canvas-viz .data-panel .dk {
+    font-size: 0.58rem; letter-spacing: 0.1em;
+    color: var(--accent); font-weight: 700;
+    text-transform: uppercase;
+  }
+  .canvas-viz .data-panel .dv { color: white; font-weight: 700; margin-top: 2px; }
+
+  /* Bars */
+  .bar-row { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.7rem; }
+  .bar-label { width: 10rem; font-weight: 600; color: var(--navy); font-size: 0.9rem; }
+  .bar-label.red { color: var(--red); }
+  .bar-label.muted { color: var(--gray); font-weight: 600; }
+  .bar-count {
+    min-width: 4rem; text-align: right;
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: 1.05rem; color: var(--red);
+  }
+  .bar-count.navy { color: var(--navy); }
+  .bar-track { flex: 1; height: 14px; background: var(--light-gray); border-radius: 7px; overflow: hidden; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--navy) 0%, var(--red) 100%); border-radius: 7px; }
+  .bar-fill.red { background: var(--red); }
+  .bar-fill.navy { background: var(--navy); }
+
+  /* Mock page card (depth exemplar) */
+  .page-mock {
+    background: white; border-radius: 6px;
+    padding: 1rem 1.15rem;
+    border-top: 3px solid var(--red);
+    font-size: 0.82rem; line-height: 1.5;
+  }
+  .page-mock .pm-url {
+    font-size: 0.7rem; color: var(--gray-soft); font-family: 'Inter', monospace;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .page-mock h4 {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    color: var(--navy); font-weight: 700; margin-bottom: 0.3rem;
+  }
+  .page-mock .pm-sample {
+    background: var(--cream-warm); padding: 0.65rem 0.8rem; border-radius: 3px;
+    margin: 0.6rem 0; font-size: 0.78rem; color: var(--ink);
+    line-height: 1.5; border-left: 2px solid var(--accent);
+  }
+  .page-mock .pm-schema {
+    font-family: 'Courier New', monospace; font-size: 0.7rem;
+    background: #0e1824; color: #9dc9f5; padding: 0.5rem 0.65rem;
+    border-radius: 3px; margin-top: 0.4rem;
+    overflow: hidden;
+  }
+  .page-mock .pm-tag {
+    display: inline-block; font-size: 0.62rem; padding: 0.12rem 0.4rem;
+    background: var(--accent); color: white; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;
+    margin-right: 0.35rem; margin-bottom: 0.25rem;
+  }
+  .page-mock .pm-tag.red { background: var(--red); }
+  .page-mock .pm-tag.navy { background: var(--navy); }
+
+  /* Plan workstreams */
+  .workstreams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .ws {
+    background: white; padding: 1.4rem 1.5rem; border-radius: 6px;
+    border-top: 4px solid var(--navy);
+  }
+  .ws:nth-child(1) { border-top-color: var(--navy); }
+  .ws:nth-child(2) { border-top-color: var(--red); }
+  .ws:nth-child(3) { border-top-color: var(--accent); }
+  .ws .ws-num {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 900; line-height: 1; color: var(--red);
+    margin-bottom: 0.3rem;
+  }
+  .ws:nth-child(1) .ws-num { color: var(--navy); }
+  .ws:nth-child(3) .ws-num { color: var(--accent); }
+  .ws h3 { margin-bottom: 0.55rem; font-size: 1.15rem; }
+  .ws p { font-size: 0.88rem; line-height: 1.55; color: var(--ink); margin-bottom: 0.65rem; }
+  .ws ul { list-style: none; padding: 0; margin-top: 0.65rem; }
+  .ws li {
+    font-size: 0.82rem; line-height: 1.5;
+    padding-left: 1rem; position: relative; margin-bottom: 0.35rem;
+  }
+  .ws li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--red); font-weight: 700;
+  }
+
+  /* Mr Mover 4 options */
+  .options-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .opt {
+    padding: 1.2rem 1.1rem; background: white; border-radius: 6px;
+    border-top: 4px solid var(--navy);
+    display: flex; flex-direction: column;
+    box-shadow: 0 1px 6px rgba(10,62,96,0.05);
+  }
+  .opt.mike { border-top-color: var(--amber); }
+  .opt.saas { border-top-color: var(--gray-soft); }
+  .opt.migrate { border-top-color: var(--navy); }
+  .opt.rebuild { border-top-color: var(--red); }
+  .opt .opt-tag {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--gray); font-weight: 700; margin-bottom: 0.3rem;
+  }
+  .opt h4 { font-size: 1.02rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 700; line-height: 1.25; }
+  .opt .badge {
+    display: inline-block; font-size: 0.6rem; padding: 0.15rem 0.45rem;
+    background: var(--amber); color: white; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .opt.rebuild .badge { background: var(--red); }
+  .opt.migrate .badge { background: var(--navy); }
+  .opt.saas .badge { background: var(--gray-soft); }
+  .opt .pros, .opt .cons { font-size: 0.8rem; line-height: 1.5; margin-bottom: 0.55rem; }
+  .opt .lab { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 0.25rem; }
+  .opt .pros .lab { color: var(--green); }
+  .opt .cons .lab { color: var(--red); }
+  .opt .pros p, .opt .cons p { color: var(--ink); font-size: 0.8rem; }
+
+  /* Questions slide */
+  .question-list { display: grid; grid-template-columns: 1fr; gap: 0.9rem; max-width: 90ch; }
+  .qn {
+    display: flex; gap: 1rem; padding: 1rem 1.25rem; background: white;
+    border-left: 4px solid var(--red); border-radius: 4px;
+    align-items: flex-start;
+  }
+  .qn .qn-num {
+    font-family: 'Playfair Display', serif; font-size: 1.9rem;
+    font-weight: 900; color: var(--red); line-height: 1;
+    min-width: 2rem;
+  }
+  .qn h3 { font-size: 1rem; margin-bottom: 0.3rem; line-height: 1.3; }
+  .qn p { font-size: 0.88rem; color: var(--gray); line-height: 1.5; }
+
+  /* Investment ranges */
+  .ranges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+  .range {
+    padding: 1.35rem; background: white; border-radius: 6px;
+    border-top: 4px solid var(--navy);
+  }
+  .range.featured { border-top-color: var(--red); background: linear-gradient(180deg, #fff 0%, #fff8f5 100%); }
+  .range .range-name {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--gray); font-weight: 700; margin-bottom: 0.35rem;
+  }
+  .range.featured .range-name { color: var(--red); }
+  .range .range-price {
+    font-family: 'Playfair Display', serif; font-size: 2rem;
+    font-weight: 900; color: var(--navy); line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .range.featured .range-price { color: var(--red); }
+  .range .range-sub { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
+  .range ul { list-style: none; padding: 0; }
+  .range li {
+    font-size: 0.82rem; line-height: 1.5;
+    padding-left: 1rem; position: relative; margin-bottom: 0.35rem;
+  }
+  .range li::before { content: '·'; position: absolute; left: 0.25rem; color: var(--red); font-weight: 900; }
+
+  /* Callout */
+  .callout {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--cream); padding: 1.9rem 2.7rem; border-radius: 6px;
+    position: relative; margin-bottom: 1.5rem;
+  }
+  .callout::before {
+    content: '\201C';
+    position: absolute; top: -1rem; left: 1.25rem;
+    font-family: 'Playfair Display', serif; font-size: 6rem;
+    color: var(--red); line-height: 1; font-weight: 900;
+  }
+  .callout .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2vw, 1.95rem);
+    line-height: 1.3; font-weight: 700; color: white;
+    position: relative;
+  }
+
+  /* Nav */
+  .nav {
+    position: absolute; bottom: 2vh; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 0.5rem; align-items: center;
+    font-size: 0.78rem; color: var(--gray); z-index: 100;
+  }
+  .nav .counter { font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .nav .dots { display: flex; gap: 0.4rem; margin: 0 1rem; }
+  .nav .dot {
+    width: 7px; height: 7px; background: var(--light-gray);
+    border-radius: 50%; cursor: pointer; transition: background 0.2s;
+  }
+  .nav .dot.active { background: var(--red); }
+  .nav .hint { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+  .brand-footer {
+    position: absolute; bottom: 2vh; right: 6vw;
+    font-size: 0.7rem; color: var(--gray);
+    letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  }
+  .slide-cover .brand-footer { color: rgba(250,246,241,0.5); }
+  .slide-cover .nav { color: rgba(250,246,241,0.7); }
+  .slide-cover .nav .counter { color: var(--cream); }
+
+  /* Pull quote */
+  .pull {
+    margin-top: 1rem; padding: 1rem 1.4rem;
+    background: rgba(183, 18, 52, 0.06); border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.92rem; color: var(--ink); line-height: 1.55;
+  }
+  .pull strong { color: var(--red); }
+
+  @media print {
+    html, body { height: auto; overflow: visible; }
+    .deck { width: 100%; height: auto; }
+    .slide { position: relative; inset: auto; opacity: 1 !important; pointer-events: auto; page-break-after: always; min-height: 100vh; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- Slide 1: Cover -->
+<section class="slide slide-cover active" data-idx="0">
+  <div class="stars"><span></span><span></span><span></span></div>
+  <div class="act-tag">Site refresh · Working session · April 22, 2026</div>
+  <h1>Blake &amp; Sons Moving &amp; Storage.<br>The next chapter.</h1>
+  <p class="lead">Thirty years on the road. Three generations on the truck. Today — what we've learned, what we've mapped, and the decisions that move this forward.</p>
+  <div class="cover-meta">
+    <span>Prepared for Shannon Shioutakon</span>
+    <span class="dot"></span>
+    <span>Apollo Marketing</span>
+  </div>
+  <div class="nav"><span class="counter">01 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 2: FINDINGS — cadence, playbook shift, early signal -->
+<section class="slide" data-idx="1">
+  <div class="act-tag">Findings · Where the April cycle landed</div>
+  <h2>We ran a richer playbook this cycle.<br>Early signal says it's working.</h2>
+  <p class="lead muted" style="margin-bottom: 1.3rem;">Apollo does on-page cycles with Blake &amp; Sons about every 6–12 months. This April's cycle was the <strong>first on our SearchAtlas + AI stack</strong> — using it to study competitor schema, generate richer content, and deploy wider, tighter signals than the old title-and-meta passes. The six-day read is promising enough to recommend a full site rebuild on the same playbook.</p>
+  <div class="two-col">
+    <div class="shipped-summary">
+      <h3>What was different this cycle</h3>
+      <ul>
+        <li>Mapped competitor schema across 5 direct peers &mdash; who ranks, who doesn't, and why</li>
+        <li>Tighter titles + meta descriptions applied across your hero pages, city hubs, and city-service pages</li>
+        <li class="pending">Homepage FAQ rich-result schema drafted &mdash; awaiting your content approval on 4 items</li>
+      </ul>
+      <div class="note">Google tightened content-quality rules across 2025–2026. The new cadence bakes in a <strong>review cycle with you</strong> before any page ships — especially as we scale content depth across 8 city micro-sites.</div>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 0.9rem;">Six days in &mdash; the read</h3>
+      <div class="three-col" style="grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+        <div class="stat-block">
+          <div class="label">Key Events (GA4)</div>
+          <div class="stat-number">+71%</div>
+          <div class="sub">Week-over-week. People completing conversion actions on your site.</div>
+        </div>
+        <div class="stat-block">
+          <div class="label">Form Starts</div>
+          <div class="stat-number">+60%</div>
+          <div class="sub">Even while the Mr. Mover link was broken.</div>
+        </div>
+        <div class="stat-block navy">
+          <div class="label">Active Users</div>
+          <div class="stat-number">+14%</div>
+          <div class="sub">Organic traffic lifting. Ranking signal catches up around T+30.</div>
+        </div>
+        <div class="stat-block navy">
+          <div class="label">New Positions</div>
+          <div class="stat-number">3</div>
+          <div class="sub">Rockville #57 (new), Bethesda 63→55, Leesburg #36 (new).</div>
+        </div>
+      </div>
+      <div class="pull" style="margin-top: 1rem;">
+        <strong>Re-crawl turbulence</strong> is normal through mid-May &mdash; Google is re-evaluating your pages at once. The meaningful ranking lift lands <strong>around T+30 (mid-May)</strong>, which is when we'll know the richer-schema bet is paying.
+      </div>
+    </div>
+  </div>
+  <div class="nav"><span class="counter">02 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 3: FINDINGS — DR / Traffic / Reviews -->
+<section class="slide" data-idx="2">
+  <div class="act-tag">Findings · The paradox</div>
+  <div class="callout">
+    <div class="quote">You have the most authority. You have the least traffic. Everything between those two is what the rebuild converts into leads.</div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3>You're not stuck on trust.</h3>
+      <p style="margin-bottom: 0.75rem;">Your link-authority score (Domain Rating, the industry metric for how much Google trusts a site) sits at <strong>45/100</strong> — higher than every direct competitor we track. Three decades of real operations earned that. It's the hardest thing to build.</p>
+      <h3 style="margin-top: 1rem;">You're stuck on what sits downstream of trust.</h3>
+      <p style="margin-bottom: 0.5rem;"><strong>Proximity &amp; presence</strong> — one map pin in Clarksburg caps how far Google shows you.</p>
+      <p style="margin-bottom: 0.5rem;"><strong>Content depth</strong> — your Rockville page is 695 words. The top-ranking competitor page is 2,018.</p>
+      <p style="margin-bottom: 0.5rem;"><strong>Review volume</strong> — 89 Google reviews (at 4.5★) vs. Bargain's 371 and the bigger names over 1,000.</p>
+      <p><strong>The quote experience</strong> — broken form, sunsetted vendor (Slide 7).</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 0.8rem;">Authority · Traffic · Reviews</h3>
+      <div class="metric-row blake">
+        <div class="who">Blake &amp; Sons</div>
+        <div class="trio">
+          <div class="metric-cell"><span class="lab">DR</span><span class="val">45</span></div>
+          <div class="metric-cell"><span class="lab">Traffic / mo</span><span class="val">232</span></div>
+          <div class="metric-cell"><span class="lab">Reviews</span><span class="val">89</span></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="who">MG Moving</div>
+        <div class="trio">
+          <div class="metric-cell"><span class="lab">DR</span><span class="val">33</span></div>
+          <div class="metric-cell"><span class="lab">Traffic / mo</span><span class="val">3.7K</span></div>
+          <div class="metric-cell"><span class="lab">Reviews</span><span class="val">414</span></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="who">495 Movers</div>
+        <div class="trio">
+          <div class="metric-cell"><span class="lab">DR</span><span class="val">32</span></div>
+          <div class="metric-cell"><span class="lab">Traffic / mo</span><span class="val">2.6K</span></div>
+          <div class="metric-cell"><span class="lab">Reviews</span><span class="val">888</span></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="who">Bargain</div>
+        <div class="trio">
+          <div class="metric-cell"><span class="lab">DR</span><span class="val">25</span></div>
+          <div class="metric-cell"><span class="lab">Traffic / mo</span><span class="val">696</span></div>
+          <div class="metric-cell"><span class="lab">Reviews</span><span class="val">371</span></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="who">Prince</div>
+        <div class="trio">
+          <div class="metric-cell"><span class="lab">DR</span><span class="val">3</span></div>
+          <div class="metric-cell"><span class="lab">Traffic / mo</span><span class="val">1.6K</span></div>
+          <div class="metric-cell"><span class="lab">Reviews</span><span class="val">1,468</span></div>
+        </div>
+      </div>
+      <p class="muted" style="font-size: 0.78rem; margin-top: 0.75rem;">Data: SearchAtlas + Google knowledge panel (Apr 21, 2026). JK Moving (enterprise ceiling) at DR 50 / 23K traffic / 2,051 reviews — reference, not a head-to-head target.</p>
+    </div>
+  </div>
+  <div class="nav"><span class="counter">03 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 4: FINDINGS — the canvas (what we've mapped) -->
+<section class="slide" data-idx="3">
+  <div class="act-tag">Findings · What we've mapped</div>
+  <h2>~90 nodes. 8 city silos. The blueprint is already drawn.</h2>
+  <p class="lead muted" style="margin-bottom: 1rem;">Every page we'd touch — every content gap, every schema hole, every missing sub-page — is already laid out in a live canvas. We don't start the rebuild from scratch. We build from a plan that's been stress-tested.</p>
+
+  <div class="canvas-viz">
+    <div class="cv-legend">
+      <span class="lk existing">Live &amp; indexed</span>
+      <span class="lk">Live, needs work</span>
+      <span class="lk new">Net-new build</span>
+      <span class="lk data">Data overlay</span>
+    </div>
+    <div class="cv-grid">
+      <div class="cv-silo new">
+        <div class="city">Clarksburg <span class="badge">404</span></div>
+        <div class="nodes">
+          <span class="nd missing"></span><span class="nd missing"></span><span class="nd missing"></span><span class="nd missing"></span><span class="nd missing"></span><span class="nd missing"></span>
+        </div>
+        <div class="meta">HQ city · no page · full build</div>
+      </div>
+      <div class="cv-silo partial">
+        <div class="city">Rockville <span class="badge">Template</span></div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd missing"></span><span class="nd missing"></span><span class="nd blog"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">695w · 2 subs missing · ref template</div>
+      </div>
+      <div class="cv-silo partial">
+        <div class="city">Bethesda</div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd missing"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">Hub + 5 subs · apt-movers new</div>
+      </div>
+      <div class="cv-silo existing">
+        <div class="city">Silver Spring <span class="badge">★</span></div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span>
+        </div>
+        <div class="meta">Only indexed city sub on site</div>
+      </div>
+      <div class="cv-silo partial">
+        <div class="city">Germantown</div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">1 sub Google-rejected · needs rebuild</div>
+      </div>
+      <div class="cv-silo partial">
+        <div class="city">Gaithersburg</div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd blog"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">Hub + 5 subs + 2-post blog</div>
+      </div>
+      <div class="cv-silo existing">
+        <div class="city">Frederick <span class="badge">Linked</span></div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd blog"></span><span class="nd blog"></span><span class="nd blog"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">13-post blog nest · 23 backlinks</div>
+      </div>
+      <div class="cv-silo partial">
+        <div class="city">Fairfax</div>
+        <div class="nodes">
+          <span class="nd hub"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd"></span><span class="nd blog"></span>
+        </div>
+        <div class="meta">621 impr / 0 clicks · titles broken</div>
+      </div>
+    </div>
+
+    <div class="data-panel">
+      <div><div class="dk">SearchAtlas</div><div class="dv">305 kw · 6 top-3</div></div>
+      <div><div class="dk">Indexed</div><div class="dv">87 / 319</div></div>
+      <div><div class="dk">Top backlink page</div><div class="dv">Frederick · 23</div></div>
+      <div><div class="dk">Biggest CTR gap</div><div class="dv">Fairfax · 621 impr</div></div>
+    </div>
+  </div>
+  <p class="muted" style="font-size: 0.85rem; margin-top: 0.85rem; max-width: 90ch;">This canvas is live in Obsidian — every page, every planned sub-page, every data signal lives here. We'll walk it together if you want. The rebuild is a matter of <strong>finishing the canvas and shipping it</strong>, page by page.</p>
+
+  <div class="nav"><span class="counter">04 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 5: FINDINGS — what depth actually reads like -->
+<section class="slide" data-idx="4">
+  <div class="act-tag">Findings · What depth actually looks like</div>
+  <h2>A city page that ranks isn't longer. It's <em>more Blake.</em></h2>
+  <p class="lead muted" style="margin-bottom: 1.1rem;">Depth isn't 2,000 words of filler. It's the texture only a 30-year local operator can write — and the schema that tells Google you're a Rockville business, not just someone claiming it.</p>
+
+  <div class="two-col" style="gap: 2rem;">
+    <div>
+      <h3 style="margin-bottom: 0.7rem;">Rockville — word-count reality</h3>
+      <div class="bar-row">
+        <div class="bar-label">MG Moving</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+        <div class="bar-count">2,018</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label muted">Our target</div>
+        <div class="bar-track"><div class="bar-fill navy" style="width: 99%;"></div></div>
+        <div class="bar-count navy">2,000</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">JK Moving</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 37%;"></div></div>
+        <div class="bar-count">746</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label red">Blake &amp; Sons</div>
+        <div class="bar-track"><div class="bar-fill red" style="width: 34%;"></div></div>
+        <div class="bar-count">695</div>
+      </div>
+      <p class="muted" style="font-size: 0.8rem; margin-top: 0.7rem;">Length alone doesn't win — Bargain ranks page 1 for "movers Gaithersburg MD" with 97 words. Length + local specificity + schema + internal linking is what wins together.</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 0.7rem;">Sample — Rockville at target depth</h3>
+      <div class="page-mock">
+        <div class="pm-url">blakemoving.com / movers-rockville-md</div>
+        <div>
+          <span class="pm-tag red">H1</span>
+        </div>
+        <h4>Rockville Movers · Blake &amp; Sons Moving &amp; Storage</h4>
+        <div class="pm-sample">
+          "Moving out of a King Farm townhouse? An elevator building on Rockville Pike? A single-family off MD-28? Different jobs, different trucks, different crew sizes. Here's what each needs, what it typically costs, and how to time the move around an HOA window."
+        </div>
+        <div style="margin-top: 0.45rem;">
+          <span class="pm-tag red">Local context block</span>
+        </div>
+        <div class="pm-sample" style="border-left-color: var(--red); background: #fff5f3;">
+          <strong>Local context — Rockville:</strong> MoCo's county seat and a major residential corridor. Big employers nearby — NIH (North Bethesda), Westat, the NRC at White Flint. Neighborhoods we move often: King Farm, Twinbrook, Rockville Town Center, the MD-28 corridor. If school timing matters for your move, ask us — Richard Montgomery and Wootton HS are among MoCo's strongest clusters, and we can plan around the academic calendar.
+        </div>
+        <div>
+          <span class="pm-tag navy">Neighborhoods</span>
+          <span class="pm-tag navy">Route corridors</span>
+          <span class="pm-tag navy">HOA &amp; condo rules</span>
+          <span class="pm-tag navy">Apt-building rules</span>
+          <span class="pm-tag navy">Local FAQ</span>
+          <span class="pm-tag navy">Schema · LocalBusiness + MovingCompany + FAQPage + areaServed=Rockville</span>
+        </div>
+        <div class="pm-schema">"@type": "MovingCompany", "areaServed": {"@type": "City", "name": "Rockville"}, "address": {"postalCode": "20850"}, "aggregateRating": { ... }</div>
+      </div>
+      <p class="muted" style="font-size: 0.8rem; margin-top: 0.55rem;">The <strong>Hot Tip</strong> block is the hyper-relevance move — top schools, famous local spots, cultural anchors only a 30-year local knows. Apollo's AI scans competitor pages + local data; you review + Blake-approve before publish.</p>
+    </div>
+  </div>
+  <p class="muted" style="font-size: 0.82rem; margin-top: 0.9rem; max-width: 90ch;">Same template pattern applied across Bethesda, Silver Spring, Germantown, Gaithersburg, Fairfax, Leesburg, Reston, and a net-new Clarksburg hub — each with its own Hot Tip, neighborhood set, and schema.</p>
+  <div class="nav"><span class="counter">05 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 6: PLAN — 3 workstreams, canvas-first -->
+<section class="slide" data-idx="5">
+  <div class="act-tag navy">The plan · Three workstreams in parallel</div>
+  <h2>Finish the canvas. Ship the pages. Fix the quote flow.</h2>
+  <p class="lead muted" style="margin-bottom: 1.2rem;">The canvas is half the build. We keep expanding it — per page: styles, content, images, custom schema with your local geo — until a page is buildable. Then we ship that page. Every page follows the same pattern.</p>
+  <div class="workstreams">
+    <div class="ws">
+      <div class="ws-num">01</div>
+      <h3>Canvas-first page build</h3>
+      <p>For each city hub + sub-page: we enrich the canvas node with copy, images, schema, and internal-link plan. When the node is complete, the page ships.</p>
+      <ul>
+        <li>Clarksburg net-new build (HQ city has no page)</li>
+        <li>Rockville as the depth-template (695 → 2,000w)</li>
+        <li>7 remaining city hubs + missing sub-pages</li>
+        <li>Custom LocalBusiness + MovingCompany schema with <em>areaServed</em> per city</li>
+        <li>Nest existing 30 blog guides into their cities</li>
+      </ul>
+    </div>
+    <div class="ws">
+      <div class="ws-num">02</div>
+      <h3>Quote experience</h3>
+      <p>Mr. Mover went dark. Tom flagged it. Mike at Jupiter has offered to explore hosting the existing form as a band-aid. The real question: does the quote experience deserve the refresh? (Slide 7)</p>
+      <ul>
+        <li>Six spec questions locked in today</li>
+        <li>Four paths — Mike band-aid · SaaS swap · HQ migrate · Blake-owned rebuild</li>
+        <li>Scope drives timing — we answer in the proposal</li>
+      </ul>
+    </div>
+    <div class="ws">
+      <div class="ws-num">03</div>
+      <h3>Review velocity — on your own turf</h3>
+      <p>No Yelp upsells, no Angi ad buys, no off-platform ad spend. We build a simple review workflow Blake &amp; Sons can run without new headcount or a training program.</p>
+      <ul>
+        <li>Automated post-move email with GBP link</li>
+        <li>Branded QR card handed over at unload</li>
+        <li>Goal: double Google reviews in 90 days, with a path to 300+ over the year</li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav"><span class="counter">06 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 7: PLAN — Mr. Mover 4 options -->
+<section class="slide" data-idx="6">
+  <div class="act-tag navy">The plan · Mr. Mover — four paths</div>
+  <h2>Mr. Mover went dark. <em>Here are your options.</em></h2>
+  <p class="lead muted" style="margin-bottom: 1rem;">Tom flagged the broken link. The vendor sold to MoveHQ and stopped supporting Blake &amp; Sons' integration. Four ways forward — each with honest trade-offs. Right path depends on the six spec questions we'll run through today.</p>
+  <div class="options-4">
+    <div class="opt mike">
+      <div class="opt-tag">Option 1 · Band-aid</div>
+      <h4>Mike hosts the existing form</h4>
+      <span class="badge">Blake-internal</span>
+      <div class="pros"><div class="lab">For you</div><p>Link works again this week. Mike handles it — no new budget, no new vendor. Buys time while we plan the real fix.</p></div>
+      <div class="cons"><div class="lab">Trade-off</div><p>Form stays legacy-looking. Dependencies may not transfer cleanly. If the PHP won't run outside Mr. Mover's environment, path fails and we're back to picking another option.</p></div>
+    </div>
+    <div class="opt saas">
+      <div class="opt-tag">Option 2 · Swap</div>
+      <h4>Subscribe to a SaaS replacement</h4>
+      <span class="badge">Third-party SaaS</span>
+      <div class="pros"><div class="lab">For you</div><p>Proven moving-industry forms. They maintain, you pay monthly. MoverBase at $19/mo; SmartMoving at $299+.</p></div>
+      <div class="cons"><div class="lab">Trade-off</div><p>Embedded form won't match your brand. You're renting, not owning. If this vendor ever goes dark the way Mr. Mover did, you're re-deciding.</p></div>
+    </div>
+    <div class="opt migrate">
+      <div class="opt-tag">Option 3 · Migrate</div>
+      <h4>Move to Mr. Mover's buyer (HQ)</h4>
+      <span class="badge">Same vendor lineage</span>
+      <div class="pros"><div class="lab">For you</div><p>Smoothest data migration — they own the old records. Path documented by the vendor. Least change for your team's workflow.</p></div>
+      <div class="cons"><div class="lab">Trade-off</div><p>Same company that just dropped your support. Pricing contact-gated. Vendor-lock risk is the same conversation a year from now.</p></div>
+    </div>
+    <div class="opt rebuild">
+      <div class="opt-tag">Option 4 · Rebuild</div>
+      <h4>Blake &amp; Sons-owned quote tool</h4>
+      <span class="badge">Apollo builds</span>
+      <div class="pros"><div class="lab">For you</div><p>Matches the new site end-to-end. Your customers' info stays under your control. You call us — not a vendor who might drop you.</p></div>
+      <div class="cons"><div class="lab">Trade-off</div><p>Timing depends on scope — a simple form is weeks; estimate calculators + valuation + signature flow is months. We cost it properly after the six specs.</p></div>
+    </div>
+  </div>
+  <p class="muted" style="margin-top: 1rem; font-size: 0.88rem;">Six quick specs today — invoice tool, data handoff, signature needs, weekly volume, dispatch touchpoints, must-haves — land the right path.</p>
+  <div class="nav"><span class="counter">07 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 8: QUESTIONS (clean — no prices visible) -->
+<section class="slide" data-idx="7">
+  <div class="act-tag">Questions · What we need from you today</div>
+  <h2>Five answers shape the formal proposal.</h2>
+  <p class="lead muted" style="margin-bottom: 1.2rem;">We write the proposal based on what you tell us here. Nothing about scope or pricing locks until these land.</p>
+  <div class="question-list">
+    <div class="qn">
+      <div class="qn-num">1</div>
+      <div>
+        <h3>14628 Southlawn Ln in Rockville — real operation, or just a registered address?</h3>
+        <p>A genuine secondary location (office, warehouse, sales presence) unlocks Rockville map rankings that one pin in Clarksburg can't reach. Biggest single ranking lever we have.</p>
+      </div>
+    </div>
+    <div class="qn">
+      <div class="qn-num">2</div>
+      <div>
+        <h3>Mr. Mover — is Mike hosting the PHP enough, or does the quote experience deserve the refresh?</h3>
+        <p>Band-aid vs. upgrade. Same problem, two different scopes. We also need the six spec answers (invoice tool, data flow, signatures, volume, dispatch, must-haves) to cost the real build.</p>
+      </div>
+    </div>
+    <div class="qn">
+      <div class="qn-num">3</div>
+      <div>
+        <h3>Image library — can you send us truck + crew photos, or do we schedule a shoot?</h3>
+        <p>Red-and-navy livery on familiar MD/VA roads is the strongest visual asset you own. We'll hand you the shot list today either way.</p>
+      </div>
+    </div>
+    <div class="qn">
+      <div class="qn-num">4</div>
+      <div>
+        <h3>Review velocity — do we launch the in-house program this quarter?</h3>
+        <p>Mostly automated: post-move email does the work; the QR card at handoff is optional. We build and run the system &mdash; Blake &amp; Sons sets the tone on the ask. Goal: doubling Google reviews in 90 days.</p>
+      </div>
+    </div>
+    <div class="qn">
+      <div class="qn-num">5</div>
+      <div>
+        <h3>Scope posture — Foundation, Full Rebuild, or Full + Premium tool?</h3>
+        <p>We'll show the ranges on the next slide. The answer shifts with your answers to questions 1–4 and the six Mr. Mover specs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav"><span class="counter">08 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+<!-- Slide 9: INVESTMENT + NEXT STEP -->
+<section class="slide" data-idx="8">
+  <div class="act-tag">Investment · Ranges, not locked tiers</div>
+  <h2>Three scopes. Formal proposal in 48 hours.</h2>
+  <p class="lead muted" style="margin-bottom: 1.1rem;">Ranges reflect what the six quote-tool specs and your five answers tell us. The formal proposal in your inbox by end of week locks the specific number, timeline, and payment structure.</p>
+  <div class="ranges">
+    <div class="range">
+      <div class="range-name">Foundation</div>
+      <div class="range-price">$6K – 7.5K</div>
+      <div class="range-sub">Core rebuild, budget-first</div>
+      <ul>
+        <li>Homepage refresh</li>
+        <li>Top 4 city pages at target depth</li>
+        <li>Custom schema site-wide</li>
+        <li>Quote flow — Option 1 or 2</li>
+        <li>30-day post-launch support</li>
+      </ul>
+    </div>
+    <div class="range featured">
+      <div class="range-name">Full Rebuild</div>
+      <div class="range-price">$9K – 12K</div>
+      <div class="range-sub">What we'd recommend</div>
+      <ul>
+        <li>Everything in Foundation</li>
+        <li>All 8 city hubs + missing sub-pages</li>
+        <li>3-generation family About page</li>
+        <li>Quote flow — Option 4 native rebuild</li>
+        <li>In-house review velocity program</li>
+        <li>60-day post-launch partnership</li>
+      </ul>
+    </div>
+    <div class="range">
+      <div class="range-name">Full + Premium</div>
+      <div class="range-price">$12.5K – 15K+</div>
+      <div class="range-sub">If the quote tool scope grows</div>
+      <ul>
+        <li>Everything in Full Rebuild</li>
+        <li>Computed estimates, e-sign, valuation flow</li>
+        <li>Scope-sensitive — ceiling moves with specs</li>
+        <li>90-day post-launch partnership</li>
+        <li>Phase-2 follow-on work locked at today's rates</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted" style="font-size: 0.82rem; margin-bottom: 1rem; max-width: 90ch;">All ranges include your 12% longest-partner discount. Structured through your existing monthly cadence — this isn't new spend, it's converting months of maintenance into the rebuild. Payment stretched 4–6 months at no upcharge.</p>
+  <div style="background: var(--navy); color: var(--cream); padding: 1rem 1.4rem; border-radius: 6px; display: flex; align-items: center; gap: 1.1rem;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 900; color: var(--accent); line-height: 1;">→</div>
+    <div>
+      <div style="font-weight: 700; color: white; margin-bottom: 0.2rem; font-size: 0.95rem;">After today</div>
+      <p style="font-size: 0.88rem; color: rgba(250,246,241,0.85); line-height: 1.45;">Formal proposal in your inbox within 48 hours — reflecting your answers. Phase 1 kicks off the morning you say go. First visible page ships within two weeks of kick-off.</p>
+    </div>
+  </div>
+  <div class="nav"><span class="counter">09 / 09</span><div class="dots"></div><span class="hint">← → to navigate</span></div>
+  <div class="brand-footer">Blake &amp; Sons Moving &amp; Storage · Apollo Marketing</div>
+</section>
+
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainers = document.querySelectorAll('.nav .dots');
+  let current = 0;
+
+  dotsContainers.forEach(container => {
+    container.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', (e) => { e.stopPropagation(); go(i); });
+      container.appendChild(dot);
+    });
+  });
+
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    updateNav();
+  }
+
+  function updateNav() {
+    document.querySelectorAll('.nav').forEach(nav => {
+      const dots = nav.querySelectorAll('.dot');
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      const counter = nav.querySelector('.counter');
+      if (counter) counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault(); go(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault(); go(current - 1);
+    } else if (e.key === 'Home') { go(0); }
+    else if (e.key === 'End') { go(slides.length - 1); }
+    else if (/^[1-9]$/.test(e.key)) {
+      const n = parseInt(e.key) - 1;
+      if (n < slides.length) go(n);
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.dot') || e.target.closest('a') || e.target.closest('button')) return;
+    const x = e.clientX;
+    const w = window.innerWidth;
+    if (x > w * 0.6) go(current + 1);
+    else if (x < w * 0.4) go(current - 1);
+  });
+})();
+</script>
+</body>
+</html>
