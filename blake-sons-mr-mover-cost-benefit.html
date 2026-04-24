@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Blake &amp; Sons Moving — Inventory Quote Tool: What's Real, What's Optional, What It Costs</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5a6473;
+    --soft: #f4f6fa;
+    --border: #d8dde6;
+    --rule: #e7eaf0;
+    --blake: #1f3f6b;
+    --blake-2: #4a6a91;
+    --accent: #c8941b;
+    --green: #2f7a4d;
+    --red: #b03030;
+    --bg: #fbfbfd;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 56px 32px 96px; }
+  header.doc {
+    border-bottom: 3px solid var(--blake);
+    padding-bottom: 22px;
+    margin-bottom: 36px;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    color: var(--blake-2);
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    color: var(--blake);
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 6px 0 0;
+  }
+  .meta-bar {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .meta-bar b { color: var(--ink); font-weight: 600; }
+  h2 {
+    font-size: 22px;
+    color: var(--blake);
+    margin: 48px 0 14px;
+    letter-spacing: -0.005em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  h3 {
+    font-size: 17px;
+    margin: 28px 0 10px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  p { margin: 12px 0; }
+  ul, ol { margin: 10px 0; padding-left: 24px; }
+  li { margin: 4px 0; }
+  blockquote {
+    margin: 18px 0;
+    padding: 12px 18px;
+    background: var(--soft);
+    border-left: 3px solid var(--accent);
+    color: var(--ink);
+    font-style: italic;
+  }
+  .callout {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .callout h3 { margin-top: 0; }
+  .recommendation {
+    background: #f5fbf7;
+    border: 1px solid #c7e2d3;
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .recommendation h3 { margin-top: 0; color: var(--green); }
+  .warning {
+    background: #fdf6f6;
+    border: 1px solid #e6c8c8;
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .warning h3 { margin-top: 0; color: var(--red); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  th {
+    background: var(--blake);
+    color: #fff;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
+  td {
+    padding: 10px 12px;
+    border-top: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--soft); }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .pill.primary { background: #e6efff; color: var(--blake); }
+  .pill.green { background: #dff0e3; color: var(--green); }
+  .pill.amber { background: #fbf0d2; color: #8a5d00; }
+  .pill.red { background: #f8dada; color: var(--red); }
+  .path {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 18px 0;
+    background: #fff;
+  }
+  .path-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .path-head h3 { margin: 0; font-size: 19px; color: var(--blake); }
+  .path-head .label { font-size: 13px; color: var(--muted); }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .grid-2 .col { background: var(--soft); border-radius: 6px; padding: 12px 14px; }
+  .grid-2 .col h4 { margin: 0 0 6px; font-size: 13px; color: var(--blake-2); text-transform: uppercase; letter-spacing: 0.05em; }
+  .grid-2 .col p, .grid-2 .col ul { margin: 4px 0; font-size: 14px; }
+  .price-block {
+    display: inline-block;
+    background: var(--soft);
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  .price-block b { color: var(--blake); }
+  .checkmark { color: var(--green); font-weight: 700; }
+  .x-mark { color: var(--red); font-weight: 700; }
+  .partial { color: #8a5d00; font-weight: 700; }
+  .toc {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 22px;
+    margin: 24px 0 32px;
+  }
+  .toc h3 { margin: 0 0 8px; font-size: 14px; color: var(--blake-2); text-transform: uppercase; letter-spacing: 0.05em; }
+  .toc ol { margin: 6px 0 0; padding-left: 20px; }
+  .toc li { margin: 3px 0; }
+  .toc a { color: var(--blake); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  footer.doc {
+    margin-top: 64px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    h1 { font-size: 26px; }
+    .wrap { padding: 36px 18px 64px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    .toc { page-break-after: always; }
+    .path { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <p class="eyebrow">Apollo Marketing — Prepared for Blake &amp; Sons Moving and Storage</p>
+  <h1>Inventory Quote Tool: What's Real, What's Optional, What It Costs</h1>
+  <p class="subtitle">A focused replacement plan for Mr. Mover's online inventory + quote function — with the broader replacement universe for context.</p>
+  <div class="meta-bar">
+    <div><b>Prepared for:</b> Tom Shioutakon &amp; Shannon Shioutakon</div>
+    <div><b>Date:</b> April 24, 2026</div>
+    <div><b>Follow-up call:</b> Monday April 27, 2:00 PM ET</div>
+  </div>
+</header>
+
+<div class="toc">
+  <h3>Inside this brief</h3>
+  <ol>
+    <li><a href="#what">What's actually broken (and what's not)</a></li>
+    <li><a href="#paths">Three paths to consider</a></li>
+    <li><a href="#path-a">Path A — Inventory-form-only (Tom's actual ask)</a></li>
+    <li><a href="#path-b">Path B — Full Mr. Mover replacement (the big leap)</a></li>
+    <li><a href="#path-c">Path C — Custom-built and Blake-owned</a></li>
+    <li><a href="#side-by-side">Side-by-side comparison</a></li>
+    <li><a href="#three-year">3-year cost picture</a></li>
+    <li><a href="#recommendation">Apollo's recommendation</a></li>
+    <li><a href="#decision-points">Decision points for Monday's call</a></li>
+    <li><a href="#open-questions">Questions Tom or Shannon need to answer first</a></li>
+    <li><a href="#broken-link">A note on the broken link on the website</a></li>
+  </ol>
+</div>
+
+<section id="what">
+<h2>1. What's actually broken (and what's not)</h2>
+
+<p>The link on <strong>blakemoving.com</strong> that sends customers to a "Free Quote" inventory form has been broken since Tom flagged it earlier this spring. The destination — <code>quote.mrmover.com</code> — was discontinued when Mr. Mover was sold and dropped support for the older quote-tool integration Blake had been using. <strong>That broken link is the visible problem.</strong></p>
+
+<p>Underneath that, Mr. Mover continues to handle the rest of Blake's day-to-day operations — scheduling everyone can see, contract generation from Word templates, the customer-to-booked-job dispatch flow, the warehouse dispatch printouts Nick uses, and the time-tracking pipeline that feeds Sharon's QuickBooks payroll. <strong>None of that other stuff has stopped working.</strong> The risk is that another piece breaks next, with no support to fix it.</p>
+
+<div class="callout">
+  <h3>The clarified ask</h3>
+  <p>Per Tom's direction: <strong>he doesn't want a full Mr. Mover replacement right now.</strong> He wants the inventory-form portion working again — the part that lets a customer self-serve their move details online so Shannon can turn that into a quote. Everything else Mr. Mover does, leave alone for now.</p>
+  <p>This brief is structured around that ask first. Then it lays out what a full replacement would look like, in case the next thing breaks and the conversation has to expand quickly.</p>
+</div>
+</section>
+
+<section id="paths">
+<h2>2. Three paths to consider</h2>
+
+<p>Each path solves a different scope of problem at a different cost and risk level. The choice isn't urgent on Paths B and C — those are pre-positioning so Blake isn't starting from zero if Mr. Mover degrades further.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 28%;">Path</th>
+      <th style="width: 24%;">What it solves</th>
+      <th style="width: 16%;">Setup time</th>
+      <th style="width: 16%;">Monthly cost</th>
+      <th>Risk profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A. Inventory-form-only</strong> <span class="pill primary">Tom's ask</span></td>
+      <td>Restores the broken online quote pathway. Mr. Mover keeps doing everything else.</td>
+      <td>1–2 weeks</td>
+      <td>$0 – $80</td>
+      <td>Lowest. Smallest disruption.</td>
+    </tr>
+    <tr>
+      <td><strong>B. Full Mr. Mover replacement</strong></td>
+      <td>Replaces scheduling, contracts, dispatch, time tracking → QuickBooks, plus inventory.</td>
+      <td>2–4 weeks</td>
+      <td>$29 – $400</td>
+      <td>Medium. New training load on a 4-person team.</td>
+    </tr>
+    <tr>
+      <td><strong>C. Custom-built (Blake-owned)</strong></td>
+      <td>Same as A or B, but Blake owns the code. No vendor dependency, ever.</td>
+      <td>3–4 weeks</td>
+      <td>$10 – $40</td>
+      <td>Higher up-front, lowest long-term.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<!-- ============= PATH A ============= -->
+<section id="path-a">
+<h2>3. Path A — Inventory-form-only (Tom's actual ask)</h2>
+
+<p>This path replaces just the inventory quote form. The customer fills it out on blakemoving.com. The completed form lands in Shannon's inbox (or whatever destination Shannon prefers) with all the inventory details captured. Shannon takes that, runs it through her quote process exactly the way she does today, and sends back the estimate. Mr. Mover stays unchanged for everything else.</p>
+
+<h3>Sub-options under Path A</h3>
+
+<p>The choice inside Path A is really about <em>scope-over-time</em>: do you want a tool that <strong>only</strong> does the inventory form (and nothing else, ever), or a tool that does the inventory form today <strong>and</strong> can grow into the rest of what Mr. Mover does without forcing Blake to switch vendors later? Below in priority order.</p>
+
+<div class="path">
+  <div class="path-head">
+    <h3>A1 — MoverBase (use only the inventory + quote tools at first)</h3>
+    <span class="label"><span class="pill green">Apollo's recommendation</span></span>
+  </div>
+  <p><strong>What it is:</strong> MoverBase is one of the bigger moving-industry software platforms. The Mover Pro plan at $29/mo includes the inventory form, quote engine, scheduling, dispatch, and QuickBooks integration. Blake's choice on day one: turn on <em>only</em> the inventory form, leave the rest dormant. Mr. Mover keeps doing scheduling, contracts, dispatch, and payroll. If anything else in Mr. Mover degrades later, the MoverBase modules are <em>already paid for</em> and ready to switch on — no re-platforming, no second project.</p>
+  <div class="grid-2">
+    <div class="col">
+      <h4>What you get day one</h4>
+      <ul>
+        <li>Embedded inventory form on blakemoving.com</li>
+        <li>Customer-side room-by-room walkthrough</li>
+        <li>Optional auto-pricing using Blake's rates</li>
+        <li>Notification to Shannon with full inventory detail</li>
+        <li>Industry-standard UI customers may already recognize</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Cost &amp; setup</h4>
+      <p><span class="price-block"><b>$29/mo</b> Mover Pro plan (entry tier)</span></p>
+      <p><span class="price-block"><b>1–2 weeks</b> setup + Blake's pricing-rule input</span></p>
+      <p><span class="price-block"><b>0 hours</b> ongoing maintenance from Blake</span></p>
+    </div>
+  </div>
+  <p><strong>What you can switch on later, same plan or with a tier upgrade:</strong> shared scheduling, contract generation, customer-to-job conversion, dispatch reporting, time tracking → QuickBooks payroll. The full Mr. Mover replacement is already in the box.</p>
+  <p><strong>Tier upgrade path if Blake ever needs more capacity:</strong> $99/mo Fleet (100 jobs/mo) → $299/mo Unlimited. Same vendor, same data, same UI Shannon and Nick learn once.</p>
+</div>
+
+<div class="path">
+  <div class="path-head">
+    <h3>A2 — Custom embedded form on blakemoving.com</h3>
+    <span class="label"><span class="pill amber">Lower monthly, more setup, no scale path</span></span>
+  </div>
+  <p><strong>What it is:</strong> Apollo builds a custom inventory form directly on the Blake website. Customer goes through room-by-room. The completed form gets emailed to Shannon and stored in Blake's existing systems if you want.</p>
+  <div class="grid-2">
+    <div class="col">
+      <h4>What you get</h4>
+      <ul>
+        <li>Form that matches Blake's brand exactly</li>
+        <li>Apollo controls the math, the fields, the look</li>
+        <li>No vendor dependency — Blake owns the code</li>
+        <li>Future-proof: easy to extend later</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Cost &amp; setup</h4>
+      <p><span class="price-block"><b>$0–$30/mo</b> hosting only</span></p>
+      <p><span class="price-block"><b>2 weeks</b> setup (Apollo build + Blake review)</span></p>
+      <p><span class="price-block"><b>One-time build cost</b> — included in current Apollo scope if approved</span></p>
+    </div>
+  </div>
+  <p><strong>What it doesn't do:</strong> nothing on dispatch / contract / payroll. Extending to those = a separate Apollo project later, not a vendor toggle.</p>
+  <p><strong>Watch:</strong> any future change to the form is an Apollo task. Slightly slower turnaround than a SaaS vendor's built-in admin panel.</p>
+</div>
+
+<div class="path">
+  <div class="path-head">
+    <h3>A3 — Movegistics (premium AI surveys, scales to full CRM)</h3>
+    <span class="label"><span class="pill amber">Premium UX, demo-quoted pricing</span></span>
+  </div>
+  <p><strong>What it is:</strong> Movegistics replaces the typed-out inventory form with an <strong>AI Virtual Survey</strong>: customer gets a text link, walks through their home on their phone camera, and the AI identifies items and calculates cubic footage automatically. Same scope-over-time benefit as MoverBase — Survey Packs are the entry tier; the full CRM (scheduling, dispatch, crew app, QuickBooks) layers on later without switching vendors.</p>
+  <div class="grid-2">
+    <div class="col">
+      <h4>Why it stands out</h4>
+      <ul>
+        <li>AI video-survey UX is meaningfully ahead of typed inventory forms</li>
+        <li>15–30 day go-live (faster than most premium peers)</li>
+        <li>Scales to crew app, dispatch, payroll, QuickBooks — same vendor</li>
+        <li>Survey Packs sold in 25/50/100/150 surveys/month buckets</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Cost &amp; setup</h4>
+      <p><span class="price-block"><b>Demo-quoted</b> — pricing not published; expect higher than MoverBase</span></p>
+      <p><span class="price-block"><b>15–30 days</b> to live</span></p>
+      <p><span class="price-block"><b>Volume discounts</b> on larger survey packs</span></p>
+    </div>
+  </div>
+  <p><strong>Best for:</strong> if customer experience on the inventory step is a strategic priority, or if Tom thinks Blake will likely scale into full CRM replacement within 12 months.</p>
+  <p><strong>Watch:</strong> demo-gated pricing means a discovery call is required before Blake knows the number. Adds friction to the decision.</p>
+</div>
+
+<div class="path">
+  <div class="path-head">
+    <h3>A4 — Yembo (best-in-class AI inventory; does NOT scale)</h3>
+    <span class="label"><span class="pill amber">Inventory-only forever</span></span>
+  </div>
+  <p><strong>What it is:</strong> Yembo is the most modern AI inventory tool on the market — customers complete pre-move surveys via phone camera, the AI generates 3D models, floor plans, measurements, and material identification. The pitch claims 3× more surveys per person per day and 27% higher closing rate.</p>
+  <div class="grid-2">
+    <div class="col">
+      <h4>Why it stands out</h4>
+      <ul>
+        <li>State-of-the-art AI inventory + 3D modeling</li>
+        <li>Documented conversion lift</li>
+        <li>Pure focus on the survey/inventory step</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Cost &amp; setup</h4>
+      <p><span class="price-block"><b>Demo-quoted</b> — premium pricing expected</span></p>
+      <p><span class="price-block"><b>Standalone tool</b> — no CRM</span></p>
+    </div>
+  </div>
+  <p><strong>Critical limitation for Blake:</strong> Yembo does <em>not</em> include scheduling, dispatch, contracts, time tracking, or payroll. If Mr. Mover later breaks on the dispatch or payroll side, Blake has to find a second tool — Yembo doesn't have a scale path.</p>
+  <p><strong>Best for:</strong> moving companies whose inventory step is the only operational pain point and who already have a different system handling the rest.</p>
+</div>
+
+<div class="path">
+  <div class="path-head">
+    <h3>A2 — Custom embedded form on blakemoving.com</h3>
+    <span class="label"><span class="pill amber">Lower monthly, more setup</span></span>
+  </div>
+  <p><strong>What it is:</strong> Apollo builds a custom inventory form directly on the Blake website. Customer goes through room-by-room. The completed form gets emailed to Shannon and stored in Blake's existing systems if you want.</p>
+  <div class="grid-2">
+    <div class="col">
+      <h4>What you get</h4>
+      <ul>
+        <li>Form that matches Blake's brand exactly</li>
+        <li>Apollo controls the math, the fields, the look</li>
+        <li>No vendor dependency — Blake owns the code</li>
+        <li>Future-proof: easy to extend later</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Cost &amp; setup</h4>
+      <p><span class="price-block"><b>$0–$30/mo</b> hosting only</span></p>
+      <p><span class="price-block"><b>2 weeks</b> setup (Apollo build + Blake review)</span></p>
+      <p><span class="price-block"><b>One-time build cost</b> — included in current Apollo scope if approved</span></p>
+    </div>
+  </div>
+  <p><strong>What it doesn't do:</strong> nothing on dispatch / contract / payroll.</p>
+  <p><strong>Watch:</strong> any future change to the form is an Apollo task. Slightly slower turnaround than a SaaS vendor's built-in admin panel.</p>
+</div>
+
+<div class="recommendation">
+  <h3>If Tom picks Path A — Apollo's pick</h3>
+  <p><strong>A1 (MoverBase, use only the inventory + quote tools at first).</strong> Reason: at $29/mo it solves Tom's exact ask today AND already includes everything Mr. Mover does in case anything else breaks tomorrow. The "scale path" is a vendor toggle, not a re-platform. <strong>A3 (Movegistics)</strong> is a credible alternative if Blake wants the AI video-survey UX and is willing to do a demo call to learn the price. <strong>A2 (custom)</strong> wins only if perfect brand-match outweighs the lack of admin-panel flexibility. <strong>A4 (Yembo)</strong> we'd skip — best-in-class for inventory only, but no scale path means Blake risks needing a second tool later.</p>
+</div>
+</section>
+
+<!-- ============= PATH B ============= -->
+<section id="path-b">
+<h2>4. Path B — Full Mr. Mover replacement (the big leap)</h2>
+
+<p>If something else in Mr. Mover breaks soon — and history says that's likely — Path B is where this conversation goes. We've mapped the candidate vendors against the five operational capabilities Shannon walked us through on April 22:</p>
+
+<ol>
+  <li>Shared scheduling everyone can see</li>
+  <li>Contract generation from templates</li>
+  <li>Customer-to-booked-job conversion + dispatch (truck + crew assignment)</li>
+  <li>Printable daily dispatch reports for the warehouse</li>
+  <li>Time tracking that feeds QuickBooks payroll, with per-job hours preserved</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 18%;">Vendor</th>
+      <th style="width: 12%;">Monthly</th>
+      <th style="width: 10%;">Sched</th>
+      <th style="width: 10%;">Contracts</th>
+      <th style="width: 10%;">Dispatch</th>
+      <th style="width: 10%;">QuickBooks</th>
+      <th style="width: 10%;">Inventory form</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MoverBase</strong> <span class="pill green">Cheapest scale-path</span></td>
+      <td>$29/mo entry; $99/mo Fleet; $299/mo Unlimited</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓ native</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td>Same plan covers Tom's ask today and the full Mr. Mover replacement tomorrow. Free tier capped at 10 jobs/mo (not viable for Blake's volume).</td>
+    </tr>
+    <tr>
+      <td><strong>Movegistics</strong> <span class="pill amber">AI surveys</span></td>
+      <td>Demo-quoted</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓ native</span></td>
+      <td><span class="checkmark">✓ AI Virtual Survey</span></td>
+      <td>Premium tier with phone-camera AI inventory. Survey Packs is the entry; full CRM scales up. 15–30 day go-live.</td>
+    </tr>
+    <tr>
+      <td><strong>MoversTech</strong></td>
+      <td>$99/mo</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓ eBOL</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="partial">~ via API</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td>Month-to-month. Includes claims management. Mid-tier feature set.</td>
+    </tr>
+    <tr>
+      <td><strong>MoveHQ (HQ CRM)</strong> <span class="pill amber">Same co. as Mr. Mover</span></td>
+      <td>Quote-on-call</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td>The same parent company that bought Mr. Mover. Likely the smoothest data-migration path; same vendor risk that just bit Blake.</td>
+    </tr>
+    <tr>
+      <td><strong>SmartMoving</strong></td>
+      <td>$299–399/mo</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓ native</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td>Industry leader by reputation. Open API, MailChimp + RingCentral integrations. Premium price.</td>
+    </tr>
+    <tr>
+      <td><strong>Elromco</strong></td>
+      <td>$289/mo</td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td><span class="checkmark">✓</span></td>
+      <td>All-in-one with eBOL, invoicing, payroll, AI features. Used by 400+ moving companies.</td>
+    </tr>
+    <tr>
+      <td><strong>Supermove</strong></td>
+      <td>$1,400+/mo</td>
+      <td colspan="5" style="text-align:center; color: var(--muted);">Eliminated — pricing is per-truck and per-crew; scales above Blake's fleet size into enterprise tier.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <h3>One Shannon-flagged wishlist item Path B can address</h3>
+  <p>On April 22, Shannon mentioned wanting a way to send post-move review-request follow-ups — but with a <em>weekly reviewable queue</em> she clicks through, not full automation, and with the ability to exclude military, commercial, and known-unhappy customers. MoverBase, MoversTech, SmartMoving, and Elromco all support automated outbound communications and customer segmentation; the reviewable-queue + exclusion-rule wrapper would be configured during setup, not built from scratch. This is not a Path A item — it's an additional reason to consider Path B if Blake wants more than just inventory replaced.</p>
+</div>
+
+<div class="recommendation">
+  <h3>If Tom picks Path B — Apollo's pick</h3>
+  <p><strong>MoverBase ($29/mo Mover Pro tier).</strong> It covers all five Tier 1 capabilities <em>and</em> includes the inventory form Tom needs today. Trade-off vs. SmartMoving or Elromco is UI polish and feature depth, not capability gaps. Blake can scale within MoverBase ($99/mo Fleet, $299/mo Unlimited) without re-platforming. Movegistics is the alternative if Blake wants premium AI inventory UX and is willing to do a demo call. <strong>The clean sequence: pick Path A1 today, layer in Path B's other modules whenever the next thing breaks. Same vendor either way.</strong></p>
+</div>
+</section>
+
+<!-- ============= PATH C ============= -->
+<section id="path-c">
+<h2>5. Path C — Custom-built and Blake-owned</h2>
+
+<p>Apollo builds the inventory form (and, optionally, the rest of the operational stack) as Blake-owned software hosted on Blake's site. Zero monthly vendor fees. Full design match to the new website. Future changes are Apollo tasks.</p>
+
+<div class="grid-2">
+  <div class="col">
+    <h4>What you get</h4>
+    <ul>
+      <li>Inventory form indistinguishable from the Blake brand</li>
+      <li>No SaaS vendor in the chain — no future "vendor dropped support" event</li>
+      <li>Customer data stays in Blake's environment</li>
+      <li>Marketing story Blake can tell ("we built this ourselves")</li>
+      <li>Optional: extend later to scheduling, contracts, dispatch, time-tracking — same custom codebase</li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4>Cost &amp; setup</h4>
+    <p><span class="price-block"><b>$10–40/mo</b> hosting + e-signature service</span></p>
+    <p><span class="price-block"><b>3–4 weeks</b> for inventory form alone</span></p>
+    <p><span class="price-block"><b>8–12 weeks</b> if extended to full Mr. Mover replacement</span></p>
+    <p><span class="price-block"><b>One-time build cost</b> — quoted separately</span></p>
+  </div>
+</div>
+
+<p><strong>Watch:</strong> any future logic change (new pricing rules, new service types, a new field on the form) is Apollo work. SaaS competitors have admin panels for that; custom doesn't.</p>
+
+<p><strong>Best for:</strong> long-horizon thinkers willing to trade higher up-front for lowest long-term cost and zero vendor risk.</p>
+</section>
+
+<!-- ============= SIDE BY SIDE ============= -->
+<section id="side-by-side">
+<h2>6. Side-by-side comparison</h2>
+
+<p>Same vendors and paths, different lens — focused on what Blake actually weighs when comparing.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>A1 MoverBase</th>
+      <th>A2 Custom form</th>
+      <th>A3 Movegistics</th>
+      <th>A4 Yembo</th>
+      <th>B SmartMoving</th>
+      <th>C Full Custom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Solves the broken link today?</td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span></td></tr>
+    <tr><td>Includes scale path to full Mr. Mover replacement?</td><td><span class="checkmark">✓</span> (already in box)</td><td><span class="partial">~ separate Apollo project</span></td><td><span class="checkmark">✓</span> (tier upgrade)</td><td><span class="x-mark">✗</span> (no CRM)</td><td><span class="checkmark">✓</span></td><td><span class="checkmark">✓</span> (extended Apollo build)</td></tr>
+    <tr><td>Time to ship</td><td>1–2 weeks</td><td>2 weeks</td><td>15–30 days</td><td>demo-dependent</td><td>2–4 weeks</td><td>3–12 weeks</td></tr>
+    <tr><td>Monthly cost</td><td>$29</td><td>$0–30</td><td>demo-quoted</td><td>demo-quoted (premium)</td><td>$299–399</td><td>$10–40</td></tr>
+    <tr><td>Inventory UX</td><td>industry-standard form</td><td>custom form</td><td>AI video walkthrough</td><td>AI video + 3D model</td><td>industry-standard form</td><td>custom form</td></tr>
+    <tr><td>QuickBooks integration</td><td>native</td><td>via Zapier</td><td>native</td><td>n/a</td><td>native</td><td>API + Zapier</td></tr>
+    <tr><td>Vendor-dependency risk</td><td>medium</td><td>low</td><td>medium</td><td>medium</td><td>medium</td><td>none</td></tr>
+    <tr><td>Brand match to Blake site</td><td>medium</td><td>excellent</td><td>medium</td><td>medium</td><td>weak</td><td>excellent</td></tr>
+    <tr><td>Training load on Blake team</td><td>low</td><td>low</td><td>low–medium</td><td>low</td><td>medium</td><td>low</td></tr>
+    <tr><td>Pricing transparency before purchase</td><td><span class="checkmark">✓</span> public</td><td><span class="checkmark">✓</span> Apollo-quoted</td><td><span class="x-mark">✗</span> demo-gated</td><td><span class="x-mark">✗</span> demo-gated</td><td><span class="checkmark">✓</span> public</td><td><span class="checkmark">✓</span> Apollo-quoted</td></tr>
+  </tbody>
+</table>
+</section>
+
+<!-- ============= 3 YEAR ============= -->
+<section id="three-year">
+<h2>7. 3-year cost picture</h2>
+
+<p>Setup costs vary by path; the ongoing monthly cost is what compounds. Numbers below assume mid-range pricing per option, no Blake-side reductions, no annual discounts negotiated.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Year 1 estimated</th>
+      <th>Year 2</th>
+      <th>Year 3</th>
+      <th>3-year total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A1 MoverBase ($29/mo, inventory only at first)</strong></td>
+      <td>$348 + setup</td>
+      <td>$348</td>
+      <td>$348</td>
+      <td><strong>$1,044 + setup</strong> (full feature set already included; cost flat)</td>
+    </tr>
+    <tr>
+      <td><strong>A2 Custom form (Apollo)</strong></td>
+      <td>$240 + setup</td>
+      <td>$240</td>
+      <td>$240</td>
+      <td><strong>$720 + setup</strong></td>
+    </tr>
+    <tr>
+      <td><strong>A3 Movegistics Survey Packs</strong></td>
+      <td>Demo-quoted</td>
+      <td>Demo-quoted</td>
+      <td>Demo-quoted</td>
+      <td><strong>Demo-quoted</strong> (expect higher than MoverBase given AI surveys)</td>
+    </tr>
+    <tr>
+      <td><strong>B MoverBase scaled to Fleet ($99/mo)</strong></td>
+      <td>$1,188 + setup</td>
+      <td>$1,188</td>
+      <td>$1,188</td>
+      <td><strong>$3,564 + setup</strong> (only if Blake exceeds 100 jobs/mo)</td>
+    </tr>
+    <tr>
+      <td><strong>B SmartMoving</strong></td>
+      <td>$4,188 + setup</td>
+      <td>$4,188</td>
+      <td>$4,188</td>
+      <td><strong>$12,564 + setup</strong></td>
+    </tr>
+    <tr>
+      <td><strong>B Elromco</strong></td>
+      <td>$3,468 + setup</td>
+      <td>$3,468</td>
+      <td>$3,468</td>
+      <td><strong>$10,404 + setup</strong></td>
+    </tr>
+    <tr>
+      <td><strong>C Full Custom (Apollo)</strong></td>
+      <td>$300 + heavier setup</td>
+      <td>$300</td>
+      <td>$300</td>
+      <td><strong>$900 + heavier setup</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size: 13px; color: var(--muted);">Setup costs and any e-signature add-ons quoted separately. Numbers are list-price baselines; multi-year contract negotiation typically reduces SmartMoving and Elromco.</p>
+</section>
+
+<!-- ============= RECOMMENDATION ============= -->
+<section id="recommendation">
+<h2>8. Apollo's recommendation</h2>
+
+<div class="recommendation">
+  <h3>Short answer</h3>
+  <p><strong>Start with A1 (MoverBase Mover Pro plan, $29/mo). Turn on only the inventory + quote tools today.</strong> It solves Tom's exact ask in 1–2 weeks, costs ~$29/mo (likely lower than Mr. Mover was), and the rest of the modules (scheduling, contracts, dispatch, time tracking → QuickBooks) are <em>already in the same plan</em>, ready to switch on if anything else degrades.</p>
+</div>
+
+<h3>The selection criterion that drove this pick: scope-over-time</h3>
+<p>Tom's actual ask is the inventory form. The instinct is to find the cheapest <em>inventory-only</em> tool. But "inventory-only forever" tools (Yembo, generic form builders) leave Blake exposed if anything else in Mr. Mover breaks — Blake then has to evaluate, buy, learn, and integrate a <em>second</em> tool.</p>
+<p>A better selection criterion: <strong>find the cheapest tool that solves today's problem AND already includes the scale path for tomorrow's possible problems.</strong> That criterion makes A1 (MoverBase) win — at $29/mo it's competitive with even inventory-only tools, and it includes the full Mr. Mover replacement in the same plan. Blake pays once, switches things on as needed.</p>
+<p>Movegistics (A3) meets the same scope-over-time criterion with premium AI surveys, but the demo-gated pricing creates friction Tom may not want. If price isn't a concern and AI inventory UX is, A3 is a defensible alternative — worth the demo call.</p>
+
+<h3>Why this beats the alternatives</h3>
+<ul>
+  <li><strong>vs. A2 (custom inventory form):</strong> A1 ships sooner, vendor handles maintenance, and the upgrade path to full Mr. Mover replacement is a vendor toggle — a custom build would need a separate Apollo project later.</li>
+  <li><strong>vs. A3 (Movegistics):</strong> only loses on AI-survey UX and known pricing. Wins on transparency and lower starting cost. If Tom values the AI walkthrough enough to do a demo, A3 is reasonable.</li>
+  <li><strong>vs. A4 (Yembo):</strong> Yembo's AI is best-in-class for the inventory step but has zero scale path. Blake would be locked into "inventory only forever" and would need a second tool if anything else in Mr. Mover breaks.</li>
+  <li><strong>vs. SmartMoving / Elromco:</strong> over-buying. If Mr. Mover is still doing scheduling, contracts, dispatch, and payroll fine, paying $300+/mo to replace what's working is unjustified — and MoverBase has the same scale path at 1/10th the price.</li>
+  <li><strong>vs. MoveHQ:</strong> same parent company that just dropped support on the older Mr. Mover quote tool. Picking them again is "trust the same vendor twice."</li>
+  <li><strong>vs. C (full custom):</strong> right answer if Blake commits to a 5+ year horizon and wants zero vendor dependency. For solving the broken link this month, it's the longer road.</li>
+</ul>
+
+<h3>What we'd do next, if you say yes to A1</h3>
+<ol>
+  <li>Apollo opens MoverBase account on Blake's behalf.</li>
+  <li>Shannon and Apollo populate Blake's pricing rules into MoverBase's quote engine (Shannon's time required; estimate provided after a brief scoping call).</li>
+  <li>Apollo embeds the MoverBase inventory form on blakemoving.com, replacing the current broken link.</li>
+  <li>Apollo configures the email-to-Shannon notification path with full inventory detail.</li>
+  <li>Test pass with three sample inventories before going live.</li>
+  <li>Monitor for 30 days. If something doesn't fit, Apollo swaps to A2 (custom) or A different vendor without Blake having to re-do anything customer-facing.</li>
+</ol>
+</section>
+
+<!-- ============= DECISION POINTS ============= -->
+<section id="decision-points">
+<h2>9. Decision points for Monday's call</h2>
+
+<p>Three calls Tom and Shannon need to make on Monday April 27:</p>
+
+<ol>
+  <li><strong>Confirm Path A vs. Path B vs. Path C.</strong> Apollo's read is Path A is correct for now; happy to be talked into B or C if Tom has reasons we don't.</li>
+  <li><strong>Within Path A, confirm A1 (MoverBase) vs. A2 (custom).</strong> Apollo's read is A1; A2 only wins if perfect brand-match and zero monthly fee matter more than 1-week-faster ship and no maintenance burden.</li>
+  <li><strong>Authorize Apollo to proceed.</strong> Once authorized, Apollo can have A1 live by ~May 11 (two weeks from Monday).</li>
+</ol>
+
+<p>Nothing about scheduling, contracts, dispatch, or payroll is on the table for this decision. Those are in Path B territory and not urgent unless something else breaks.</p>
+</section>
+
+<!-- ============= OPEN QUESTIONS ============= -->
+<section id="open-questions">
+<h2>10. Questions Tom or Shannon need to answer first</h2>
+
+<p>These don't change the recommendation but they affect setup speed:</p>
+
+<ol>
+  <li><strong>Pricing rules.</strong> Do you have a documented pricing model (rate per crew, per hour, per mile, per add-on like piano or appliance disconnect)? If yes, Apollo plugs it in. If it lives in Tom's head, we capture it during setup.</li>
+  <li><strong>Customer data destination.</strong> Where do you want completed inventory forms to land? Email-to-Shannon is the default; we can also push them into Mr. Mover's intake side if the API still accepts it, or a Google Sheet, or both.</li>
+  <li><strong>Historical quotes.</strong> Do you need to search "what did we quote this customer last time?" against a year of historical data, or is "this customer is new to us" the typical case?</li>
+  <li><strong>Style.</strong> Should the inventory form match the new website design (recommended) or stay generic for speed?</li>
+  <li><strong>Approval pathway for the quote that goes back out.</strong> Today Shannon manually generates the quote after Mr. Mover. Should Path A also send the customer an automated preliminary estimate, or strictly intake-only with Shannon doing the formal quote?</li>
+</ol>
+</section>
+
+<!-- ============= BROKEN LINK ============= -->
+<section id="broken-link">
+<h2>11. A note on the broken link on the website</h2>
+
+<div class="warning">
+  <h3>Friday fix — separate from this decision</h3>
+  <p>Independent of which path Blake picks, the current broken link (the checkbox-routed redirect to the dead Mr. Mover quote tool) is being removed on the website this week. Customers will no longer hit a broken page. The link will either be hidden until the new inventory form is live, or replaced with a "Call us for a quote — (301) 610-5310" placeholder. Apollo's read: hide the link entirely until the new form is live, so the site doesn't suggest a self-service path that doesn't exist yet.</p>
+</div>
+</section>
+
+<footer class="doc">
+  <p>Prepared by Apollo Marketing &middot; Sage Harper &middot; April 24, 2026<br>
+  For Blake &amp; Sons Moving &amp; Storage, Inc. &middot; Tom Shioutakon &middot; Shannon Shioutakon<br>
+  Follow-up call: Monday April 27, 2:00 PM ET. Tom invited.</p>
+</footer>
+
+</div>
+</body>
+</html>
