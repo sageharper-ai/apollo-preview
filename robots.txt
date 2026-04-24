@@ -1,0 +1,4 @@
+# All client preview / deliverable content is published for direct review.
+# It is intentionally not crawlable or indexable.
+User-agent: *
+Disallow: /
