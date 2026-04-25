@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Premium SEO Research — morgankeller.com | Apollo Marketing</title>
+<style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-dark: #1a1a2e;
+  --apollo-navy: #16213e;
+  --apollo-blue: #0f3460;
+  --green: #22c55e;
+  --yellow: #eab308;
+  --red: #ef4444;
+  --cyan: #06b6d4;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--gray-50); color: var(--gray-800); line-height: 1.6; }
+.header { background: linear-gradient(135deg, var(--apollo-dark), var(--apollo-navy)); color: white; padding: 2rem 3rem; }
+.header h1 { font-size: 1.85rem; font-weight: 300; letter-spacing: 1px; }
+.header h1 span { color: var(--apollo-orange); font-weight: 600; }
+.header .subtitle { color: #94a3b8; margin-top: 0.4rem; font-size: 1rem; }
+.header .meta { display: flex; gap: 1.25rem; margin-top: 1rem; font-size: 0.85rem; color: #94a3b8; flex-wrap: wrap; }
+.header .meta span { background: rgba(255,255,255,0.08); padding: 0.3rem 0.8rem; border-radius: 4px; }
+.tier-badge { background: var(--apollo-orange) !important; color: white !important; font-weight: 600; }
+.nav { background: white; border-bottom: 2px solid var(--gray-200); padding: 0 3rem; display: flex; gap: 0; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.nav button { background: none; border: none; padding: 1rem 1.5rem; font-size: 0.95rem; color: var(--gray-600); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: inherit; }
+.nav button:hover { color: var(--apollo-orange); background: rgba(197,107,63,0.05); }
+.nav button.active { color: var(--apollo-orange); border-bottom-color: var(--apollo-orange); font-weight: 600; }
+.content { max-width: 1240px; margin: 0 auto; padding: 2rem 3rem; }
+.section { display: none; }
+.section.active { display: block; }
+.section h2 { font-size: 1.5rem; color: var(--apollo-dark); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--apollo-orange); }
+.section h3 { font-size: 1.15rem; color: var(--apollo-navy); margin: 1.75rem 0 0.75rem; font-weight: 600; }
+.section h4 { font-size: 0.95rem; color: var(--gray-700); margin: 1.25rem 0 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.section p { margin: 0.6rem 0; }
+.section ul, .section ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+.section li { margin: 0.35rem 0; }
+.badge { display: inline-block; padding: 0.18rem 0.65rem; border-radius: 4px; font-size: 0.78rem; font-weight: 600; }
+.badge-ok { background: #dcfce7; color: #166534; }
+.badge-warn { background: #fef9c3; color: #854d0e; }
+.badge-error { background: #fee2e2; color: #991b1b; }
+.badge-info { background: #dbeafe; color: #1e40af; }
+.badge-incomplete { background: #fce7f3; color: #9d174d; }
+.badge-strong { background: #ddd6fe; color: #5b21b6; }
+table.data { width: 100%; border-collapse: collapse; margin: 1rem 0; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+table.data th { background: var(--apollo-dark); color: white; padding: 0.75rem 1rem; text-align: left; font-weight: 500; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; }
+table.data th.num { text-align: right; }
+table.data th.center { text-align: center; }
+table.data td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--gray-200); font-size: 0.9rem; vertical-align: top; }
+table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.data td.center { text-align: center; }
+table.data td.strong { font-weight: 600; }
+table.data tr:hover { background: rgba(197,107,63,0.04); }
+table.data tr.highlight { background: #fff7ed; }
+table.data tr.subheader td { background: var(--gray-100); font-weight: 700; color: var(--apollo-navy); padding: 0.5rem 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; border-top: 2px solid var(--apollo-orange); }
+.callout { padding: 1rem 1.25rem; border-left: 4px solid var(--apollo-orange); background: #fff7ed; border-radius: 0 6px 6px 0; margin: 1rem 0; font-size: 0.92rem; }
+.callout.warn { border-left-color: var(--yellow); background: #fefce8; }
+.callout.red { border-left-color: var(--red); background: #fef2f2; }
+.callout.info { border-left-color: var(--cyan); background: #ecfeff; }
+.callout.strong { border-left-color: #5b21b6; background: #f5f3ff; }
+.callout strong { color: var(--apollo-dark); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.card { background: white; border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.25rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.card .value { font-size: 1.8rem; font-weight: 700; color: var(--apollo-dark); }
+.card .value.ok { color: var(--green); }
+.card .value.warn { color: #854d0e; }
+.card .value.bad { color: var(--red); }
+.card .label { font-size: 0.78rem; color: var(--gray-600); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.card .sublabel { font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.matrix { display: grid; grid-template-columns: 200px repeat(3, 1fr); gap: 4px; margin: 1rem 0; font-size: 0.88rem; }
+.matrix .header-cell { background: var(--apollo-dark); color: white; padding: 0.6rem 0.75rem; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.matrix .row-label { background: var(--gray-100); padding: 0.6rem 0.75rem; font-weight: 600; }
+.matrix .cell { background: white; padding: 0.6rem 0.75rem; border: 1px solid var(--gray-200); }
+.matrix .cell.high { background: #dcfce7; font-weight: 600; }
+.matrix .cell.medium { background: #fef9c3; }
+.matrix .cell.low { background: #fef2f2; color: var(--gray-600); }
+.deliverable-banner { background: linear-gradient(135deg, var(--apollo-navy), var(--apollo-blue)); color: white; padding: 1.25rem 1.5rem; border-radius: 8px; margin: 1.25rem 0; }
+.deliverable-banner h3 { color: white; margin: 0 0 0.5rem 0; }
+.deliverable-banner p { margin: 0.3rem 0; }
+.deliverable-banner code { background: rgba(255,255,255,0.15); padding: 0.15rem 0.45rem; border-radius: 3px; color: #fde68a; font-size: 0.88rem; }
+.gap-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.5rem 0; padding: 0.75rem; background: white; border: 1px solid var(--gray-200); border-radius: 6px; }
+.gap-row .gap-side { font-size: 0.88rem; }
+.gap-row .gap-side h5 { font-size: 0.78rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+@media print {
+  .nav { display: none; }
+  .section { display: block !important; page-break-inside: avoid; }
+}
+@media (max-width: 768px) {
+  .header { padding: 1.5rem; }
+  .header h1 { font-size: 1.4rem; }
+  .nav { padding: 0 1rem; }
+  .content { padding: 1.5rem 1rem; }
+  .gap-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span>Apollo</span> Marketing — SEO Research Report</h1>
+  <div class="subtitle">morgankeller.com — Frederick County, Maryland</div>
+  <div class="meta">
+    <span class="tier-badge">Premium Tier</span>
+    <span>Revised: April 25, 2026</span>
+    <span>Client: Morgan-Keller Construction</span>
+    <span>Mid-Atlantic Commercial GC, est. 1955</span>
+    <span>3 commercial GC competitors analyzed</span>
+    <span>Frederick County, MD</span>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="active" onclick="showTab('summary')">Executive Summary</button>
+  <button onclick="showTab('health')">Site Health</button>
+  <button onclick="showTab('keywords')">Keyword Landscape</button>
+  <button onclick="showTab('competitive')">Domain Comparison</button>
+  <button onclick="showTab('content-gap')">Content Gap</button>
+  <button onclick="showTab('serp-map')">SERP Feature Map</button>
+  <button onclick="showTab('priority')">Intent &amp; Priority</button>
+  <button onclick="showTab('eeat')">EEAT Signals</button>
+  <button onclick="showTab('schema')">JSON-LD Schema Bundle</button>
+  <button onclick="showTab('actions')">Recommended Actions</button>
+</div>
+
+<div class="content">
+
+<!-- ============================== TAB: EXECUTIVE SUMMARY ============================== -->
+<div id="summary" class="section active">
+  <h2>Executive Summary</h2>
+  <p>Morgan-Keller already wins the organic Frederick MD commercial-construction queries it has dedicated content for — ranking <strong>#1 organic for "design build contractor frederick md" and "commercial general contractor frederick md," and #2 organic for "commercial construction frederick md" and "construction management frederick md."</strong> The premium opportunity is twofold: (1) a small set of high-intent specialty queries (medical office, healthcare facility, tenant fit-out) that Morgan-Keller does not currently rank for, simply because there is no service page targeting them; and (2) zero schema markup on any page across Morgan-Keller or any of the three GC competitors analyzed — meaning schema deployment is a true differentiator, not a fix. The Frederick County MD commercial GC search market is thin (only 2 of 18 researched keywords carry monthly volume; CPC is $0 across all 16 keywords with data), which means organic SEO and content velocity are the only viable channels — paid search has no real economy here.</p>
+
+  <h3>What this Premium tier adds beyond a standard SEO Research deliverable</h3>
+  <ul>
+    <li><strong>Custom JSON-LD schema bundle</strong> — deploy-ready payloads for GeneralContractor (homepage), Service (each of 7 service pages), FAQPage, BreadcrumbList, plus templates for Person and CreativeWork/Project schemas. See the JSON-LD Schema Bundle tab + the attached <code>morgan-keller-schema-payloads-2026-04-25.json</code>.</li>
+    <li><strong>Competitive content gap analysis</strong> — H-tag tree comparison across Morgan-Keller and each competitor's service / portfolio pages, with word-count baseline and topic coverage diff.</li>
+    <li><strong>SERP feature opportunity map</strong> — for each priority query, which features Google currently surfaces (Local Pack, FAQ rich cards, AI Overview, sitelinks) and which are winnable with which content approach.</li>
+    <li><strong>Intent-stage segmentation + page-priority matrix</strong> — buckets the keyword set into research / vendor evaluation / RFP-ready stages and prioritizes pages by current rank × opportunity × business value.</li>
+    <li><strong>EEAT signals audit</strong> — comparative table of trust signals across Morgan-Keller and competitors: certifications, named team members, project provenance, industry affiliations.</li>
+  </ul>
+
+  <h3>The five findings that matter most</h3>
+  <ol>
+    <li><strong>Page coverage is the single biggest lever.</strong> Morgan-Keller ranks #1 or #2 organic for the queries it has dedicated content for, and falls out of the top 10 for queries it doesn't. Building 3-4 specialty service pages (medical office, healthcare facility, tenant fit-out, warehouse) would meaningfully expand visibility without changing anything about the existing pages.</li>
+    <li><strong>Schema markup is a clean win — no competitor uses it.</strong> Morgan-Keller, Kinsley, Harkins, and KasCon all return zero JSON-LD schema across their service pages. Deploying the schema bundle makes Morgan-Keller eligible for FAQ rich cards, AI Overview citations, and Knowledge Panel data that none of the competitors are positioned for.</li>
+    <li><strong>Service-page content depth is thin.</strong> Morgan-Keller's seven service pages average 277 words of body copy each. The shortest (General Contracting, 172 words) and second-shortest (Construction Management, 180 words) are exactly the queries Morgan-Keller currently ranks for — meaning even modest content depth pays off in this market.</li>
+    <li><strong>The homepage has two mechanical fixes worth surfacing.</strong> The homepage <code>&lt;title&gt;</code> tag renders as "<code>| Morgan Keller</code>" — a missing variable in a template — and the homepage has an empty H1. Both are quick fixes with outsized SEO impact.</li>
+    <li><strong>Brand authority is Morgan-Keller's quietest strength.</strong> Brand Signal score is 52 — the highest of the four GCs analyzed. Trust Flow is 37 — also the highest. Spam Score is 1 — tied for cleanest. This authority profile is what allows Morgan-Keller to rank #1-2 for competitive queries despite a relatively small backlink count (1,700) compared to Kinsley (9,500). Sustaining and showcasing this authority through dedicated EEAT content (named PMs, project case studies, certifications) compounds the advantage.</li>
+  </ol>
+
+  <div class="callout strong">
+    <strong>Headline opportunity.</strong> Frederick County's commercial construction search market is small enough that it can be won with disciplined work — not big enough that paid budgets matter. The path to category leadership is page coverage + schema deployment + monthly project case studies. Morgan-Keller is closer to that goal than the surface metrics suggest.
+  </div>
+</div>
+
+<!-- ============================== TAB: SITE HEALTH ============================== -->
+<div id="health" class="section">
+  <h2>Site Health</h2>
+  <p>Crawl summary across 100 pages on morgankeller.com (the largest sample the Apollo crawler captured before reaching its 100-page limit; the site has additional /news/ archive pages beyond this sample).</p>
+
+  <div class="kpi-grid">
+    <div class="card"><div class="value ok">100</div><div class="label">Pages Crawled</div><div class="sublabel">Cap reached — site has more</div></div>
+    <div class="card"><div class="value ok">0</div><div class="label">Missing H1</div></div>
+    <div class="card"><div class="value ok">0</div><div class="label">Multiple H1</div></div>
+    <div class="card"><div class="value ok">0/109</div><div class="label">Images Missing Alt</div><div class="sublabel">Excellent alt-text coverage</div></div>
+    <div class="card"><div class="value warn">66</div><div class="label">Titles Over 60 Chars</div><div class="sublabel">Truncated in SERPs</div></div>
+    <div class="card"><div class="value warn">18</div><div class="label">Missing Meta Descriptions</div></div>
+    <div class="card"><div class="value bad">6</div><div class="label">Broken External Links</div><div class="sublabel">Of first 50 checked</div></div>
+    <div class="card"><div class="value bad">0/100</div><div class="label">Pages with Schema Markup</div><div class="sublabel">Highest-leverage gap</div></div>
+  </div>
+
+  <h3>PageSpeed Insights — re-run live</h3>
+  <p>Click each link to re-run Google PageSpeed Insights against the homepage. Reports are generated fresh on each load and include Core Web Vitals (LCP, FCP, CLS, INP), opportunities, and diagnostics.</p>
+  <ul>
+    <li><strong>Mobile:</strong> <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=mobile" target="_blank" rel="noopener">pagespeed.web.dev/report?url=https://www.morgankeller.com/&amp;form_factor=mobile</a></li>
+    <li><strong>Desktop:</strong> <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=desktop" target="_blank" rel="noopener">pagespeed.web.dev/report?url=https://www.morgankeller.com/&amp;form_factor=desktop</a></li>
+  </ul>
+
+  <h3>Two homepage issues worth surfacing first</h3>
+  <table class="data">
+    <thead><tr><th>Issue</th><th>What we found</th><th>Why it matters</th><th>Fix complexity</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Homepage <code>&lt;title&gt;</code> is "<code>| Morgan Keller</code>"</strong></td>
+        <td>The homepage title tag renders as " | Morgan Keller" — the leading variable that should populate the page name appears to be missing or empty in the page template.</td>
+        <td>Title is the single most important on-page SEO element. Currently Google sees a title beginning with a pipe character. A proper title like "Morgan-Keller Construction — Commercial General Contractor in Frederick, MD" would meaningfully improve click-through and ranking signals.</td>
+        <td><span class="badge badge-warn">Template variable fix</span></td>
+      </tr>
+      <tr>
+        <td><strong>Homepage H1 is empty</strong></td>
+        <td>The homepage has exactly one H1 tag (good — no duplicates), but it contains no text. The current visible heading "Our Reputation Is Building Every Day" is wrapped as an H2.</td>
+        <td>H1 carries strong topical relevance signal. An empty H1 means Google has to derive the page topic from less-weighted elements. Setting H1 to either the brand-line or a service-anchored phrase recovers this signal.</td>
+        <td><span class="badge badge-warn">Template fix</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Title length distribution (66 of 100 pages over 60 chars)</h3>
+  <p>Most over-long titles come from the /news/ section, where article titles plus the " | Morgan Keller" suffix push past Google's ~60-character SERP display limit. This is cosmetic — Google still indexes the full title, but the SERP display gets truncated. A small adjustment to the news-page title template (drop the brand suffix on news pages, or shorten article titles) would fix it.</p>
+
+  <h3>Schema markup — the single biggest finding</h3>
+  <div class="callout strong">
+    <strong>Zero of 100 crawled pages on morgankeller.com carry JSON-LD schema markup.</strong> Cross-checked against three commercial-GC competitors (Kinsley, Harkins, KasCon) — also zero schema across their service / portfolio pages. This means the entire commercial-GC niche in this market is unschemed. Whichever firm deploys structured data first becomes eligible for SERP features (FAQ rich cards, AI Overview citations, Knowledge Panel) that competitors aren't even fighting for. The full deploy-ready payload bundle is in the JSON-LD Schema Bundle tab.
+  </div>
+
+  <h3>Excellent fundamentals worth keeping</h3>
+  <ul>
+    <li><strong>Alt-text coverage at 100%</strong> — 109 of 109 images have alt attributes. Many sites this size are at 60-80%. This is exemplary discipline.</li>
+    <li><strong>Single H1 per page (where present)</strong> — no duplicate H1s, no missing H1s on subpages. The empty homepage H1 is the only outlier.</li>
+    <li><strong>Sitemap and robots.txt both present</strong> — sitemap.xml is published and accessible.</li>
+  </ul>
+
+  <h3>Items worth reviewing in priority order</h3>
+  <ol>
+    <li>Fix the homepage title and H1 (template change, ~30 minutes)</li>
+    <li>Deploy the JSON-LD schema bundle (one-time effort, see Schema tab)</li>
+    <li>Add meta descriptions to the 18 pages missing them — most are /news/ entries, easily templated from the article excerpt</li>
+    <li>Repair the 6 broken external links (audit + replace or remove)</li>
+    <li>Shorten /news/ titles to fit the 60-character display window</li>
+  </ol>
+</div>
+
+<!-- ============================== TAB: KEYWORD LANDSCAPE ============================== -->
+<div id="keywords" class="section">
+  <h2>Keyword Landscape</h2>
+  <p>18 commercial-GC keywords researched at Frederick County, MD. Mix of Morgan-Keller-native city-phrase keywords plus one buyer-intent variant ("medical office buildings near me") sourced from competitor analysis. 16 of 18 returned data; 2 returned no data and are flagged explicitly rather than presented as zero.</p>
+
+  <div class="callout warn">
+    <strong>The headline reality.</strong> Only 2 keywords of the 18 returned any monthly search volume (both at SV=10). The Frederick County MD commercial-GC search market is thin — but that thinness is balanced by zero CPC across all 16 keywords with data, meaning <strong>there is essentially no paid competition</strong>. Organic and content velocity are the only viable channels. This actually favors a firm with Morgan-Keller's existing authority — paid budget gives competitors no advantage here.
+  </div>
+
+  <h3>Keywords grouped by Morgan-Keller service page</h3>
+
+  <h4>General Contracting / Commercial Construction (broad service capture)</h4>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="center">Intent</th>
+        <th class="num">Search Volume (monthly)</th>
+        <th class="num">Competitor Pressure</th>
+        <th class="num">CPC</th>
+        <th class="num">PPC Difficulty</th>
+        <th class="center">Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td><strong>commercial construction frederick md</strong></td><td class="center">N</td><td class="num"><strong>10</strong></td><td class="num">0</td><td class="num">$0</td><td class="num">0</td><td class="center">Today</td></tr>
+      <tr><td>commercial contractor frederick md</td><td class="center">T &middot; C</td><td class="num">0</td><td class="num">3</td><td class="num">$0</td><td class="num">0</td><td class="center">Today</td></tr>
+      <tr><td>commercial general contractor frederick md</td><td class="center">T &middot; C</td><td class="num">0</td><td class="num">4</td><td class="num">$0</td><td class="num">0</td><td class="center">Today</td></tr>
+      <tr><td>commercial contractors frederick md (plural)</td><td class="center">—</td><td class="num"><span class="badge badge-incomplete">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="center">—</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Construction Management</h4>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="center">Intent</th>
+        <th class="num">Search Volume</th>
+        <th class="num">Competitor Pressure</th>
+        <th class="num">CPC</th>
+        <th class="num">PPC Difficulty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td><strong>construction management frederick md</strong></td><td class="center">N</td><td class="num"><strong>10</strong></td><td class="num">23</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>pre construction services frederick md</td><td class="center">N</td><td class="num">0</td><td class="num">8</td><td class="num">$0</td><td class="num">0</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Design-Build</h4>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="center">Intent</th>
+        <th class="num">Search Volume</th>
+        <th class="num">Competitor Pressure</th>
+        <th class="num">CPC</th>
+        <th class="num">PPC Difficulty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>design build contractor frederick md</td><td class="center">C &middot; T</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">0</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Healthcare / Medical Office (page-coverage gap)</h4>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="center">Intent</th>
+        <th class="num">Search Volume</th>
+        <th class="num">Competitor Pressure</th>
+        <th class="num">CPC</th>
+        <th class="num">PPC Difficulty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>healthcare facility construction maryland</td><td class="center">T</td><td class="num">0</td><td class="num"><strong>63</strong></td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>medical office construction frederick md</td><td class="center">N</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>medical office buildings near me</td><td class="center">—</td><td class="num"><span class="badge badge-incomplete">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Specialty / Sector Construction (page-coverage gap)</h4>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="center">Intent</th>
+        <th class="num">Search Volume</th>
+        <th class="num">Competitor Pressure</th>
+        <th class="num">CPC</th>
+        <th class="num">PPC Difficulty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>warehouse construction frederick md</td><td class="center">C &middot; T</td><td class="num">0</td><td class="num">21</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>industrial construction frederick md</td><td class="center">T</td><td class="num">0</td><td class="num">4</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>flex space construction frederick md</td><td class="center">N</td><td class="num">0</td><td class="num">22</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>tenant fit out frederick md</td><td class="center">N</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>office buildout frederick md</td><td class="center">T &middot; C</td><td class="num">0</td><td class="num">16</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>commercial renovation frederick md</td><td class="center">C &middot; T</td><td class="num">0</td><td class="num">10</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>school construction frederick county md</td><td class="center">N</td><td class="num">0</td><td class="num">46</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>church construction maryland</td><td class="center">T</td><td class="num">0</td><td class="num">21</td><td class="num">$0</td><td class="num">0</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 0.82rem; color: var(--gray-600); margin-top: 0.5rem;">Intent decode: <strong>N</strong> = Navigational · <strong>T</strong> = Transactional · <strong>C</strong> = Commercial. Multi-letter values indicate mixed intent. CPC = average Google Ads cost-per-click. Competitor Pressure = 0–100 relative organic difficulty (paid difficulty separately measured as PPC Difficulty).</p>
+
+  <h3>How to read the "Competitor Pressure" column</h3>
+  <p>Competitor Pressure measures organic-content competition independent of paid spend. The most interesting reads here:</p>
+  <ul>
+    <li><strong>healthcare facility construction maryland (CompP 63)</strong> — heaviest organic competition in the set, dominated by national GCs (Clark, Gilbane, HBW). State-level keyword is harder to win than county-level equivalents. Address with a Maryland-positioning content piece, not a service page.</li>
+    <li><strong>school construction frederick county md (CompP 46)</strong> — institutional / public-sector niche. Frederick County Public Schools is the obvious primary buyer. A dedicated landing page with project case studies (e.g., Hagerstown CC Learning Resource Center, MSM Knott Academic Center) would earn this query.</li>
+    <li><strong>construction management frederick md (CompP 23)</strong> — Morgan-Keller already ranks #2 organic here despite the moderate competition. Strengthening this page (currently 180 words) compounds the existing position.</li>
+    <li><strong>flex space construction frederick md (CompP 22) and warehouse construction frederick md (CompP 21)</strong> — moderate competition for service types Morgan-Keller can deliver but doesn't currently target. Each warrants a dedicated page.</li>
+    <li><strong>commercial general contractor frederick md (CompP 4)</strong> — surprisingly low competition for what is arguably the highest-intent buyer query in the entire set. Morgan-Keller is positioned to defend this term decisively.</li>
+  </ul>
+
+  <h3>Why two keywords returned "No Data Returned"</h3>
+  <p>Two keywords (<em>medical office buildings near me</em> and <em>commercial contractors frederick md</em>) were submitted to the keyword research tool and saved in the project but did not return data when the table was queried. Likely causes: "near me" geo-aware queries are handled differently by the data source's backend, and plural variants are sometimes deduplicated against their singular form. We're flagging these explicitly rather than reporting zero — both keywords are still worth tracking.</p>
+</div>
+
+<!-- ============================== TAB: DOMAIN COMPARISON ============================== -->
+<div id="competitive" class="section">
+  <h2>Domain Comparison — Morgan-Keller vs. 3 Commercial GC Competitors</h2>
+  <p>Comparison set is the three commercial general contractors confirmed by the Morgan-Keller / HighRock team: Kinsley Construction, Harkins Builders, and KasCon Inc. Earlier research used commercial real-estate owner-developers as competitors, which produced a misleading benchmark — those firms operate in a different keyword universe. The corrected GC-only comparison below reflects the actual competitive set.</p>
+
+  <h3>Headline metrics</h3>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th class="num">morgankeller.com</th>
+        <th class="num">kinsleyconstruction.com</th>
+        <th class="num">harkinsbuilders.com</th>
+        <th class="num">kasconinc.com</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Indexed Pages (sitemap-confirmed)</td><td class="num">100+</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>Domain Rating</td><td class="num">31</td><td class="num">—</td><td class="num"><strong>40</strong></td><td class="num">11</td></tr>
+      <tr><td>Total Monthly Organic Traffic</td><td class="num">1,100</td><td class="num"><strong>7,300</strong></td><td class="num">2,600</td><td class="num">256</td></tr>
+      <tr><td>Referring Domains</td><td class="num">699</td><td class="num"><strong>781</strong></td><td class="num">598</td><td class="num">214</td></tr>
+      <tr><td>Total Backlinks</td><td class="num">1,700</td><td class="num"><strong>9,500</strong></td><td class="num">7,000</td><td class="num">1,300</td></tr>
+      <tr><td>Backlinks Last 30 Days</td><td class="num"><span class="badge badge-incomplete">Incomplete</span></td><td class="num"><span class="badge badge-incomplete">Incomplete</span></td><td class="num"><span class="badge badge-incomplete">Incomplete</span></td><td class="num"><span class="badge badge-incomplete">Incomplete</span></td></tr>
+      <tr><td>Organic Keywords</td><td class="num">771</td><td class="num"><strong>4,100</strong></td><td class="num">297</td><td class="num">155</td></tr>
+      <tr><td>Domain Authority (Moz)</td><td class="num">30</td><td class="num">32</td><td class="num"><strong>35</strong></td><td class="num">26</td></tr>
+      <tr class="subheader"><td colspan="5">Authority + AI Signals — beyond standard SEO baseline</td></tr>
+      <tr><td>AI Overviews mentions (current)</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">0</td></tr>
+      <tr><td>LLM Visibility — platforms with presence</td><td class="num"><strong>3 of 6</strong> (Gemini, Grok, Google AI Mode)</td><td class="num">Not yet activated</td><td class="num">Not yet activated</td><td class="num">Not yet activated</td></tr>
+      <tr><td>Trust Flow (Majestic-equivalent)</td><td class="num"><strong>37</strong></td><td class="num">22</td><td class="num">22</td><td class="num">4</td></tr>
+      <tr><td>Citation Flow</td><td class="num"><strong>33</strong></td><td class="num">25</td><td class="num">28</td><td class="num">14</td></tr>
+      <tr><td>Spam Score</td><td class="num"><strong>1</strong></td><td class="num">9</td><td class="num">1</td><td class="num"><span class="badge badge-error">17</span></td></tr>
+      <tr><td>Brand Signal</td><td class="num"><strong>52</strong></td><td class="num">43.4</td><td class="num">0 (propagating)</td><td class="num">0 (propagating)</td></tr>
+      <tr><td>URL PageRank</td><td class="num">4</td><td class="num">—</td><td class="num"><strong>11</strong></td><td class="num">—</td></tr>
+      <tr><td>Estimated Monthly Traffic Value</td><td class="num">$4,000</td><td class="num"><strong>$61,900</strong></td><td class="num">$12,200</td><td class="num">$107</td></tr>
+      <tr class="subheader"><td colspan="5">Backlink profile detail</td></tr>
+      <tr><td>Referring IPs</td><td class="num">348</td><td class="num">590</td><td class="num">490</td><td class="num">143</td></tr>
+      <tr><td>Backlinks-per-domain ratio</td><td class="num"><strong>2.4</strong> (most balanced)</td><td class="num">12.2</td><td class="num">11.7</td><td class="num">6.1</td></tr>
+    </tbody>
+  </table>
+
+  <h3>How to read this table</h3>
+  <ul>
+    <li><strong>Kinsley is the largest by raw scale</strong> — 9,500 backlinks, 4,100 organic keywords, $61,900 traffic value. They have the largest content footprint in the comparison set.</li>
+    <li><strong>Harkins has the strongest Domain Rating (40)</strong> — the cleanest authority signal among competitors. Employee-owned construction firm with a strong multifamily / government portfolio.</li>
+    <li><strong>Morgan-Keller wins on quality signals</strong>: highest Brand Signal (52), highest Trust Flow (37), tied for lowest Spam Score (1), and the most balanced backlink profile (2.4 backlinks per domain — Kinsley's 12.2 indicates heavy sitewide-link concentration). The numbers behind Morgan-Keller are smaller, but cleaner.</li>
+    <li><strong>Morgan-Keller is the only domain with active LLM visibility</strong> across Gemini, Grok, and Google AI Mode (sentiment scores 80-83% across those platforms). Competitors haven't activated this layer yet.</li>
+    <li><strong>KasCon's Spam Score of 17 is a flag</strong> — typical caution threshold is 5+. Their backlink profile carries some quality risk that the other three don't.</li>
+  </ul>
+
+  <h3>What the comparison really says</h3>
+  <p>Morgan-Keller is not the largest commercial GC in the search comparison, but is the most established and the cleanest. Kinsley wins on raw scale (and pulls 18× the monthly traffic), but Morgan-Keller is the only firm in the set with active LLM presence and the strongest brand and trust signals. The strategic question for Morgan-Keller is not "how do we match Kinsley's scale?" — it's "how do we extend our authority and trust advantages into higher visibility on the queries that actually convert?" The answer in the rest of this report.</p>
+</div>
+
+<!-- ============================== TAB: CONTENT GAP ============================== -->
+<div id="content-gap" class="section">
+  <h2>Competitive Content Gap Analysis</h2>
+  <p>Direct H-tag tree comparison across Morgan-Keller's seven service pages and the equivalent service / portfolio pages on each of the three competitors. Pages compared via real-browser fetch.</p>
+
+  <h3>Service-page coverage matrix</h3>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Service / topic</th>
+        <th class="center">Morgan-Keller</th>
+        <th class="center">Kinsley</th>
+        <th class="center">Harkins</th>
+        <th class="center">KasCon</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Preconstruction</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-warn">Mentioned</span></td><td class="center"><span class="badge badge-warn">Mentioned</span></td><td class="center"><span class="badge badge-ok">Page</span></td><td>KasCon has a dedicated /services/#precon section; Morgan-Keller and KasCon are the two firms with named preconstruction pages.</td></tr>
+      <tr><td>General Contracting</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-ok">Page (services)</span></td><td>Kinsley and Harkins lead with portfolio-by-market rather than service-method pages.</td></tr>
+      <tr><td>Construction Management</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-ok">Page (postcon)</span></td><td>Morgan-Keller is the strongest on service-method-named pages.</td></tr>
+      <tr><td>Design-Build</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td class="center"><span class="badge badge-warn">Implied</span></td><td>Morgan-Keller alone has a dedicated design-build page and ranks #1 organic for the term.</td></tr>
+      <tr><td>Concrete Construction</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td>Unique Morgan-Keller offering — no competitor has equivalent. MK Concrete subsidiary is a real differentiator.</td></tr>
+      <tr><td>Sustainable Construction</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td>Unique Morgan-Keller offering. With LEED/ESG procurement growing in commercial buyer requirements, this page is increasingly valuable.</td></tr>
+      <tr><td>Facilities Maintenance</td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td>Unique Morgan-Keller offering through MK Commercial Facilities Maintenance subsidiary. Recurring-revenue category.</td></tr>
+      <tr><td>Healthcare / Medical Office</td><td class="center"><span class="badge badge-error">No page</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-error">No</span></td><td><strong>Page-coverage gap.</strong> Morgan-Keller has built medical office buildings (e.g., 112 Thomas Johnson Drive) but has no dedicated landing page. A news article currently does the SEO work.</td></tr>
+      <tr><td>Multifamily / Senior Housing</td><td class="center"><span class="badge badge-warn">Team page only</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-ok">Page</span></td><td class="center"><span class="badge badge-error">No</span></td><td>Morgan-Keller has /teams/multi-family-construction but no service-positioning page. Harkins leads on this category.</td></tr>
+      <tr><td>Educational / Institutional</td><td class="center"><span class="badge badge-error">No page</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-error">No</span></td><td><strong>Page-coverage gap.</strong> Morgan-Keller has built MSM Knott Academic Center, Hagerstown CC Learning Resource Center, Shepherd University Center for Contemporary Arts — strong portfolio with no service page.</td></tr>
+      <tr><td>Tenant Fit-Out / Buildout</td><td class="center"><span class="badge badge-error">No page</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td><strong>Open category.</strong> Smaller GCs (Bruchey, ECM) have tenant-fit-out pages and are winning organic for the term. No major Frederick GC has claimed it yet.</td></tr>
+      <tr><td>Industrial / Warehouse</td><td class="center"><span class="badge badge-error">No page</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-warn">Portfolio mention</span></td><td class="center"><span class="badge badge-error">No</span></td>"</td><td>Page-coverage gap. Morgan-Keller has built Stonecroft Industrial Center and Transteck Hangar — portfolio strong, page absent.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Service-page word-count baseline</h3>
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th class="num">Body word count</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>morgankeller.com homepage</td><td class="num">631</td><td>Strongest content depth on the site.</td></tr>
+      <tr><td>/services/preconstruction/</td><td class="num">202</td><td>Thin. Has the H1 + intent. Ready for expansion.</td></tr>
+      <tr><td>/services/general-contracting/</td><td class="num"><strong>172</strong></td><td>Thinnest service page. Currently ranking #1 organic for "commercial general contractor frederick md" — proving even thin pages with the right intent work in this niche. With more content, this becomes harder to dislodge.</td></tr>
+      <tr><td>/services/construction-management/</td><td class="num"><strong>180</strong></td><td>Currently ranking #2 organic for "construction management frederick md" — same dynamic.</td></tr>
+      <tr><td>/services/design-build/</td><td class="num">~200 (approx)</td><td>Currently ranking #1 organic for "design build contractor frederick md."</td></tr>
+      <tr><td><strong>Total across 8 MK pages crawled</strong></td><td class="num"><strong>2,213</strong></td><td>Average 277 words per page. Among the smallest content footprints in the comparison set.</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size: 0.85rem; color: var(--gray-600);">Comparison: KasCon's 6 fetched pages totaled 3,877 words (avg 646/page); Harkins's 5 fetched pages totaled 1,649 (avg 330/page); Kinsley's homepage fetch was blocked by their bot detection during this research pass.</p>
+
+  <h3>The gap that matters most: H2 / H3 hierarchy on Morgan-Keller service pages</h3>
+  <p>Beyond word count, the structural pattern on Morgan-Keller's service pages is unusually flat. Most pages have one H1 (good), then H2s used primarily for navigation and footer elements ("Primary Nav", "Secondary Nav", "Site Map", "Follow Us"), then no H3s at all on most service pages. This isn't a content problem — it's a semantic-HTML problem. The page template wraps nav and footer text in H2 tags, which dilutes the H2 signal Google uses to understand the page's actual subject hierarchy. Restructuring the template to use H2/H3 only for content sections (and proper <code>&lt;nav&gt;</code> elements for navigation) would meaningfully strengthen the topical signal on every page without writing new content.</p>
+
+  <h3>Three specialty pages worth building, ranked by impact</h3>
+  <ol>
+    <li><strong>/services/healthcare-construction/</strong> (or /sectors/healthcare/) — Morgan-Keller's portfolio includes 112 Thomas Johnson Drive medical office, Frederick Health Hospital projects, Meritus Outpatient Services, and Frederick Primary Care Brunswick Crossing. Currently a news article ranks #8 for "medical office construction frederick md" — a dedicated page with the same project provenance would rank substantially higher and capture the broader "healthcare facility construction" + "medical office construction" + "MOB construction" query family.</li>
+    <li><strong>/services/multifamily/</strong> (or /sectors/multifamily-housing/) — Morgan-Keller's portfolio includes Ashburn Chase Apartments, Bracken Square (Silver Spring), Riverside Square, Junction Apartments, Crossings of Spring Hill, Ashton Apartment Homes, Cromwell Atlantic Boulevard. The /teams/multi-family-construction page mentions the team but doesn't sell the service. Multifamily is the largest near-term commercial pipeline in the Mid-Atlantic.</li>
+    <li><strong>/services/educational-construction/</strong> (or /sectors/education/) — Morgan-Keller has Hagerstown CC Learning Resource Center, MSM Knott Academic Center, Shepherd University Center for Contemporary Arts, Maryland Theatre. School construction in Frederick County alone has CompP 46 — institutional buyers (FCPS, FCC, Hood College) are repeat customers worth landing.</li>
+  </ol>
+</div>
+
+<!-- ============================== TAB: SERP FEATURE MAP ============================== -->
+<div id="serp-map" class="section">
+  <h2>SERP Feature Opportunity Map</h2>
+  <p>Live SERP analysis across the seven highest-priority queries from the keyword set. For each, we captured: which SERP features Google currently surfaces, where Morgan-Keller ranks organically, and which features Morgan-Keller could earn with which content approach.</p>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Query</th>
+        <th class="center">MK rank</th>
+        <th class="center">Local Pack</th>
+        <th class="center">PAA</th>
+        <th class="center">FAQ rich</th>
+        <th class="center">Sitelinks</th>
+        <th class="center">AI Overview</th>
+        <th>Opportunity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td><strong>commercial construction frederick md</strong></td>
+        <td class="center"><strong>#2</strong></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>Highest-feature query in the set. FAQ schema → eligible for the FAQ rich card position. GBP optimization → eligible for Local Pack top 3.</td>
+      </tr>
+      <tr>
+        <td>construction management frederick md</td>
+        <td class="center"><strong>#2</strong></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>Strong organic position. Local Pack capture via GBP would boost above-the-fold real estate.</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>commercial general contractor frederick md</strong></td>
+        <td class="center"><strong>#1</strong></td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>Already winning organically. Sitelinks expansion would compound (more internal-link volume to service pages would earn Google's confidence).</td>
+      </tr>
+      <tr>
+        <td>medical office construction frederick md</td>
+        <td class="center">#8 (news article)</td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>News article ranks because no service page exists. Building /services/healthcare-construction/ would replace the news ranking with a higher-authority service page ranking.</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>design build contractor frederick md</strong></td>
+        <td class="center"><strong>#1</strong></td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>Direct evidence that Morgan-Keller's existing service pages convert intent into organic position. Local Pack capture remains an addition.</td>
+      </tr>
+      <tr>
+        <td>healthcare facility construction maryland</td>
+        <td class="center">Not in top 10</td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center"><span class="badge badge-strong">Yes</span></td>
+        <td>State-level keyword triggers AI Overview. JSON-LD GeneralContractor + Service schema increases AI Overview citation eligibility. Worth pursuing only with explicit state-positioning content.</td>
+      </tr>
+      <tr>
+        <td>tenant fit out frederick md</td>
+        <td class="center">Not in top 10</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td class="center">No</td>
+        <td class="center"><span class="badge badge-info">Yes</span></td>
+        <td class="center">No</td>
+        <td>Open category. Smaller GCs (Bruchey) win because they have a dedicated page. A Morgan-Keller tenant-fit-out page could rank quickly.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>SERP feature win-paths, summarized</h3>
+  <ul>
+    <li><strong>Local Pack (4 of 7 queries)</strong> — Win path: Google Business Profile optimization. Confirm category accuracy (General Contractor + Commercial), service-area coverage (Frederick County, Washington County, Loudoun County, Montgomery County, Henrico County), service catalog (mirror the 7 service pages), photo refresh, and review velocity (1-2 new reviews per quarter from completed projects). GBP is a separate workstream from on-site SEO and produces the most consistent above-the-fold real estate.</li>
+    <li><strong>People Also Ask + FAQ rich card (1 of 7 queries today, but expanding category-wide)</strong> — Win path: deploy the FAQPage JSON-LD schema (in the Schema Bundle tab). Google selects FAQ-eligible answers from sites that mark up question/answer content correctly.</li>
+    <li><strong>AI Overview (1 of 7 queries today, growing rapidly category-wide)</strong> — Win path: combine GeneralContractor schema + Service schema + FAQPage schema + named-author Person schema + project provenance content. Google's AI Overview citations skew heavily toward sites with structured data + EEAT signals. Morgan-Keller has the EEAT (1955 founding, awards, certifications); the schema is what's missing.</li>
+    <li><strong>Sitelinks (7 of 7 queries already showing them)</strong> — Win path: strengthen internal linking from homepage to each service page, and add BreadcrumbList schema. Sitelinks are Google's reward for clear site hierarchy.</li>
+  </ul>
+
+  <h3>Untracked competitors surfaced organically</h3>
+  <p>SERP analysis revealed 11 Frederick-area commercial GCs ranking organically that are not in the Kinsley/Harkins/KasCon comparison set. The most consistent threats:</p>
+  <ul>
+    <li><strong>Wormald Commercial Construction</strong> (wormaldcommercial.com) — appears at #1 for "commercial construction frederick md" and #2 for "commercial general contractor frederick md." Worth tracking.</li>
+    <li><strong>Bruchey Builders</strong> (brucheybuilders.com) — appears across 3+ queries; wins #1 for "tenant fit out frederick md" because they have a dedicated page Morgan-Keller doesn't.</li>
+    <li><strong>CCS</strong> (ccsgc.com) — Frederick-based commercial construction services firm; consistent top-10 presence.</li>
+    <li>Warner Construction, Waynesboro Construction, Summit Construction, Bruchey Builders, Talon, ECM, VCRE, River Valley Construction — all Frederick-area GCs surfacing on at least one of the queries researched.</li>
+  </ul>
+</div>
+
+<!-- ============================== TAB: INTENT & PRIORITY ============================== -->
+<div id="priority" class="section">
+  <h2>Intent-Stage Segmentation + Page Priority Matrix</h2>
+
+  <h3>Intent-stage segmentation of the 16 keywords with data</h3>
+  <p>Buyer intent in the commercial construction journey moves through three rough stages: <strong>research</strong> (defining the project / understanding the category), <strong>vendor evaluation</strong> (comparing firms and capabilities), and <strong>RFP-ready</strong> (preparing to issue or respond to a request for proposal). Different keywords map to different stages, which informs both content and offer choices.</p>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Keywords in this stage</th>
+        <th>What buyers want</th>
+        <th>Content type that wins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Research</strong></td>
+        <td>medical office construction frederick md · healthcare facility construction maryland · church construction maryland · school construction frederick county md · industrial construction frederick md · warehouse construction frederick md</td>
+        <td>What does this kind of project entail? Who builds these locally? What are the typical timelines and requirements?</td>
+        <td>Sector-specific service pages with FAQ schema, project case studies, typical-timeline content, regulatory considerations.</td>
+      </tr>
+      <tr>
+        <td><strong>Vendor Evaluation</strong></td>
+        <td>commercial general contractor frederick md · commercial contractor frederick md · design build contractor frederick md · construction management frederick md · pre construction services frederick md</td>
+        <td>Who are the credible firms? What are their capabilities, history, and process? Can they deliver?</td>
+        <td>Service-method pages with named team members, awards, certifications, and project provenance. EEAT signals dominate the win.</td>
+      </tr>
+      <tr>
+        <td><strong>RFP-Ready</strong></td>
+        <td>tenant fit out frederick md · office buildout frederick md · commercial renovation frederick md · flex space construction frederick md · commercial construction frederick md</td>
+        <td>I have a defined project. Who can quote it? Who can deliver to my schedule and budget?</td>
+        <td>Service pages with clear contact paths, recent project photos, named PMs, and explicit "request a quote" or "discuss your project" CTAs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Page-priority matrix: rank × opportunity × business value</h3>
+  <p>Each candidate page scored on three axes:</p>
+  <ul>
+    <li><strong>Current rank</strong> — does Morgan-Keller already rank, or is this a new position to earn?</li>
+    <li><strong>Opportunity</strong> — combination of search volume and competitor pressure (organic-content competition independent of paid spend)</li>
+    <li><strong>Business value</strong> — strategic value of winning this category to Morgan-Keller's commercial-GC business (revenue per project, repeat-customer potential, margin profile)</li>
+  </ul>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th class="center">Current rank</th>
+        <th class="center">Opportunity</th>
+        <th class="center">Business value</th>
+        <th class="center">Priority</th>
+        <th>Recommended action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td>/services/healthcare-construction/ (new)</td><td class="center"><span class="badge badge-warn">Not built</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><strong>1</strong></td><td>Build new sector page. Capture existing portfolio (112 Thomas Johnson, Frederick Health, Meritus, Bracken Square Silver Spring senior). Apply Service + FAQPage schema. Replaces news article currently ranking #8.</td></tr>
+      <tr class="highlight"><td>/services/multifamily/ or /sectors/multifamily/ (new)</td><td class="center"><span class="badge badge-warn">Team page only</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><strong>2</strong></td><td>Build new sector page. Multifamily is one of the strongest categories in Morgan-Keller's portfolio. /teams/multi-family-construction is people-focused; need a service-positioning page alongside.</td></tr>
+      <tr><td>/services/general-contracting/ (existing)</td><td class="center"><span class="badge badge-ok">#1</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><strong>3</strong></td><td>Strengthen existing 172-word page. Add FAQ block, service depth, named team mentions. Defend the #1 position.</td></tr>
+      <tr><td>/services/construction-management/ (existing)</td><td class="center"><span class="badge badge-ok">#2</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><span class="badge badge-strong">High</span></td><td class="center"><strong>4</strong></td><td>Strengthen existing 180-word page. Same play as General Contracting — push from #2 to #1.</td></tr>
+      <tr><td>/services/educational-construction/ (new)</td><td class="center"><span class="badge badge-warn">Not built</span></td><td class="center"><span class="badge badge-info">Medium-high</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><strong>5</strong></td><td>Build new sector page. Strong existing portfolio (Hagerstown CC, MSM Knott, Shepherd University, Maryland Theatre). FCPS / Frederick County is a known repeat-buyer category.</td></tr>
+      <tr><td>/services/design-build/ (existing)</td><td class="center"><span class="badge badge-ok">#1</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><strong>6</strong></td><td>Maintain. Already winning. Light schema deployment (Service + FAQ).</td></tr>
+      <tr><td>/services/tenant-fit-out/ (new)</td><td class="center"><span class="badge badge-warn">Not built</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><strong>7</strong></td><td>Build new sub-service page. Open category — Bruchey Builders currently wins it. Strong cross-sell to existing GC clients with retail/office portfolios.</td></tr>
+      <tr><td>/services/industrial-warehouse/ (new)</td><td class="center"><span class="badge badge-warn">Not built</span></td><td class="center"><span class="badge badge-warn">Lower</span></td><td class="center"><span class="badge badge-info">Medium</span></td><td class="center"><strong>8</strong></td><td>Build new sector page. Stonecroft Industrial Center, Transteck Hangar, Freightliner Hagerstown are existing portfolio anchors.</td></tr>
+      <tr><td>Other 4 service pages (preconstruction / concrete / sustainable / facilities maintenance)</td><td class="center">Not searched directly</td><td class="center">Low (terms aren't high-volume)</td><td class="center">High (recurring revenue)</td><td class="center"><strong>9</strong></td><td>Maintain. Apply Service schema. These pages serve qualified buyers reaching them via direct nav, not search discovery.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The single highest-leverage move</h3>
+  <div class="callout strong">
+    <strong>Build /services/healthcare-construction/ first.</strong> Morgan-Keller has the project portfolio (over 6 medical office / hospital projects identified across the news section), the sector intent maps to one of the highest-margin commercial construction categories, and a news article currently ranks #8 for the query — proving Google already trusts Morgan-Keller for this topic. Replacing the news article with a dedicated sector page would likely move the ranking to position 1-3, and unlocks the opportunity to expand into adjacent queries (medical office contractor, healthcare GC, MOB construction, etc.) over time.
+  </div>
+</div>
+
+<!-- ============================== TAB: EEAT SIGNALS ============================== -->
+<div id="eeat" class="section">
+  <h2>EEAT Signals Audit</h2>
+  <p>EEAT — Experience, Expertise, Authoritativeness, Trustworthiness — is increasingly load-bearing in Google's ranking signals (especially since 2023's Helpful Content updates and the rise of AI Overviews, which heavily favor sources with verifiable expertise). For commercial construction firms, EEAT signals are the strongest non-keyword lever for organic visibility. Comparison below.</p>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>EEAT signal</th>
+        <th class="center">Morgan-Keller</th>
+        <th class="center">Kinsley</th>
+        <th class="center">Harkins</th>
+        <th class="center">KasCon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Founding year publicly stated</td><td class="center"><span class="badge badge-ok">1955</span></td><td class="center">—</td><td class="center"><span class="badge badge-warn">Not surfaced in fetch</span></td><td class="center">—</td></tr>
+      <tr><td>Industry awards visible (last 5 years)</td><td class="center"><span class="badge badge-ok">ABC Excellence (multiple), ConsTeel Builder of Year, ASCC Safety Award</span></td><td class="center">Unknown</td><td class="center">Unknown</td><td class="center">Unknown</td></tr>
+      <tr><td>Industry affiliations (AGC, ABC, ACI)</td><td class="center"><span class="badge badge-ok">ABC Cumberland Valley, ACI</span></td><td class="center">Unknown</td><td class="center">Unknown</td><td class="center">Unknown</td></tr>
+      <tr><td>Named team members on site</td><td class="center"><span class="badge badge-ok">4+ on homepage (Mark Remaklus, Scott Armiger, Dennis Hunter, Joe Wasilewski)</span></td><td class="center">Unknown</td><td class="center">Unknown</td><td class="center">Unknown</td></tr>
+      <tr><td>Project case studies / portfolio depth</td><td class="center"><span class="badge badge-ok">100+ projects in news section</span></td><td class="center">Unknown</td><td class="center"><span class="badge badge-ok">Portfolio section with project pages</span></td><td class="center"><span class="badge badge-warn">Projects section, less depth</span></td></tr>
+      <tr><td>Geographic / sector specialization stated</td><td class="center"><span class="badge badge-ok">Frederick MD + Richmond VA + Mid-Atlantic</span></td><td class="center">Unknown</td><td class="center"><span class="badge badge-ok">Multifamily, commercial, government</span></td><td class="center"><span class="badge badge-ok">Columbia MD, commercial GC</span></td></tr>
+      <tr><td>Ownership / governance stated (employee-owned, family-owned, etc.)</td><td class="center"><span class="badge badge-ok">Privately held, established 1955</span></td><td class="center">Unknown</td><td class="center"><span class="badge badge-strong">100% employee-owned (visible on site)</span></td><td class="center">Unknown</td></tr>
+      <tr><td>Subsidiary / specialty divisions</td><td class="center"><span class="badge badge-ok">MK Concrete, MK Specialty, MK Commercial Facilities Maintenance</span></td><td class="center">Unknown</td><td class="center">Unknown</td><td class="center">Unknown</td></tr>
+      <tr><td>Active news / project updates</td><td class="center"><span class="badge badge-ok">Active /news/ section</span></td><td class="center">Unknown</td><td class="center">Unknown</td><td class="center">Unknown</td></tr>
+      <tr><td>JSON-LD Person / Organization schema deployed</td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td></tr>
+      <tr><td>JSON-LD Awards / Memberships marked up</td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td><td class="center"><span class="badge badge-error">No</span></td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 0.5rem;">Where competitor data shows "Unknown" — competitor research focused on metrics signals via the SEO data source rather than deep individual-site EEAT scraping. Many of these signals likely exist on competitor sites; what matters is which are <em>made discoverable to Google</em> through structured data, which is currently zero across all four firms.</p>
+
+  <h3>The asymmetry to extract</h3>
+  <p>Morgan-Keller's EEAT signal density is among the strongest in the comparison set, but almost none of it is exposed to Google through structured data. Awards, certifications, named team members, project provenance — Google sees the unstructured text but doesn't reliably extract the signals into a knowledge graph. The schema bundle in the next tab fixes exactly this gap: GeneralContractor schema with explicit award + memberOf properties, Person schema for named PMs, CreativeWork schema for project case studies. The content already exists. Marking it up is the work.</p>
+
+  <h3>Three EEAT moves to make alongside schema deployment</h3>
+  <ol>
+    <li><strong>Add a dedicated /about/awards-and-certifications/ page</strong> with each award, year received, and project (if applicable). Currently buried in news posts. Single page makes it discoverable + schema-able as one unit.</li>
+    <li><strong>Convert the homepage's 4 named team-member mentions into linked Person profile pages</strong> with bios, role, project history, and Person schema. Mark Remaklus, Scott Armiger, Dennis Hunter, and Joe Wasilewski are already surfaced — adding bio pages would compound the trust signal.</li>
+    <li><strong>Reformat the news section's project mentions into a dedicated /projects/ section</strong> — same content, different IA. Project pages with location, completion date, project type, and CreativeWork schema rank consistently better than news articles for project-type queries (which is exactly what we saw with the medical office construction query).</li>
+  </ol>
+</div>
+
+<!-- ============================== TAB: SCHEMA BUNDLE ============================== -->
+<div id="schema" class="section">
+  <h2>JSON-LD Schema Bundle</h2>
+  <p>Custom-built JSON-LD payloads ready to deploy across Morgan-Keller's site. The full bundle is in the attached file <code>morgan-keller-schema-payloads-2026-04-25.json</code>. Each payload targets a specific page or page-type. Drop each inside a <code>&lt;script type="application/ld+json"&gt;…&lt;/script&gt;</code> block in the page's <code>&lt;head&gt;</code>.</p>
+
+  <div class="deliverable-banner">
+    <h3>What's in the bundle</h3>
+    <p><strong>Ready-to-deploy payloads:</strong></p>
+    <ul style="margin-left: 1.5rem;">
+      <li><code>GeneralContractor</code> for the homepage — includes name, founding year, all addresses, area served, knowsAbout topic graph, full service catalog, awards, memberships</li>
+      <li><code>Service</code> for each of the 7 service pages (preconstruction, general contracting, construction management, design-build, concrete, sustainable, facilities maintenance) — each linked back to the parent organization</li>
+      <li><code>BreadcrumbList</code> template for service pages (apply to each)</li>
+      <li><code>FAQPage</code> for the homepage or About page — 5 questions sourced from Google's "People also ask" for related queries, with draft answers Morgan-Keller can review and adjust</li>
+    </ul>
+    <p style="margin-top: 0.75rem;"><strong>Templates with placeholders for Morgan-Keller to fill in:</strong></p>
+    <ul style="margin-left: 1.5rem;">
+      <li><code>Person</code> template for named team members (homepage already surfaces Mark Remaklus, Scott Armiger, Dennis Hunter, Joe Wasilewski as candidates)</li>
+      <li><code>CreativeWork</code> / <code>Place</code> template for project case studies (8 candidate projects identified from the homepage features and news section)</li>
+    </ul>
+  </div>
+
+  <h3>Deployment priority</h3>
+  <ol>
+    <li><strong>Organization schema on the homepage</strong> — single deploy, highest impact, eligible for Knowledge Panel and Brand Mentions</li>
+    <li><strong>Service schema on each service page</strong> — 7 deploys, supports SERP service-feature eligibility</li>
+    <li><strong>BreadcrumbList on each page</strong> — sitelinks support, easy template</li>
+    <li><strong>FAQPage on the homepage or selected service page</strong> — FAQ rich card eligibility, AI Overview citation eligibility</li>
+    <li><strong>Person schema on each named-team-member page</strong> as those bio pages get built — author/expertise EEAT signal</li>
+    <li><strong>CreativeWork schema on each project case study</strong> as those /projects/ pages get built — strongest EEAT signal commercial GCs can deploy</li>
+  </ol>
+
+  <h3>Validation before publish</h3>
+  <p>Before publishing each schema, validate via Google's Rich Results Test (<a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">search.google.com/test/rich-results</a>) to confirm Google can parse the payload correctly. The schema.org validator (<a href="https://validator.schema.org/" target="_blank" rel="noopener">validator.schema.org</a>) provides additional structural checks.</p>
+
+  <h3>Why this matters more for Morgan-Keller than for most clients</h3>
+  <p>Three of the GC competitors analyzed have zero schema. None of the 11 organic competitors surfaced in the SERP analysis appear to deploy structured data either. The commercial-GC niche in this market is currently unschemed, which means schema deployment is not a "catch up" move — it's a "first mover" move. Combined with Morgan-Keller's existing Brand Signal (52, highest of competitors), Trust Flow (37, highest), and active LLM visibility on three platforms, the structured data layer is the missing piece that converts existing authority into AI Overview eligibility, FAQ rich cards, and Knowledge Panel population.</p>
+</div>
+
+<!-- ============================== TAB: RECOMMENDED ACTIONS ============================== -->
+<div id="actions" class="section">
+  <h2>Recommended Actions</h2>
+  <p>Five things Morgan-Keller can do this quarter, in priority order. Each is concrete, scoped, and pairs site-side work with schema work.</p>
+
+  <h3>This month — high-leverage, low-effort</h3>
+  <ol>
+    <li><strong>Fix the homepage <code>&lt;title&gt;</code> tag and empty H1</strong> (template change, ~30 minutes of dev time). Restores the strongest on-page SEO signals. Highest impact-per-hour move on the entire site.</li>
+    <li><strong>Deploy the Organization JSON-LD schema on the homepage</strong> (single payload, attached file). Eligible for Google Knowledge Panel and AI Overview citations. ~15 minutes of dev work.</li>
+    <li><strong>Deploy Service JSON-LD on each of the 7 service pages</strong> (one payload per page, attached file). Strengthens each page's topical signal independently. ~1 hour total dev work.</li>
+    <li><strong>Add meta descriptions to the 18 pages currently missing them</strong> — most are /news/ entries; can be templated from the article excerpt.</li>
+  </ol>
+
+  <h3>This quarter — page-coverage gap closure</h3>
+  <ol start="5">
+    <li><strong>Build /services/healthcare-construction/</strong> — Morgan-Keller's healthcare project portfolio (112 Thomas Johnson, Frederick Health, Meritus Outpatient, Bracken Square Silver Spring senior) is strong; the dedicated landing page is what's missing. Apply Service + FAQPage schema. Highest-impact new page.</li>
+    <li><strong>Build /services/multifamily/ or /sectors/multifamily-housing/</strong> — Morgan-Keller's multifamily portfolio is one of the deepest in the comparison set (Ashburn Chase, Junction Apartments, Riverside Square, Crossings of Spring Hill, Bracken Square, Cromwell Atlantic Boulevard). The /teams/multi-family-construction page exists but doesn't sell the service.</li>
+    <li><strong>Build /services/educational-construction/</strong> — Existing portfolio (Hagerstown CC LRC, MSM Knott Academic Center, Shepherd University Center for Contemporary Arts, Maryland Theatre) supports a strong sector page. Frederick County Public Schools is a repeat-buyer category worth winning.</li>
+    <li><strong>Convert the homepage's 4 named team-member mentions into linked bio pages with Person schema.</strong> Mark Remaklus, Scott Armiger, Dennis Hunter, Joe Wasilewski. Compounds EEAT signal across all pages those people are referenced from.</li>
+    <li><strong>Optimize the Google Business Profile</strong> for Local Pack capture on the 4 queries where Local Pack appears. Confirm category accuracy, service-area coverage, photo refresh, and a quarterly review-velocity cadence.</li>
+  </ol>
+
+  <h3>Sustained — content velocity</h3>
+  <p>Among the four GCs analyzed, content publishing velocity is the largest unaddressed competitive lever. Morgan-Keller's /news/ section publishes regularly already — repurposing one news article per month into a dedicated /projects/{slug}/ page with CreativeWork schema (project type, completion date, location, square footage if known, named PMs) compounds the EEAT signal and creates an indexed-page footprint that competitors aren't matching.</p>
+
+  <h3>Want to go deeper?</h3>
+  <p>The recommendations above are the "in-house actions worth taking this quarter" subset. The strategic conversation — sequencing, which sectors to lead with, how to structure a recurring SEO + content cadence, and how the GBP / paid social channels would integrate — is a separate scope. Apollo Marketing handles ongoing SEO management for clients in adjacent industries; we can talk through whether that's a fit for Morgan-Keller / HighRock when the timing's right.</p>
+
+  <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--gray-200);">
+
+  <h3>Methodology notes</h3>
+  <ul>
+    <li><strong>Local SEO methodology:</strong> All keyword research used city-phrase keywords ("frederick md") with county-level location filtering (Frederick County, MD). County names are not searched as queries; city names are. Uniform application across all Apollo SEO clients.</li>
+    <li><strong>No US-wide data was used.</strong> US-wide search volume inflates expectations and breaks trust with local-service buyers. Every metric in this report is filtered to Frederick County, MD or the explicit state-level keyword (where indicated).</li>
+    <li><strong>Honest reporting on gaps:</strong> Two keywords returned no data from the research source and are flagged as such. Backlink 30-day velocity is rendered as an interactive chart rather than a discrete number by the data source — flagged Incomplete rather than approximated. Brand Signal scores on two competitors (Harkins, KasCon) appear as 0 — likely propagation-pending since their tracking projects were created within the past 24 hours; will normalize over the coming days.</li>
+  </ul>
+
+  <p style="font-size: 0.85rem; color: var(--gray-500); margin-top: 1.5rem;">Prepared by Apollo Marketing. Questions, requests for clarification, or interest in expanded scope can be directed through Monique Fisher at HighRock.</p>
+</div>
+
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
