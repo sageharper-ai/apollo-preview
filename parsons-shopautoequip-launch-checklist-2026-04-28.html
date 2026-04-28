@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Shopautoequip.com — Launch Readiness Checklist | Apollo Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Nunito+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg-elev: #121826;
+    --bg-card: #0f1420;
+    --border: #1f2937;
+    --border-strong: #2d3748;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-mute: #64748b;
+    --apollo: #faa523;
+    --apollo-soft: rgba(250, 165, 35, 0.12);
+    --red: #ef4444;
+    --red-soft: rgba(239, 68, 68, 0.12);
+    --amber: #f59e0b;
+    --amber-soft: rgba(245, 158, 11, 0.12);
+    --green: #10b981;
+    --green-soft: rgba(16, 185, 129, 0.12);
+    --blue: #3b82f6;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'Nunito Sans', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 96px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 32px; margin-bottom: 48px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--apollo);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: italic; color: var(--apollo); }
+  .lede { font-size: 19px; color: var(--text-dim); max-width: 720px; line-height: 1.5; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .meta-item .meta-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .meta-item .meta-value a { color: var(--apollo); text-decoration: none; }
+  .meta-item .meta-value a:hover { text-decoration: underline; }
+
+  .verdict {
+    background: var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 48px;
+  }
+  .verdict h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .verdict-status {
+    display: inline-block;
+    background: var(--red-soft);
+    color: var(--red);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .verdict p { color: var(--text-dim); font-size: 16px; margin-bottom: 12px; }
+  .verdict p strong { color: var(--text); font-weight: 700; }
+  .verdict ul { margin-top: 12px; padding-left: 22px; color: var(--text-dim); }
+  .verdict ul li { margin-bottom: 6px; }
+
+  .summary-counts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .count-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+  }
+  .count-card.must { border-color: rgba(239, 68, 68, 0.4); }
+  .count-card.should { border-color: rgba(245, 158, 11, 0.3); }
+  .count-card.nice { border-color: rgba(59, 130, 246, 0.3); }
+  .count-num { font-family: var(--serif); font-size: 56px; font-weight: 400; line-height: 1; margin-bottom: 8px; }
+  .count-card.must .count-num { color: var(--red); }
+  .count-card.should .count-num { color: var(--amber); }
+  .count-card.nice .count-num { color: var(--blue); }
+  .count-label { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+
+  section { margin-bottom: 56px; }
+  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .section-header h2 .num {
+    color: var(--apollo);
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .section-sub { color: var(--text-dim); font-size: 14px; flex: 1; }
+
+  .item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .item.must { border-left: 3px solid var(--red); }
+  .item.should { border-left: 3px solid var(--amber); }
+  .item.nice { border-left: 3px solid var(--blue); }
+
+  .item-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .item-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.25;
+    flex: 1;
+    min-width: 240px;
+  }
+  .item-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .tag.status-blocked { background: var(--red-soft); color: var(--red); }
+  .tag.status-partial { background: var(--amber-soft); color: var(--amber); }
+  .tag.status-missing { background: var(--red-soft); color: var(--red); }
+  .tag.status-todo { background: var(--amber-soft); color: var(--amber); }
+  .tag.status-verify { background: rgba(148, 163, 184, 0.12); color: var(--text-dim); }
+  .tag.owner { background: var(--apollo-soft); color: var(--apollo); }
+  .tag.effort-s { background: var(--green-soft); color: var(--green); }
+  .tag.effort-m { background: var(--amber-soft); color: var(--amber); }
+  .tag.effort-l { background: var(--red-soft); color: var(--red); }
+
+  .item-row { display: grid; grid-template-columns: 110px 1fr; gap: 12px 16px; padding-top: 12px; border-top: 1px solid var(--border); margin-top: 14px; font-size: 14px; }
+  .item-row .key { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-mute); padding-top: 3px; }
+  .item-row .val { color: var(--text-dim); line-height: 1.55; }
+  .item-row .val strong { color: var(--text); font-weight: 600; }
+  .item-row .val code {
+    font-family: var(--mono);
+    font-size: 12px;
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--apollo);
+  }
+
+  footer { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-brand { font-family: var(--serif); font-size: 20px; }
+  .footer-brand em { color: var(--apollo); font-style: italic; }
+  .footer-meta { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
+  .toc a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+  .toc a:hover { border-color: var(--apollo); color: var(--apollo); }
+  .toc a .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .toc a.must .dot { background: var(--red); }
+  .toc a.should .dot { background: var(--amber); }
+  .toc a.nice .dot { background: var(--blue); }
+
+  @media (max-width: 720px) {
+    .summary-counts { grid-template-columns: 1fr; }
+    .item-row { grid-template-columns: 1fr; }
+    .item-row .key { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Apollo Marketing · Launch Readiness Audit</div>
+    <h1>Shopautoequip.com<br><em>Launch Checklist</em></h1>
+    <p class="lede">A prioritized, three-tier punch list of what needs to happen before Shopautoequip.com can take its first real customer order — and what can wait until after launch.</p>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Parsons Ventures</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Storefront</div>
+        <div class="meta-value">Shopautoequip.com</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Platform</div>
+        <div class="meta-value">BigCommerce</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Audit Date</div>
+        <div class="meta-value">April 28, 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Prepared by</div>
+        <div class="meta-value">Apollo Marketing</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-value" style="color: var(--red);">Not yet launch-ready</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <span class="verdict-status">Bottom Line</span>
+    <h2>The store cannot accept a real order today.</h2>
+    <p>The inventory catalog and core marketing pages (home, financing) are in good shape. The infrastructure that converts a visitor into a paying customer — payments, shipping methods, tax rates, and a real domain — is not yet wired up.</p>
+    <p>This is normal for a store at this stage. The good news: <strong>most of the launch blockers are configuration tasks, not build tasks.</strong> A focused day or two on the items in the "Must-do" section gets the store live.</p>
+    <p>The recommendation below splits the work into three buckets so you can decide what to launch with and what to add after:</p>
+    <ul>
+      <li><strong>Must-do</strong> — blocks first transaction, legal compliance, or trust at first impression. Must ship before launch.</li>
+      <li><strong>Should-do</strong> — hurts conversion or looks unfinished, but doesn't block a sale. Strongly recommended for launch.</li>
+      <li><strong>Nice-to-have</strong> — uplift, polish, marketing capability. Add post-launch.</li>
+    </ul>
+  </div>
+
+  <div class="summary-counts">
+    <div class="count-card must">
+      <div class="count-num">11</div>
+      <div class="count-label">Must-do before launch</div>
+    </div>
+    <div class="count-card should">
+      <div class="count-num">9</div>
+      <div class="count-label">Should-do before launch</div>
+    </div>
+    <div class="count-card nice">
+      <div class="count-num">8</div>
+      <div class="count-label">Nice-to-have post-launch</div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <a href="#must" class="must"><span class="dot"></span> Must-do</a>
+    <a href="#should" class="should"><span class="dot"></span> Should-do</a>
+    <a href="#nice" class="nice"><span class="dot"></span> Nice-to-have</a>
+  </div>
+
+  <!-- ============= MUST-DO ============= -->
+  <section id="must">
+    <div class="section-header">
+      <h2><span class="num">01</span>Must-do before launch</h2>
+      <span class="section-sub">Blocks first transaction, legal compliance, or trust at first impression.</span>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">1. Connect a real payment processor</div>
+        <div class="item-tags">
+          <span class="tag status-blocked">Blocker</span>
+          <span class="tag owner">Client decision</span>
+          <span class="tag effort-m">Half-day</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Store is currently in <strong>test-card mode only</strong>. No live processor (BigCommerce Payments, Stripe, PayPal, Klarna) is connected.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Without a live processor, every customer who clicks "Buy" hits a dead end. This is the single biggest launch blocker.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val"><strong>BigCommerce Payments</strong> (preferred — bundles credit cards, PayPal, Venmo, Pay Later, and digital wallets in one checkout, no separate contracts) <em>or</em> <strong>Stripe</strong> (more granular control, better if Parsons already has a Stripe relationship). Need a decision from Parsons on which to set up, plus underwriting paperwork.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">2. Enable free shipping (MAP-priced products)</div>
+        <div class="item-tags">
+          <span class="tag status-blocked">Blocker</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">No shipping origin address set. The U.S. shipping zone exists but <strong>zero shipping methods are turned on</strong> (Free, Flat rate, Pick-up — all off).</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Without at least one shipping method enabled, the checkout will reject every order. Per the agreed scope, shipping cost is baked into MAP pricing rather than calculated at checkout — but the "Free Shipping" method still needs to be turned on for the checkout to complete.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Set Parsons warehouse address as origin. Toggle <strong>"Free shipping"</strong> ON for the U.S. zone (already the agreed scope — shipping baked into MAP). Add an optional homepage callout: <em>"Free shipping on every order"</em>. Defer FedEx / UPS live-rate setup unless Parsons later wants to surface dimensional pricing for oversized SKUs.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">4. Confirm fulfillment routing (Parsons vs. vendor catalogs)</div>
+        <div class="item-tags">
+          <span class="tag status-todo">To-do</span>
+          <span class="tag owner">Client decision</span>
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">The kickoff brief noted that some products fulfill from Parsons directly and some come from vendor catalogs without their own fulfillment. The handoff for each product family needs confirmation before launch so orders don't sit unrouted.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Day-one orders need a clear answer to: "Who picks, packs, and ships this SKU?" Without a documented routing rule, fulfillment delays become customer-service problems immediately.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Confirm with Parsons: which categories fulfill from Parsons warehouse (label print + ship), which dropship from vendor (PO sent on order), which are special-order. A simple one-page routing map per category is enough for launch — a real fulfillment integration (Sage 100, ShipStation) is a Phase 2 conversation.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">4. Set sales tax rates (or connect Avalara)</div>
+        <div class="item-tags">
+          <span class="tag status-missing">Missing</span>
+          <span class="tag owner">Client decision</span>
+          <span class="tag effort-s">1–2 hours</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Basic Tax module is enabled with 4 tax classes and 1 zone, but <strong>0 actual tax rates are configured</strong>. The 10% fallback is a default, not a policy.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Selling auto equipment across state lines triggers sales tax nexus rules. Charging the wrong tax (or none) creates legal exposure and reconciliation headaches at year-end. This is the cheapest item on the list to fix and the most expensive one to ignore.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">For a starting catalog, manually configure the home-state rate plus any states with confirmed nexus. If the product mix is wider than one state, install <strong>Avalara AvaTax</strong> (BigCommerce's recommended tax service) — it auto-applies the right rate per shipping address.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">5. Move store to a custom domain (shopautoequip.com)</div>
+        <div class="item-tags">
+          <span class="tag status-blocked">Blocker</span>
+          <span class="tag owner">Apollo + Client</span>
+          <span class="tag effort-s">1–3 hours + DNS propagation</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Storefront is currently on the BigCommerce subdomain <code>shopautoequipcom.mybigcommerce.com</code>. No custom domain attached.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Trust, branding, SEO indexability, and deliverability of order-confirmation emails all depend on a real domain. Customers will not trust a checkout on a <code>.mybigcommerce.com</code> URL.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Confirm Parsons owns <strong>shopautoequip.com</strong> (or chosen variant). Point DNS at BigCommerce, attach in admin, verify SSL provisions automatically. Add 24–48 hours of propagation buffer to the launch timeline.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">6. SSL certificate provisioned + HTTPS enforced</div>
+        <div class="item-tags">
+          <span class="tag status-todo">Pending domain</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">Automatic</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">SSL is provisioned automatically by BigCommerce once the custom domain is attached. Verification needed after Item 4 is complete.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Customers will not (and should not) submit credit-card data over a non-HTTPS page. Browsers now flag non-HTTPS sites as "Not Secure" — fatal for trust at the moment of purchase.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Verify SSL is active and HTTPS is enforced site-wide after the domain attaches. Confirm by visiting the bare domain — should auto-redirect to <code>https://</code>.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">7. Configure order notifications (admin + customer)</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Admin order alerts need a confirmed recipient at Parsons. Customer-facing transactional emails (order confirmation, shipping confirmation) need branding review and a real "from" address tied to the new domain.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">If no one at Parsons gets pinged when an order comes in, fulfillment delays start immediately. If customer emails come from a generic <code>noreply@</code> with no logo, customers think the order didn't go through.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Set admin recipient to the order-fulfillment owner's email at Parsons. Set customer-facing "from" to <code>orders@shopautoequip.com</code>. Quick brand-review pass on the email templates so they match the site.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">8. Required legal pages — Privacy, Terms, Returns, Shipping policy</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Client + Apollo</span>
+          <span class="tag effort-m">Half-day</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Must-have legal/policy pages need to exist and be linked from the footer before launch: <strong>Privacy Policy</strong>, <strong>Terms of Service</strong>, <strong>Return Policy</strong>, <strong>Shipping Policy</strong>. State of presence to be confirmed during the storefront walk-through.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Privacy Policy is a legal requirement in every U.S. state with a shopping site. Returns and shipping policies are baseline trust signals — customers check these before purchase, especially on higher-ticket auto-equipment items. Their absence is a conversion killer.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Parsons supplies the policy language (or signs off on a starter template Apollo drafts). Apollo publishes as BigCommerce Web Pages and links from the footer.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">9. Contact information visible in header/footer</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">15 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Phone number, business address, and contact email need to be visible site-wide (typically header or footer). State of presence to be confirmed during the storefront walk-through.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">B2B and high-ticket buyers want to call before they click "Buy." Missing contact info is a top-three reason for cart abandonment on equipment sites. It also affects local SEO and Google Shopping eligibility.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Add Parsons phone, business address, and <code>info@shopautoequip.com</code> to the footer at minimum. Phone in the header ("call to order") for higher-intent buyers.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">10. Order confirmation flow tested end-to-end</div>
+        <div class="item-tags">
+          <span class="tag status-todo">To-do</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">Once payment + shipping + tax + domain are configured, a real end-to-end test order needs to be placed and refunded to verify the full flow.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Untested checkout = guaranteed first-day surprise. Every store launch finds at least one config issue (wrong tax zone, broken email template, shipping rate mis-applied) that only surfaces in a real transaction.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Place a real $1 test order using a Parsons credit card after all Must-do items are complete. Verify: order placed, admin email received, customer email received, tax calculated correctly, shipping rate applied. Then refund.</div>
+      </div>
+    </div>
+
+    <div class="item must">
+      <div class="item-head">
+        <div class="item-title">11. Complete BigCommerce store setup wizard</div>
+        <div class="item-tags">
+          <span class="tag status-todo">To-do</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">15 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Status</div>
+        <div class="val">The "Welcome to BigCommerce" onboarding wizard has not been completed. Some downstream features (recommendations, default settings) reference inputs from this wizard.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why it matters</div>
+        <div class="val">Quick win — clears the dashboard banner and gives BigCommerce the data it needs to surface the right recommendations and analytics defaults.</div>
+      </div>
+      <div class="item-row">
+        <div class="key">Recommendation</div>
+        <div class="val">Walk through the wizard once Parsons confirms business category, currency, and basic preferences.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============= SHOULD-DO ============= -->
+  <section id="should">
+    <div class="section-header">
+      <h2><span class="num">02</span>Should-do before launch</h2>
+      <span class="section-sub">Hurts conversion or looks unfinished, but doesn't block a sale.</span>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">12. Abandoned cart recovery emails</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">BigCommerce has built-in abandoned-cart saver — recovers 10–15% of abandoned carts on average. For higher-ticket auto equipment that recovery rate is meaningful revenue. Free to enable, three-email sequence with discount on the third send is a sensible default.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">13. Google Analytics 4 + Meta Pixel installed</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Without analytics installed at launch, the first month of traffic data is lost forever. GA4 for traffic + behavior. Meta Pixel for ad retargeting (mandatory if Parsons plans any Facebook/Instagram ads). Both via BigCommerce's native Data Solutions integration — no manual code.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">14. Sitemap + robots.txt verified for indexing</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">BigCommerce auto-generates both. Need to verify no <code>noindex</code> remnant from test mode, and submit the sitemap to Google Search Console + Bing Webmaster Tools day-of-launch so indexing starts immediately.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">15. Page titles + meta descriptions across catalog</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo + Client</span>
+          <span class="tag effort-l">1–2 days for full catalog</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">SEO baseline. Default product titles/descriptions from a spreadsheet import are usually thin. Pass needed for: home page, financing page, top-level categories, and top 20–50 products. Remaining catalog can be templated and improved post-launch.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">16. Mobile responsiveness verified across key flows</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">60%+ of e-commerce traffic is mobile. Walk through home → category → product → cart → checkout on a real iPhone and Android. Any layout breaks here are launch blockers in disguise.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">17. Search functionality tuned</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Site search converts 2–3x higher than browse. Verify the BigCommerce native search returns relevant results for the top 10 queries Parsons expects (e.g., specific product names, SKUs, common categories). Add synonyms if needed.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">18. 404 page + custom navigation paths</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">404 page should match the site's branding and offer a path forward (search, top categories, contact). Default BigCommerce 404 is generic and ends the visit.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">19. Account creation flow + form fields reviewed</div>
+        <div class="item-tags">
+          <span class="tag status-verify">Verify</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Confirm guest checkout is enabled (lower friction = higher conversion). Audit the account-signup form fields — every required field is a conversion drag. Strip to email + password + name unless there's a strong business reason for more.</div>
+      </div>
+    </div>
+
+    <div class="item should">
+      <div class="item-head">
+        <div class="item-title">20. Payment method badges + trust signals visible at checkout</div>
+        <div class="item-tags">
+          <span class="tag status-todo">To-do</span>
+          <span class="tag owner">Apollo</span>
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Visible Visa/Mastercard/Amex/PayPal logos near the cart and footer reduce checkout drop-off measurably. Add an SSL/secure-checkout badge near the credit card form. Free, fast, well-documented uplift.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============= NICE-TO-HAVE ============= -->
+  <section id="nice">
+    <div class="section-header">
+      <h2><span class="num">03</span>Nice-to-have post-launch</h2>
+      <span class="section-sub">Uplift, polish, marketing capability — add after launch.</span>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">21. Customer reviews + ratings</div>
+        <div class="item-tags">
+          <span class="tag effort-m">Half-day setup</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Reviews lift conversion 10–30% on equipment categories. BigCommerce has native reviews; Yotpo or Judge.me add richer review widgets and email solicitation. Best added once a few real orders have shipped to seed the reviews.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">22. Email marketing platform (Klaviyo / Mailchimp)</div>
+        <div class="item-tags">
+          <span class="tag effort-m">Half-day setup</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Captures email signups, runs welcome series, post-purchase flows, win-back campaigns. Klaviyo is the industry default for e-commerce. Worth standing up in week 2–4 once there's a list to mail.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">23. Live chat / chatbot</div>
+        <div class="item-tags">
+          <span class="tag effort-s">2 hours</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">High-ticket equipment buyers ask pre-purchase questions. Tidio, Gorgias, or Intercom are common picks. Only worth it if Parsons has someone who can respond within minutes during business hours — otherwise it hurts more than it helps.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">24. Cross-sell / upsell on product pages + cart</div>
+        <div class="item-tags">
+          <span class="tag effort-s">2 hours</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">"Frequently bought together" and cart upsells lift average order value 5–15%. BigCommerce native related products is the cheap version; apps like Justuno do it smarter. Wait until purchase data exists.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">25. Promotions + coupon system</div>
+        <div class="item-tags">
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Configure first-purchase discount, free-shipping threshold, seasonal codes. BigCommerce native — no app needed. Add when there's a marketing reason (launch promo, holiday, abandoned-cart code).</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">26. Schema markup + rich results</div>
+        <div class="item-tags">
+          <span class="tag effort-m">Half-day</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Product schema unlocks Google Shopping rich results (price, availability, ratings in search). BigCommerce themes generate basic Product schema; can be extended with FAQ, Breadcrumb, Organization schema for additional SERP real estate.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">27. ShipStation for fulfillment</div>
+        <div class="item-tags">
+          <span class="tag effort-s">1 hour</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">Once order volume is past ~10–20/week, batch label printing and rate-shopping across carriers via ShipStation saves real time and money. Free for low volume; tiered after that.</div>
+      </div>
+    </div>
+
+    <div class="item nice">
+      <div class="item-head">
+        <div class="item-title">28. Wishlist / save-for-later</div>
+        <div class="item-tags">
+          <span class="tag effort-s">30 min</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="key">Why</div>
+        <div class="val">BigCommerce native — toggle on. Useful for high-ticket categories where the buyer comes back later. Low effort, modest value.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-brand">Apollo <em>Marketing</em></div>
+    <div class="footer-meta">Audit · April 28, 2026 · Internal review</div>
+  </footer>
+
+</div>
+</body>
+</html>
