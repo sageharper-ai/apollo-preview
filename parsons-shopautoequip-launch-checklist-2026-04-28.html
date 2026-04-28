@@ -7,198 +7,63 @@
 <title>Shopautoequip.com — Path to Launch | Apollo Marketing</title>
 <style>
   :root {
-    --bg: #0e1421;
-    --bg-elev: #161e2d;
-    --bg-card: #131b29;
-    --border: #28324a;
-    --text: #f3f4f6;
-    --text-soft: #d1d5db;
-    --text-mute: #9ca3af;
-    --apollo: #faa523;
-    --apollo-soft: rgba(250, 165, 35, 0.14);
-    --client: #60a5fa;
-    --apollo-do: #34d399;
-    --question: #fbbf24;
-    --future: #a78bfa;
+    --bg: #0e1421; --bg-elev: #161e2d; --bg-card: #131b29; --border: #28324a;
+    --text: #f3f4f6; --text-soft: #d1d5db; --text-mute: #9ca3af;
+    --apollo: #faa523; --apollo-soft: rgba(250,165,35,0.14);
+    --client: #60a5fa; --apollo-do: #34d399; --question: #fbbf24; --future: #a78bfa;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
     --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 96px; }
   header { border-bottom: 1px solid var(--border); padding-bottom: 28px; margin-bottom: 40px; }
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--apollo);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
-  }
-  h1 {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    color: var(--text);
-  }
+  .eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--apollo); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+  h1 { font-size: clamp(32px,5vw,48px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--text); }
   h1 span.brand { color: var(--apollo); }
   .lede { font-size: 18px; color: var(--text-soft); max-width: 760px; line-height: 1.55; }
-  .meta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-    margin-top: 28px;
-    padding: 18px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-  }
-  .meta-item .meta-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
-  }
-  .meta-item .meta-value {
-    font-size: 14px;
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  .verdict {
-    background: var(--bg-elev);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--apollo);
-    border-radius: 8px;
-    padding: 24px 28px;
-    margin-bottom: 40px;
-  }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 14px; margin-top: 28px; padding: 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+  .meta-item .meta-label { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .meta-item .meta-value { font-size: 14px; color: var(--text); font-weight: 600; }
+  .verdict { background: var(--bg-elev); border: 1px solid var(--border); border-left: 4px solid var(--apollo); border-radius: 8px; padding: 24px 28px; margin-bottom: 40px; }
   .verdict h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
   .verdict p { color: var(--text-soft); font-size: 16px; margin-bottom: 10px; }
   .verdict p:last-child { margin-bottom: 0; }
   .verdict strong { color: var(--text); font-weight: 700; }
-
-  .summary-counts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-    margin-bottom: 48px;
-  }
-  .count-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-  }
-  .count-card.client { border-top: 3px solid var(--client); }
-  .count-card.apollo-do { border-top: 3px solid var(--apollo-do); }
-  .count-card.question { border-top: 3px solid var(--question); }
-  .count-card.future { border-top: 3px solid var(--future); }
+  .summary-counts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin-bottom: 48px; }
+  .count-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
+  .count-card.client { border-top: 3px solid var(--client); } .count-card.apollo-do { border-top: 3px solid var(--apollo-do); }
+  .count-card.question { border-top: 3px solid var(--question); } .count-card.future { border-top: 3px solid var(--future); }
   .count-num { font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 6px; color: var(--text); }
-  .count-card.client .count-num { color: var(--client); }
-  .count-card.apollo-do .count-num { color: var(--apollo-do); }
-  .count-card.question .count-num { color: var(--question); }
-  .count-card.future .count-num { color: var(--future); }
+  .count-card.client .count-num { color: var(--client); } .count-card.apollo-do .count-num { color: var(--apollo-do); }
+  .count-card.question .count-num { color: var(--question); } .count-card.future .count-num { color: var(--future); }
   .count-label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-soft); }
-
   section { margin-bottom: 48px; }
   .section-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; padding-bottom: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  .section-header h2 {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: var(--text);
-  }
-  .section-header h2 .num {
-    color: var(--apollo);
-    font-family: var(--mono);
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 8px;
-    vertical-align: middle;
-  }
+  .section-header h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; color: var(--text); }
+  .section-header h2 .num { color: var(--apollo); font-family: var(--mono); font-size: 16px; font-weight: 600; margin-right: 8px; vertical-align: middle; }
   .section-sub { color: var(--text-soft); font-size: 14px; flex: 1; min-width: 280px; }
-
-  .item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 22px;
-    margin-bottom: 14px;
-  }
-  .item.client { border-left: 3px solid var(--client); }
-  .item.apollo-do { border-left: 3px solid var(--apollo-do); }
-  .item.question { border-left: 3px solid var(--question); }
-  .item.future { border-left: 3px solid var(--future); }
-
+  .item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; margin-bottom: 14px; }
+  .item.client { border-left: 3px solid var(--client); } .item.apollo-do { border-left: 3px solid var(--apollo-do); }
+  .item.question { border-left: 3px solid var(--question); } .item.future { border-left: 3px solid var(--future); }
   .item-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
-  .item-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.35;
-    flex: 1;
-    min-width: 240px;
-  }
+  .item-title { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.35; flex: 1; min-width: 240px; }
   .item-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 4px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-  .tag.priority-blocker { background: rgba(248, 113, 113, 0.18); color: #fca5a5; }
+  .tag { font-family: var(--mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
+  .tag.priority-blocker { background: rgba(248,113,113,0.18); color: #fca5a5; }
   .tag.priority-launch { background: var(--apollo-soft); color: var(--apollo); }
-  .tag.priority-quick { background: rgba(52, 211, 153, 0.18); color: #6ee7b7; }
-
   .item-body p { color: var(--text-soft); font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
   .item-body p:last-child { margin-bottom: 0; }
   .item-body strong { color: var(--text); font-weight: 700; }
-  .item-body code {
-    font-family: var(--mono);
-    font-size: 13px;
-    background: var(--bg);
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: var(--apollo);
-  }
-
-  .question-text {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
+  .item-body code { font-family: var(--mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 3px; color: var(--apollo); }
+  .question-text { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
   .question-context { color: var(--text-soft); font-size: 14px; line-height: 1.55; }
-
   footer { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
   .footer-brand { font-size: 16px; font-weight: 700; }
   .footer-brand span { color: var(--apollo); }
   .footer-meta { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; }
-
-  @media (max-width: 720px) {
-    .wrap { padding: 32px 18px 64px; }
-    .summary-counts { grid-template-columns: 1fr 1fr; }
-  }
+  @media (max-width: 720px) { .wrap { padding: 32px 18px 64px; } .summary-counts { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -207,125 +72,65 @@
   <header>
     <div class="eyebrow">Apollo Marketing · Path to Launch</div>
     <h1>Shopautoequip.com<br><span class="brand">Launch Plan</span></h1>
-    <p class="lede">A clear split of what's still needed to get the store live: what we need from Parsons, what Apollo will complete, and the open questions we need answered to finish your part.</p>
+    <p class="lede">The remaining work to plumb checkout and follow-up so the store can take its first real order. Built from a live walk through the BigCommerce admin this morning.</p>
     <div class="meta-grid">
-      <div class="meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-value">Parsons Ventures</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Storefront</div>
-        <div class="meta-value">Shopautoequip.com</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Platform</div>
-        <div class="meta-value">BigCommerce</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Audit Date</div>
-        <div class="meta-value">April 28, 2026</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Prepared by</div>
-        <div class="meta-value">Apollo Marketing</div>
-      </div>
+      <div class="meta-item"><div class="meta-label">Client</div><div class="meta-value">Parsons Ventures</div></div>
+      <div class="meta-item"><div class="meta-label">Storefront</div><div class="meta-value">Shopautoequip.com</div></div>
+      <div class="meta-item"><div class="meta-label">Platform</div><div class="meta-value">BigCommerce</div></div>
+      <div class="meta-item"><div class="meta-label">Audit Date</div><div class="meta-value">April 28, 2026</div></div>
+      <div class="meta-item"><div class="meta-label">Prepared by</div><div class="meta-value">Apollo Marketing</div></div>
     </div>
   </header>
 
   <div class="verdict">
     <h2>Where we are</h2>
-    <p>Inventory is built and validated, the home page is live, and the financing page is built. The remaining work is the layer that turns a visitor into a paying customer — payments, shipping config, tax, the real domain, and a few content pieces. <strong>Most of it is configuration, not building.</strong></p>
-    <p>This document splits the remaining work three ways so we know exactly who owns what before launch.</p>
+    <p>Inventory, home page, financing page, About section, brands, and pop-up framework are all built. The store can show product — it just can't take an order yet. The remaining work is <strong>checkout</strong> (payments, shipping, tax) and <strong>follow-up</strong> (order notifications and post-purchase emails).</p>
+    <p>This document splits the remaining work three ways so we know exactly who owns what.</p>
   </div>
 
   <div class="summary-counts">
-    <div class="count-card client">
-      <div class="count-num">6</div>
-      <div class="count-label">From Parsons</div>
-    </div>
-    <div class="count-card apollo-do">
-      <div class="count-num">9</div>
-      <div class="count-label">Apollo will do</div>
-    </div>
-    <div class="count-card question">
-      <div class="count-num">6</div>
-      <div class="count-label">Open questions</div>
-    </div>
-    <div class="count-card future">
-      <div class="count-num">7</div>
-      <div class="count-label">After launch</div>
-    </div>
+    <div class="count-card client"><div class="count-num">3</div><div class="count-label">From Parsons</div></div>
+    <div class="count-card apollo-do"><div class="count-num">5</div><div class="count-label">Apollo will do</div></div>
+    <div class="count-card question"><div class="count-num">3</div><div class="count-label">Open questions</div></div>
+    <div class="count-card future"><div class="count-num">7</div><div class="count-label">After launch</div></div>
   </div>
 
   <section id="client">
     <div class="section-header">
       <h2><span class="num">01</span>What we need from Parsons</h2>
-      <span class="section-sub">Decisions, content, and access we're waiting on to unblock launch work.</span>
+      <span class="section-sub">Decisions and inputs to unblock Apollo's launch work.</span>
     </div>
 
     <div class="item client">
       <div class="item-head">
-        <div class="item-title">Underwriting + decision on payment processor</div>
+        <div class="item-title">Payment processor decision + underwriting</div>
         <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
-        <p>The store cannot accept a real order until a payment processor is connected. Today only test-card processing is enabled.</p>
-        <p><strong>What we need:</strong> Parsons to choose between <strong>BigCommerce Payments</strong> (bundles cards, PayPal, Venmo, Pay Later, digital wallets in one checkout — recommended) or <strong>Stripe</strong> (better if Parsons has an existing Stripe relationship). Underwriting paperwork lives with the business owner — bank info, EIN, business address.</p>
+        <p>Today the store is in test-card mode only — no live processor is connected. The store cannot accept a real order until this is plumbed in.</p>
+        <p><strong>What we need:</strong> Parsons picks <strong>BigCommerce Payments</strong> (recommended — bundles cards, PayPal, Venmo, Pay Later, digital wallets in one checkout, no separate contracts) or <strong>Stripe</strong> (better if Parsons already has a Stripe relationship). Underwriting paperwork sits with the business owner — bank info, EIN, business address.</p>
       </div>
     </div>
 
     <div class="item client">
       <div class="item-head">
-        <div class="item-title">Sales tax direction (manual rates or Avalara)</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
+        <div class="item-title">Sales tax direction</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
-        <p>No tax rates are configured. Selling auto equipment across state lines triggers nexus rules — getting this wrong creates legal exposure and reconciliation headaches at year-end.</p>
-        <p><strong>What we need:</strong> Parsons' position on tax — either (a) the list of states where Parsons has sales-tax nexus and we configure manually, or (b) a green light to install <strong>Avalara AvaTax</strong>, which auto-applies the correct rate per shipping address. Pricing on Avalara depends on transaction volume.</p>
+        <p>Zero tax rates are configured today. Selling auto equipment across state lines triggers nexus rules — getting this wrong creates legal exposure and reconciliation work at year-end.</p>
+        <p><strong>What we need:</strong> either (a) the list of states where Parsons has confirmed sales-tax nexus and Apollo configures manually, or (b) a green light to install <strong>Avalara AvaTax</strong>, which auto-applies the right rate per shipping address (monthly cost based on transaction volume).</p>
       </div>
     </div>
 
     <div class="item client">
       <div class="item-head">
-        <div class="item-title">Legal and policy content</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
+        <div class="item-title">Order notification recipient + customer-facing "from" email</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
-        <p>Privacy Policy, Terms of Service, Return Policy, and Shipping Policy pages need to be live and linked from the footer before launch. Privacy is a legal requirement; the others are baseline trust signals customers check before purchase.</p>
-        <p><strong>What we need:</strong> Parsons supplies the policy text, OR signs off on starter templates Apollo drafts based on Parsons' return-window, restocking-fee, and warranty practices.</p>
-      </div>
-    </div>
-
-    <div class="item client">
-      <div class="item-head">
-        <div class="item-title">Order-fulfillment owner and notification email</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
-      </div>
-      <div class="item-body">
-        <p>When an order comes in, someone at Parsons needs to be alerted so fulfillment can begin. The store needs a real "from" address tied to the new domain for customer-facing emails so confirmation messages don't look like spam.</p>
-        <p><strong>What we need:</strong> the email address of the team member who owns order fulfillment (admin alert recipient), plus confirmation that <code>orders@shopautoequip.com</code> works as the customer-facing "from" address.</p>
-      </div>
-    </div>
-
-    <div class="item client">
-      <div class="item-head">
-        <div class="item-title">About Us page content + contact information</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
-      </div>
-      <div class="item-body">
-        <p>The home page already has an About section with a "Read More" button — but that button isn't linked to a full page yet. We also need contact details to surface in the header and footer.</p>
-        <p><strong>What we need:</strong> About Us page copy (or sign-off on a draft Apollo writes), plus the phone number, business address, and contact email Parsons wants displayed site-wide.</p>
-      </div>
-    </div>
-
-    <div class="item client">
-      <div class="item-head">
-        <div class="item-title">Pop-up content for first promo (AC Machines spring)</div>
-        <div class="item-tags"><span class="tag priority-quick">Quick</span></div>
-      </div>
-      <div class="item-body">
-        <p>The pop-up framework was scaffolded during the homepage build. The first scheduled promo — AC Machines spring — needs final imagery and copy before it goes live.</p>
-        <p><strong>What we need:</strong> the AC Machines promo image and rough copy from Allie. Apollo styles and wires the CTA to the right category page.</p>
+        <p>When an order comes in, someone at Parsons needs to be alerted so fulfillment begins. Customer-facing confirmation emails need a real "from" address tied to the domain so they don't look like spam.</p>
+        <p><strong>What we need:</strong> the email of the team member who owns order fulfillment (admin alert recipient), and confirmation that <code>orders@shopautoequip.com</code> works as the customer-facing "from" address.</p>
       </div>
     </div>
 
@@ -334,7 +139,7 @@
   <section id="apollo-do">
     <div class="section-header">
       <h2><span class="num">02</span>What Apollo will do before launch</h2>
-      <span class="section-sub">Tasks Apollo owns and will complete — no client interpretation needed.</span>
+      <span class="section-sub">Tasks Apollo owns and will complete — no client interpretation required.</span>
     </div>
 
     <div class="item apollo-do">
@@ -343,13 +148,13 @@
         <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
-        <p>Per the documented requirement, shipping is included in MAP pricing and items ship from multiple warehouses. We'll add each fulfillment warehouse in <strong>Settings → Locations</strong>, enable the "Free shipping" method on the U.S. zone, and confirm product-to-location mapping reflects which warehouse each SKU ships from.</p>
+        <p>Per the documented requirement, shipping is included in MAP pricing and items ship from multiple warehouses. Apollo will add each fulfillment warehouse in <strong>Settings → Locations</strong>, enable the "Free shipping" method on the U.S. zone, and confirm product-to-location mapping reflects which warehouse each SKU ships from.</p>
       </div>
     </div>
 
     <div class="item apollo-do">
       <div class="item-head">
-        <div class="item-title">Connect payment processor (once chosen)</div>
+        <div class="item-title">Connect the chosen payment processor</div>
         <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
@@ -359,8 +164,8 @@
 
     <div class="item apollo-do">
       <div class="item-head">
-        <div class="item-title">Set up tax (manual rates or Avalara install)</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
+        <div class="item-title">Set up tax (manual rates or Avalara)</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
       </div>
       <div class="item-body">
         <p>Once Parsons gives the direction, Apollo either configures the manual nexus-state rates in Basic Tax or installs and configures Avalara AvaTax.</p>
@@ -369,61 +174,21 @@
 
     <div class="item apollo-do">
       <div class="item-head">
-        <div class="item-title">Configure order notifications + transactional email branding</div>
+        <div class="item-title">Plumb in follow-up emails (order, shipping, abandoned cart)</div>
         <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
       </div>
       <div class="item-body">
-        <p>Apollo sets the admin alert recipient, points the customer-facing "from" address at the new domain, and runs a quick brand-review pass on the order-confirmation and shipping-confirmation email templates.</p>
+        <p>Apollo sets the admin alert recipient, points the customer "from" address at the domain, brand-passes the order-confirmation and shipping-confirmation templates, and turns on BigCommerce's native abandoned-cart saver (recovers 10–15% of abandoned carts on average).</p>
       </div>
     </div>
 
     <div class="item apollo-do">
       <div class="item-head">
-        <div class="item-title">Publish legal pages + footer links</div>
+        <div class="item-title">End-to-end test order</div>
         <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
       </div>
       <div class="item-body">
-        <p>Once Parsons supplies content (or signs off on drafts), Apollo publishes the four policy pages as BigCommerce Web Pages and links them from the footer.</p>
-      </div>
-    </div>
-
-    <div class="item apollo-do">
-      <div class="item-head">
-        <div class="item-title">Add contact info to header + footer</div>
-        <div class="item-tags"><span class="tag priority-quick">Quick</span></div>
-      </div>
-      <div class="item-body">
-        <p>Apollo adds the phone, address, and contact email to the footer; phone-to-call link in the header for higher-intent buyers.</p>
-      </div>
-    </div>
-
-    <div class="item apollo-do">
-      <div class="item-head">
-        <div class="item-title">Install GA4 + Meta Pixel + verify SEO baseline</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
-      </div>
-      <div class="item-body">
-        <p>Without analytics installed at launch, the first month of traffic data is lost forever. Apollo installs Google Analytics 4 and Meta Pixel through BigCommerce's native Data Solutions integration, verifies the auto-generated sitemap and <code>robots.txt</code>, and submits the sitemap to Google Search Console on launch day.</p>
-      </div>
-    </div>
-
-    <div class="item apollo-do">
-      <div class="item-head">
-        <div class="item-title">Enable abandoned-cart recovery + tune search</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
-      </div>
-      <div class="item-body">
-        <p>Apollo turns on BigCommerce's built-in abandoned-cart saver (recovers 10–15% of abandoned carts on average) and tunes the native search to return relevant results for the top queries Parsons expects, including SKU-level lookups.</p>
-      </div>
-    </div>
-
-    <div class="item apollo-do">
-      <div class="item-head">
-        <div class="item-title">Mobile QA, 404 page, end-to-end test order</div>
-        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
-      </div>
-      <div class="item-body">
-        <p>Apollo walks the home → category → product → cart → checkout flow on a real iPhone and Android, customizes the 404 page to match brand and offer recovery paths, and places a real $1 test order using a Parsons card to verify the entire flow (admin email received, customer email received, tax + shipping applied, refund processed).</p>
+        <p>Once payment, shipping, tax, and follow-up emails are configured, Apollo places a real $1 test order using a Parsons card to verify the full flow: order placed, admin email received, customer email received, tax + shipping applied correctly. Then refunds. Any config issue surfaces here, not on launch day.</p>
       </div>
     </div>
 
@@ -432,12 +197,12 @@
   <section id="questions">
     <div class="section-header">
       <h2><span class="num">03</span>Open questions we need answered</h2>
-      <span class="section-sub">Quick decisions Parsons makes that unblock multiple Apollo tasks above.</span>
+      <span class="section-sub">Quick decisions Parsons makes that unblock the Apollo tasks above.</span>
     </div>
 
     <div class="item question">
       <p class="question-text">Which payment processor — BigCommerce Payments or Stripe?</p>
-      <p class="question-context">BC Payments is the simpler all-in-one (cards, PayPal, Venmo, Pay Later, wallets, no separate contracts). Stripe is more granular and worth choosing if Parsons already has a Stripe account and processing relationship.</p>
+      <p class="question-context">BC Payments is the simpler all-in-one (cards, PayPal, Venmo, Pay Later, wallets, no separate contracts). Stripe is more granular and worth choosing if Parsons already has a Stripe relationship.</p>
     </div>
 
     <div class="item question">
@@ -446,23 +211,8 @@
     </div>
 
     <div class="item question">
-      <p class="question-text">Returns policy specifics — timeframe, restocking, who pays return shipping?</p>
-      <p class="question-context">Apollo can draft a starter Return Policy, but we need Parsons' actual practice on (a) return window in days, (b) any restocking fees, (c) which party pays return shipping, and (d) any items that can't be returned (oversized freight, special-order). Same answers shape the Refunds messaging at checkout.</p>
-    </div>
-
-    <div class="item question">
-      <p class="question-text">About Us page — Parsons writes or Apollo drafts?</p>
-      <p class="question-context">The home page already has the About section linked. The full page can be (a) Parsons-supplied copy on company history and capabilities, or (b) an Apollo draft Parsons reviews and edits. Either way, two-day turnaround once the choice is made.</p>
-    </div>
-
-    <div class="item question">
-      <p class="question-text">Cross-site links — which Parsons companies' sites should link to Shopautoequip, and vice versa?</p>
-      <p class="question-context">The kickoff brief flagged this as a cross-site ecosystem play. We need the list of sister-company sites that should outbound to Shopautoequip (and which should receive inbound links from the Brands section). Apollo handles the placement once we have the list.</p>
-    </div>
-
-    <div class="item question">
-      <p class="question-text">Free-shipping callout on the homepage — yes or no?</p>
-      <p class="question-context">Since shipping is baked into MAP pricing, a "Free shipping included" callout on the home page can be a real conversion lift. Or it can be left off if Parsons would rather keep the messaging quieter. Apollo's recommendation is to include it.</p>
+      <p class="question-text">Returns policy specifics — return window, restocking fees, who pays return shipping?</p>
+      <p class="question-context">These answers shape the Refunds messaging at checkout and any Return Policy page text. Apollo can draft starter language, but we need Parsons' actual practice on (a) return window in days, (b) restocking fees, (c) who pays return shipping, (d) any items that can't be returned (oversized freight, special-order).</p>
     </div>
 
   </section>
@@ -473,40 +223,13 @@
       <span class="section-sub">Capabilities to add in week 2–4 and beyond, once orders are flowing.</span>
     </div>
 
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Customer reviews + ratings on product pages</div></div>
-      <div class="item-body"><p>Reviews lift conversion 10–30% on equipment categories. BigCommerce has native reviews; Yotpo or Judge.me add richer widgets and email solicitation. Best added once early orders have shipped to seed the reviews.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Email marketing platform (Klaviyo or Mailchimp)</div></div>
-      <div class="item-body"><p>Captures email signups, runs welcome series, post-purchase flows, win-back campaigns. Klaviyo is the e-commerce default. Worth standing up in week 2–4 once there's a list to mail.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Schema markup + rich Google results</div></div>
-      <div class="item-body"><p>Product schema unlocks Google Shopping rich results (price, availability, ratings in search). BigCommerce themes generate basic schema; can be extended with FAQ, Breadcrumb, and Organization schema for additional SERP real estate.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">ShipStation for fulfillment + label printing</div></div>
-      <div class="item-body"><p>Once order volume is past ~10–20 per week, batch label printing and rate-shopping across carriers via ShipStation saves real time and money. Free for low volume, tiered after that.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Sage 100 Contractor integration</div></div>
-      <div class="item-body"><p>The original kickoff conversation flagged a bi-directional API between BigCommerce and Sage 100 Contractor for inventory and order sync. Worth revisiting once order volume justifies the integration cost — too heavy for launch.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Promotions + coupon system</div></div>
-      <div class="item-body"><p>First-purchase discount, free-shipping threshold, seasonal codes. BigCommerce native, no app needed. Add when there's a marketing reason to run one.</p></div>
-    </div>
-
-    <div class="item future">
-      <div class="item-head"><div class="item-title">Live chat or chatbot for sales support</div></div>
-      <div class="item-body"><p>High-ticket equipment buyers ask pre-purchase questions. Tidio, Gorgias, or Intercom are common picks. Only worth it if Parsons can respond within minutes during business hours — otherwise it hurts more than it helps.</p></div>
-    </div>
+    <div class="item future"><div class="item-head"><div class="item-title">Customer reviews + ratings on product pages</div></div><div class="item-body"><p>Reviews lift conversion 10–30% on equipment categories. BigCommerce has native reviews; Yotpo or Judge.me add richer widgets and email solicitation. Best added once early orders have shipped to seed the reviews.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">Email marketing platform (Klaviyo or Mailchimp)</div></div><div class="item-body"><p>Captures email signups, runs welcome series, post-purchase flows, win-back campaigns. Klaviyo is the e-commerce default. Worth standing up in week 2–4 once there's a list to mail.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">Schema markup + rich Google results</div></div><div class="item-body"><p>Product schema unlocks Google Shopping rich results (price, availability, ratings in search). BigCommerce themes generate basic schema; can be extended with FAQ, Breadcrumb, and Organization schema for additional SERP real estate.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">ShipStation for fulfillment + label printing</div></div><div class="item-body"><p>Once order volume is past ~10–20 per week, batch label printing and rate-shopping across carriers via ShipStation saves real time and money. Free for low volume, tiered after that.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">Sage 100 Contractor integration</div></div><div class="item-body"><p>The original kickoff conversation flagged a bi-directional API between BigCommerce and Sage 100 Contractor for inventory and order sync. Worth revisiting once order volume justifies the integration cost — too heavy for launch.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">Promotions + coupon system</div></div><div class="item-body"><p>First-purchase discount, free-shipping threshold, seasonal codes. BigCommerce native, no app needed. Add when there's a marketing reason to run one.</p></div></div>
+    <div class="item future"><div class="item-head"><div class="item-title">Live chat or chatbot for sales support</div></div><div class="item-body"><p>High-ticket equipment buyers ask pre-purchase questions. Tidio, Gorgias, or Intercom are common picks. Only worth it if Parsons can respond within minutes during business hours — otherwise it hurts more than it helps.</p></div></div>
 
   </section>
 
