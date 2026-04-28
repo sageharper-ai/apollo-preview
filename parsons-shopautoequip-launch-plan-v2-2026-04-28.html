@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Shopautoequip.com — Launch Plan v2 | Apollo Marketing</title>
+<style>
+  :root {
+    --bg: #0e1421;
+    --bg-elev: #161e2d;
+    --bg-card: #131b29;
+    --border: #28324a;
+    --text: #f3f4f6;
+    --text-soft: #d1d5db;
+    --text-mute: #9ca3af;
+    --apollo: #faa523;
+    --apollo-soft: rgba(250, 165, 35, 0.14);
+    --client: #60a5fa;
+    --apollo-do: #34d399;
+    --question: #fbbf24;
+    --future: #a78bfa;
+    --decided: #10b981;
+    --decided-soft: rgba(16, 185, 129, 0.18);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 96px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--apollo);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  h1 span.brand { color: var(--apollo); }
+  h1 .v2 { font-size: 0.5em; font-weight: 600; color: var(--decided); vertical-align: super; margin-left: 12px; }
+  .lede { font-size: 18px; color: var(--text-soft); max-width: 760px; line-height: 1.55; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .meta-item .meta-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .verdict {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--decided);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .verdict h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .verdict p { color: var(--text-soft); font-size: 16px; margin-bottom: 10px; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .verdict strong { color: var(--text); font-weight: 700; }
+  .verdict .decided { color: var(--decided); font-weight: 700; }
+
+  .summary-counts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .count-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .count-card.client { border-top: 3px solid var(--client); }
+  .count-card.apollo-do { border-top: 3px solid var(--apollo-do); }
+  .count-card.question { border-top: 3px solid var(--question); }
+  .count-card.future { border-top: 3px solid var(--future); }
+  .count-num { font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 6px; color: var(--text); }
+  .count-card.client .count-num { color: var(--client); }
+  .count-card.apollo-do .count-num { color: var(--apollo-do); }
+  .count-card.question .count-num { color: var(--question); }
+  .count-card.future .count-num { color: var(--future); }
+  .count-label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-soft); }
+
+  section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; padding-bottom: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .section-header h2 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .section-header h2 .num {
+    color: var(--apollo);
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .section-sub { color: var(--text-soft); font-size: 14px; flex: 1; min-width: 280px; }
+
+  .item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .item.client { border-left: 3px solid var(--client); }
+  .item.apollo-do { border-left: 3px solid var(--apollo-do); }
+  .item.question { border-left: 3px solid var(--question); }
+  .item.future { border-left: 3px solid var(--future); }
+
+  .item-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+  .item-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+    flex: 1;
+    min-width: 240px;
+  }
+  .item-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .tag.priority-blocker { background: rgba(248, 113, 113, 0.18); color: #fca5a5; }
+  .tag.priority-launch { background: var(--apollo-soft); color: var(--apollo); }
+  .tag.priority-quick { background: rgba(52, 211, 153, 0.18); color: #6ee7b7; }
+  .tag.decided { background: var(--decided-soft); color: var(--decided); }
+  .tag.new { background: rgba(167, 139, 250, 0.18); color: #c4b5fd; }
+  .tag.from-meeting { background: rgba(96, 165, 250, 0.18); color: #93c5fd; }
+
+  .item-body p { color: var(--text-soft); font-size: 14.5px; line-height: 1.6; margin-bottom: 8px; }
+  .item-body p:last-child { margin-bottom: 0; }
+  .item-body strong { color: var(--text); font-weight: 700; }
+  .item-body .decision { color: var(--decided); font-weight: 600; }
+  .item-body code {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--apollo);
+  }
+
+  .question-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .question-context { color: var(--text-soft); font-size: 13.5px; line-height: 1.55; }
+
+  footer { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+  .footer-brand { font-size: 16px; font-weight: 700; }
+  .footer-brand span { color: var(--apollo); }
+  .footer-meta { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 32px 18px 64px; }
+    .summary-counts { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Apollo Marketing · Path to Launch</div>
+    <h1>Shopautoequip.com<br><span class="brand">Launch Plan</span><span class="v2">v2</span></h1>
+    <p class="lede">Updated post-meeting (Apr 28, 11:05 AM ET). Reflects decisions made during the working session with Tom, Steve, and Ali. Most v1 open questions are now answered; new scope items surfaced from the walkthrough.</p>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Parsons Ventures</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Storefront</div>
+        <div class="meta-value">Shopautoequip.com</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Platform</div>
+        <div class="meta-value">BigCommerce</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">v2 Date</div>
+        <div class="meta-value">April 28, 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Meeting</div>
+        <div class="meta-value">11:05–12:03 AM ET</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Prepared by</div>
+        <div class="meta-value">Apollo Marketing</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <h2>What changed since v1</h2>
+    <p><span class="decided">DECIDED in meeting:</span> payment processor approach (cards + PayPal + Venmo bundled), sales-tax basis (destination, not origin), AI chatbot (approved), social channels (Facebook + Instagram, no LinkedIn), blog at launch (3 posts: launch announcement / categories / promotions), brand placement (top-sellers first, clickable), homepage copy edits (remove service & install references), About Us page scope (history + FAQ).</p>
+    <p><strong>Net effect on the path:</strong> v1's 3 open questions dropped to 4 different ones. Apollo's task list grew from 5 to 14 — the meeting surfaced UX, content, and integration scope that wasn't visible in the audit. Most of it is configuration + content shaping, not net-new building.</p>
+    <p>The launch path is clearer, not shorter.</p>
+  </div>
+
+  <div class="summary-counts">
+    <div class="count-card client">
+      <div class="count-num">9</div>
+      <div class="count-label">From Parsons</div>
+    </div>
+    <div class="count-card apollo-do">
+      <div class="count-num">14</div>
+      <div class="count-label">Apollo will do</div>
+    </div>
+    <div class="count-card question">
+      <div class="count-num">4</div>
+      <div class="count-label">Open questions</div>
+    </div>
+    <div class="count-card future">
+      <div class="count-num">5</div>
+      <div class="count-label">After launch</div>
+    </div>
+  </div>
+
+  <section id="client">
+    <div class="section-header">
+      <h2><span class="num">01</span>What we need from Parsons</h2>
+      <span class="section-sub">Content + decisions that unblock Apollo's launch work.</span>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Complete payment-processor underwriting (cards, PayPal, Venmo)</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> processor stack covers credit cards + PayPal + Venmo. BigCommerce Payments natural fit (single contract). Underwriting paperwork still requires Parsons' bank details, EIN, and business address.</p>
+        <p><strong>What we need:</strong> Tom or Steve completes the underwriting application; Apollo handles the BigCommerce-side connection once approved.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">About Us page content (company history + FAQ)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Tom committed to drafting a comprehensive About Us with multiple sections — company history, FAQ, brand story. Sage flagged this as SEO-relevant.</p>
+        <p><strong>What we need:</strong> Tom's draft. Apollo styles the page once content arrives.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Final homepage copy edits (Tom's revisions)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided in meeting:</span></p>
+        <p>• Remove references to "service" and "installation" — Parsons supplies equipment, doesn't service it from this site<br>
+        • Update second line to mention <em>"service facilities across the country"</em><br>
+        • Equipment description revised to: <em>"Whether you're in the market for a single lift, a new compressor, or planning a full shop build-out, we have the equipment to fit your needs."</em><br>
+        • "Connect with us" line updated to: <em>"Connect with us to stay up to date with ShopAutoEquip.com on sales and new products"</em></p>
+        <p><strong>What we need:</strong> Tom's final-pass approval before Apollo applies the edits site-wide. Sage suggested using AI for polish, finalize at 80% satisfied.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Brand placement — top-sellers list + ordering</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> top-selling brands appear at the top of the page with clickable links. Other brands display contact information instead.</p>
+        <p><strong>What we need:</strong> Tom confirms the specific ordering (which brands rank as top-sellers) so Apollo can configure placement.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Graco product catalog correction</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Tom flagged Graco products needed review/correction in the catalog. Specific corrections needed weren't fully spelled out in the working session.</p>
+        <p><strong>What we need:</strong> Tom's specific Graco corrections (which SKUs, what's wrong) so Ali can update.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Financing flow content update (Bill Waddell link)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Financing page currently links out to Bill Waddell's site for application approval. The on-page content needs updating before launch — clearer expectation-setting around what "Apply" actually does (external partner, not in-store checkout).</p>
+        <p><strong>What we need:</strong> Tom's revised financing page copy (or sign-off on a draft Apollo writes).</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Launch blog content (3 posts)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> three blog posts at launch — (1) launch announcement, (2) product categories overview, (3) current promotions.</p>
+        <p><strong>What we need:</strong> Tom or Apollo drafts; Tom's voice approval. Apollo can ghost-write if he prefers.</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Mission statement page content</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Sage suggested adding a mission-statement page alongside About Us. Tom agreed.</p>
+        <p><strong>What we need:</strong> Tom's mission-statement language (or sign-off on Apollo draft).</p>
+      </div>
+    </div>
+
+    <div class="item client">
+      <div class="item-head">
+        <div class="item-title">Social account access — Facebook + Instagram</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> Facebook + Instagram for social presence at launch (LinkedIn dropped).</p>
+        <p><strong>What we need:</strong> existing FB / IG account credentials for Shopautoequip (or confirmation they need to be created), plus brand-asset pack for profile setup.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="apollo-do">
+    <div class="section-header">
+      <h2><span class="num">02</span>What Apollo will do before launch</h2>
+      <span class="section-sub">Tasks Apollo owns and will complete.</span>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Connect payment processor (BigCommerce Payments)</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p>Once Tom completes underwriting, Apollo configures the BC Payments connection (cards + PayPal + Venmo + digital wallets), enables live processing, switches off test-card mode. Sage and Tom to handle setup together on a future call.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Configure multi-warehouse free shipping</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span></div>
+      </div>
+      <div class="item-body">
+        <p>Per documented requirement, shipping is included in MAP pricing across multiple warehouses. Apollo adds each fulfillment warehouse in <strong>Settings → Locations</strong>, enables "Free shipping" on the U.S. zone, confirms product-to-location mapping reflects which warehouse each SKU ships from.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Configure destination-based sales tax</div>
+        <div class="item-tags"><span class="tag priority-blocker">Blocker</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> tax charged based on customer's <strong>destination</strong> address (not origin). Validation deferred until after payment processor connects.</p>
+        <p>Apollo configures destination-based rates in BigCommerce. If transaction volume justifies, switch to Avalara AvaTax for automatic per-state handling. Decision criteria: if Parsons sells into 5+ states regularly, Avalara is worth it.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Plumb in transactional + abandoned-cart emails</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> email notifications for both customers and internal staff, including abandoned-cart follow-ups.</p>
+        <p>Apollo sets the admin alert recipient, points the customer "from" address at the domain, brand-passes the order-confirmation and shipping-confirmation templates, enables BigCommerce's native abandoned-cart saver (recovers 10–15% of carts on average).</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Implement AI chatbot for customer service</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag new">New</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p><span class="decision">Decided:</span> AI chat agent for site monitoring and customer service. Tom approved.</p>
+        <p>Apollo evaluates platform options (Tidio / Drift / Intercom / native BC chat) and proposes a recommendation. Configuration includes: knowledge base from existing site content, escalation path to human (Parsons staff), business-hours setting, brand voice tuning.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Apply Tom's homepage copy edits</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Apply the four specific copy edits decided in meeting (remove service/install references, "service facilities" line, equipment description, "Connect with us" line). AI-assisted polish where Tom approves; finalize at 80% satisfied threshold.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Configure brand placement (top-sellers first, clickable)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Reorganize brand section: top-selling brands at top with clickable links to their product pages; other brands display contact-info treatment. Specific ordering pending Tom's input.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Improve sale-price display (regular vs sale prominence)</div>
+        <div class="item-tags"><span class="tag priority-quick">Quick</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Sage flagged in meeting: the visual difference between regular and sale prices needs to be more prominent. Apollo updates product-card styling so sale callouts read at a glance.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Tablet + mobile versions of Ali's redesigned hero image</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Ali presented a redesigned hero image; Sage agreed to create the tablet and mobile responsive versions. Ali also creating additional versions for specific product categories.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Add images to category menus (theme-friendly approach)</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Theme limits category-menu spacing changes (modifying risks future theme updates). Workaround discussed in meeting: add images to category sections to improve appearance without touching the menu structure itself.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Set up Facebook + Instagram channels</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag new">New</span><span class="tag decided">Decided</span></div>
+      </div>
+      <div class="item-body">
+        <p>Apollo creates / configures FB + IG accounts for Shopautoequip, sets up profile branding, publishes initial post tied to launch announcement.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Build About Us, Mission, FAQ, and Legal pages</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Apollo publishes the four standalone pages once Tom delivers content: About Us (history + FAQ blocks), Mission Statement, FAQ, and Legal pages (Terms & Conditions, Privacy, Returns, Shipping). T&C must align with payment-processor requirements — drafted after BC Payments connects.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">Site-wide aesthetic improvements before launch</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span><span class="tag from-meeting">From meeting</span></div>
+      </div>
+      <div class="item-body">
+        <p>Sage agreed to a polish pass on overall site aesthetics. Includes spacing, hero composition consistency, image quality across category sections, button styling for sale CTAs, and visual hierarchy on product detail pages.</p>
+      </div>
+    </div>
+
+    <div class="item apollo-do">
+      <div class="item-head">
+        <div class="item-title">End-to-end test order + final pre-launch QA</div>
+        <div class="item-tags"><span class="tag priority-launch">Pre-launch</span></div>
+      </div>
+      <div class="item-body">
+        <p>Once all configuration is in place, Apollo places a real test order using a Parsons card to verify the flow end-to-end: order placed, admin email received, customer email received, tax + shipping applied correctly, abandoned-cart trigger fires on a separate test, refund processed cleanly. Mobile checkout tested on real device.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="questions">
+    <div class="section-header">
+      <h2><span class="num">03</span>Open questions</h2>
+      <span class="section-sub">Decisions still unresolved that block specific tasks above.</span>
+    </div>
+
+    <div class="item question">
+      <p class="question-text">Avalara or manual tax rates?</p>
+      <p class="question-context">Direction is decided (destination-based). Implementation choice depends on transaction volume forecast. If Parsons expects to sell into 5+ states regularly, Avalara handles it automatically (monthly cost based on volume). If concentrated in 2–3 states, manual configuration in Basic Tax is free and sufficient. Apollo recommendation comes after payment processor connects and we see early order distribution.</p>
+    </div>
+
+    <div class="item question">
+      <p class="question-text">Returns policy specifics — timeframe, restocking fees, who pays return shipping?</p>
+      <p class="question-context">Tom's input needed on (a) return window in days, (b) any restocking fees (typical for heavy equipment), (c) who pays return shipping, (d) any items that can't be returned (oversized freight, special-order). These shape the Returns page text and refunds messaging at checkout.</p>
+    </div>
+
+    <div class="item question">
+      <p class="question-text">Chatbot platform — Apollo recommendation pending</p>
+      <p class="question-context">Decision to add a chatbot is made. Platform choice is open: Tidio (cheapest, BC-native integration), Drift (sales-led), Intercom (full-featured but pricey), or BigCommerce native chat. Apollo to recommend based on (a) Parsons' inbound volume expectation and (b) who will respond when the bot escalates.</p>
+    </div>
+
+    <div class="item question">
+      <p class="question-text">Email-marketing platform — needed pre-launch or post?</p>
+      <p class="question-context">Klaviyo / Mailchimp would handle: welcome series, post-purchase flows, abandoned-cart enrichment beyond BC's native saver, win-back campaigns. Question: does Parsons want a richer email-marketing platform live at launch, or stand it up after first orders are flowing? Apollo recommendation: defer to week 2–4 unless Tom wants email capture from day one.</p>
+    </div>
+
+  </section>
+
+  <section id="future">
+    <div class="section-header">
+      <h2><span class="num">04</span>After launch</h2>
+      <span class="section-sub">Capabilities to add once orders are flowing.</span>
+    </div>
+
+    <div class="item future">
+      <div class="item-head"><div class="item-title">100% review-cycle strategy (compete with Derek Weaver)</div></div>
+      <div class="item-body"><p>Sage flagged in meeting: post-launch, every order should solicit a review. Reviews lift conversion 10–30% on equipment categories and close the trust gap with established competitors. Yotpo / Judge.me / BC native — pick after launch volume settles.</p></div>
+    </div>
+
+    <div class="item future">
+      <div class="item-head"><div class="item-title">Klaviyo or Mailchimp (if not stood up pre-launch)</div></div>
+      <div class="item-body"><p>Welcome series, segmented post-purchase flows, win-back campaigns. Klaviyo is the e-commerce default. Stand up week 2–4 once there's a list to mail.</p></div>
+    </div>
+
+    <div class="item future">
+      <div class="item-head"><div class="item-title">Promotions + coupon system</div></div>
+      <div class="item-body"><p>First-purchase discount, free-shipping threshold (already baked into MAP, but stack offers possible), seasonal codes. BigCommerce native, no app needed. Add when there's a marketing reason.</p></div>
+    </div>
+
+    <div class="item future">
+      <div class="item-head"><div class="item-title">ShipStation for label printing + multi-carrier rate shopping</div></div>
+      <div class="item-body"><p>Once order volume passes ~10–20 per week, batch label printing via ShipStation saves real time. Free for low volume.</p></div>
+    </div>
+
+    <div class="item future">
+      <div class="item-head"><div class="item-title">Sage 100 Contractor integration</div></div>
+      <div class="item-body"><p>Original kickoff brief flagged a bi-directional API between BigCommerce and Sage 100 Contractor for inventory and order sync. Worth revisiting once order volume justifies the integration cost — too heavy for launch.</p></div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-brand">Apollo <span>Marketing</span></div>
+    <div class="footer-meta">v2 · April 28, 2026 · Post-meeting update</div>
+  </footer>
+
+</div>
+</body>
+</html>
