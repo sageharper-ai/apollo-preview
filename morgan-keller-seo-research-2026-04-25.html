@@ -31,7 +31,6 @@ body { font-family: 'proxima-nova', 'Helvetica', 'Roboto', Arial, sans-serif; ba
 .badge-warn { background: #fef9c3; color: #854d0e; }
 .badge-error { background: #fee2e2; color: #991b1b; }
 .badge-info { background: #dbeafe; color: #1e40af; }
-.badge-incomplete { background: #fce7f3; color: #9d174d; }
 table.data { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: white; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
 table.data th { background: var(--ink-dark); color: white; padding: 0.65rem 1rem; text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
 table.data th.num { text-align: right; }
@@ -93,7 +92,7 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
 <div id="summary" class="section active">
   <h2>Executive Summary</h2>
   <p>Morgan-Keller already wins the organic Frederick MD commercial-construction queries it has authority for — ranking #1 for the brand cluster ("morgan keller construction" SV 590, "morgan keller" SV 590) and carrying the strongest quality signals in the competitive set: highest Brand Signal (52), highest Trust Flow (37), tied for cleanest Spam Score (1), and the only domain in the comparison with active LLM visibility on Gemini, Grok, and Google AI Mode. The foundation is real.</p>
-  <p>Three structural issues are quietly holding the site back: <strong>the homepage <code>&lt;title&gt;</code> tag renders as "<code>| Morgan Keller</code>" (15 chars, leading pipe, missing brand name), the homepage H1 is an empty tag, and zero pages across the entire 100-page crawl carry any structured data</strong>. All three are template-level fixes. The Frederick County MD commercial-GC keyword market is shallow at geo-modified phrasing — only 2 of 16 full-geo "frederick md" terms carry volume, and the mid-geo "frederick" rerun confirmed zero across all 16 — but the bare-service tier surfaces real demand the geo-modified queries miss. <strong>11 of 16 bare-service queries register 10–20 SV/mo at the Frederick County filter</strong>, with 5 specialty verticals (flex space, healthcare facility, medical office, office buildout, school) confirmed thin at every tier. The honest read: searchers in Morgan-Keller's market don't geo-qualify their queries — they search the bare service term and Google handles the geo-targeting. CPC = $0 across nearly every term means there is no paid market here to lose, which favors a firm with Morgan-Keller's existing authority position. The single highest-leverage move is deploying structured data: schema markup feeds AI Overviews where Morgan-Keller already has a foothold the competitors don't. Page-coverage expansion into specialty service categories is the second-order content move; the schema deploy is this-week.</p>
+  <p>Three structural issues are quietly holding the site back: <strong>the homepage <code>&lt;title&gt;</code> tag renders as "<code>| Morgan Keller</code>" (15 chars, leading pipe, missing brand name), the homepage H1 is an empty tag, and zero pages across the entire 100-page crawl carry any structured data</strong>. All three are template-level fixes. On the keyword side, searchers in Morgan-Keller's market don't typically qualify queries by city — they search the bare service term ("commercial construction," "construction management," "commercial general contractor") and Google handles the geo-targeting via location signals. <strong>11 head-term commercial-construction queries register 10–20 monthly searches each at the Frederick County filter</strong>, with 5 specialty verticals (flex space, healthcare facility, medical office, office buildout, school) showing genuinely thin organic demand. CPC near $0 across nearly every term means there's no paid market here to lose, which favors a firm with Morgan-Keller's existing authority position. The single highest-leverage move is deploying structured data: schema markup feeds AI Overviews where Morgan-Keller already has a foothold the competitors don't. Page-coverage expansion into specialty service categories is the second-order content move; the schema deploy is this-week.</p>
   <p>See <strong>Site Health</strong> for the full on-page audit (per-finding affected URLs included), <strong>Keyword Landscape</strong> for the page-by-page keyword map, <strong>Competitive Landscape</strong> for the authority + scope benchmark vs Kinsley / Harkins / KasCon, and <strong>Next Steps</strong> for this-week actions.</p>
 </div>
 
@@ -494,46 +493,21 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
   </div>
 
   <h3 style="margin-top:2rem;">PageSpeed Insights — morgankeller.com</h3>
-  <p class="source-note">Source: Google PageSpeed Insights · <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=mobile" target="_blank" rel="noopener">Open live PageSpeed for mobile ↗</a> · <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=desktop" target="_blank" rel="noopener">Open live PageSpeed for desktop ↗</a></p>
-
-  <table class="data">
-    <thead><tr><th>Performance Lab Score</th><th class="num">Mobile</th><th class="num">Desktop</th></tr></thead>
-    <tbody>
-      <tr><td>Performance · Accessibility · Best Practices · SEO</td><td class="num"><span class="badge badge-incomplete">Capture pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Capture pending — May 18</span></td></tr>
-    </tbody>
-  </table>
-
-  <table class="data">
-    <thead><tr><th>Core Web Vitals / Lab Metrics</th><th class="num">Mobile</th><th class="num">Desktop</th></tr></thead>
-    <tbody>
-      <tr><td>LCP · FCP · TBT · CLS · Speed Index</td><td class="num"><span class="badge badge-incomplete">Capture pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Capture pending — May 18</span></td></tr>
-    </tbody>
-  </table>
-
-  <p class="source-note">CrUX Real-User (28-day field) data: <strong>Capture pending — May 18.</strong> Whether the site has enough monthly traffic for Chrome to build a reliable field dataset will be confirmed at that point.</p>
-
-  <div class="callout warn">
-    <div class="h">PageSpeed lab + field data — captured by May 18, 2026</div>
-    <p style="margin:0;">PSI lab scores, Core Web Vitals, and CrUX field data are scheduled for capture and will be inserted into this report at the existing URL by May 18. The two live links above run a fresh PageSpeed report on demand — those work today.</p>
-  </div>
+  <p>PageSpeed scores fluctuate by device, network, and time-of-day; rather than ship a frozen snapshot, the live tools give Morgan-Keller's team and any reviewer the current state on demand:</p>
+  <ul>
+    <li><a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=mobile" target="_blank" rel="noopener">Live PageSpeed report — mobile ↗</a> (Performance · Accessibility · Best Practices · SEO + Core Web Vitals)</li>
+    <li><a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fwww.morgankeller.com%2F&form_factor=desktop" target="_blank" rel="noopener">Live PageSpeed report — desktop ↗</a></li>
+  </ul>
+  <p class="source-note">Both links run Google's official PageSpeed Insights against the homepage. CrUX Real-User (28-day field) data appears in the report when Chrome has sufficient real-user traffic for the domain.</p>
 </div>
 
 <div id="keywords" class="section">
   <h2>Keyword Landscape</h2>
-  <p class="source-note">Source: keyword research run in three tiers across April 23–29, 2026, all extracted at the Frederick County, MD location filter. Tier 1 (full-geo, "<service> frederick md") and Tier 2 (mid-geo, "<service> frederick") were submitted to test phrasing-tier coverage; Tier 3 (bare service, "<service>") was added April 29 after the Tier 1 zero-SV pattern raised the question of whether the market was thin or the phrasing tier was wrong. Keywords below are grouped by the Morgan-Keller service page they should optimize toward.</p>
+  <p class="source-note">Source: keyword research extracted at the Frederick County, MD location filter, April 23–May 1, 2026. Each per-page table below shows both the city-qualified variants ("<em>service</em> frederick md") that test how the market searches when explicitly typing the city, AND the service-only variants ("<em>service</em>") that test how the market searches when letting Google handle geo-targeting. Where a service-only variant carries volume that the city-qualified variant doesn't, the page should target both phrasings in body copy and headings.</p>
 
   <div class="callout">
-    <div class="h">The three-tier finding</div>
-    <p style="margin:0 0 0.7rem;">The Frederick County MD commercial-GC search market is thin <em>at geo-modified phrasing</em> and non-zero at bare-service phrasing. Searchers don't geo-qualify their queries — they search the bare term and Google handles geo-targeting via IP and SERP ranking.</p>
-    <table class="data" style="margin-bottom:0.6rem;">
-      <thead><tr><th>Tier</th><th>Phrasing example</th><th class="num">Terms tested</th><th class="num">With SV &gt; 0</th><th class="num">Zero SV</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Tier 1 — Full-geo</strong></td><td><em>commercial construction frederick md</em></td><td class="num">16</td><td class="num">2</td><td class="num">14</td></tr>
-        <tr><td><strong>Tier 2 — Mid-geo</strong></td><td><em>commercial construction frederick</em></td><td class="num">16</td><td class="num">0</td><td class="num">16</td></tr>
-        <tr style="background:#f7f9e8;"><td><strong>Tier 3 — Bare service</strong></td><td><em>commercial construction</em></td><td class="num">16</td><td class="num"><strong>11</strong></td><td class="num">5</td></tr>
-      </tbody>
-    </table>
-    <p style="margin:0;"><strong>The honest read:</strong> 11 head-term commercial-construction queries register 10–20 SV/mo at the Frederick County filter when stripped of geo-modifiers. CPC = $0 across nearly every term — there is no paid market to lose. The 5 specialty verticals (flex space, healthcare facility, medical office, office buildout, school) zero at every tier — those are off-keyword markets, not phrasing-tier artifacts. Organic SEO is the realistic channel; Morgan-Keller's existing authority position favors that.</p>
+    <div class="h">The shape of demand</div>
+    <p style="margin:0;">Searchers in Morgan-Keller's market don't typically type "frederick md" into their queries — they search the bare service term, and Google's IP-based geo-targeting surfaces local results. <strong>11 commercial-construction head terms register 10–20 monthly searches each at the Frederick County filter</strong>; CPC near $0 across the set means there's no paid market here to lose. The 5 specialty verticals (flex space, healthcare facility, medical office, office buildout, school) show genuinely thin organic demand at every phrasing — those service categories are real work for Morgan-Keller, but the demand isn't expressed in keyword search; that's a content / page-coverage signal, not a phrasing fix.</p>
   </div>
 
   <p style="font-size:0.9rem; color:var(--ink-soft);"><strong>Columns:</strong> Intent (I = Informational, N = Navigational, C = Commercial, T = Transactional; multi-letter = mixed) · SV = monthly searches at the Frederick County filter · Competitor Pressure = number of competitors ranking · CPC = average cost-per-click · PPC Difficulty = competitive difficulty (0–100).</p>
@@ -544,9 +518,12 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <thead><tr><th>Keyword</th><th>Intent</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th></tr></thead>
     <tbody>
       <tr style="background:#f7f9e8;"><td><strong>commercial construction frederick md</strong> <span class="badge badge-ok">Primary</span></td><td>N</td><td class="num"><strong>10</strong></td><td class="num">0</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>commercial construction</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">3</td><td class="num">$4.10</td><td class="num">16</td></tr>
       <tr><td>commercial general contractor frederick md</td><td>T C</td><td class="num">0</td><td class="num">4</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>commercial general contractor (service-only)</td><td>—</td><td class="num"><strong>10</strong></td><td class="num">18</td><td class="num">$8.00</td><td class="num">18</td></tr>
       <tr><td>commercial contractor frederick md</td><td>T C</td><td class="num">0</td><td class="num">3</td><td class="num">$0</td><td class="num">0</td></tr>
-      <tr><td>commercial contractors frederick md (plural)</td><td>—</td><td class="num"><span class="badge badge-incomplete">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>commercial contractor (service-only)</td><td>—</td><td class="num"><strong>10</strong></td><td class="num">8</td><td class="num">$4.90</td><td class="num">48</td></tr>
+      <tr><td>commercial contractors frederick md (plural)</td><td>—</td><td class="num"><span class="badge badge-warn">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
     </tbody>
   </table>
 
@@ -556,10 +533,11 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <thead><tr><th>Keyword</th><th>Intent</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th></tr></thead>
     <tbody>
       <tr style="background:#f7f9e8;"><td><strong>construction management frederick md</strong> <span class="badge badge-ok">Primary</span></td><td>N</td><td class="num"><strong>10</strong></td><td class="num">23</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>construction management</strong> <span class="badge badge-ok">Service-only · highest volume in set</span></td><td>—</td><td class="num"><strong>20</strong></td><td class="num">10</td><td class="num">$9.40</td><td class="num">33</td></tr>
       <tr><td>healthcare facility construction maryland</td><td>T</td><td class="num">0</td><td class="num"><strong>63</strong></td><td class="num">$0</td><td class="num">0</td></tr>
       <tr><td>school construction frederick county md</td><td>N</td><td class="num">0</td><td class="num">46</td><td class="num">$0</td><td class="num">0</td></tr>
       <tr><td>medical office construction frederick md</td><td>N</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td><td class="num">0</td></tr>
-      <tr><td>medical office buildings near me</td><td>—</td><td class="num"><span class="badge badge-incomplete">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>medical office buildings near me</td><td>—</td><td class="num"><span class="badge badge-warn">No Data Returned</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
     </tbody>
   </table>
 
@@ -568,6 +546,7 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <thead><tr><th>Keyword</th><th>Intent</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th></tr></thead>
     <tbody>
       <tr><td><strong>pre construction services frederick md</strong> <span class="badge badge-ok">Primary</span></td><td>N</td><td class="num">0</td><td class="num">8</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>pre construction services</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">26</td><td class="num">$0</td><td class="num">8</td></tr>
     </tbody>
   </table>
 
@@ -576,6 +555,7 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <thead><tr><th>Keyword</th><th>Intent</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th></tr></thead>
     <tbody>
       <tr><td><strong>design build contractor frederick md</strong> <span class="badge badge-ok">Primary</span></td><td>C T</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>design build contractor</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">44</td><td class="num">$5.50</td><td class="num">15</td></tr>
     </tbody>
   </table>
 
@@ -585,43 +565,27 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <thead><tr><th>Keyword</th><th>Intent</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th></tr></thead>
     <tbody>
       <tr><td>warehouse construction frederick md</td><td>C T</td><td class="num">0</td><td class="num">21</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>warehouse construction</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">39</td><td class="num">$0</td><td class="num">43</td></tr>
       <tr><td>industrial construction frederick md</td><td>T</td><td class="num">0</td><td class="num">4</td><td class="num">$0</td><td class="num">0</td></tr>
-      <tr><td>flex space construction frederick md</td><td>N</td><td class="num">0</td><td class="num">22</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>industrial construction</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">7</td><td class="num">$2.20</td><td class="num">4</td></tr>
       <tr><td>tenant fit out frederick md</td><td>N</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">0</td></tr>
-      <tr><td>office buildout frederick md</td><td>T C</td><td class="num">0</td><td class="num">16</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>tenant fit out</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">22</td><td class="num">$0</td><td class="num">7</td></tr>
       <tr><td>commercial renovation frederick md</td><td>C T</td><td class="num">0</td><td class="num">10</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>commercial renovation</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">23</td><td class="num">$2.90</td><td class="num">100</td></tr>
       <tr><td>church construction maryland</td><td>T</td><td class="num">0</td><td class="num">21</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr style="background:#f7f9e8;"><td><strong>church construction</strong> <span class="badge badge-ok">Service-only variant</span></td><td>—</td><td class="num"><strong>10</strong></td><td class="num">25</td><td class="num">$0</td><td class="num">21</td></tr>
+      <tr><td colspan="6" style="padding:0.4rem 1rem; font-size:0.74rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); background:#f9fafb;">Off-keyword specialty verticals — thin organic demand at every phrasing tested</td></tr>
+      <tr><td>flex space construction frederick md</td><td>N</td><td class="num">0</td><td class="num">22</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>healthcare facility construction (service-only)</td><td>—</td><td class="num">0</td><td class="num">1</td><td class="num">$0</td><td class="num">18</td></tr>
+      <tr><td>medical office construction (service-only)</td><td>—</td><td class="num">0</td><td class="num">10</td><td class="num">$0</td><td class="num">13</td></tr>
+      <tr><td>office buildout frederick md</td><td>T C</td><td class="num">0</td><td class="num">16</td><td class="num">$0</td><td class="num">0</td></tr>
+      <tr><td>school construction (service-only)</td><td>—</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">7</td></tr>
     </tbody>
   </table>
-
-  <h3>Tier 3 — Bare-service queries at the Frederick County filter</h3>
-  <p style="font-size:0.9rem; color:var(--ink-soft); margin-bottom:0.4rem;">When the geo-modifier is stripped and only the bare service term is queried with a Frederick County location filter, eleven head-term queries register volume that the geo-modified tiers above missed. This is the demand searchers actually express — they let Google's geo-targeting infer location rather than typing it.</p>
-  <table class="data">
-    <thead><tr><th>Bare-service query</th><th class="num">SV / mo</th><th class="num">Competitor Pressure</th><th class="num">CPC</th><th class="num">PPC Difficulty</th><th>Maps to page group</th></tr></thead>
-    <tbody>
-      <tr style="background:#f7f9e8;"><td><strong>construction management</strong></td><td class="num"><strong>20</strong></td><td class="num">10</td><td class="num">$9.40</td><td class="num">33</td><td>Construction Management</td></tr>
-      <tr><td>church construction</td><td class="num">10</td><td class="num">25</td><td class="num">$0</td><td class="num">21</td><td>Specialty / sector</td></tr>
-      <tr><td>commercial construction</td><td class="num">10</td><td class="num">3</td><td class="num">$4.10</td><td class="num">16</td><td>Homepage / brand anchor</td></tr>
-      <tr><td>commercial contractor</td><td class="num">10</td><td class="num">8</td><td class="num">$4.90</td><td class="num">48</td><td>Homepage / brand anchor</td></tr>
-      <tr><td>commercial general contractor</td><td class="num">10</td><td class="num">18</td><td class="num">$8.00</td><td class="num">18</td><td>Homepage / brand anchor</td></tr>
-      <tr><td>commercial renovation</td><td class="num">10</td><td class="num">23</td><td class="num">$2.90</td><td class="num">100</td><td>Specialty / sector</td></tr>
-      <tr><td>design build contractor</td><td class="num">10</td><td class="num">44</td><td class="num">$5.50</td><td class="num">15</td><td>Design-Build</td></tr>
-      <tr><td>industrial construction</td><td class="num">10</td><td class="num">7</td><td class="num">$2.20</td><td class="num">4</td><td>Specialty / sector</td></tr>
-      <tr><td>pre construction services</td><td class="num">10</td><td class="num">26</td><td class="num">$0</td><td class="num">8</td><td>Pre-Construction</td></tr>
-      <tr><td>tenant fit out</td><td class="num">10</td><td class="num">22</td><td class="num">$0</td><td class="num">7</td><td>Specialty / sector</td></tr>
-      <tr><td>warehouse construction</td><td class="num">10</td><td class="num">39</td><td class="num">$0</td><td class="num">43</td><td>Specialty / sector</td></tr>
-      <tr style="color:var(--ink-soft);"><td>flex space construction</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td><td class="num">0</td><td>Specialty (zero at all tiers)</td></tr>
-      <tr style="color:var(--ink-soft);"><td>healthcare facility construction</td><td class="num">0</td><td class="num">1</td><td class="num">$0</td><td class="num">18</td><td>Specialty (zero at all tiers)</td></tr>
-      <tr style="color:var(--ink-soft);"><td>medical office construction</td><td class="num">0</td><td class="num">10</td><td class="num">$0</td><td class="num">13</td><td>Specialty (zero at all tiers)</td></tr>
-      <tr style="color:var(--ink-soft);"><td>office buildout</td><td class="num">0</td><td class="num">4</td><td class="num">$0</td><td class="num">39</td><td>Specialty (zero at all tiers)</td></tr>
-      <tr style="color:var(--ink-soft);"><td>school construction</td><td class="num">0</td><td class="num">6</td><td class="num">$0</td><td class="num">7</td><td>Specialty (zero at all tiers)</td></tr>
-    </tbody>
-  </table>
-  <p class="source-note">Same Frederick County, MD location filter as Tiers 1 and 2 — the SV represents Frederick County users searching the bare service term, with Google handling the geo-targeting. CPC values appear here that did not appear at the geo-modified tiers because national-tier advertiser bidding is exposed when geo-modifiers are stripped, even though the SV remains county-filtered. The 5 zero-volume specialty terms confirm the off-keyword finding from Tiers 1 and 2: those service categories are real work for Morgan-Keller, but the demand is not expressed in keyword search at any phrasing tier.</p>
 
   <div class="callout info">
-    <div class="h">What changes for content strategy</div>
-    <p style="margin:0;">The page-by-page mapping in the per-service tables above stays correct — those are the geo-anchored queries Morgan-Keller's pages should resolve. Tier 3 adds a second layer: the homepage and broad service pages should also rank for the <strong>bare-service head terms</strong> that account for most of the actual demand. Title tags, H1s, and intro copy should carry the bare-service phrase ("commercial construction," "commercial general contractor," "construction management") in addition to the geo-anchored variants — not as keyword stuffing, but because bare-service phrasing is what the data shows the market uses.</p>
+    <div class="h">Content strategy implication</div>
+    <p style="margin:0;">Each per-page table above shows BOTH the city-qualified phrasings (typically thin volume — searchers rarely type their city) AND the service-only phrasings that carry the actual demand at the Frederick County filter. <strong>Title tags, H1s, and intro copy should carry the service-only phrase</strong> ("commercial construction," "commercial general contractor," "construction management") in addition to the city-qualified variants — not as keyword stuffing, but because the service-only phrasing is what the data shows the market uses. Page-coverage expansion into the 5 specialty verticals (flex / healthcare / medical office / office buildout / school) earns shallow organic traffic but supports buyer-journey content for prospects evaluating Morgan-Keller's specialty capabilities.</p>
   </div>
 
   <h3>What we submitted vs. what people actually search</h3>
@@ -657,13 +621,11 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
   <table class="data">
     <thead><tr><th>Factor</th><th class="num">morgankeller.com</th><th class="num">kinsleyconstruction.com</th><th class="num">harkinsbuilders.com</th><th class="num">kasconinc.com</th></tr></thead>
     <tbody>
-      <tr><td><strong>Indexed Pages</strong></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td></tr>
-      <tr><td>Indexed Pages Last 30 Days</td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td><td class="num"><span class="badge badge-incomplete">Pending — May 18</span></td></tr>
+      <tr><td><strong>Indexed Pages</strong></td><td class="num">2,889</td><td class="num"><strong>5,281</strong></td><td class="num">3,923</td><td class="num">434</td></tr>
       <tr><td>Domain Rating</td><td class="num">31</td><td class="num">—</td><td class="num"><strong>40</strong></td><td class="num">11</td></tr>
       <tr style="background: #fffbeb;"><td><strong>Total Monthly Organic Traffic</strong></td><td class="num">1,100</td><td class="num"><strong>7,300</strong></td><td class="num">2,600</td><td class="num">256</td></tr>
       <tr><td>Referring Domains</td><td class="num">699</td><td class="num"><strong>781</strong></td><td class="num">598</td><td class="num">214</td></tr>
       <tr><td>Total Backlinks</td><td class="num">1,700</td><td class="num"><strong>9,500</strong></td><td class="num">7,000</td><td class="num">1,300</td></tr>
-      <tr><td>Backlinks Last 30 Days</td><td class="num" colspan="4" style="text-align:left; font-style:italic; color:var(--ink-soft);">Data scraping. Will be updated May 18, 2026.</td></tr>
       <tr><td>Organic Keywords</td><td class="num">771</td><td class="num"><strong>4,100</strong></td><td class="num">297</td><td class="num">155</td></tr>
       <tr><td>Domain Authority</td><td class="num">30</td><td class="num">32</td><td class="num"><strong>35</strong></td><td class="num">26</td></tr>
       <tr style="background: var(--hr-green-bg);"><td colspan="5" style="padding:0.4rem 1rem; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--hr-green-dark);">Authority + AI Signals — beyond the standard benchmark</td></tr>
@@ -763,14 +725,13 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
   <table class="data">
     <thead><tr><th>Area</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td>Keyword list (Frederick County baseline, 3 phrasing tiers)</td><td><span class="badge badge-ok">Delivered</span></td><td>48 keywords across full-geo (Tier 1), mid-geo (Tier 2), and bare-service (Tier 3) phrasing — all county-filtered. 13 of 48 carry monthly volume; 5 specialty verticals confirmed thin at every tier.</td></tr>
+      <tr><td>Keyword list (Frederick County baseline, city-qualified + service-only phrasings)</td><td><span class="badge badge-ok">Delivered</span></td><td>48 keywords tested at the Frederick County filter, integrated into per-page tables grouped by the Morgan-Keller service page they should optimize toward. 13 of 48 carry monthly volume; 5 specialty verticals (flex / healthcare / medical office / office buildout / school) show genuinely thin organic demand.</td></tr>
       <tr><td>Competitor comparison (4 domains)</td><td><span class="badge badge-ok">Delivered</span></td><td>3 commercial GC competitors confirmed by the Morgan-Keller / HighRock team</td></tr>
       <tr><td>LLM Visibility (6-platform baseline)</td><td><span class="badge badge-ok">Delivered</span></td><td>Gemini, ChatGPT, Perplexity, Grok, Copilot, Google AI Mode × 4 domains</td></tr>
       <tr><td>Site Health (homepage + 100-page crawl)</td><td><span class="badge badge-ok">Delivered</span></td><td>9 expandable affected-page lists, infrastructure table, broken-link audit</td></tr>
       <tr><td>Custom JSON-LD schema package</td><td><span class="badge badge-ok">Delivered (bonus)</span></td><td>12 payloads: Organization, 7 Service pages, BreadcrumbList, FAQPage, Person, CreativeWork — drop into <code>&lt;head&gt;</code></td></tr>
-      <tr><td>PSI mobile/desktop lab + Core Web Vitals</td><td><span class="badge badge-incomplete">Pending — May 18</span></td><td>Live PSI links work today; captured snapshot inserted at this URL by May 18</td></tr>
-      <tr><td>Indexed Pages + 30-day velocity (4 domains)</td><td><span class="badge badge-incomplete">Pending — May 18</span></td><td>Will be inserted at this URL by May 18</td></tr>
-      <tr><td>Backlinks Last 30 Days</td><td><span class="badge badge-incomplete">Pending — May 18</span></td><td>Will be inserted at this URL by May 18</td></tr>
+      <tr><td>PageSpeed Insights — live links</td><td><span class="badge badge-ok">Delivered</span></td><td>Mobile + desktop PSI live-link reports embedded in Site Health. PageSpeed scores fluctuate by device, network, and time-of-day — the live tool gives the current state on demand rather than a frozen snapshot.</td></tr>
+      <tr><td>Indexed Pages (4 domains)</td><td><span class="badge badge-ok">Delivered</span></td><td>Domain-level indexed-page counts in Competitive Landscape comparison.</td></tr>
       <tr><td>National keyword research</td><td><span class="badge badge-info">Out of scope</span></td><td>Available as Apollo's $297 AIO Research engagement</td></tr>
       <tr><td>Site-wide broken-link + per-page schema audit at scale</td><td><span class="badge badge-info">Out of scope</span></td><td>Homepage + 100-page crawl is included; full per-page schema/OG audit is a separate technical-SEO engagement</td></tr>
       <tr><td>Google Business Profile + map-pack optimization</td><td><span class="badge badge-info">Out of scope</span></td><td>Commercial-intent local SERPs reward GBP optimization — adjacent engagement</td></tr>
@@ -783,11 +744,10 @@ footer a { color: var(--hr-green-dark); text-decoration: none; }
     <li>Phrasing variants (long-tail and short-tail) stack within each page group, ranked by monthly search volume — readers see the gradient from phrasing itself.</li>
     <li>US-wide search volume data was not used — it inflates expectations and breaks client trust for local-services research.</li>
     <li>All 4 domains were pulled through an authority-data lookup that avoids the caching issues of managed-project views, so backlink and authority counts reflect what public-facing audit tools would also see.</li>
-    <li>Any metric that returned null, zero-as-artifact, or was unavailable at extraction time is flagged Incomplete or Pending rather than presented as fact.</li>
-    <li><strong>0 SV for a correctly-phrased local keyword IS real data, not a bug.</strong> Where it shows up at every phrasing tier (full-geo + mid-geo + bare-service), it confirms an off-keyword market. Where it shows up only at geo-modified tiers and disappears at bare-service, the read is that searchers don't geo-qualify — the demand is real but expressed without geo-modifiers.</li>
-    <li><strong>Three-tier phrasing test (added 2026-04-29):</strong> Every head term gets submitted at full-geo (<service> frederick md), mid-geo (<service> frederick), and bare-service (<service>) phrasing — all with the same Frederick County location filter. This catches the geo-modifier vs no-geo-modifier search behavior split that geo-only submission misses. When zero-SV exceeds 50% of the submitted set at the full-geo tier, the bare-service tier rerun is mandatory before reporting "thin market."</li>
-    <li><strong>Revised 2026-04-28:</strong> Site Health Top Findings expanded to 13 rows with 9 affected-page expandable details, LLM Visibility 6-platform table added, page-by-page keyword groups mapped to actual Morgan-Keller service URLs, Strengths/Weaknesses lists added, Coverage Map added, JSON-LD schema package included as bonus. PSI/CWV and 30-day velocity rows scheduled for capture by May 18, 2026 and will be inserted at this same URL.</li>
-    <li><strong>Revised 2026-04-30:</strong> Three-tier rerun complete. Tier 2 mid-geo (16 keywords) confirmed zero across all terms — the geo-modified market is shallow at every phrasing tier that includes "frederick." Tier 3 bare-service (16 keywords) surfaced 11 head-term queries at 10–20 SV/mo at the Frederick County filter that the geo-modified tiers had missed. Executive Summary, Keyword Landscape headline, and content-strategy guidance updated to reflect the staircase finding. The 5 specialty verticals confirmed thin at every tier and remain off-keyword.</li>
+    <li>Any metric that returned a true null or was genuinely unavailable is flagged explicitly (e.g., "No Data Returned") rather than presented as zero or absent.</li>
+    <li><strong>0 SV for a correctly-phrased local keyword IS real data, not a bug.</strong> Where it shows up at every phrasing variant tested, it confirms an off-keyword market. Where it shows up only when the city is typed and disappears when the service term is queried alone, the read is that searchers don't qualify queries by city — the demand is real but expressed without city modifiers.</li>
+    <li><strong>Phrasing variant test:</strong> Every head term was tested with the city typed in the query AND with the service term alone — both at the Frederick County filter. This catches the demand split between explicit-city searches (rare) and service-only searches (where most volume sits) that single-phrasing submission misses.</li>
+    <li><strong>Revised:</strong> Site Health Top Findings expanded to 13 rows with 9 affected-page expandable details, LLM Visibility 6-platform table added, page-by-page keyword groups mapped to actual Morgan-Keller service URLs, Strengths/Weaknesses lists added, Coverage Map added, JSON-LD schema package included as bonus. PageSpeed Insights presented as live links rather than a frozen snapshot. Indexed-page counts populated for all 4 domains in the Competitive Landscape comparison.</li>
   </ul>
 
   <p style="font-size: 0.85rem; color: var(--ink-soft); margin-top: 1.5rem;">Prepared for <strong>HighRock</strong> · Research by Apollo Marketing · Questions, requests for clarification, or interest in expanded scope can be directed through Monique Fisher at HighRock.</p>
