@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Curtis Call Brief — Wed 2026-05-06 15:00 ET · v3</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --panel: #131826;
+    --ink: #e8edf5;
+    --mute: #8b95a8;
+    --rule: #1f2738;
+    --accent: #faa523;
+    --good: #10b981;
+    --warn: #f59e0b;
+    --bad: #ef4444;
+    --link: #60a5fa;
+    --note-bg: rgba(255,255,255,0.025);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13.5px; line-height: 1.45; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 32px 48px; }
+  header.top { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 20px; }
+  header.top h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+  header.top .meta { color: var(--mute); font-size: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  h2 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin: 24px 0 10px; border-bottom: 1px solid var(--rule); padding-bottom: 4px; }
+  h3 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink); margin: 14px 0 6px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+  .lede { background: linear-gradient(135deg, rgba(250,165,35,0.12), rgba(16,185,129,0.08)); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; margin-bottom: 18px; }
+  .lede p { margin: 0; font-size: 14.5px; }
+  .lede strong { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12.5px; }
+  th { text-align: left; color: var(--mute); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--rule); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 5px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-family: 'JetBrains Mono', ui-monospace, monospace; text-align: right; }
+  td.wk { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 700; text-align: center; width: 40px; }
+  .pos1 { color: var(--good); font-weight: 700; }
+  .pos-up { color: var(--good); }
+  .pos-down { color: var(--bad); }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 10.5px; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  .tag.helpful { background: rgba(16,185,129,0.15); color: var(--good); }
+  .tag.local { background: rgba(96,165,250,0.15); color: var(--link); }
+  .tag.review { background: rgba(245,158,11,0.15); color: var(--warn); }
+  .tag.specialty { background: rgba(167,139,250,0.18); color: #c4b5fd; }
+  .tag.cornerstone { background: rgba(250,165,35,0.18); color: var(--accent); }
+  .question { margin: 14px 0 0; padding: 10px 14px; background: var(--panel); border-left: 3px solid var(--accent); border-radius: 0 3px 3px 0; }
+  .question .q-num { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 700; font-size: 12px; }
+  .question .q-pair { color: var(--mute); font-size: 11.5px; font-style: italic; margin-top: 4px; }
+  .question .q-body { margin-top: 4px; }
+  .note { border: 1px dashed var(--mute); border-radius: 3px; padding: 22px 12px 14px; margin-top: 8px; min-height: 60px; background: var(--note-bg); position: relative; }
+  .note::before { content: "Notes"; position: absolute; top: 4px; left: 8px; font-size: 9.5px; color: var(--mute); text-transform: uppercase; letter-spacing: 0.08em; font-family: 'JetBrains Mono', monospace; }
+  .note.tall { min-height: 110px; }
+  .note.short { min-height: 40px; padding-top: 18px; }
+  .checks { list-style: none; padding: 0; margin: 6px 0; }
+  .checks li { padding: 6px 0 6px 22px; position: relative; display: flex; align-items: baseline; gap: 8px; }
+  .checks li::before { content: "☐"; position: absolute; left: 0; color: var(--mute); font-size: 14px; }
+  .checks li .commit-line { flex: 1; border-bottom: 1px dotted var(--rule); min-height: 18px; margin-left: 8px; }
+  .flag { background: rgba(239,68,68,0.08); border-left: 3px solid var(--bad); padding: 10px 14px; border-radius: 3px; font-size: 12.5px; }
+  .flag b { color: var(--bad); }
+  .flag .small { color: var(--mute); font-size: 11.5px; }
+  .funnel-honesty { background: rgba(96,165,250,0.06); border-left: 3px solid var(--link); padding: 12px 16px; border-radius: 3px; }
+  .funnel-honesty b { color: var(--link); }
+  ol.questions { padding-left: 0; margin: 0; list-style: none; }
+  .block-head { color: var(--mute); font-size: 11px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 16px; margin-bottom: 4px; }
+  footer { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--rule); color: var(--mute); font-size: 11px; text-align: center; }
+  @media print {
+    html, body { background: white; color: black; font-size: 11pt; }
+    .wrap { max-width: none; padding: 10mm 12mm; }
+    .card, .lede, .flag, .funnel-honesty, .question { background: white; border: 1px solid #ccc; }
+    h2 { color: #c47e00; border-bottom-color: #999; }
+    th, td { border-color: #999; }
+    .tag { border: 1px solid #999; }
+    .note { background: white; border: 1px dashed #888; min-height: 80px; }
+    .note.tall { min-height: 130px; }
+    .checks li .commit-line { border-bottom: 1px solid #888; }
+    section { page-break-inside: avoid; }
+    .question { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Curtis Call — Quarterly Resync + Content Interview · v3</h1>
+  <div class="meta">Wed 2026-05-06 · 15:00–16:00 ET · Apollo Cal · Zoom 3017448586</div>
+</header>
+
+<section class="lede">
+  <p>
+    <b>Today's frame for Curtis:</b> "We've got <strong>23 articles ready in the queue</strong> — bathroom remodels, kitchen guides, Frederick service pages, the Clarksburg blog, contractor cornerstones. Last we talked, I asked you to write team and project pieces. Today let's flip that — <strong>I'll ask 12 questions, you tell me stories, I write them up</strong>. Each story pairs with a technical post we're launching. We'll have <strong>12 weeks of paired content</strong> that doesn't read like a content farm — and that gives Google the human signal it's missing."
+  </p>
+</section>
+
+<section>
+<h2>Wins to lead with</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>GSC last 30 days (US)</h3>
+    <table>
+      <tr><th>Metric</th><th class="num">Value</th></tr>
+      <tr><td>Total ranking keywords (full footprint)</td><td class="num">924</td></tr>
+      <tr><td>Avg position</td><td class="num">12.2</td></tr>
+      <tr><td>Clicks</td><td class="num">23</td></tr>
+      <tr><td>Impressions</td><td class="num">13,152</td></tr>
+      <tr><td>Top click driver</td><td class="num">frederick bathroom remodeling</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Position momentum (74 tracked KWs)</h3>
+    <table>
+      <tr><th>Tier</th><th>Detail</th></tr>
+      <tr><td>Position #1</td><td class="pos1">basement remodeling frederick md · kitchen remodeling ijamsville · bathroom renovation</td></tr>
+      <tr><td>Top 10</td><td>5 keywords</td></tr>
+      <tr><td>Improved last 30d</td><td class="pos-up">15</td></tr>
+      <tr><td>Big mover</td><td class="pos-up">remodeling contractors frederick md 80→19 (+61)</td></tr>
+    </table>
+  </div>
+</div>
+<p style="color: var(--mute); font-size: 12px; margin: 8px 0 0;">Customer-search language to weave in: <code style="font-family: 'JetBrains Mono', monospace; background: var(--panel); padding: 1px 5px; border-radius: 2px;">frederick bathroom remodeling</code> · <code style="font-family: 'JetBrains Mono', monospace; background: var(--panel); padding: 1px 5px; border-radius: 2px;">bathroom remodeling frederick md</code> · <code style="font-family: 'JetBrains Mono', monospace; background: var(--panel); padding: 1px 5px; border-radius: 2px;">kitchen remodelers frederick md</code> · <code style="font-family: 'JetBrains Mono', monospace; background: var(--panel); padding: 1px 5px; border-radius: 2px;">basement finishing contractors near me</code> · <code style="font-family: 'JetBrains Mono', monospace; background: var(--panel); padding: 1px 5px; border-radius: 2px;">bathroom renovation</code></p>
+</section>
+
+<section>
+<h2>Sales-funnel honesty (pre-empt "what's it doing for me?")</h2>
+<div class="funnel-honesty">
+  <p style="margin: 0 0 8px;"><b>Where rankings DON'T equal leads yet:</b> the basement-paint workhorse is ranking #3 for a 1.6K-search keyword, but "basement paint" is informational intent — readers are picking colors, not hiring a remodeler. Those 15 monthly visitors aren't shopping. The piece is doing topical-authority work, not sales work.</p>
+  <p style="margin: 0 0 8px;"><b>Where the leads will come from:</b> the queries we're targeting in the launch sequence — <i>frederick bathroom remodeling</i>, <i>kitchen remodelers frederick md</i>, <i>bathroom remodeling clarksburg md</i>, <i>general contractor frederick md</i> — those ARE shopping intent. People searching them are within weeks of hiring.</p>
+  <p style="margin: 0;"><b>The fix on the existing workhorse:</b> add internal links from the basement-paint piece down-funnel into a basement remodel service/landing page so we capture the intent shift when "I'm picking colors" becomes "I'm ready to call someone."</p>
+</div>
+<div class="note short"></div>
+</section>
+
+<section>
+<h2>The queue · 23 articles, no review-gate</h2>
+<div class="card">
+<table>
+  <thead><tr><th>Bucket</th><th class="num">Count</th><th>Notable titles</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tag local">Frederick service / local-SEO</span></td><td class="num">10</td><td>remodeling contractor frederick md · kitchen and bath cabinets frederick md · frederick bathroom remodeling · general contractor frederick md · kitchen remodeling frederick county md · bath remodeling frederick md · remodeling contractors frederick md · general contractors frederick md · kitchen and bath shop frederick · Transform Your Space (Remodeling Frederick MD)</td></tr>
+    <tr><td><span class="tag helpful">Topic-helpful guides</span></td><td class="num">6</td><td>Budget-Savvy Tips for Bathroom Remodel · Kitchen Remodeling Budget · Navigating Bathroom Remodeling Expenses · Revamp Your Space: Expert Bathroom Remodeling · custom wet bars · home remodeling frederick md</td></tr>
+    <tr><td><span class="tag local">Hyper-local geographic</span></td><td class="num">2</td><td>bathroom remodeling clarksburg md · shower door experts jefferson maryland</td></tr>
+    <tr><td><span class="tag specialty">Specialty product</span></td><td class="num">2</td><td>shower guard doors · (custom wet bars cross-counts)</td></tr>
+    <tr><td><span class="tag cornerstone">Cornerstone</span></td><td class="num">1</td><td>Great Seneca – Remodeling Contractor in Frederick MD (1,777w)</td></tr>
+    <tr><td>Paint colors (queue)</td><td class="num">2</td><td>best paint color for basement (queue) · popular basement paint colors (repurpose to Frederick-geo angle to avoid cannibalizing the live #3 ranker)</td></tr>
+  </tbody>
+</table>
+<p style="color: var(--mute); font-size: 11.5px; margin-top: 8px;">CG workflow status (NEEDS_REVIEW vs COMPLETED) folded into the weekly publish rhythm — not a separate approval gate.</p>
+</div>
+</section>
+
+<section>
+<h2>Live Interview · 12 Questions · ~30 min</h2>
+
+<div class="block-head">Block A · Recent project storytelling (10 min · → 2 posts)</div>
+
+<div class="question">
+  <div class="q-num">Q1</div>
+  <div class="q-body"><b>Recent budget-conscious bathroom — what was the homeowner's number, what tradeoffs did you make, what surprised you?</b></div>
+  <div class="q-pair">→ pairs with <b>Budget-Savvy Tips for Bathroom Remodel</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q2</div>
+  <div class="q-body"><b>A specific Frederick bathroom you finished recently — walk me through start to finish. Names of streets / neighborhoods welcome.</b></div>
+  <div class="q-pair">→ pairs with <b>bath remodeling frederick md</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="block-head">Block B · Customer Q&amp;A and decisions (8 min · → 2 posts)</div>
+
+<div class="question">
+  <div class="q-num">Q3</div>
+  <div class="q-body"><b>A homeowner who agonized over cabinet choices — how did you guide them? What did they pick and why?</b></div>
+  <div class="q-pair">→ pairs with <b>kitchen and bath cabinets frederick md</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q4</div>
+  <div class="q-body"><b>Where do kitchen remodels go over budget vs under? Real numbers from a recent project.</b></div>
+  <div class="q-pair">→ pairs with <b>Kitchen Remodeling Budget: Planning for Success</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q5</div>
+  <div class="q-body"><b>First or most recent Clarksburg job — what's different about working in Clarksburg vs Frederick?</b></div>
+  <div class="q-pair">→ pairs with <b>bathroom remodeling clarksburg md</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q6</div>
+  <div class="q-body"><b>Most challenging shower install you've done — what made it tricky, what did it look like finished?</b></div>
+  <div class="q-pair">→ pairs with <b>shower door experts jefferson maryland</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="block-head">Block C · Curtis's voice as a contractor (8 min · → 3 posts)</div>
+
+<div class="question">
+  <div class="q-num">Q7</div>
+  <div class="q-body"><b>When does a project need a general contractor vs a specialist? Walk me through a recent multi-trade job.</b></div>
+  <div class="q-pair">→ pairs with <b>general contractor frederick md</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q8</div>
+  <div class="q-body"><b>Recent specialty job that wasn't a standard remodel — what did the customer want, how did it come together?</b></div>
+  <div class="q-pair">→ pairs with <b>shower guard doors / custom wet bars</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q9</div>
+  <div class="q-body"><b>Costs that surprise homeowners. What do they NOT expect to pay for?</b></div>
+  <div class="q-pair">→ pairs with <b>Navigating Bathroom Remodeling Expenses</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="block-head">Block D · Big-picture and standalone (4 min · → 1 post)</div>
+
+<div class="question">
+  <div class="q-num">Q10</div>
+  <div class="q-body"><b>If a Frederick homeowner is just starting to think about remodeling, what's your first piece of advice?</b></div>
+  <div class="q-pair">→ pairs with <b>Transform Your Space (Remodeling Frederick MD)</b></div>
+  <div class="note tall"></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Q11</div>
+  <div class="q-body"><b>What's the part of your job most clients never see?</b></div>
+  <div class="q-pair">→ standalone "Behind the Scenes at Great Seneca"</div>
+  <div class="note tall"></div>
+</div>
+
+<div class="block-head">Block E · Practical / scheduling (2 min)</div>
+
+<div class="question">
+  <div class="q-num">Q12</div>
+  <div class="q-body"><b>Going forward — when you have 5 spare minutes a month, can you send one 3-min voice memo about a recent project? Same format as today.</b></div>
+  <div class="q-pair">ongoing cadence ask · plus: anything you DON'T want me to write about? · photos for these projects?</div>
+  <div class="note tall"></div>
+</div>
+</section>
+
+<section>
+<h2>12-Week Paired Launch Sequence</h2>
+<div class="card">
+<table>
+  <thead><tr><th>Wk</th><th>Technical launch</th><th>Human companion (Q#)</th></tr></thead>
+  <tbody>
+    <tr><td class="wk">1</td><td>Budget-Savvy Tips for Bathroom Remodel <span class="tag helpful">helpful</span></td><td>Budget-conscious bathroom story (Q1)</td></tr>
+    <tr><td class="wk">2</td><td>bath remodeling frederick md <span class="tag local">local</span></td><td>Frederick bathroom walkthrough (Q2)</td></tr>
+    <tr><td class="wk">3</td><td>Kitchen Remodeling Budget: Planning for Success <span class="tag helpful">helpful</span></td><td>Kitchen over/under budget story (Q4)</td></tr>
+    <tr><td class="wk">4</td><td>kitchen and bath cabinets frederick md <span class="tag local">local</span></td><td>Cabinet selection story (Q3)</td></tr>
+    <tr><td class="wk">5</td><td>bathroom remodeling clarksburg md <span class="tag local">hyper-local</span></td><td>Clarksburg-specific project (Q5)</td></tr>
+    <tr><td class="wk">6</td><td>shower door experts jefferson maryland <span class="tag local">hyper-local</span></td><td>Tough shower install story (Q6)</td></tr>
+    <tr><td class="wk">7</td><td>Navigating Bathroom Remodeling Expenses <span class="tag helpful">helpful</span></td><td>Costs that surprise homeowners (Q9)</td></tr>
+    <tr><td class="wk">8</td><td>general contractor frederick md <span class="tag local">local</span></td><td>Multi-trade job walkthrough (Q7)</td></tr>
+    <tr><td class="wk">9</td><td>Revamp Your Space: Expert Bathroom Remodeling <span class="tag helpful">helpful</span></td><td>What clients don't see (Q11)</td></tr>
+    <tr><td class="wk">10</td><td>Great Seneca – Remodeling Contractor in Frederick MD <span class="tag cornerstone">cornerstone</span></td><td>First-time remodeler advice (Q10)</td></tr>
+    <tr><td class="wk">11</td><td>shower guard doors OR custom wet bars <span class="tag specialty">specialty</span></td><td>Specialty job story (Q8)</td></tr>
+    <tr><td class="wk">12</td><td>frederick bathroom remodeling / general contractors frederick md <span class="tag local">local</span></td><td>Refresh from earlier raw material</td></tr>
+  </tbody>
+</table>
+<p style="color: var(--mute); font-size: 11.5px; margin-top: 8px;"><b>Bench (not in 12-wk schedule, deploy as gap-fill):</b> remodeling contractor frederick md · kitchen remodeling frederick county md · remodeling contractors frederick md · general contractors frederick md · kitchen and bath shop frederick · home remodeling frederick md · best paint color for basement · popular basement paint colors (repurpose to Frederick-geo angle) · Transform Your Space (Remodeling Frederick MD)</p>
+</div>
+</section>
+
+<section>
+<h2>Decisions to walk out with</h2>
+<div class="card">
+<ul class="checks">
+  <li>Approve 12-week paired launch sequence <span class="commit-line"></span></li>
+  <li>Voice-memo cadence locked — 1 per month going forward (Q12) <span class="commit-line"></span></li>
+  <li>Photo follow-up scope confirmed for projects discussed <span class="commit-line"></span></li>
+  <li>Internal-link plan: workhorse → basement remodel service/landing page <span class="commit-line"></span></li>
+  <li>Renewal direction signaled (May–Jul scope) <span class="commit-line"></span></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Open feedback / Curtis-said capture</h2>
+<div class="card">
+  <h3>Anything Curtis pushed back on</h3>
+  <div class="note tall"></div>
+  <h3>New asks or scope expansions Curtis raised</h3>
+  <div class="note tall"></div>
+  <h3>Story material outside the 12 questions worth capturing</h3>
+  <div class="note tall"></div>
+  <h3>Promises Apollo made on the call</h3>
+  <div class="note tall"></div>
+</div>
+</section>
+
+<section>
+<h2>Internal flags — DO NOT surface to Curtis</h2>
+<div class="flag">
+  <b>Link-building Feb–Apr quarter:</b> output looks like quantity-over-quality directory drops (DA 2–19, mostly nofollow). Authority pillar still 7/100. <span class="small">Frame next quarter as a "fewer, higher-DA placements" pivot — not as a complaint about past delivery. Internal conversation with Crissy / Deepakshi separately.</span>
+</div>
+<div class="flag" style="margin-top:8px;">
+  <b>AI search visibility:</b> 0% across ChatGPT / Gemini / Perplexity / Copilot / Google AI Mode / Grok. <span class="small">Don't lead with this — soft-mention as a natural segue to AIO Research ($297) opportunity for Q3 renewal.</span>
+</div>
+</section>
+
+<section>
+<h2>Pre-call checklist</h2>
+<div class="card">
+<ul class="checks">
+  <li>Confirm Wed 3 PM calendar invite still good with Curtis (already moved on Apollo cal, no email blast sent) <span class="commit-line"></span></li>
+  <li>Recording / AI bridge active per <code style="font-family: 'JetBrains Mono', monospace;">feedback_external_sync_recording_default.md</code> <span class="commit-line"></span></li>
+  <li>CG dashboard open in another tab for live article reference during call <span class="commit-line"></span></li>
+  <li>This brief printed or pulled up in second window for live note-taking <span class="commit-line"></span></li>
+</ul>
+</div>
+</section>
+
+<footer>
+  Apollo Marketing · Internal — noindex · v3 generated 2026-05-05 14:50 EDT · Source: GSC + SearchAtlas Site Explorer + Content Genius + KRT
+</footer>
+
+</div>
+</body>
+</html>
