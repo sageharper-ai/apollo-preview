@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Where Things Stand v2 — Venegas Contracting</title>
+<style>
+  :root {
+    --apollo: #faa523;
+    --green: #2f8458;
+    --green-soft: #e7f3ec;
+    --amber: #c47615;
+    --amber-soft: #fdf2dc;
+    --blue: #1d5a99;
+    --blue-soft: #e6effa;
+    --orange-band: #fff5e1;
+    --orange-band-border: #faa523;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --paper: #ffffff;
+    --rule: #e5e7eb;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); font-family: var(--sans); }
+  body { font-size: 13.5px; line-height: 1.45; padding: 28px 36px; max-width: 8.5in; margin: 0 auto; }
+
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; }
+  header h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
+  header .meta { font-size: 11.5px; color: var(--ink-soft); text-align: right; }
+  header .meta strong { color: var(--ink); display: block; font-size: 12.5px; font-weight: 700; }
+
+  .section { margin-bottom: 16px; padding: 13px 16px; border-radius: 6px; }
+  .section.strong { background: var(--green-soft); border-left: 4px solid var(--green); }
+  .section.improving { background: var(--amber-soft); border-left: 4px solid var(--amber); }
+  .section.approach { background: var(--blue-soft); border-left: 4px solid var(--blue); }
+  .section.transition { background: var(--orange-band); border: 1.5px solid var(--orange-band-border); border-radius: 8px; }
+
+  .section h2 { font-size: 13.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .section.strong h2 { color: var(--green); }
+  .section.improving h2 { color: var(--amber); }
+  .section.approach h2 { color: var(--blue); }
+  .section.transition h2 { color: var(--apollo); }
+
+  .item { margin-bottom: 9px; }
+  .item:last-child { margin-bottom: 0; }
+  .item .lead { font-weight: 700; color: var(--ink); margin-bottom: 3px; font-size: 13.5px; line-height: 1.35; }
+  .item .body { color: var(--ink-soft); font-size: 13px; line-height: 1.5; }
+  .item .body strong { color: var(--ink); font-weight: 700; }
+
+  .next { margin-top: 5px; font-size: 12px; color: var(--ink-soft); padding: 5px 9px; background: rgba(255,255,255,0.65); border-radius: 4px; display: inline-block; }
+  .next strong { color: var(--amber); font-weight: 700; }
+  .next.done strong { color: var(--green); }
+  .next.live strong { color: var(--apollo); font-weight: 800; }
+
+  .quote-block { font-size: 13px; line-height: 1.6; color: var(--ink); }
+  .quote-block .q { font-style: italic; padding: 4px 0; display: block; }
+  .quote-block .q::before { content: "\201C"; color: var(--blue); font-weight: 700; }
+  .quote-block .q::after { content: "\201D"; color: var(--blue); font-weight: 700; }
+
+  .cluster-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); margin: 12px 0 6px; padding-top: 8px; border-top: 1px dashed rgba(196,118,21,0.35); }
+  .cluster-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .approach p { font-size: 13px; color: var(--ink); line-height: 1.55; margin-bottom: 7px; }
+  .approach p:last-child { margin-bottom: 0; }
+
+  .transition p { font-size: 13.5px; color: var(--ink); line-height: 1.5; margin-bottom: 7px; }
+  .transition p:last-child { margin-bottom: 0; }
+  .transition p.lead { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+  .transition .quiet { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+  .homework { margin-bottom: 8px; }
+  .homework:last-child { margin-bottom: 0; }
+  .homework strong { color: var(--ink); font-weight: 700; display: block; margin-bottom: 2px; }
+  .homework span { color: var(--ink-soft); font-size: 13px; }
+
+  footer { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 11.5px; color: var(--ink-soft); display: flex; justify-content: space-between; align-items: center; }
+  footer .signoff { color: var(--ink); font-weight: 600; }
+
+  @media print {
+    body { padding: 18px 26px; max-width: 100%; font-size: 12px; }
+    header h1 { font-size: 20px; }
+    header { margin-bottom: 14px; padding-bottom: 9px; }
+    .section { margin-bottom: 12px; padding: 10px 13px; }
+    .section h2 { font-size: 12px; margin-bottom: 8px; }
+    .item .lead { font-size: 12.5px; }
+    .item .body { font-size: 12px; }
+    .next { font-size: 11px; }
+    .approach p { font-size: 12px; }
+    .transition p.lead { font-size: 13px; }
+    .transition p { font-size: 12.5px; }
+    .cluster-label { font-size: 10px; }
+    @page { margin: 0.45in; size: letter; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Where Things Stand v2<br>Venegas Contracting</h1>
+    <div class="meta">
+      <strong>Apollo Marketing</strong>
+      Thursday, May 7, 2026
+    </div>
+  </header>
+
+  <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;">Action items for your approval today. Yes, no, or push-to-later on each one. After the call we ship what you greenlight.</p>
+
+  <section class="section improving">
+    <h2>Action items</h2>
+
+    <div class="item">
+      <div class="lead">Take Solar off the site.</div>
+      <div class="body">The other seven services stay &mdash; residential roofing, commercial roofing, gutters, downspouts, siding, windows, doors, decks.</div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Caller ID and whisper messages on your lead-gen tracking numbers.</div>
+      <div class="body">When a call comes in from <strong>Porch &amp; Patio of Frederick</strong> or <strong>Frederick Roofers</strong>, your phone tells you which site it came from before you pick up, and a quick whisper tells you on the line.</div>
+      <div class="next live"><strong>Live demo on the call today.</strong></div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Route the lead-gen sites&rsquo; contact form and phone number to Venegas.</div>
+      <div class="body">Both go to <strong>info@venegascontracting.com</strong> and forward to your personal email like always.</div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Confirm your info@ email forwarding still works.</div>
+      <div class="body">Five-minute test &mdash; we send a message in, you confirm it arrived.</div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Trim the long-form pages that aren&rsquo;t pulling their weight.</div>
+      <div class="body">A lot of older content on the site isn&rsquo;t earning Google rankings or helping visitors decide. We tighten what&rsquo;s working, cut what&rsquo;s dead weight.</div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Three new Maryland city pages: Middletown, Frederick, Brunswick.</div>
+      <div class="body">
+        <strong>Middletown, MD</strong> &mdash; your home town &mdash; doesn&rsquo;t have its own page right now. Biggest miss on the site.<br>
+        <strong>Frederick, MD</strong> &mdash; you&rsquo;re already showing up #7 for &ldquo;commercial roof replacement Frederick&rdquo; from a generic page. A dedicated page locks that in and opens up residential.<br>
+        <strong>Brunswick, MD</strong> &mdash; closest real town south of Middletown. Logical fill.
+      </div>
+      <div class="next"><strong>Two weeks to ship, then we evaluate before more.</strong></div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Deepen the top 3 of your 14 West Virginia pages.</div>
+      <div class="body"><strong>Charles Town</strong>, <strong>Harpers Ferry</strong>, <strong>Shepherdstown</strong> &mdash; biggest markets in the cluster. The pages exist but are thin. If the depth moves rankings, we propagate to the other 11.</div>
+    </div>
+
+    <div class="item">
+      <div class="lead">Remove the projects database/map.</div>
+      <div class="body">400 entries, 20-30 actually finished. Maintenance burden + the partial entries dilute the gallery. Recommend pulling it cleanly &mdash; unless you want to keep it and own the cleanup.</div>
+    </div>
+  </section>
+  </section>
+
+  <section class="section transition">
+    <h2>One thing on your side</h2>
+
+    <div class="homework">
+      <strong>A patio referral partner.</strong>
+      <span>The patio leads from Porch &amp; Patio of Frederick will keep coming &mdash; they&rsquo;re bundled with the porch leads, can&rsquo;t separate them. You&rsquo;ll need someone to send them to. That&rsquo;s the kind of relationship a business owner builds; we can&rsquo;t do it for you.</span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="signoff">Sage Harper &middot; Apollo Marketing</span>
+    <span>Questions? Just text or call &mdash; (301) 744-9697</span>
+  </footer>
+
+</body>
+</html>
