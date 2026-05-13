@@ -7,214 +7,204 @@
 <title>Terms & Conditions — Draft for SAR Review — ShopAutoEquip.com</title>
 <style>
   * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif;
-    max-width: 820px;
-    margin: 2.5em auto;
-    padding: 0 1.25em;
-    line-height: 1.65;
-    color: #2c3e50;
-    background: #fafafa;
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 1200px; margin: 2em auto; padding: 0 1.25em; line-height: 1.65; color: #2c3e50; background: #f4f5f7; }
+  .how-to { background: #d4edda; border: 1px solid #b1d8b9; border-radius: 8px; padding: 1em 1.5em; margin-bottom: 2em; }
+  .how-to h2 { margin-top: 0; color: #155724; font-size: 1.1em; border: none; padding: 0; }
+  .how-to ul { margin: 0.5em 0; padding-left: 1.3em; }
+  .how-to li { margin-bottom: 0.3em; font-size: 0.93em; }
+  .doc-title { background: white; border-radius: 8px 8px 0 0; padding: 1.5em 2em 0.5em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .doc-title h1 { color: #1a2b3c; border-bottom: 3px solid #faa523; padding-bottom: 0.4em; margin: 0 0 0.2em; font-size: 1.7em; }
+  .doc-title p { color: #777; font-style: italic; margin: 0; }
+  .meta-line { background: white; padding: 0.5em 2em 1em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 0; font-size: 0.95em; }
+  .section { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 1.5em; background: white; padding: 1.2em 2em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 0; align-items: start; }
+  .section + .section { margin-top: 1px; }
+  .section:last-of-type { border-radius: 0 0 8px 8px; padding-bottom: 1.5em; }
+  .section .content h2 { color: #1a2b3c; margin-top: 0; margin-bottom: 0.6em; padding-bottom: 0.3em; border-bottom: 1px solid #e8e8e8; font-size: 1.1em; }
+  .section .content h3 { color: #2c3e50; margin-top: 1em; font-size: 1em; }
+  .section .content p, .section .content li { font-size: 0.94em; }
+  .section .content ul, .section .content ol { padding-left: 1.4em; }
+  .section .content li { margin-bottom: 0.3em; }
+  .annotations { font-size: 0.85em; }
+  .note { background: #fff8e1; border-left: 3px solid #f5a623; padding: 0.6em 0.85em; margin-bottom: 0.7em; border-radius: 0 4px 4px 0; }
+  .note.decision { background: #eef6ff; border-left-color: #4a90d9; }
+  .note.legal { background: #ffe9e9; border-left-color: #d94a4a; }
+  .note.openq { background: #fff0e0; border-left-color: #e8702a; }
+  .note strong { display: block; margin-bottom: 0.2em; color: #1a2b3c; }
+  .note.decision strong { color: #2c5d8f; }
+  .note.legal strong { color: #b53030; }
+  .note.openq strong { color: #b85515; }
+  .placeholder { background: #fff3cd; padding: 0.05em 0.4em; border-radius: 3px; color: #c0392b; font-weight: 600; font-size: 0.92em; }
+  .legalcaps { font-size: 0.9em; }
+  .footer-note { background: #f0f4f8; border-radius: 8px; padding: 1.2em 1.5em; margin-top: 1.5em; font-size: 0.92em; color: #555; }
+  @media (max-width: 900px) {
+    .section { grid-template-columns: 1fr; }
+    .annotations { border-top: 1px dashed #ccc; padding-top: 0.8em; margin-top: 0.5em; }
+    .annotations::before { content: "Notes & decisions for this section:"; display: block; font-weight: 600; color: #555; margin-bottom: 0.5em; font-size: 0.85em; }
   }
-  h1 { color: #1a2b3c; border-bottom: 3px solid #faa523; padding-bottom: 0.4em; margin-bottom: 0.2em; }
-  h1 + p { color: #777; font-style: italic; margin-top: 0; }
-  h2 { color: #1a2b3c; margin-top: 2em; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.3em; }
-  h3 { color: #2c3e50; margin-top: 1.4em; }
-  .input-needed {
-    background: #eef6ff;
-    border-left: 4px solid #4a90d9;
-    padding: 0.7em 1.05em;
-    margin: 0.9em 0;
-    border-radius: 0 4px 4px 0;
-    font-size: 0.93em;
-  }
-  .input-needed strong { color: #2c5d8f; }
-  ul, ol { padding-left: 1.5em; }
-  li { margin-bottom: 0.4em; }
-  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2em 0; }
-  .placeholder {
-    background: #fff3cd;
-    padding: 0.05em 0.4em;
-    border-radius: 3px;
-    color: #c0392b;
-    font-weight: 600;
-    font-size: 0.92em;
-  }
-  .footer-note {
-    background: #f0f4f8;
-    border-radius: 6px;
-    padding: 1em 1.3em;
-    margin-top: 2.5em;
-    font-size: 0.92em;
-    color: #555;
-  }
-  .toc { background: white; padding: 1em 1.5em; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 1.5em 0; }
-  .toc ol { padding-left: 1.2em; }
-  .toc li { margin-bottom: 0.2em; }
 </style>
 </head>
 <body>
 
+<div class="how-to">
+<h2>How to use this page</h2>
+<ul>
+<li><strong>Left column = the publishable text.</strong> Copy this directly into the BigCommerce T&C page when finalized. Yellow-highlighted bracketed items are placeholders to fill in inline (effective date, legal entity name, etc.).</li>
+<li><strong>Right column = annotations from Sage.</strong> Decisions you need to make, attorney-review flags, and trade-off context. These are NOT part of the published page — leave them behind when copying.</li>
+<li><strong>Strongly recommend attorney review</strong> before going live. This is a structural starting point, not legal advice.</li>
+<li><strong>To return edits:</strong> reply to sage.harper@apollollc.com in any format — Word, Google Doc, paste in email, notes by section number.</li>
+</ul>
+</div>
+
+<div class="doc-title">
 <h1>Terms & Conditions</h1>
 <p>ShopAutoEquip.com — Powered by SAR Automotive Equipment</p>
-
-<div class="input-needed">
-<strong>Draft for SAR review.</strong> Yellow-highlighted bracketed items mark inputs SAR will fill in. Blue callouts flag specific legal decisions you may want to make with an attorney before publishing. This is a starting structure — not a substitute for legal review. <strong>Recommend final pass by SAR's attorney before going live.</strong>
 </div>
 
-<div class="toc">
-<strong>Contents</strong>
-<ol>
-<li>Acceptance of Terms</li>
-<li>About SAR Automotive Equipment</li>
-<li>Eligibility</li>
-<li>Account Registration</li>
-<li>Product Information & Pricing</li>
-<li>Ordering & Payment</li>
-<li>Shipping & Delivery</li>
-<li>Returns & Refunds</li>
-<li>Warranties</li>
-<li>Intellectual Property</li>
-<li>Acceptable Use</li>
-<li>Disclaimers</li>
-<li>Limitation of Liability</li>
-<li>Indemnification</li>
-<li>Dispute Resolution & Governing Law</li>
-<li>Modifications to Terms</li>
-<li>Contact Information</li>
-</ol>
+<div class="meta-line">
+<strong>Effective Date:</strong> <span class="placeholder">[INSERT EFFECTIVE DATE]</span> &nbsp;·&nbsp;
+<strong>Last Updated:</strong> <span class="placeholder">[INSERT LAST UPDATED DATE]</span>
 </div>
 
-<p><strong>Effective Date:</strong> <span class="placeholder">[INSERT EFFECTIVE DATE]</span></p>
-<p><strong>Last Updated:</strong> <span class="placeholder">[INSERT LAST UPDATED DATE]</span></p>
-
-<hr>
-
+<div class="section">
+<div class="content">
 <h2>1. Acceptance of Terms</h2>
-
 <p>Welcome to ShopAutoEquip.com (the "Site"), operated by SAR Automotive Equipment ("SAR," "we," "us," or "our"). These Terms and Conditions ("Terms") govern your access to and use of the Site, and any purchase of products through it.</p>
+<p>By accessing the Site, creating an account, or placing an order, you ("you" or "Customer") agree to be bound by these Terms and our Privacy Policy. If you do not agree, please do not use the Site.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
-<p>By accessing the Site, creating an account, or placing an order, you ("you" or "Customer") agree to be bound by these Terms and our <a href="#privacy">Privacy Policy</a>. If you do not agree, please do not use the Site.</p>
-
+<div class="section">
+<div class="content">
 <h2>2. About SAR Automotive Equipment</h2>
-
 <p>SAR Automotive Equipment is a supplier of automotive service equipment, lifts, compressors, and related shop tools, based in Barrington, New Jersey. Our business address is:</p>
-
 <p><strong>SAR Automotive Equipment</strong><br>
 111 E Gloucester Pike<br>
 Barrington, NJ 08007<br>
 Phone: 856.547.8700</p>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> Confirm SAR's legal business name (e.g., "SAR Automotive Equipment, LLC" or full registered entity). The "operated by" line should match the registered entity that conducts business through the site.
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Confirm SAR's legal business name (e.g., "SAR Automotive Equipment, LLC" or full registered entity). The "operated by" line should match the registered entity that conducts business through the site.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>3. Eligibility</h2>
-
 <p>You must be at least 18 years old and legally capable of entering into binding contracts to use the Site. By placing an order, you represent that you meet these requirements.</p>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> Will you accept individual consumer customers, or business-to-business only? If B2B only, add: <em>"The Site is intended for business customers purchasing equipment for commercial use. Personal/consumer purchases are not the primary focus and may be subject to additional terms."</em>
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Will you accept individual consumer customers, or business-to-business only? If B2B only, add a line stating the Site is intended for business customers purchasing equipment for commercial use.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>4. Account Registration</h2>
-
 <p>To place orders or access certain features, you may need to create an account. You agree to:</p>
-
 <ul>
 <li>Provide accurate, current, and complete information during registration</li>
 <li>Maintain the security of your password and account credentials</li>
 <li>Notify SAR immediately of any unauthorized account access</li>
 <li>Accept responsibility for all activities under your account</li>
 </ul>
-
 <p>SAR reserves the right to suspend or terminate accounts that violate these Terms or are used for fraudulent purposes.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>5. Product Information & Pricing</h2>
-
 <p>SAR makes every effort to display product information, specifications, images, and pricing accurately. However:</p>
-
 <ul>
 <li>Product images are for reference and may not exactly represent the item shipped (color, finish, accessories sold separately)</li>
 <li>Specifications and availability are subject to change without notice</li>
 <li>Prices are in U.S. dollars and exclude applicable taxes and shipping unless otherwise stated</li>
 <li>SAR reserves the right to correct errors, inaccuracies, or omissions and to change or update information at any time</li>
 </ul>
-
 <p>If a product is listed at an incorrect price due to typographical or system error, SAR reserves the right to refuse or cancel any orders placed at the incorrect price, even after the order has been confirmed.</p>
-
-<h2>6. Ordering & Payment</h2>
-
-<p>Placing an order constitutes an offer to purchase the products listed at the stated prices. SAR's acceptance of your order occurs when we send you an order confirmation email.</p>
-
-<p>We accept the following payment methods:</p>
-
-<ul>
-<li>Major credit cards (Visa, Mastercard, American Express, Discover)</li>
-<li><span class="placeholder">[INSERT ANY ADDITIONAL PAYMENT METHODS — PayPal, financing via Navitas Credit, ACH, purchase orders, etc.]</span></li>
-</ul>
-
-<p>Payment is processed at the time of order. By submitting payment information, you authorize SAR (and our payment processor) to charge the applicable amount.</p>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> Confirm accepted payment methods. Note any thresholds for financing (Navitas), special handling for large orders (e.g., purchase orders, wire transfer for $X+).
+</div>
+<div class="annotations"></div>
 </div>
 
+<div class="section">
+<div class="content">
+<h2>6. Ordering & Payment</h2>
+<p>Placing an order constitutes an offer to purchase the products listed at the stated prices. SAR's acceptance of your order occurs when we send you an order confirmation email.</p>
+<p>We accept the following payment methods:</p>
+<ul>
+<li>Major credit cards (Visa, Mastercard, American Express, Discover)</li>
+<li><span class="placeholder">[INSERT ANY ADDITIONAL PAYMENT METHODS]</span></li>
+</ul>
+<p>Payment is processed at the time of order. By submitting payment information, you authorize SAR (and our payment processor) to charge the applicable amount.</p>
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Confirm accepted payment methods. PayPal? Navitas financing? ACH? Purchase orders for B2B? Note any thresholds (e.g., wire transfer required for $X+).</div>
+</div>
+</div>
+
+<div class="section">
+<div class="content">
 <h2>7. Shipping & Delivery</h2>
-
-<p>Shipping terms, carriers, timeframes, and costs are detailed on our <a href="#shipping">Shipping Policy</a> page. In summary:</p>
-
+<p>Shipping terms, carriers, timeframes, and costs are detailed on our Shipping Policy page. In summary:</p>
 <ul>
 <li>Most products ship via freight carrier (LTL or full truckload) due to equipment size and weight</li>
 <li>Estimated delivery times are not guaranteed; actual delivery depends on carrier scheduling and destination</li>
 <li>Customer is responsible for inspecting goods upon delivery and noting any visible damage on the carrier's delivery receipt before signing</li>
 <li>Risk of loss transfers to Customer upon delivery to the shipping address</li>
 </ul>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> Carrier names, typical lead times, geographic shipping limits (US only? Canada? Lower 48 only?), free-shipping thresholds if any. Confirm liftgate / inside-delivery / curbside-delivery defaults.
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Specifics live in Shipping Policy (coming next). For this T&C summary: confirm if SAR uses LTL/freight for most items, or has mixed shipping (small-parcel + freight). Adjust opening bullet accordingly.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>8. Returns & Refunds</h2>
-
-<p>Returns are governed by our <a href="#returns">Return Policy</a>. In summary:</p>
-
+<p>Returns are governed by our Return Policy. In summary:</p>
 <ul>
 <li>Returns must be initiated within <span class="placeholder">[INSERT — e.g., 30 days]</span> of delivery</li>
 <li>Items must be unused, in original packaging, and accompanied by proof of purchase</li>
 <li>A <span class="placeholder">[INSERT — e.g., 20%]</span> restocking fee may apply to non-defective returns</li>
-<li>Return shipping costs are <span class="placeholder">[INSERT — e.g., the customer's responsibility / shared / paid by SAR for defective items]</span></li>
+<li>Return shipping costs are <span class="placeholder">[INSERT — customer's responsibility / shared / paid by SAR for defective items]</span></li>
 <li>Custom-configured, special-order, or non-stock items are non-returnable unless defective</li>
 </ul>
-
-<div class="input-needed">
-<strong>Open Question #2 in the Launch Plan:</strong> Tom's call on returns timeframe, restocking fees, and who pays return shipping. Once decided, those values plug in here and in the Return Policy page.
+</div>
+<div class="annotations">
+<div class="note openq"><strong>Open Question #2 (Tom's call)</strong>Returns timeframe, restocking fees, and who pays return shipping. Once decided, the same values plug in here and in the full Return Policy page.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>9. Warranties</h2>
-
-<p>Product warranties are governed by our <a href="#warranty">Warranty Information</a> page. In summary:</p>
-
+<p>Product warranties are governed by our Warranty Information page. In summary:</p>
 <ul>
 <li>Each product carries the manufacturer's warranty (Graco, Champion, and other brand-specific terms)</li>
 <li>SAR provides a workmanship warranty on installation and service work it performs</li>
 <li>Manufacturer warranty terms vary by product line and are detailed on each product page</li>
 </ul>
+<p class="legalcaps"><strong>EXCEPT FOR THE EXPRESS WARRANTIES STATED ON THE WARRANTY PAGE, SAR MAKES NO OTHER WARRANTIES, EXPRESS OR IMPLIED, AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW.</strong></p>
+</div>
+<div class="annotations"></div>
+</div>
 
-<p><strong>EXCEPT FOR THE EXPRESS WARRANTIES STATED ON THE WARRANTY PAGE, SAR MAKES NO OTHER WARRANTIES, EXPRESS OR IMPLIED, AND SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW.</strong></p>
-
+<div class="section">
+<div class="content">
 <h2>10. Intellectual Property</h2>
-
 <p>All content on the Site — including text, graphics, logos, images, product descriptions, and software — is the property of SAR Automotive Equipment or its content suppliers (manufacturer brands like Graco, Champion, etc.) and is protected by U.S. and international copyright, trademark, and other intellectual property laws.</p>
-
 <p>You may not reproduce, distribute, modify, or create derivative works from any Site content without express written permission, except for personal, non-commercial purposes incidental to your use of the Site.</p>
-
 <p>Brand names and product names referenced on the Site are trademarks of their respective owners.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>11. Acceptable Use</h2>
-
 <p>When using the Site, you agree NOT to:</p>
-
 <ul>
 <li>Use the Site for any unlawful purpose or in violation of these Terms</li>
 <li>Attempt to gain unauthorized access to any portion of the Site, accounts, or systems</li>
@@ -223,67 +213,82 @@ Phone: 856.547.8700</p>
 <li>Interfere with or disrupt Site operation, security, or other users' access</li>
 <li>Resell products purchased from SAR without authorization, unless you are an authorized reseller</li>
 </ul>
-
-<h2>12. Disclaimers</h2>
-
-<p>The Site and all products are provided "as is" and "as available" without warranties of any kind, except as expressly stated on the Warranty page or required by applicable law.</p>
-
-<p>SAR does not warrant that the Site will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</p>
-
-<h2>13. Limitation of Liability</h2>
-
-<p>TO THE FULLEST EXTENT PERMITTED BY LAW, SAR AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AFFILIATES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS INTERRUPTION — ARISING OUT OF OR RELATED TO YOUR USE OF THE SITE OR PURCHASE OF PRODUCTS, EVEN IF SAR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
-
-<p>SAR's total cumulative liability for any claim arising from these Terms or your use of the Site shall not exceed the amount paid by you for the specific product giving rise to the claim, or <span class="placeholder">[INSERT CAP — e.g., $500]</span>, whichever is greater.</p>
-
-<div class="input-needed">
-<strong>Legal review recommended:</strong> Liability caps and damage exclusions are jurisdiction-specific. New Jersey enforces most reasonable limitation-of-liability clauses but some consumer-protection statutes override. Attorney review on this section.
+</div>
+<div class="annotations"></div>
 </div>
 
+<div class="section">
+<div class="content">
+<h2>12. Disclaimers</h2>
+<p>The Site and all products are provided "as is" and "as available" without warranties of any kind, except as expressly stated on the Warranty page or required by applicable law.</p>
+<p>SAR does not warrant that the Site will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</p>
+</div>
+<div class="annotations"></div>
+</div>
+
+<div class="section">
+<div class="content">
+<h2>13. Limitation of Liability</h2>
+<p class="legalcaps"><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, SAR AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AFFILIATES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS INTERRUPTION — ARISING OUT OF OR RELATED TO YOUR USE OF THE SITE OR PURCHASE OF PRODUCTS, EVEN IF SAR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong></p>
+<p>SAR's total cumulative liability for any claim arising from these Terms or your use of the Site shall not exceed the amount paid by you for the specific product giving rise to the claim, or <span class="placeholder">[INSERT CAP — e.g., $500]</span>, whichever is greater.</p>
+</div>
+<div class="annotations">
+<div class="note legal"><strong>Attorney review</strong>Liability caps and damage exclusions are jurisdiction-specific. NJ enforces most reasonable limitation-of-liability clauses but some consumer-protection statutes override. Set cap with attorney input.</div>
+</div>
+</div>
+
+<div class="section">
+<div class="content">
 <h2>14. Indemnification</h2>
-
 <p>You agree to indemnify, defend, and hold harmless SAR and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorney fees) arising from:</p>
-
 <ul>
 <li>Your use of the Site or products in violation of these Terms</li>
 <li>Your violation of any law or third-party right</li>
 <li>Your misrepresentation of information provided to SAR</li>
 </ul>
-
-<h2>15. Dispute Resolution & Governing Law</h2>
-
-<p>These Terms are governed by the laws of the State of New Jersey, without regard to its conflict-of-laws principles.</p>
-
-<p>Any dispute arising out of or related to these Terms or your purchase from the Site shall first be attempted to be resolved through good-faith negotiation. If negotiation fails, disputes shall be resolved by:</p>
-
-<div class="input-needed">
-<strong>Decision needed (legal review):</strong> Choose one — (a) Litigation in New Jersey state or federal courts in Camden County, or (b) Binding arbitration administered by AAA or JAMS under their commercial rules. Arbitration limits class-action exposure but excludes jury trial; jurisdiction route preserves court access. Recommend attorney input.
+</div>
+<div class="annotations"></div>
 </div>
 
+<div class="section">
+<div class="content">
+<h2>15. Dispute Resolution & Governing Law</h2>
+<p>These Terms are governed by the laws of the State of New Jersey, without regard to its conflict-of-laws principles.</p>
+<p>Any dispute arising out of or related to these Terms or your purchase from the Site shall first be attempted to be resolved through good-faith negotiation. If negotiation fails, disputes shall be resolved by <span class="placeholder">[INSERT — litigation in NJ state or federal courts in Camden County, OR binding arbitration administered by AAA or JAMS under their commercial rules]</span>.</p>
 <p>You agree to submit to the personal jurisdiction of <span class="placeholder">[INSERT — courts in Camden County, NJ / arbitrator]</span> for any such disputes.</p>
+</div>
+<div class="annotations">
+<div class="note legal"><strong>Attorney review</strong>Choose: (a) litigation in NJ state/federal courts in Camden County, or (b) binding arbitration via AAA or JAMS. Arbitration limits class-action exposure but excludes jury trial; litigation preserves court access. Mirror this same choice in the Warranty page Section 10.</div>
+</div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>16. Modifications to Terms</h2>
-
 <p>SAR may update these Terms from time to time. The "Last Updated" date at the top reflects the most recent revision. Continued use of the Site after updates constitutes acceptance of the revised Terms.</p>
-
 <p>For material changes (e.g., changes to dispute resolution, liability limits, or pricing terms), SAR will provide reasonable notice — either by posting a banner on the Site, sending email to registered account holders, or both.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>17. Contact Information</h2>
-
 <p>For questions about these Terms:</p>
-
 <p><strong>SAR Automotive Equipment</strong><br>
 111 E Gloucester Pike<br>
 Barrington, NJ 08007<br>
 📞 856.547.8700<br>
 ✉️ <span class="placeholder">[INSERT LEGAL/GENERAL CONTACT EMAIL]</span></p>
-
-<hr>
-
 <p><em>By accessing ShopAutoEquip.com and placing orders, you acknowledge that you have read, understood, and agree to these Terms and Conditions.</em></p>
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Set the legal/general contact email. Likely same as the Contact Us form routing, or a dedicated legal@ alias.</div>
+</div>
+</div>
 
 <div class="footer-note">
-<strong>To return this draft:</strong> reply to Sage with edits in any format — Word, Google Doc, paste in email, or edited HTML. <strong>Strongly recommend final attorney review before going live</strong> — legal pages are jurisdiction-specific and SAR-business-specific. Open SAR decisions: legal business name · payment methods · shipping terms · returns specifics (Tom) · liability cap amount · dispute resolution path · legal contact email.
+<strong>To return this draft:</strong> reply to Sage with edits in any format — Word, Google Doc, paste in email, or notes by section number. <strong>Strongly recommend SAR's attorney does a final pass before going live.</strong> Open SAR decisions (summary): legal entity name · B2B vs B2C scope · payment methods · shipping format · liability cap amount · dispute resolution path · legal contact email.
 </div>
 
 </body>

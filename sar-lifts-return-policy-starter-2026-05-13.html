@@ -7,95 +7,107 @@
 <title>Return Policy — Draft for SAR Review — ShopAutoEquip.com</title>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 820px; margin: 2.5em auto; padding: 0 1.25em; line-height: 1.65; color: #2c3e50; background: #fafafa; }
-  h1 { color: #1a2b3c; border-bottom: 3px solid #faa523; padding-bottom: 0.4em; margin-bottom: 0.2em; }
-  h1 + p { color: #777; font-style: italic; margin-top: 0; }
-  h2 { color: #1a2b3c; margin-top: 2em; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.3em; }
-  h3 { color: #2c3e50; margin-top: 1.4em; }
-  .input-needed { background: #eef6ff; border-left: 4px solid #4a90d9; padding: 0.7em 1.05em; margin: 0.9em 0; border-radius: 0 4px 4px 0; font-size: 0.93em; }
-  .input-needed strong { color: #2c5d8f; }
-  .open-question { background: #fff5f0; border-left: 4px solid #e8702a; padding: 0.7em 1.05em; margin: 0.9em 0; border-radius: 0 4px 4px 0; font-size: 0.93em; }
-  .open-question strong { color: #b85515; }
-  ul, ol { padding-left: 1.5em; }
-  li { margin-bottom: 0.4em; }
-  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2em 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 1200px; margin: 2em auto; padding: 0 1.25em; line-height: 1.65; color: #2c3e50; background: #f4f5f7; }
+  .how-to { background: #d4edda; border: 1px solid #b1d8b9; border-radius: 8px; padding: 1em 1.5em; margin-bottom: 2em; }
+  .how-to h2 { margin-top: 0; color: #155724; font-size: 1.1em; border: none; padding: 0; }
+  .how-to ul { margin: 0.5em 0; padding-left: 1.3em; }
+  .how-to li { margin-bottom: 0.3em; font-size: 0.93em; }
+  .doc-title { background: white; border-radius: 8px 8px 0 0; padding: 1.5em 2em 0.5em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .doc-title h1 { color: #1a2b3c; border-bottom: 3px solid #faa523; padding-bottom: 0.4em; margin: 0 0 0.2em; font-size: 1.7em; }
+  .doc-title p { color: #777; font-style: italic; margin: 0; }
+  .meta-line { background: white; padding: 0.5em 2em 1em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 0; font-size: 0.95em; }
+  .section { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 1.5em; background: white; padding: 1.2em 2em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 0; align-items: start; }
+  .section + .section { margin-top: 1px; }
+  .section:last-of-type { border-radius: 0 0 8px 8px; padding-bottom: 1.5em; }
+  .section .content h2 { color: #1a2b3c; margin-top: 0; margin-bottom: 0.6em; padding-bottom: 0.3em; border-bottom: 1px solid #e8e8e8; font-size: 1.1em; }
+  .section .content p, .section .content li { font-size: 0.94em; }
+  .section .content ul, .section .content ol { padding-left: 1.4em; }
+  .section .content li { margin-bottom: 0.3em; }
+  .annotations { font-size: 0.85em; }
+  .note { background: #fff8e1; border-left: 3px solid #f5a623; padding: 0.6em 0.85em; margin-bottom: 0.7em; border-radius: 0 4px 4px 0; }
+  .note.decision { background: #eef6ff; border-left-color: #4a90d9; }
+  .note.legal { background: #ffe9e9; border-left-color: #d94a4a; }
+  .note.openq { background: #fff0e0; border-left-color: #e8702a; }
+  .note strong { display: block; margin-bottom: 0.2em; color: #1a2b3c; }
+  .note.decision strong { color: #2c5d8f; }
+  .note.legal strong { color: #b53030; }
+  .note.openq strong { color: #b85515; }
+  .note ul { margin: 0.3em 0; padding-left: 1.1em; }
+  .note li { margin-bottom: 0.2em; }
   .placeholder { background: #fff3cd; padding: 0.05em 0.4em; border-radius: 3px; color: #c0392b; font-weight: 600; font-size: 0.92em; }
-  .footer-note { background: #f0f4f8; border-radius: 6px; padding: 1em 1.3em; margin-top: 2.5em; font-size: 0.92em; color: #555; }
-  .toc { background: white; padding: 1em 1.5em; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin: 1.5em 0; }
-  .toc ol { padding-left: 1.2em; }
-  .toc li { margin-bottom: 0.2em; }
+  .footer-note { background: #f0f4f8; border-radius: 8px; padding: 1.2em 1.5em; margin-top: 1.5em; font-size: 0.92em; color: #555; }
+  @media (max-width: 900px) {
+    .section { grid-template-columns: 1fr; }
+    .annotations { border-top: 1px dashed #ccc; padding-top: 0.8em; margin-top: 0.5em; }
+    .annotations::before { content: "Notes & decisions for this section:"; display: block; font-weight: 600; color: #555; margin-bottom: 0.5em; font-size: 0.85em; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Return Policy</h1>
-<p>ShopAutoEquip.com — Powered by SAR Automotive Equipment</p>
-
-<div class="input-needed">
-<strong>Draft for SAR review.</strong> Yellow brackets mark SAR-specific inputs. Blue callouts flag decisions needed. <strong>Orange callouts flag the three open questions Tom needs to decide</strong> (return window, restocking fees, who pays return shipping) — those are the Launch Plan's Open Question #2.
-</div>
-
-<div class="toc">
-<strong>Contents</strong>
-<ol>
-<li>Overview</li>
-<li>Return Window</li>
-<li>Eligible Items</li>
-<li>Non-Returnable Items</li>
-<li>Condition Requirements</li>
-<li>Restocking Fee</li>
-<li>Return Shipping</li>
-<li>How to Initiate a Return</li>
-<li>Refund Processing</li>
-<li>Damaged or Defective Items</li>
-<li>Wrong Item Received</li>
-<li>Order Cancellation</li>
-<li>Exchanges</li>
-<li>Contact for Returns</li>
-</ol>
-</div>
-
-<p><strong>Effective Date:</strong> <span class="placeholder">[INSERT EFFECTIVE DATE]</span></p>
-<p><strong>Last Updated:</strong> <span class="placeholder">[INSERT LAST UPDATED DATE]</span></p>
-
-<hr>
-
-<h2>1. Overview</h2>
-
-<p>We want you to be satisfied with your purchase from ShopAutoEquip.com. If a product doesn't meet your needs, we accept returns under the terms below.</p>
-
-<p>This Return Policy covers returns for any reason — change of mind, wrong fit, ordering error. For products that arrived damaged in shipping or have a defect that emerged after use, see our Warranty Information page instead.</p>
-
-<h2>2. Return Window</h2>
-
-<p>Returns must be initiated within <span class="placeholder">[INSERT WINDOW — e.g., 30 days]</span> from the date of delivery.</p>
-
-<p>The return window begins on the date the carrier delivers the product to your shipping address (as confirmed by tracking).</p>
-
-<div class="open-question">
-<strong>Tom's call (Launch Plan Open Question #2):</strong> How many days from delivery should the return window be?
+<div class="how-to">
+<h2>How to use this page</h2>
 <ul>
-<li>Common e-commerce window: 30 days</li>
-<li>Industrial/equipment standard: 14 days</li>
-<li>SAR's call based on operational reality and competitive positioning</li>
+<li><strong>Left column = the publishable text.</strong> Copy this into the BigCommerce Return Policy page when finalized. Yellow brackets are placeholders to fill in inline.</li>
+<li><strong>Right column = annotations from Sage.</strong> Decisions, trade-offs, Tom's three open questions (orange callouts). NOT part of the published page.</li>
+<li><strong>Strongly recommend attorney review</strong> before going live.</li>
+<li><strong>To return edits:</strong> reply to sage.harper@apollollc.com.</li>
 </ul>
 </div>
 
+<div class="doc-title">
+<h1>Return Policy</h1>
+<p>ShopAutoEquip.com — Powered by SAR Automotive Equipment</p>
+</div>
+
+<div class="meta-line">
+<strong>Effective Date:</strong> <span class="placeholder">[INSERT EFFECTIVE DATE]</span> &nbsp;·&nbsp;
+<strong>Last Updated:</strong> <span class="placeholder">[INSERT LAST UPDATED DATE]</span>
+</div>
+
+<div class="section">
+<div class="content">
+<h2>1. Overview</h2>
+<p>We want you to be satisfied with your purchase from ShopAutoEquip.com. If a product doesn't meet your needs, we accept returns under the terms below.</p>
+<p>This Return Policy covers returns for any reason — change of mind, wrong fit, ordering error. For products that arrived damaged in shipping or have a defect that emerged after use, see our Warranty Information page instead.</p>
+</div>
+<div class="annotations"></div>
+</div>
+
+<div class="section">
+<div class="content">
+<h2>2. Return Window</h2>
+<p>Returns must be initiated within <span class="placeholder">[INSERT WINDOW]</span> from the date of delivery.</p>
+<p>The return window begins on the date the carrier delivers the product to your shipping address (as confirmed by tracking).</p>
+</div>
+<div class="annotations">
+<div class="note openq"><strong>Tom's call (Open Q #2)</strong>Return window length:
+<ul>
+<li>Common e-commerce: 30 days</li>
+<li>Industrial/equipment standard: 14 days</li>
+<li>Tom's call based on operational reality and competitive positioning</li>
+</ul></div>
+</div>
+</div>
+
+<div class="section">
+<div class="content">
 <h2>3. Eligible Items</h2>
-
 <p>To qualify for return, items must be:</p>
-
 <ul>
 <li>Within the return window stated above</li>
 <li>Unused or used minimally (only as needed to determine fit/suitability)</li>
 <li>In original condition — undamaged, with all original packaging, accessories, manuals, and documentation</li>
 <li>Accompanied by proof of purchase (order number or order confirmation email)</li>
 </ul>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>4. Non-Returnable Items</h2>
-
 <p>The following are <strong>not eligible for return</strong>:</p>
-
 <ul>
 <li><strong>Custom-configured or special-order items</strong> built specifically for your order</li>
 <li><strong>Used or installed equipment</strong> showing wear beyond inspection use</li>
@@ -104,61 +116,66 @@
 <li><strong>Items marked "Final Sale" or "Non-Returnable"</strong> on the product page</li>
 <li><strong>Items returned outside the return window</strong></li>
 </ul>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> Confirm which categories SAR routinely flags as non-returnable. Add or remove items above based on actual operational policy.
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Confirm which categories SAR routinely flags as non-returnable. Add or remove based on actual operational policy.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>5. Condition Requirements</h2>
-
 <p>To receive a full refund (less restocking fee, if applicable), returned items must be:</p>
-
 <ul>
 <li>In their original carton with all internal packaging materials</li>
 <li>Free of damage caused by use, installation, or transit back to SAR</li>
 <li>Complete with all included accessories, hardware, manuals, and documentation</li>
 </ul>
-
 <p>Items returned in damaged or incomplete condition may be subject to additional fees, partial refund, or return refusal.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>6. Restocking Fee</h2>
-
-<p>A restocking fee of <span class="placeholder">[INSERT % — e.g., 15% or 20%]</span> may apply to non-defective returns to cover inspection, repackaging, and restocking costs.</p>
-
+<p>A restocking fee of <span class="placeholder">[INSERT %]</span> may apply to non-defective returns to cover inspection, repackaging, and restocking costs.</p>
 <p>The restocking fee does <strong>not</strong> apply to:</p>
-
 <ul>
 <li>Defective items (covered by Warranty)</li>
 <li>Items damaged in transit (replacement issued)</li>
 <li>Wrong items shipped by SAR (no fee, no return shipping cost to customer)</li>
 </ul>
-
-<div class="open-question">
-<strong>Tom's call (Launch Plan Open Question #2):</strong> What restocking percentage?
+</div>
+<div class="annotations">
+<div class="note openq"><strong>Tom's call (Open Q #2)</strong>Restocking percentage:
 <ul>
-<li>Common industrial-equipment range: 15–25%</li>
-<li>SAR's decision based on real handling costs and competitive market</li>
-<li>Or: no restocking fee, simpler messaging — trade-off on margin</li>
-</ul>
+<li>Industrial-equipment range: 15–25%</li>
+<li>Trade-off: protects margin on returns vs. friction in the buy decision</li>
+<li>Or: no restocking fee for simpler messaging — narrower margin</li>
+</ul></div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>7. Return Shipping</h2>
-
-<p>Return shipping costs are <span class="placeholder">[INSERT — e.g., the customer's responsibility / paid by SAR for defective items only / shared 50/50]</span>.</p>
-
+<p>Return shipping costs are <span class="placeholder">[INSERT — customer's responsibility / paid by SAR for defective items only / shared 50/50]</span>.</p>
 <p>For large or heavy items requiring freight shipping, SAR can coordinate the return pickup at customer's cost (and provide a return shipping label or carrier coordination) to ensure proper handling.</p>
-
-<div class="open-question">
-<strong>Tom's call (Launch Plan Open Question #2):</strong> Who pays return shipping?
+</div>
+<div class="annotations">
+<div class="note openq"><strong>Tom's call (Open Q #2)</strong>Return shipping responsibility:
 <ul>
-<li><strong>Option A:</strong> Customer pays return shipping for change-of-mind returns; SAR pays for defective/wrong-item returns. (Industry standard.)</li>
-<li><strong>Option B:</strong> SAR pays all return shipping, customer pays a higher restocking fee. (Trade-off: smoother UX, narrower margin.)</li>
-<li><strong>Option C:</strong> Customer pays all return shipping including defective items, with shipping cost reimbursed when defect is confirmed. (Cash-flow friendly for SAR, harder UX.)</li>
-</ul>
+<li><strong>A:</strong> Customer pays for change-of-mind; SAR pays for defective/wrong-item. Industry standard.</li>
+<li><strong>B:</strong> SAR pays all return shipping, with higher restocking fee.</li>
+<li><strong>C:</strong> Customer pays everything including defective items; SAR reimburses when defect confirmed.</li>
+</ul></div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>8. How to Initiate a Return</h2>
-
 <ol>
 <li><strong>Contact us first.</strong> Email <span class="placeholder">[INSERT RETURNS EMAIL]</span> or call <strong>856.547.8700</strong> with your order number and the reason for return. <strong>Do not ship the item back without contacting us first</strong> — we'll issue a Return Merchandise Authorization (RMA) number and confirm where to ship.</li>
 <li><strong>Receive your RMA number.</strong> SAR will email an RMA number and return instructions within <span class="placeholder">[INSERT — typically 1–2 business days]</span>. The RMA number must be visible on the outside of the returning package.</li>
@@ -166,81 +183,96 @@
 <li><strong>Ship via tracked carrier.</strong> Use a carrier that provides tracking and (for high-value items) insurance. SAR is not responsible for items lost or damaged in return shipping if not properly tracked/insured.</li>
 <li><strong>Wait for inspection.</strong> SAR will inspect the returned item upon receipt and process your refund within the timeframe stated below.</li>
 </ol>
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>Set returns email and RMA response timeframe.</div>
+</div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>9. Refund Processing</h2>
-
 <p>Once your return is received and inspected, SAR will:</p>
-
 <ul>
 <li>Email you confirming receipt and inspection result within 2–3 business days</li>
 <li>Process the refund to the original payment method</li>
 <li>Allow 5–10 business days for the refund to appear on your statement (timing depends on your card issuer / bank)</li>
 </ul>
-
 <p>Refund amount = item price minus applicable restocking fee and any return shipping deducted.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>10. Damaged or Defective Items</h2>
-
 <p>If your item arrives damaged from shipping:</p>
-
 <ol>
 <li><strong>Inspect at delivery.</strong> Note any visible damage on the carrier's delivery receipt <strong>before signing</strong>. This is critical for damage claims.</li>
 <li><strong>Photo-document.</strong> Take clear photos of the damaged packaging, the damaged item, and the shipping label.</li>
 <li><strong>Contact SAR within 48 hours of delivery</strong> at <span class="placeholder">[INSERT EMAIL]</span> with order number, photos, and delivery details.</li>
 <li>SAR will work with the carrier and manufacturer to arrange replacement or refund. No restocking fee applies; SAR covers return shipping.</li>
 </ol>
-
 <p>For defects discovered after the item is in use, see our Warranty Information page — that's the right path for product-failure issues.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>11. Wrong Item Received</h2>
-
 <p>If SAR ships the wrong product:</p>
-
 <ul>
 <li>Contact us within 7 days of delivery</li>
 <li>SAR arranges return shipping at our cost</li>
 <li>The correct item ships at our cost</li>
 <li>No restocking fee</li>
 </ul>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>12. Order Cancellation</h2>
-
 <p>Orders can be cancelled <strong>before shipment</strong> at no cost.</p>
-
 <p>Once an order has shipped, it falls under the standard Return Policy (including return shipping costs and any applicable restocking fee).</p>
-
 <p>To cancel an order, contact us as quickly as possible at <span class="placeholder">[INSERT EMAIL]</span> or call <strong>856.547.8700</strong>. Custom-configured and special-order items may not be cancellable once the order is in production — those are addressed in Section 4 above.</p>
+</div>
+<div class="annotations"></div>
+</div>
 
+<div class="section">
+<div class="content">
 <h2>13. Exchanges</h2>
-
 <p>SAR does not currently process direct exchanges. To exchange an item:</p>
-
 <ol>
 <li>Return the original item per this Return Policy</li>
 <li>Place a new order for the replacement item</li>
 <li>Refund for the returned item processes when the return is inspected</li>
 </ol>
-
-<div class="input-needed">
-<strong>Decision needed:</strong> If SAR offers direct exchanges (some equipment sellers do for sizing/spec mismatches), let me know and I'll update this section.
+</div>
+<div class="annotations">
+<div class="note decision"><strong>Decision needed</strong>If SAR offers direct exchanges (some equipment sellers do for sizing/spec mismatches), let Sage know and this section gets rewritten.</div>
+</div>
 </div>
 
+<div class="section">
+<div class="content">
 <h2>14. Contact for Returns</h2>
-
 <p>For questions about returns or to start a return:</p>
-
 <p><strong>SAR Automotive Equipment</strong><br>
 111 E Gloucester Pike<br>
 Barrington, NJ 08007<br>
 📞 <strong>856.547.8700</strong><br>
 ✉️ <span class="placeholder">[INSERT RETURNS EMAIL]</span></p>
-
-<hr>
-
 <p><em>This Return Policy is subject to change. The version in effect at the time of your purchase governs your order. Questions? Contact us before initiating a return so we can guide the process smoothly.</em></p>
+</div>
+<div class="annotations"></div>
+</div>
 
 <div class="footer-note">
-<strong>To return this draft:</strong> reply to Sage with edits in any format — Word, Google Doc, paste in email, or edited HTML. <strong>Recommend final attorney review before going live.</strong> Three orange-flagged decisions (return window, restocking %, return-shipping responsibility) are the open Launch Plan items Tom needs to make. Yellow brackets are other SAR-specific inputs (returns email, RMA timeframe, exchange policy).
+<strong>To return this draft:</strong> reply to Sage with edits in any format. <strong>Recommend attorney review before going live.</strong> Three orange-flagged decisions (return window, restocking %, return-shipping responsibility) are the open Launch Plan items Tom needs to make. Yellow brackets are other SAR-specific inputs.
 </div>
 
 </body>
