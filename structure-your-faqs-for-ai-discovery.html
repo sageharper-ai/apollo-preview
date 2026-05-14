@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="https://apollollc.com/wp-content/uploads/2019/01/favicon.png">
+    <title>Is Your Business Invisible to AI? | Apollo Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --orange: #F5A623;
+            --orange-dark: #E09000;
+            --charcoal: #2a2b2d;
+            --gray: #555555;
+            --light-bg: #FFF9F0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Nunito Sans", sans-serif;
+            background: var(--charcoal);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 60px 80px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide types */
+        .slide-dark {
+            background: var(--charcoal);
+            color: var(--white);
+            background-image: radial-gradient(circle at 90% 10%, rgba(245,166,35,0.04) 0%, transparent 50%);
+        }
+
+        .slide-light {
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        .slide-accent {
+            background: var(--light-bg);
+            color: var(--charcoal);
+        }
+
+        .slide-orange {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        p, li {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            font-weight: 600;
+            opacity: 0.85;
+            margin-bottom: 12px;
+        }
+
+        .highlight { color: var(--orange); }
+        .slide-light .highlight,
+        .slide-accent .highlight { color: var(--orange-dark); }
+
+        ul { list-style: none; padding: 0; }
+        ul li {
+            padding: 10px 0;
+            padding-left: 32px;
+            position: relative;
+        }
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 16px;
+            height: 16px;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 32px;
+            border-top: 4px solid var(--orange);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(245,166,35,0.12);
+        }
+
+        .slide-light .card,
+        .slide-accent .card {
+            background: var(--white);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+
+        .card h3 { font-size: 1.3rem; }
+        .card p { font-size: 1.15rem; }
+
+        .stat {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .slide-orange .stat { color: var(--white); }
+
+        .brand-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--orange);
+            z-index: 100;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 16px;
+            right: 32px;
+            font-size: 0.85rem;
+            opacity: 0.4;
+            z-index: 100;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 14px;
+            left: 32px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            opacity: 0.4;
+            z-index: 100;
+        }
+
+        .logo span { color: var(--orange); }
+
+        /* CTA button */
+        .cta {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            margin-top: 24px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245,166,35,0.3);
+        }
+
+        .slide-orange .cta {
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+            margin-bottom: 24px;
+            border-radius: 2px;
+        }
+
+        .slide-orange .divider { background: var(--white); }
+
+        /* Step numbers */
+        .step-num {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--orange);
+            opacity: 0.3;
+            margin-bottom: 8px;
+        }
+
+        /* Keyboard nav hint */
+        .nav-hint {
+            position: fixed;
+            top: 16px;
+            right: 32px;
+            font-size: 0.75rem;
+            opacity: 0.25;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<div class="brand-bar"></div>
+<div class="logo"><img src="https://apollollc.com/wp-content/uploads/2019/01/footer-logo.png" alt="Apollo Marketing" style="height:24px; opacity:0.6;"></div>
+<div class="slide-number" id="slideNum"></div>
+<div class="nav-hint">Arrow keys or click to navigate</div>
+
+<!-- SLIDE 1: Title -->
+<div class="slide slide-dark active" id="s1">
+    <div>
+        <h1>Structure Your<br><span class="highlight">FAQs for AI Discovery</span></h1>
+        <p style="font-size:1.5rem; max-width:780px; opacity:0.8; margin-top:16px;">
+            How to make your website show up in AI answers and local search &mdash; without more content, just clearer signals.
+        </p>
+        <p style="margin-top:40px; font-size:1.1rem; opacity:0.5;">Sage Harper &bull; Apollo Marketing &bull; apollollc.com</p>
+    </div>
+</div>
+
+<!-- SLIDE 2: The Hook -->
+<div class="slide slide-dark" id="s2">
+    <div>
+        <h2>Quick question:</h2>
+        <h1 style="font-size:2.8rem; max-width:800px;">
+            How many of you Googled something this week and got an answer <span class="highlight">without clicking a single website?</span>
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 2A: NEW — 64% data stat -->
+<div class="slide slide-accent" id="s2a">
+    <div style="text-align:center;">
+        <p style="font-size:0.95rem; text-transform:uppercase; letter-spacing:3px; color:var(--orange-dark); margin-bottom:32px;">The Data</p>
+        <h1 style="font-size:8rem; font-weight:800; letter-spacing:-2px; line-height:1; margin-bottom:24px;">
+            <span class="highlight">64%</span>
+        </h1>
+        <h2 style="font-size:2rem; max-width:880px; margin:0 auto 12px; font-weight:600;">
+            of Google searches now end <span class="highlight">without a single click</span> to any website.
+        </h2>
+        <p style="font-size:1.3rem; opacity:0.7; margin-top:16px;">AI is doing the answering.</p>
+        <div style="width:80px; height:2px; background:var(--orange); margin:32px auto;"></div>
+        <p style="font-size:1.5rem; font-weight:700; max-width:760px; margin:0 auto;">
+            And most local businesses haven't given it anything to cite.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 3: What Changed -->
+<div class="slide slide-light" id="s3">
+    <div>
+        <div class="divider"></div>
+        <h2>That's an <span class="highlight">AI Overview</span></h2>
+        <p style="max-width:700px; font-size:1.3rem; margin-bottom:32px;">
+            Google now uses AI to answer search queries directly &mdash; before anyone scrolls to your website. This isn't coming. <strong>It's here.</strong>
+        </p>
+        <div class="two-col" style="margin-top:20px;">
+            <div>
+                <h3>What it looks like</h3>
+                <p>A full answer appears at the top of Google, synthesized from multiple sources. Your website may or may not be cited.</p>
+                <p style="margin-top:12px; font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; color:var(--orange-dark);">Live demo &rarr;</p>
+            </div>
+            <div>
+                <h3>Why it matters</h3>
+                <p>If Google's AI doesn't reference your business, <strong>your competitors get the visibility you used to own</strong> &mdash; even if your SEO is solid.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: Three Things AI Looks For -->
+<div class="slide slide-dark" id="s5">
+    <div>
+        <div class="divider"></div>
+        <h2>What AI is <span class="highlight">actually looking for</span></h2>
+        <div class="three-col">
+            <div class="card">
+                <div class="stat">01</div>
+                <h3>Structured Authority</h3>
+                <p>Does your website clearly answer specific questions? FAQ pages, service pages with depth, location-specific content.</p>
+            </div>
+            <div class="card">
+                <div class="stat">02</div>
+                <h3>Trust Signals</h3>
+                <p>E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness. Reviews, credentials, consistent business info across the web.</p>
+            </div>
+            <div class="card">
+                <div class="stat">03</div>
+                <h3>Topical Depth</h3>
+                <p>AI wants comprehensive coverage of your expertise. 20 related questions answered well beats one thin "Services" page.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5A: NEW — Key Takeaway #1: What makes an FAQ AI-discoverable -->
+<div class="slide slide-light" id="s5a">
+    <div>
+        <div class="divider"></div>
+        <p class="subtitle" style="color: var(--orange-dark); text-transform: uppercase; letter-spacing: 2px; font-size: 0.95rem;">Takeaway #1</p>
+        <h2>What makes an FAQ <span class="highlight">AI-discoverable</span></h2>
+        <p style="font-size:1.25rem; max-width:780px; margin-bottom:28px; opacity:0.75;">
+            AI doesn't reward more content. It rewards clearer signals. Four rules, in order of impact.
+        </p>
+        <div class="two-col" style="gap:40px;">
+            <div>
+                <ul>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Ask the way people ask</h3>
+                        <p style="font-size:1.05rem;">Long-tail, conversational. <em>"How much does a deep-tissue massage cost near me?"</em> beats <em>"Pricing."</em></p>
+                    </li>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Answer in 40&ndash;80 words</h3>
+                        <p style="font-size:1.05rem;">Long enough to be useful. Short enough to be quotable. One concrete claim per answer.</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Name a place when it matters</h3>
+                        <p style="font-size:1.05rem;">Local intent? Put your city in the question OR the first sentence of the answer. Not buried at the bottom.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Cap each page at ~10 questions</h3>
+                        <p style="font-size:1.05rem;">Beyond that, AI dilutes the page's topic. Better: split into focused topic pages.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5B: NEW — Before / After FAQ rewrite -->
+<div class="slide slide-accent" id="s5b">
+    <div>
+        <div class="divider"></div>
+        <h2>Same question. <span class="highlight">Two answers.</span> Watch what changes.</h2>
+        <p style="font-size:1.15rem; max-width:780px; opacity:0.75; margin-bottom:24px;">
+            <strong>Q:</strong> Do you take walk-ins?
+        </p>
+        <div class="two-col" style="gap:48px;">
+            <div class="card" style="border-top-color:#999; background:rgba(0,0,0,0.04);">
+                <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; color:#999; margin-bottom:8px;">Before</p>
+                <p style="font-size:1.1rem; line-height:1.6;">
+                    Yes, walk-ins welcome. Please call ahead if possible.
+                </p>
+                <p style="margin-top:20px; font-size:0.95rem; opacity:0.6;">
+                    11 words. No location. No concrete time. AI has nothing to quote.
+                </p>
+            </div>
+            <div class="card" style="border-top-color:var(--orange);">
+                <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; color:var(--orange-dark); margin-bottom:8px;">After</p>
+                <p style="font-size:1.1rem; line-height:1.6;">
+                    Yes &mdash; our Charlotte location accepts walk-ins Monday through Friday from 9 AM to 6 PM, and Saturdays until 2 PM. Sundays are appointment-only. To guarantee a time, we recommend booking online the day before.
+                </p>
+                <p style="margin-top:20px; font-size:0.95rem; opacity:0.7;">
+                    47 words. Location, hours, concrete claim. AI can lift this verbatim into an answer.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5C: NEW — Key Takeaway #2: FAQPage schema, format not volume -->
+<div class="slide slide-dark" id="s5c">
+    <div>
+        <div class="divider"></div>
+        <p class="subtitle" style="color: var(--orange); text-transform: uppercase; letter-spacing: 2px; font-size: 0.95rem;">Takeaway #2</p>
+        <h2>FAQPage schema: <span class="highlight">format, not volume</span></h2>
+        <div class="two-col" style="gap:48px; margin-top:8px; align-items:start;">
+            <div>
+                <p style="font-size:1.15rem; line-height:1.6; margin-bottom:18px;">
+                    Schema is a small block of structured data AI search reads first. You don't write it from scratch.
+                </p>
+                <ul style="font-size:1.05rem;">
+                    <li><h3 style="margin-bottom:2px; font-size:1.1rem;">One page, one purpose</h3><p style="font-size:1rem;">A FAQ-rich service page outranks 50 thin blog posts. Every time.</p></li>
+                    <li><h3 style="margin-bottom:2px; font-size:1.1rem;">Your plugin already does it</h3><p style="font-size:1rem;">WordPress + Yoast/RankMath/SEOPress, Shopify, Wix &mdash; FAQ schema is a toggle.</p></li>
+                    <li><h3 style="margin-bottom:2px; font-size:1.1rem;">Or paste the prompt</h3><p style="font-size:1rem;">Free schema-guide prompt at the end of this session generates a starter block.</p></li>
+                </ul>
+            </div>
+            <div style="background:rgba(245,166,35,0.06); border-left:3px solid var(--orange); padding:24px 28px; font-family:'JetBrains Mono', Consolas, monospace; font-size:0.85rem; line-height:1.55; color:#e8e6e1; border-radius:4px;">
+<span style="opacity:0.5;">&lt;script type="application/ld+json"&gt;</span><br>
+{<br>
+&nbsp;&nbsp;<span style="color:var(--orange);">"@context"</span>: <span style="color:#a3d4a3;">"https://schema.org"</span>,<br>
+&nbsp;&nbsp;<span style="color:var(--orange);">"@type"</span>: <span style="color:#a3d4a3;">"FAQPage"</span>,<br>
+&nbsp;&nbsp;<span style="color:var(--orange);">"mainEntity"</span>: [{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--orange);">"@type"</span>: <span style="color:#a3d4a3;">"Question"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--orange);">"name"</span>: <span style="color:#a3d4a3;">"Do you take walk-ins?"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--orange);">"acceptedAnswer"</span>: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--orange);">"@type"</span>: <span style="color:#a3d4a3;">"Answer"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--orange);">"text"</span>: <span style="color:#a3d4a3;">"Yes &mdash; our Charlotte location..."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}]<br>
+}<br>
+<span style="opacity:0.5;">&lt;/script&gt;</span>
+            </div>
+        </div>
+        <p style="margin-top:24px; font-size:1rem; opacity:0.6; max-width:760px;">
+            You will never look at this code at 2 AM. Your plugin or the free prompt handles it. The point: AI is reading <em>this format</em>, not your prose.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 5D: NEW — Key Takeaway #3: AI as research, not content factory -->
+<div class="slide slide-light" id="s5d">
+    <div>
+        <div class="divider"></div>
+        <p class="subtitle" style="color: var(--orange-dark); text-transform: uppercase; letter-spacing: 2px; font-size: 0.95rem;">Takeaway #3</p>
+        <h2>Use AI to <span class="highlight">find the right questions</span> &mdash; not to write 50 blog posts</h2>
+        <div class="two-col" style="gap:48px; margin-top:20px;">
+            <div class="card" style="border-top-color:#c44; background:rgba(196,68,68,0.04);">
+                <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; color:#c44; margin-bottom:8px;">Wrong</p>
+                <h3 style="font-size:1.3rem;">"ChatGPT, write me 50 FAQ articles."</h3>
+                <p style="margin-top:12px; font-size:1.05rem;">
+                    Generic, thin, recognizably AI-generated. Google has been demoting this kind of content for two years. You're now competing with millions of identical pages.
+                </p>
+            </div>
+            <div class="card" style="border-top-color:var(--orange);">
+                <p style="font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; color:var(--orange-dark); margin-bottom:8px;">Right</p>
+                <h3 style="font-size:1.3rem;">"What are the 15 questions my customers actually ask?"</h3>
+                <p style="margin-top:12px; font-size:1.05rem;">
+                    Use AI to <em>mine</em> &mdash; your inbox, your call transcripts, Google's "People Also Ask," your competitors. Then <em>you</em> answer the 15 that matter, in your voice.
+                </p>
+            </div>
+        </div>
+        <p style="font-size:1.15rem; margin-top:28px; max-width:780px; text-align:center; opacity:0.75;">
+            AI is your research assistant. You are still the expert.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 5E: NEW — Three prompts to find your right 15 questions -->
+<div class="slide slide-dark" id="s5e">
+    <div>
+        <div class="divider"></div>
+        <h2>Three prompts to find your <span class="highlight">right 15 questions</span></h2>
+        <div class="three-col" style="margin-top:24px;">
+            <div class="card">
+                <div class="step-num">01</div>
+                <h3>Mine "People Also Ask"</h3>
+                <p style="font-size:0.95rem; font-style:italic; opacity:0.85; margin-top:8px; line-height:1.5;">
+                    "Search Google for [my main service] in [my city]. Extract every question from the 'People Also Ask' box. Group them by intent: pricing, scheduling, qualifications, what-to-expect."
+                </p>
+            </div>
+            <div class="card">
+                <div class="step-num">02</div>
+                <h3>Mine your inbox</h3>
+                <p style="font-size:0.95rem; font-style:italic; opacity:0.85; margin-top:8px; line-height:1.5;">
+                    "Here are 20 customer emails from the last 6 months [paste]. Pull every question they asked before buying. Cluster them. Tell me which 10 came up more than once."
+                </p>
+            </div>
+            <div class="card">
+                <div class="step-num">03</div>
+                <h3>Mine your competitors</h3>
+                <p style="font-size:0.95rem; font-style:italic; opacity:0.85; margin-top:8px; line-height:1.5;">
+                    "Visit [3 competitor URLs]. List every FAQ they answer. Mark which ones I should answer differently or better. Flag the questions none of them answer that I should own."
+                </p>
+            </div>
+        </div>
+        <p style="margin-top:28px; font-size:1.05rem; opacity:0.65; max-width:800px;">
+            Run all three. You'll have your 15 questions in 30 minutes. Then <em>you</em> write the answers.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 6: Reframe -->
+<div class="slide slide-accent" id="s6">
+    <div>
+        <div class="divider"></div>
+        <h1 style="font-size:2.6rem; max-width:800px;">
+            This isn't about tricking an algorithm.
+        </h1>
+        <p style="font-size:1.5rem; max-width:700px; margin-top:16px;">
+            It's about being <span class="highlight">genuinely useful</span> &mdash; which is what good businesses already do. The gap is between what you <em>know</em> and what your <em>website communicates</em>.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 7: Four Moves -->
+<div class="slide slide-dark" id="s7">
+    <div>
+        <div class="divider"></div>
+        <h2>Four moves you can make <span class="highlight">this week</span></h2>
+        <div class="two-col" style="margin-top:20px;">
+            <div>
+                <ul>
+                    <li>
+                        <h3 style="margin-bottom:4px;">The FAQ Audit</h3>
+                        <p style="font-size:1.1rem;">List the 10 questions your customers ask most. Does your website answer them?</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Google Yourself</h3>
+                        <p style="font-size:1.1rem;">Search the questions your customers would ask. Does an AI Overview appear? Are you in it?</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Claim Your Territory</h3>
+                        <p style="font-size:1.1rem;">Pick the ONE thing you're the local expert on. Build content depth around that topic.</p>
+                    </li>
+                    <li>
+                        <h3 style="margin-bottom:4px;">Check Your Foundation</h3>
+                        <p style="font-size:1.1rem;">Google Business Profile: complete? Website: mobile-friendly, fast, clear headings?</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8: The Gap -->
+<div class="slide slide-light" id="s8">
+    <div>
+        <div class="divider"></div>
+        <h2>The gap you <span class="highlight">can't see</span></h2>
+        <p style="font-size:1.4rem; max-width:750px; margin-bottom:32px;">
+            Everything I just shared, you can start doing yourself. But here's what you can't do yourself:
+        </p>
+        <ul style="max-width:700px;">
+            <li><strong>See how AI currently treats your business</strong> across hundreds of search queries</li>
+            <li><strong>Know which competitors</strong> are getting cited instead of you</li>
+            <li><strong>Build schema from real search data</strong> &mdash; not guesswork, but what people actually search</li>
+            <li><strong>Validate and deploy</strong> structured data that passes Google's verification</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SLIDE 9: The Offer -->
+<div class="slide slide-dark" id="s9">
+    <div>
+        <div class="divider"></div>
+        <h2>Two ways to start</h2>
+        <div class="two-col" style="margin-top:20px;">
+            <div class="card" style="border-top-color: #666;">
+                <h3 style="opacity:0.6;">FREE</h3>
+                <h3>AI Schema Prompt</h3>
+                <p>A prompt you paste into ChatGPT or Claude right now. Generates basic schema for your business in 60 seconds.</p>
+                <p style="margin-top:16px; font-size:1rem; opacity:0.7;">Covers 2 of 9+ schema types. Gets you started.</p>
+                <p style="margin-top:16px; font-size:1rem;">
+                    + Free installation guide at<br>
+                    <span class="highlight">apollollc.com/schema-guide</span>
+                </p>
+            </div>
+            <div class="card">
+                <h3 style="color:var(--orange);">$297 &mdash; ONE TIME</h3>
+                <h3>AIO Research</h3>
+                <p>We research how AI sees your business, build a complete 9-type schema package with up to 50 FAQs from real search data, validate everything, and <strong>install it on your site</strong>.</p>
+                <p style="margin-top:16px; font-size:1rem;">
+                    Delivered in 5&ndash;7 business days.<br>
+                    Done-for-you deployment included.
+                </p>
+                <p style="margin-top:16px;">
+                    <span class="highlight" style="font-weight:700;">apollollc.com/aio-research</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: Closing -->
+<div class="slide slide-orange" id="s10">
+    <div>
+        <h1 style="font-size:3rem;">Start with the free prompt.</h1>
+        <p style="font-size:1.5rem; max-width:700px; margin-top:16px;">
+            You'll see exactly what I mean.
+        </p>
+        <div style="margin-top:48px;">
+            <p style="font-size:1.3rem; font-weight:700;">Sage Harper</p>
+            <p style="font-size:1.1rem;">Apollo Marketing &bull; apollollc.com</p>
+            <p style="font-size:1.1rem;">sage.harper@apollollc.com &bull; 301-744-9697</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 11: Q&A -->
+<div class="slide slide-dark" id="s11">
+    <div style="text-align:center;">
+        <h1><span class="highlight">Q&amp;A</span></h1>
+        <p style="font-size:1.3rem; opacity:0.6; margin-top:16px;">
+            Try the free prompt right now &mdash; I'll walk you through it.
+        </p>
+        <div style="margin-top:36px; display:inline-block; background:#ffffff; padding:18px 18px 12px; border-radius:12px;">
+            <img src="qr-schema-guide.png" alt="Scan to get the free schema prompt" width="220" height="220" style="display:block;">
+            <p style="color:#23282d; font-size:0.85rem; margin-top:8px; opacity:1;">Scan for the free prompt</p>
+        </div>
+        <p style="font-size:1.1rem; opacity:0.4; margin-top:32px;">
+            apollollc.com/aio-research &bull; apollollc.com/schema-guide
+        </p>
+    </div>
+</div>
+
+<script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slideNum = document.getElementById('slideNum');
+
+    function showSlide(n) {
+        slides[current].classList.remove('active');
+        current = Math.max(0, Math.min(n, slides.length - 1));
+        slides[current].classList.add('active');
+        slideNum.textContent = (current + 1) + ' / ' + slides.length;
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+            e.preventDefault();
+            showSlide(current + 1);
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            e.preventDefault();
+            showSlide(current - 1);
+        }
+        if (e.key === 'Home') showSlide(0);
+        if (e.key === 'End') showSlide(slides.length - 1);
+        if (e.key === 'f' || e.key === 'F') {
+            document.documentElement.requestFullscreen?.();
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.clientX > window.innerWidth / 2) showSlide(current + 1);
+        else showSlide(current - 1);
+    });
+
+    showSlide(0);
+</script>
+</body>
+</html>
