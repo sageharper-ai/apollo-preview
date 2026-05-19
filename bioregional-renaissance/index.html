@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toward a Bioregional Renaissance — Sage Harper · 2026-05-20</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #000; font-family: 'Inter', sans-serif; height: 100%; overflow: hidden; }
+  .stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .slide {
+    width: 100vw; height: 100vh;
+    max-width: calc(100vh * 16 / 9); max-height: calc(100vw * 9 / 16);
+    aspect-ratio: 16 / 9; position: relative; overflow: hidden; display: none;
+  }
+  .slide.active { display: block; }
+  .slide .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .slide .copy { position: absolute; z-index: 2; padding: 4vh 4vw; }
+  .copy.left { left: 5%; top: 50%; transform: translateY(-50%); width: 40%;
+    background: linear-gradient(to right, rgba(20,20,25,0.88) 0%, rgba(20,20,25,0.78) 70%, rgba(20,20,25,0) 100%);
+    color: #fff; }
+  .copy.right { right: 5%; top: 50%; transform: translateY(-50%); width: 40%;
+    background: linear-gradient(to left, rgba(20,20,25,0.88) 0%, rgba(20,20,25,0.78) 70%, rgba(20,20,25,0) 100%);
+    color: #fff; }
+  .copy.center { left: 50%; top: 50%; transform: translate(-50%, -50%); width: 78%;
+    background: rgba(20,20,25,0.78); color: #fff; text-align: center; }
+  h1 { font-family: 'Crimson Pro', serif; font-size: 5vw; font-weight: 600; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 2vh; }
+  h2 { font-family: 'Crimson Pro', serif; font-size: 3.8vw; font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 2vh; }
+  h3 { font-family: 'Crimson Pro', serif; font-size: 3vw; font-weight: 600; line-height: 1.1; margin-bottom: 1.5vh; }
+  p, li { font-family: 'Inter', sans-serif; font-size: 1.7vw; font-weight: 400; line-height: 1.45; margin-bottom: 1vh; opacity: 0.95; }
+  .dek { font-style: italic; opacity: 0.78; font-size: 1.5vw; }
+  .data-list { list-style: none; }
+  .data-list li { font-size: 1.6vw; margin-bottom: 1.2vh; padding-left: 0; }
+  .data-list .num { font-family: 'Crimson Pro', serif; font-weight: 700; font-size: 2.2vw; color: #f0d090; margin-right: 0.5rem; }
+  .nav { position: fixed; bottom: 1.5vh; left: 50%; transform: translateX(-50%); z-index: 100;
+    background: rgba(30,30,40,0.7); color: rgba(255,255,255,0.9);
+    padding: 0.5rem 1rem; border-radius: 999px; font-size: 14px; font-family: Inter, sans-serif;
+    display: flex; gap: 1rem; align-items: center; backdrop-filter: blur(8px); }
+  .nav button { background: rgba(255,255,255,0.1); color: #fff; border: 0; padding: 0.3rem 0.7rem; border-radius: 4px; cursor: pointer; font-family: inherit; font-size: inherit; }
+  .nav button:hover { background: rgba(255,255,255,0.2); }
+  .nav .counter { min-width: 3.5rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+<div class="slide active" data-i="1">
+  <img class="bg" src="bg/bg1.webp" alt="">
+  <div class="copy left">
+    <h1>Toward a Bioregional Renaissance</h1>
+    <p class="dek">Sage Harper · Catawba Care Network<br>2026-05-20</p>
+  </div>
+</div>
+
+<div class="slide" data-i="2">
+  <img class="bg" src="bg/bg2.webp" alt="">
+  <div class="copy center">
+    <h3>The empirical picture</h3>
+    <ul class="data-list">
+      <li><span class="num">60%</span>of early-career activists report adverse mental-health impact from their work</li>
+      <li><span class="num">67%</span>of nonprofit EDs plan to leave within 5 years; tenure dropped 10→6 years</li>
+      <li><span class="num">90%</span>mortality across 1970s food cooperatives over 50 years</li>
+      <li><span class="num">70%</span>of Transition Towns initiatives inactive within 5 years</li>
+    </ul>
+  </div>
+</div>
+
+<div class="slide" data-i="3">
+  <img class="bg" src="bg/bg4.webp" alt="">
+  <div class="copy left">
+    <h2>One bioregion.</h2>
+    <p>Catawba County, North Carolina.</p>
+    <p class="dek">Twenty years in telecommunications gave us an architecture lens. We're running the first deployment of this substrate here. Months in, not years.</p>
+  </div>
+</div>
+
+<div class="slide" data-i="4">
+  <img class="bg" src="bg/bg6.webp" alt="">
+  <div class="copy right">
+    <h2>The hubs we cite, in context.</h2>
+    <p>Cleveland Evergreen: $5.8M day-one capital stack. Three CEOs in year one. ~320 jobs vs original projection of thousands.</p>
+    <p>Cooperation Jackson: founding mayor died 8 months in. $3M city funding collapsed.</p>
+    <p>Mondragón: founding industrial co-op went bankrupt in 2013. €1.1B in debt.</p>
+  </div>
+</div>
+
+<div class="slide" data-i="5">
+  <img class="bg" src="bg/bg5.webp" alt="">
+  <div class="copy right">
+    <h2>A wicked problem.</h2>
+    <p>Every bioregion is different. Different ecological ground. Different people. Different conditions that either allow or stifle bioregionalism in that specific place.</p>
+    <p class="dek">There isn't one answer. There are many valid responses.</p>
+  </div>
+</div>
+
+<div class="slide" data-i="6">
+  <img class="bg" src="bg/bg3.webp" alt="">
+  <div class="copy right">
+    <h2>The layer underneath.</h2>
+    <p>Like mycelium beneath a forest — carrying signals between trees that look unrelated above ground.</p>
+    <p class="dek">Open-source substrate. Other bioregions don't import our solutions. They fork it and instantiate it inside their own conditions.</p>
+  </div>
+</div>
+
+<div class="slide" data-i="7">
+  <img class="bg" src="bg/bg7.webp" alt="">
+  <div class="copy center">
+    <h2>Member-owned. Honest about gaps.</h2>
+    <p>Cooperative form removes failure modes when the founder leaves. Surplus stays with members who did the work.</p>
+    <p>The case library compounds across bioregions — including the failures.</p>
+    <p class="dek">Conditions can't be exported. Discipline can.</p>
+  </div>
+</div>
+
+<div class="slide" data-i="8">
+  <img class="bg" src="bg/bg8.webp" alt="">
+  <div class="copy right">
+    <h1>The door is open.</h1>
+    <p>If you identify as a bioregional steward — the work we just described is the work you're already doing in your place. We're building these tools to support your mission.</p>
+    <p class="dek">A weekly working group is forming. Light commitment. Real practice. Reach out.</p>
+  </div>
+</div>
+
+</div>
+
+<div class="nav">
+  <button id="prev">← Prev</button>
+  <span class="counter"><span id="cur">1</span> / 8</span>
+  <button id="next">Next →</button>
+  <button id="full">⛶ Fullscreen</button>
+</div>
+
+<script>
+  let i = 1; const total = 8;
+  const slides = document.querySelectorAll('.slide');
+  const cur = document.getElementById('cur');
+  function show(n) {
+    n = Math.max(1, Math.min(total, n));
+    slides.forEach(s => s.classList.toggle('active', parseInt(s.dataset.i, 10) === n));
+    cur.textContent = n; i = n;
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('full').onclick = () => document.documentElement.requestFullscreen();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { show(i + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(i - 1); e.preventDefault(); }
+    if (e.key === 'f' || e.key === 'F') { document.documentElement.requestFullscreen(); }
+    if (e.key === 'Home') { show(1); }
+    if (e.key === 'End') { show(total); }
+  });
+</script>
+
+</body>
+</html>
