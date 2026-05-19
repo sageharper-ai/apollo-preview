@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What we need from you — Empowered Business Networking AIO Research</title>
+<style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b87d1a;
+  --warn-soft: #fdf7e8;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 36px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+.intro-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 36px; border-radius: 0 6px 6px 0; }
+.intro-callout p { margin: 0 0 8px; }
+.intro-callout p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+.section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+
+.input-row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.input-row .field-label { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.input-row .field-note { font-size: 13px; color: var(--ink-muted); font-style: italic; margin-bottom: 8px; }
+.input-row input[type="text"] { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; font-family: inherit; font-size: 14px; }
+.input-row input[type="text"]:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.input-row.optional .field-label::after { content: " (optional)"; color: var(--ink-muted); font-weight: 400; font-size: 13px; font-style: italic; }
+
+.open-q { background: var(--warn-soft); border: 1px solid #f0d99a; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; }
+.open-q .q-text { font-weight: 600; font-size: 15px; }
+.open-q .q-why { font-size: 13px; color: var(--ink-soft); margin-top: 6px; font-style: italic; }
+.open-q textarea { width: 100%; border: 1px solid #d9b96d; border-radius: 4px; padding: 10px 12px; margin-top: 10px; min-height: 70px; font-family: inherit; font-size: 14px; background: #fff; resize: vertical; }
+.open-q textarea:focus { outline: 2px solid var(--warn); outline-offset: -1px; }
+
+.confirm-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; margin: 12px 0; }
+.confirm-card .confirm-q { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.confirm-card .confirm-detail { font-size: 14px; color: var(--ink-soft); margin: 6px 0 12px; }
+.confirm-card .confirm-detail .quote { background: var(--bg-soft); padding: 10px 14px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 10px 0; font-style: italic; line-height: 1.55; }
+.confirm-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.confirm-options label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px;
+  padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; transition: all 0.15s;
+}
+.confirm-options label:hover { border-color: var(--ink-muted); }
+.confirm-options input[type="radio"] { margin: 0; }
+.confirm-options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.confirm-note { margin-top: 10px; display: none; }
+.confirm-note.show { display: block; }
+.confirm-note label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.confirm-note input { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; font-family: inherit; font-size: 14px; }
+
+.send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
+.send-zone h3 { color: #fff; margin: 0 0 6px; font-size: 20px; }
+.send-zone p { color: #d8d4cd; margin: 0 0 16px; font-size: 14px; }
+.send-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary { background: var(--apollo-orange); color: #fff; border: none; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--apollo-orange-dark); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.send-output { display: none; margin-top: 16px; }
+.send-output.show { display: block; }
+.send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
+.send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
+.save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.save-notice.show { opacity: 1; }
+
+.top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.top-bar .top-bar-msg { color: var(--ink-soft); }
+.top-bar .top-bar-actions { display: flex; gap: 8px; }
+.btn-small { background: var(--bg-soft); border: 1px solid var(--rule); color: var(--ink-soft); padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.btn-small:hover { background: var(--rule); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="top-bar">
+  <div class="top-bar-msg">Your answers auto-save in your browser</div>
+  <div class="top-bar-actions">
+    <button class="btn-small" onclick="document.getElementById('send-section').scrollIntoView({behavior:'smooth'})">↓ Jump to send</button>
+    <button class="btn-small" onclick="clearAll()">Clear my answers</button>
+  </div>
+</div>
+
+<header>
+  <div class="preheader">Apollo Marketing · AIO Research</div>
+  <h1>Quick — what we need from you to finish your AIO Research</h1>
+  <p class="subtitle">For Stephanie Bonte-Lebair / Empowered Business Networking</p>
+  <p class="meta-line">Prepared: May 19, 2026 · Revised: May 19, 2026 · Read time: ~10 minutes</p>
+</header>
+
+<div class="intro-callout">
+  <p>Your full AIO Research package — the analysis report, the 9-type schema bundle (including the recurring Event schemas for your monthly Networking & Connection Experience and Implementation & Referral Roundtable), the 50 FAQs, the Entity Chain Architecture document, the LeadConnector-specific deploy guide, and our Zoom session to install everything — is being built right now.</p>
+  <p>There are a few specific things we couldn't finish without your input. Three short sections below. Fill in what you can, skip what you don't want included, then hit "Send back to Apollo" at the bottom. Your finished package arrives ~5-7 business days after your reply.</p>
+</div>
+
+<!-- ===== SECTION 1: Data fields we need ===== -->
+<section id="sec-data">
+  <h2><span class="num">1.</span>Data we need for your schema</h2>
+  <p class="section-intro">Fields that go into the Knowledge Panel and AI-surface entity data. Fill what you want included; leave blank what you'd rather we omit.</p>
+
+  <div class="input-row">
+    <div class="field-label">Phone number</div>
+    <div class="field-note">For your Knowledge Panel entity. Skip to keep private.</div>
+    <input type="text" data-save="phone" placeholder="(xxx) xxx-xxxx · or leave blank">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Public business address</div>
+    <div class="field-note">Your intake had a Gaithersburg street address; your live site only shows "Gaithersburg, MD." If the street address is a home address, recommend keeping it city + state only.</div>
+    <input type="text" data-save="address" placeholder="Full address, city + state only, or leave blank">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Canonical brand logo URL</div>
+    <div class="field-note">Google recommends at least 600 × 60px. URL pointing to your real EBN brand logo (not a Stephanie headshot).</div>
+    <input type="text" data-save="logo" placeholder="https://...">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Membership cap accuracy</div>
+    <div class="field-note">We encoded "capped at 75 members" based on a branded search snippet. Confirm the current cap (or correct).</div>
+    <input type="text" data-save="member-cap" placeholder="75 · or your actual number">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Authority Magazine interview URL — confirm</div>
+    <div class="field-note">We pulled this Medium URL for the press signal: medium.com/authority-magazine/stephanie-bonte-lebair-of-empowered-business-networking… Confirm it's the right interview, or paste a different/canonical URL.</div>
+    <input type="text" data-save="press-authority" placeholder="Confirm or paste correct URL">
+  </div>
+
+  <div class="input-row optional">
+    <div class="field-label">Your educational background</div>
+    <div class="field-note">Strengthens your founder-authority signal. We noted "Bachelor + Master of Vocal Performance" inferred from earlier intake — confirm school(s) if you want them encoded, or skip.</div>
+    <input type="text" data-save="education" placeholder="School(s) + degree(s) · or leave blank">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">"did" subdomain quiz framing</div>
+    <div class="field-note">did.empoweredbusinessnetworking.com/didquiz — we want to encode it as a pre-conversation tool (the "Aligned Business Networking Style" quiz). Confirm it's yours and the framing matches how you describe it.</div>
+    <input type="text" data-save="did-quiz" placeholder="OK as 'pre-conversation networking-style quiz' · or correct the framing">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">"ebn.empoweryourvoice.com/experience/" subdomain</div>
+    <div class="field-note">This parallel subdomain came up in our scan. We encoded it as a sameAs URL on the Organization. Confirm it's a current EBN surface you want associated, or tell us to drop it.</div>
+    <input type="text" data-save="ebn-experience-subdomain" placeholder="Keep as sameAs · drop · or framing note">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Eventbrite organizer URL</div>
+    <div class="field-note">We have your Eventbrite organizer link from your live profile. Confirm it's current and you want it encoded as a sameAs on Organization + Person.</div>
+    <input type="text" data-save="eventbrite" placeholder="Confirm current Eventbrite URL · or skip">
+  </div>
+</section>
+
+<!-- ===== SECTION 2: Open FAQs we want answers for ===== -->
+<section id="sec-faqs">
+  <h2><span class="num">2.</span>FAQs only you can answer</h2>
+  <p class="section-intro">Public search data tells us what buyers are <em>already</em> asking. The questions below matter for AI visibility but we couldn't write them well without your input. Skip any you'd rather not include.</p>
+
+  <div class="open-q">
+    <div class="q-text">What inspired you to build EBN specifically — beyond discovering you had a talent for matching people? What were you seeing in other networking communities that pushed you to create something different?</div>
+    <div class="q-why">Your live site mentions you discovered your talent through Managing Director work. The deeper "why" — what was broken in existing networking that made you build EBN — is the part AI surfaces will surface as your founding story.</div>
+    <textarea data-save="faq-1" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What type of business owner is NOT a good fit for EBN?</div>
+    <div class="q-why">Anti-personas sharpen positioning. Your existing Q1 names who IS a fit — surfacing who isn't gives AI a clearer signal on category alignment. (Bonus: protects you from misfit applications.)</div>
+    <textarea data-save="faq-2" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What does a typical 6-month member outcome look like? (Beyond the "2+ connections per event" stat — specifics about what changes in someone's business by month 6.)</div>
+    <div class="q-why">Outcome stories at a 6-month horizon convert prospects who are evaluating whether the time investment pays off. The 95% / 64% / Erin Duffy $6,500 stats are great proof points; the 6-month arc is the missing narrative.</div>
+    <textarea data-save="faq-3" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">Why pick EBN over Pavilion, Chief, or other women-focused / paid networking communities? (We drafted a basic version in Q47-48; this is your chance to sharpen it.)</div>
+    <div class="q-why">The comparison question is one AI surfaces directly answer. Right now Pavilion/Chief/Entreprenista are writing this answer for you because they have larger AI footprints.</div>
+    <textarea data-save="faq-4" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What's the most common question you answer in your 20-minute discovery conversations that we haven't covered in the 50 FAQs?</div>
+    <div class="q-why">You live in those discovery conversations. We can't surface from public data what only you know from talking to applicants.</div>
+    <textarea data-save="faq-5" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What happens when a member's business shifts mid-membership (rebrand, pivot, life change)? Do they stay, pause, or leave?</div>
+    <div class="q-why">Buyers worry about being locked into a community that won't match them anymore. Naming how EBN handles transition is rare in this category and builds trust.</div>
+    <textarea data-save="faq-6" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">How do you handle overlapping niches in the same membership? (Two coaches, two marketers — do they get matched together or kept apart?)</div>
+    <div class="q-why">This is exactly the BNI "single-category-per-chapter" question reframed for EBN's model. Strong differentiator if your answer is collaboration-first; useful clarity either way.</div>
+    <textarea data-save="faq-7" placeholder="Your answer..."></textarea>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: Micro-confirms on FAQs we drafted ===== -->
+<section id="sec-confirms">
+  <h2><span class="num">3.</span>A few quick confirms on FAQs we drafted</h2>
+  <p class="section-intro">Three places inside the 50 FAQs we wrote where we made a content call we'd like you to look at. Each one shows you the actual FAQ in context.</p>
+
+  <!-- Confirm 1 — BNI comparison FAQs -->
+  <div class="confirm-card" data-mark="confirm-1">
+    <div class="confirm-q">The BNI comparison FAQs — competitive framing check</div>
+    <div class="confirm-detail">
+      We wrote two FAQs that compare EBN to BNI by name. AI surfaces will quote these back when prospects ask "EBN vs BNI" or "alternatives to BNI." Here's how we drafted them:
+      <div class="quote">
+        <strong>Q. How is EBN different from BNI?</strong><br><br>
+        A. BNI runs on a strict referral-quota model with weekly attendance, single-business-category-per-chapter exclusivity, and a transactional referral-tracking culture. EBN runs on a curated-collaboration model: monthly events instead of weekly, partnership-building instead of referral counting, application-only and capped membership instead of broad chapter recruitment, and Empowered Partners® rather than referral leads. Both work — but they serve different working styles. Members who hate the BNI quota structure often thrive in EBN.
+      </div>
+      <div class="quote">
+        <strong>Q. How is EBN different from BNI for creative entrepreneurs specifically?</strong><br><br>
+        A. BNI is built around a structure that fits some business models well (high-volume, transactional, single-category-per-chapter) but doesn't fit creative service businesses well — coaches, marketing professionals, audiobook narrators, vocal coaches, designers, and speakers often have overlapping niches that BNI's exclusivity rules don't accommodate. EBN was built specifically for the creative service-based entrepreneur category — overlap is welcome (and often productive), and the curation accounts for it.
+      </div>
+      Naming BNI directly is competitive framing. If you have past or current relationships with BNI, or just prefer softer comparative posture, we can soften, anonymize, or drop the comparison.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="confirm-1" value="keep" data-save="confirm-1"><span>Ship both as-drafted</span></label>
+      <label><input type="radio" name="confirm-1" value="soften" data-save="confirm-1"><span>Soften — keep both but less direct:</span></label>
+      <label><input type="radio" name="confirm-1" value="anonymize" data-save="confirm-1"><span>Anonymize BNI ("traditional referral networks")</span></label>
+      <label><input type="radio" name="confirm-1" value="drop" data-save="confirm-1"><span>Drop both</span></label>
+    </div>
+    <div class="confirm-note" data-for="confirm-1"><label>Your softening direction (if soften):</label><input type="text" data-save="confirm-1-note" placeholder="..."></div>
+  </div>
+
+  <!-- Confirm 2 — Parent LLC framing -->
+  <div class="confirm-card" data-mark="confirm-2">
+    <div class="confirm-q">Parent LLC framing — "Duet Vocal Academy d/b/a The Empowered Voice"</div>
+    <div class="confirm-detail">
+      Your intake noted EBN operates under <em>Duet Vocal Academy d/b/a The Empowered Voice</em> as the parent legal entity. We drafted this FAQ about the relationship between EBN and your voice-coaching brand:
+      <div class="quote">
+        <strong>Q. What's the relationship between EBN and The Empowered Voice?</strong><br><br>
+        A. The Empowered Voice is Stephanie's vocal coaching practice — her original business as a voice coach for entrepreneurs and performers. EBN is a separate brand focused on business networking, founded in 2020 after she discovered her facilitation talent through Managing Director work. The two businesses share Stephanie's voice/communication expertise as a foundation but serve different audiences.
+      </div>
+      We did NOT surface the parent LLC name (Duet Vocal Academy) in the FAQ or in the schema's parentOrganization field. Schema-wise we can: (a) keep it implicit as drafted, (b) add Duet Vocal Academy as the legal parent in the Organization schema (visible to AI but not in this FAQ), or (c) surface the d/b/a relationship in the FAQ too.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="confirm-2" value="implicit" data-save="confirm-2"><span>Keep implicit (FAQ as-is, no parent LLC in schema)</span></label>
+      <label><input type="radio" name="confirm-2" value="schema-only" data-save="confirm-2"><span>Add Duet Vocal Academy as legal parent in schema only</span></label>
+      <label><input type="radio" name="confirm-2" value="surface-faq" data-save="confirm-2"><span>Surface the d/b/a in the FAQ too</span></label>
+      <label><input type="radio" name="confirm-2" value="rewrite" data-save="confirm-2"><span>Rewrite the FAQ:</span></label>
+    </div>
+    <div class="confirm-note" data-for="confirm-2"><label>Your rewrite or framing note:</label><input type="text" data-save="confirm-2-note" placeholder="..."></div>
+  </div>
+
+  <!-- Confirm 3 — Membership pricing -->
+  <div class="confirm-card" data-mark="confirm-3">
+    <div class="confirm-q">Membership pricing — disclose in FAQ, or keep gated?</div>
+    <div class="confirm-detail">
+      Pricing isn't on your live landing — application-only model. We drafted this FAQ for the "how much does it cost" question:
+      <div class="quote">
+        <strong>Q. How much does EBN membership cost?</strong><br><br>
+        A. EBN membership pricing details are shared during the application process. Membership is application-only, so pricing conversations happen as part of evaluating mutual fit. The 20-minute conversation with Stephanie (bookable at links.empoweredbusinessnetworking.com) is the right starting point.
+      </div>
+      AI surfaces tend to favor concrete numbers when answering "how much does X cost" queries. Keeping it gated is intentional positioning; disclosing the price gives AI a direct answer. Your call.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="confirm-3" value="gated" data-save="confirm-3"><span>Keep gated as-drafted</span></label>
+      <label><input type="radio" name="confirm-3" value="disclose" data-save="confirm-3"><span>Disclose the price:</span></label>
+      <label><input type="radio" name="confirm-3" value="rewrite" data-save="confirm-3"><span>Rewrite the FAQ:</span></label>
+    </div>
+    <div class="confirm-note" data-for="confirm-3"><label>Your price (if disclose) or rewrite:</label><input type="text" data-save="confirm-3-note" placeholder="..."></div>
+  </div>
+</section>
+
+<!-- ===== SEND ZONE ===== -->
+<section id="send-section">
+  <div class="send-zone">
+    <h3>Send back to Apollo</h3>
+    <p>Hit the button to package your answers. Review, send via email, or copy to paste anywhere.</p>
+    <div class="send-actions">
+      <button class="btn-primary" onclick="compileAnswers()">📋 Compile my answers</button>
+    </div>
+
+    <div class="send-output" id="send-output">
+      <p style="color: #d8d4cd; font-size: 13px; margin-top: 14px;">Your answers, ready to send:</p>
+      <textarea id="send-text" readonly></textarea>
+      <div class="post-actions">
+        <button class="btn-primary" onclick="openEmail()">✉ Open in my email client</button>
+        <button class="btn-secondary" onclick="copyToClipboard()">📋 Copy to clipboard</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Apollo Marketing · Questions? Just reply to the email this link came in.</p>
+</footer>
+
+</div>
+
+<div class="save-notice" id="save-notice">✓ Saved</div>
+
+<script>
+const STORAGE_KEY = 'aio-input-ebn-2026-05-19';
+const RECIPIENT_EMAIL = 'sage.harper@apollollc.com';
+
+window.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  attachListeners();
+  document.querySelectorAll('input[type="radio"]:checked').forEach(input => toggleConfirmNote(input));
+});
+
+function loadState() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch (e) { saved = {}; }
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (!saved[key]) return;
+    if (el.type === 'radio') {
+      if (el.value === saved[key]) el.checked = true;
+    } else {
+      el.value = saved[key];
+    }
+  });
+}
+
+function saveState() {
+  const state = {};
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (el.type === 'radio') {
+      if (el.checked) state[key] = el.value;
+    } else {
+      if (el.value) state[key] = el.value;
+    }
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  showSaveNotice();
+}
+
+function attachListeners() {
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const event = el.type === 'radio' ? 'change' : 'input';
+    el.addEventListener(event, (e) => {
+      if (e.target.type === 'radio') toggleConfirmNote(e.target);
+      saveState();
+    });
+  });
+}
+
+function toggleConfirmNote(radio) {
+  const note = document.querySelector(`.confirm-note[data-for="${radio.name}"]`);
+  if (!note) return;
+  const needsNote = ['soften', 'rewrite', 'disclose'].includes(radio.value);
+  if (needsNote) note.classList.add('show');
+  else note.classList.remove('show');
+}
+
+function clearAll() {
+  if (!confirm('Clear all your answers? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('[data-save]').forEach(el => {
+    if (el.type === 'radio') el.checked = false;
+    else el.value = '';
+  });
+  document.querySelectorAll('.confirm-note').forEach(n => n.classList.remove('show'));
+  document.getElementById('send-output').classList.remove('show');
+}
+
+let saveTimer;
+function showSaveNotice() {
+  const n = document.getElementById('save-notice');
+  n.classList.add('show');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => n.classList.remove('show'), 800);
+}
+
+function getVal(key) {
+  const el = document.querySelector(`[data-save="${key}"]`);
+  return el ? (el.value || '').trim() : '';
+}
+function getMark(name) {
+  const sel = document.querySelector(`input[name="${name}"]:checked`);
+  return sel ? sel.value : null;
+}
+
+function compileAnswers() {
+  const lines = [];
+  lines.push("Stephanie's answers for AIO Research — Empowered Business Networking");
+  lines.push('Sent ' + new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}));
+  lines.push('='.repeat(56));
+  lines.push('');
+
+  lines.push('SCHEMA DATA');
+  const fields = [
+    ['Phone', 'phone'],
+    ['Public address', 'address'],
+    ['Logo URL', 'logo'],
+    ['Membership cap', 'member-cap'],
+    ['Authority Magazine URL', 'press-authority'],
+    ['Educational background', 'education'],
+    ['"did" quiz subdomain framing', 'did-quiz'],
+    ['ebn.empoweryourvoice.com subdomain', 'ebn-experience-subdomain'],
+    ['Eventbrite organizer URL', 'eventbrite']
+  ];
+  fields.forEach(([label, key]) => {
+    const v = getVal(key);
+    lines.push(`- ${label}: ${v || '(skip)'}`);
+  });
+  lines.push('');
+
+  lines.push('OPEN FAQ ANSWERS');
+  const qs = [
+    ['What inspired you to build EBN?', 'faq-1'],
+    ['Who is NOT a good fit?', 'faq-2'],
+    ['Typical 6-month member outcome?', 'faq-3'],
+    ['Why EBN over Pavilion / Chief / others?', 'faq-4'],
+    ['Common discovery-call question we missed?', 'faq-5'],
+    ['Member business shifts mid-membership?', 'faq-6'],
+    ['Handling overlapping niches?', 'faq-7']
+  ];
+  let any = false;
+  qs.forEach(([q, key]) => {
+    const a = getVal(key);
+    if (a) {
+      lines.push('Q: ' + q);
+      lines.push('A: ' + a);
+      lines.push('');
+      any = true;
+    }
+  });
+  if (!any) {
+    lines.push('(skipped — happy to come back to these later)');
+    lines.push('');
+  }
+
+  lines.push('FAQ CONFIRMS');
+  const confirms = [
+    ['BNI comparison FAQs', 'confirm-1', {keep:'SHIP BOTH AS-DRAFTED', soften:'SOFTEN', anonymize:'ANONYMIZE BNI', drop:'DROP BOTH'}],
+    ['Parent LLC framing (Duet Vocal Academy d/b/a The Empowered Voice)', 'confirm-2', {implicit:'KEEP IMPLICIT', 'schema-only':'SCHEMA ONLY', 'surface-faq':'SURFACE IN FAQ', rewrite:'REWRITE'}],
+    ['Membership pricing — disclose or keep gated', 'confirm-3', {gated:'KEEP GATED', disclose:'DISCLOSE', rewrite:'REWRITE'}]
+  ];
+  confirms.forEach(([label, key, map]) => {
+    const m = getMark(key);
+    lines.push(`- ${label}: ${m ? map[m] : '(not marked)'}`);
+    const note = getVal(key + '-note');
+    if (note) lines.push('    note: ' + note);
+  });
+  lines.push('');
+  lines.push('— Reply with anything else you want to add. Full deliverable lands ~5-7 business days after this comes back.');
+
+  const text = lines.join('\n');
+  document.getElementById('send-text').value = text;
+  document.getElementById('send-output').classList.add('show');
+  document.getElementById('send-output').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function openEmail() {
+  const body = document.getElementById('send-text').value;
+  const subject = 'AIO Research — Stephanie answers for Empowered Business Networking';
+  const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function copyToClipboard() {
+  const textarea = document.getElementById('send-text');
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    alert('Copied. Paste into your email reply.');
+  }).catch(() => {
+    textarea.select();
+    document.execCommand('copy');
+    alert('Copied. Paste into your email reply.');
+  });
+}
+</script>
+</body>
+</html>

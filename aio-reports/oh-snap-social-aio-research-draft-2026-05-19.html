@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What we need from you — Oh Snap! Social® AIO Research</title>
+<style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b87d1a;
+  --warn-soft: #fdf7e8;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 36px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+.intro-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 36px; border-radius: 0 6px 6px 0; }
+.intro-callout p { margin: 0 0 8px; }
+.intro-callout p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+.section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+
+/* Input fields (Section 1) */
+.input-row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.input-row .field-label { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.input-row .field-note { font-size: 13px; color: var(--ink-muted); font-style: italic; margin-bottom: 8px; }
+.input-row input[type="text"] { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; font-family: inherit; font-size: 14px; }
+.input-row input[type="text"]:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.input-row.optional .field-label::after { content: " (optional)"; color: var(--ink-muted); font-weight: 400; font-size: 13px; font-style: italic; }
+
+/* Open FAQ questions (Section 2) */
+.open-q { background: var(--warn-soft); border: 1px solid #f0d99a; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; }
+.open-q .q-text { font-weight: 600; font-size: 15px; }
+.open-q .q-why { font-size: 13px; color: var(--ink-soft); margin-top: 6px; font-style: italic; }
+.open-q textarea { width: 100%; border: 1px solid #d9b96d; border-radius: 4px; padding: 10px 12px; margin-top: 10px; min-height: 70px; font-family: inherit; font-size: 14px; background: #fff; resize: vertical; }
+.open-q textarea:focus { outline: 2px solid var(--warn); outline-offset: -1px; }
+
+/* Micro-confirmations (Section 3) */
+.confirm-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; margin: 12px 0; }
+.confirm-card .confirm-q { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.confirm-card .confirm-detail { font-size: 14px; color: var(--ink-soft); margin: 6px 0 12px; }
+.confirm-card .confirm-detail .quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; }
+.confirm-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.confirm-options label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px;
+  padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; transition: all 0.15s;
+}
+.confirm-options label:hover { border-color: var(--ink-muted); }
+.confirm-options input[type="radio"] { margin: 0; }
+.confirm-options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.confirm-note { margin-top: 10px; display: none; }
+.confirm-note.show { display: block; }
+.confirm-note label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.confirm-note input { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; font-family: inherit; font-size: 14px; }
+
+/* Send zone */
+.send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
+.send-zone h3 { color: #fff; margin: 0 0 6px; font-size: 20px; }
+.send-zone p { color: #d8d4cd; margin: 0 0 16px; font-size: 14px; }
+.send-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary { background: var(--apollo-orange); color: #fff; border: none; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--apollo-orange-dark); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+.send-output { display: none; margin-top: 16px; }
+.send-output.show { display: block; }
+.send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
+.send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
+
+.save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.save-notice.show { opacity: 1; }
+
+/* Sticky top bar */
+.top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.top-bar .top-bar-msg { color: var(--ink-soft); }
+.top-bar .top-bar-actions { display: flex; gap: 8px; }
+.btn-small { background: var(--bg-soft); border: 1px solid var(--rule); color: var(--ink-soft); padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.btn-small:hover { background: var(--rule); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="top-bar">
+  <div class="top-bar-msg">Your answers auto-save in your browser</div>
+  <div class="top-bar-actions">
+    <button class="btn-small" onclick="document.getElementById('send-section').scrollIntoView({behavior:'smooth'})">↓ Jump to send</button>
+    <button class="btn-small" onclick="clearAll()">Clear my answers</button>
+  </div>
+</div>
+
+<header>
+  <div class="preheader">Apollo Marketing · AIO Research</div>
+  <h1>Quick — what we need from you to finish your AIO Research</h1>
+  <p class="subtitle">For Karlyn Ankrom / Oh Snap! Social®</p>
+  <p class="meta-line">Prepared: May 19, 2026 · Revised: May 19, 2026 · Read time: ~10 minutes</p>
+</header>
+
+<div class="intro-callout">
+  <p>Your full AIO Research package — the analysis report, the 9-type schema bundle, the 50 FAQs, the Entity Chain Architecture document, the deploy guide, and our Zoom session to install everything — is being built right now.</p>
+  <p>There are a few specific things we couldn't finish without your input. Three short sections below. Fill in what you can, skip what you don't want included, then hit "Send back to Apollo" at the bottom. Your finished package arrives ~5-7 business days after your reply.</p>
+</div>
+
+<!-- ===== SECTION 1: Data fields we need ===== -->
+<section id="sec-data">
+  <h2><span class="num">1.</span>Data we need for your schema</h2>
+  <p class="section-intro">Fields that go into the Knowledge Panel and AI-surface entity data. Fill what you want included; leave blank what you'd rather we omit.</p>
+
+  <div class="input-row">
+    <div class="field-label">Phone number</div>
+    <div class="field-note">For your Knowledge Panel entity. Skip to keep private.</div>
+    <input type="text" data-save="phone" placeholder="(xxx) xxx-xxxx · or leave blank">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Public business address</div>
+    <div class="field-note">Full address, city + state only, or skip — whichever you want public.</div>
+    <input type="text" data-save="address" placeholder="Address, city + state, or leave blank">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Canonical brand logo URL</div>
+    <div class="field-note">Google recommends at least 600 × 60px. Whatever URL points at your real brand logo.</div>
+    <input type="text" data-save="logo" placeholder="https://...">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">EEE Founding-Member rate — full payment</div>
+    <div class="field-note">The /join-eee page shows pricing as an image, so we couldn't extract the number.</div>
+    <input type="text" data-save="eee-full" placeholder="$ amount">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">EEE Founding-Member rate — payment plan</div>
+    <div class="field-note">Same — image-rendered on the page.</div>
+    <input type="text" data-save="eee-plan" placeholder="$ amount and per-period">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Snap Scan price</div>
+    <div class="field-note">Your services page says "pricing details available" but doesn't list the number.</div>
+    <input type="text" data-save="snap-scan" placeholder="$ amount · or 'contact for pricing'">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Press article URL — Business Insider</div>
+    <div class="field-note">URL strengthens the citation signal significantly (AI surfaces can verify).</div>
+    <input type="text" data-save="press-bi" placeholder="https://...">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Press article URL — ABC 7</div>
+    <div class="field-note">Same.</div>
+    <input type="text" data-save="press-abc" placeholder="https://...">
+  </div>
+
+  <div class="input-row">
+    <div class="field-label">Press article URL — Social Media Examiner</div>
+    <div class="field-note">Same.</div>
+    <input type="text" data-save="press-sme" placeholder="https://...">
+  </div>
+
+  <div class="input-row optional">
+    <div class="field-label">Your educational background</div>
+    <div class="field-note">Strengthens your founder-authority signal. Skip if not something you publicly share.</div>
+    <input type="text" data-save="education" placeholder="School(s) + degree(s) · or leave blank">
+  </div>
+</section>
+
+<!-- ===== SECTION 2: Open FAQs we want answers for ===== -->
+<section id="sec-faqs">
+  <h2><span class="num">2.</span>FAQs only you can answer</h2>
+  <p class="section-intro">Public search data tells us what buyers are <em>already</em> asking. The questions below matter for AI visibility but we couldn't write them well without your input. Skip any you'd rather not include.</p>
+
+  <div class="open-q">
+    <div class="q-text">What inspired the Fan Firestarter Framework? What were you seeing in agencies or clients that made you build it?</div>
+    <div class="q-why">"Why" stories tied to named methodology give AI surfaces real material to surface when buyers ask about your approach.</div>
+    <textarea data-save="faq-1" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What type of client is NOT a good fit for Oh Snap! Social®?</div>
+    <div class="q-why">Anti-personas sharpen positioning. Often the highest-trust answer a service business can publish.</div>
+    <textarea data-save="faq-2" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What does a typical 6-month outcome look like for a Corporate Done-For-You client? (Specifics, not vanity metrics.)</div>
+    <div class="q-why">Concrete outcome stories convert when AI surfaces are answering "is this worth it" questions.</div>
+    <textarea data-save="faq-3" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">Why should a service-based business pick Oh Snap! Social® over a generalist marketing agency?</div>
+    <div class="q-why">The comparison question is one AI surfaces directly answer. Right now competitors are writing the answer.</div>
+    <textarea data-save="faq-4" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">For EEE: realistically, how many hours per week should a member plan for?</div>
+    <div class="q-why">Time commitment is a top decision factor. Our drafted figure is 2-3 hours — is that accurate?</div>
+    <textarea data-save="faq-5" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What's the most common question you answer in discovery calls that we haven't covered?</div>
+    <div class="q-why">You live in client conversations — we can't surface from public data what only you know.</div>
+    <textarea data-save="faq-6" placeholder="Your answer..."></textarea>
+  </div>
+
+  <div class="open-q">
+    <div class="q-text">What happens when a Corporate engagement ends? (Offboarding, handoff, asset transfer.)</div>
+    <div class="q-why">Buyers worried about contract-lock prefer agencies that frame the end clearly.</div>
+    <textarea data-save="faq-7" placeholder="Your answer..."></textarea>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: Micro-confirms on FAQs we drafted ===== -->
+<section id="sec-confirms">
+  <h2><span class="num">3.</span>A few quick confirms on FAQs we drafted</h2>
+  <p class="section-intro">Three places inside the 50 FAQs we wrote where we made a voice or attribution call we'd like you to look at. Each one shows you the actual FAQ we drafted so you can see the call in context.</p>
+
+  <!-- Confirm 1 — show full Q9 in context -->
+  <div class="confirm-card" data-mark="confirm-1">
+    <div class="confirm-q">The "fake their own death" line — context check</div>
+    <div class="confirm-detail">
+      Here's the full FAQ we drafted that includes the line (it's our answer to <em>"What is the Fan Firestarter Framework?"</em>):
+      <div class="quote">
+        <strong>Q. What is the Fan Firestarter Framework?</strong><br><br>
+        A. The Fan Firestarter Framework is Karlyn Ankrom's proprietary approach to social media marketing built for businesses that, in her words, are <strong>"tempted to fake their own death and flee to Tahiti at the mere thought of content creation."</strong> It moves through three phases — Pulse Check (current state), Strategize (optimization), Advance (implementation) — and emphasizes converting passive followers into active fans through consistent, opinionated content rather than algorithmic guesswork.
+      </div>
+      The line is verbatim from your site. Once this is in the FAQ schema, AI surfaces will quote the whole answer (including the line) back to anyone asking about your methodology.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="confirm-1" value="keep" data-save="confirm-1"><span>Ship as-is</span></label>
+      <label><input type="radio" name="confirm-1" value="drop-line" data-save="confirm-1"><span>Drop just the line; keep the rest</span></label>
+      <label><input type="radio" name="confirm-1" value="edit-line" data-save="confirm-1"><span>Change just the line:</span></label>
+      <label><input type="radio" name="confirm-1" value="rewrite" data-save="confirm-1"><span>Rewrite the whole answer</span></label>
+    </div>
+    <div class="confirm-note" data-for="confirm-1"><label>Your line edit or rewrite:</label><input type="text" data-save="confirm-1-note" placeholder="..."></div>
+  </div>
+
+  <!-- Confirm 2 — show both original Shaw + our use -->
+  <div class="confirm-card" data-mark="confirm-2">
+    <div class="confirm-q">Shaw Services attribution — context check</div>
+    <div class="confirm-detail">
+      Shaw Services testimonial as it appears on your site:
+      <div class="quote">
+        <strong>Shaw Services</strong> — "Karlyn is fantastic! She manages our media advertising. She's timely, she's hip, she doesn't oversell our clients with pushy ads. <strong>Our call volume has increased consistently since we partnered with her.</strong>"
+      </div>
+      We drew on that to draft this FAQ (our answer to <em>"Does Oh Snap! Social handle paid advertising?"</em>):
+      <div class="quote">
+        <strong>Q. Does Oh Snap! Social handle paid advertising?</strong><br><br>
+        A. Yes. Several Oh Snap! Social engagements include paid social management alongside organic content. Karlyn and the team approach paid social as an accelerant for organic strategy — not a replacement. <strong>Clients have reported consistent call-volume increases after we layered paid into existing programs (one example: a multi-location service business saw sustained call growth quarter over quarter).</strong>
+      </div>
+      Currently anonymized as "a multi-location service business." If you'd rather we drop the example entirely, the FAQ still answers the question cleanly — the example is the last sentence and isn't load-bearing for the rest.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="confirm-2" value="keep" data-save="confirm-2"><span>Keep as anonymized</span></label>
+      <label><input type="radio" name="confirm-2" value="name" data-save="confirm-2"><span>Name Shaw Services</span></label>
+      <label><input type="radio" name="confirm-2" value="drop" data-save="confirm-2"><span>Drop the last sentence</span></label>
+      <label><input type="radio" name="confirm-2" value="rewrite" data-save="confirm-2"><span>Rewrite:</span></label>
+    </div>
+    <div class="confirm-note" data-for="confirm-2"><label>Your rewrite or correction:</label><input type="text" data-save="confirm-2-note" placeholder="..."></div>
+  </div>
+
+  <!-- Confirm 3 — show all 4 bonus descriptions inline -->
+  <div class="confirm-card" data-mark="confirm-3">
+    <div class="confirm-q">EEE bonus descriptions — four short paraphrases for your eyes</div>
+    <div class="confirm-detail">
+      We paraphrased the EEE bonus stack from your /join-eee landing page in four separate FAQs. All four below. Mark each one separately — keep as-drafted or edit:
+    </div>
+
+    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
+      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 1 — Metrics That Matter tracker</div>
+      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"The Metrics That Matter tracker is the exact social media measurement system Oh Snap! Social uses inside the agency, packaged for EEE members. It tracks the signals that actually move book sales and audience growth — engagement quality, content-to-conversation conversion, audience progression — rather than vanity metrics. Yours to keep past EEE."</div>
+      <div class="confirm-options">
+        <label><input type="radio" name="confirm-3a" value="keep" data-save="confirm-3a"><span>Ship as-drafted</span></label>
+        <label><input type="radio" name="confirm-3a" value="edit" data-save="confirm-3a"><span>Edit:</span></label>
+      </div>
+      <div class="confirm-note" data-for="confirm-3a"><label>Your edit:</label><input type="text" data-save="confirm-3a-note" placeholder="..."></div>
+    </div>
+
+    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
+      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 2 — Content calendar template</div>
+      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"EEE members receive Oh Snap! Social's working content calendar template — the same one the agency uses with paying clients. It maps content pillars, posting cadence, repurposing flows, and campaign overlays, ready to populate with your own editorial plan."</div>
+      <div class="confirm-options">
+        <label><input type="radio" name="confirm-3b" value="keep" data-save="confirm-3b"><span>Ship as-drafted</span></label>
+        <label><input type="radio" name="confirm-3b" value="edit" data-save="confirm-3b"><span>Edit:</span></label>
+      </div>
+      <div class="confirm-note" data-for="confirm-3b"><label>Your edit:</label><input type="text" data-save="confirm-3b-note" placeholder="..."></div>
+    </div>
+
+    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
+      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 3 — Rinse + Repurpose e-book</div>
+      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"Rinse + Repurpose is Karlyn's e-book on content repurposing — the discipline of turning one piece of long-form content (your book, a podcast appearance, a keynote) into 10-25 shorter social pieces that work across different platforms. It's a free founder bonus to EEE members and core to the program's leverage thesis."</div>
+      <div class="confirm-options">
+        <label><input type="radio" name="confirm-3c" value="keep" data-save="confirm-3c"><span>Ship as-drafted</span></label>
+        <label><input type="radio" name="confirm-3c" value="edit" data-save="confirm-3c"><span>Edit:</span></label>
+      </div>
+      <div class="confirm-note" data-for="confirm-3c"><label>Your edit:</label><input type="text" data-save="confirm-3c-note" placeholder="..."></div>
+    </div>
+
+    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
+      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 4 — Prompt Card Deck</div>
+      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"The Prompt Card Deck is a curated set of 31 content prompts — ready-to-use ideas you can pull from when you're stuck or running short on creative time. Yours to keep past EEE. Especially useful during the high-velocity months of a book launch when content demand spikes."</div>
+      <div class="confirm-options">
+        <label><input type="radio" name="confirm-3d" value="keep" data-save="confirm-3d"><span>Ship as-drafted</span></label>
+        <label><input type="radio" name="confirm-3d" value="edit" data-save="confirm-3d"><span>Edit:</span></label>
+      </div>
+      <div class="confirm-note" data-for="confirm-3d"><label>Your edit:</label><input type="text" data-save="confirm-3d-note" placeholder="..."></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEND ZONE ===== -->
+<section id="send-section">
+  <div class="send-zone">
+    <h3>Send back to Apollo</h3>
+    <p>Hit the button to package your answers. Review, send via email, or copy to paste anywhere.</p>
+    <div class="send-actions">
+      <button class="btn-primary" onclick="compileAnswers()">📋 Compile my answers</button>
+    </div>
+
+    <div class="send-output" id="send-output">
+      <p style="color: #d8d4cd; font-size: 13px; margin-top: 14px;">Your answers, ready to send:</p>
+      <textarea id="send-text" readonly></textarea>
+      <div class="post-actions">
+        <button class="btn-primary" onclick="openEmail()">✉ Open in my email client</button>
+        <button class="btn-secondary" onclick="copyToClipboard()">📋 Copy to clipboard</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Apollo Marketing · Questions? Just reply to the email this link came in.</p>
+</footer>
+
+</div>
+
+<div class="save-notice" id="save-notice">✓ Saved</div>
+
+<script>
+const STORAGE_KEY = 'aio-input-oh-snap-social-2026-05-19';
+const RECIPIENT_EMAIL = 'sage.harper@apollollc.com';
+
+window.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  attachListeners();
+  document.querySelectorAll('input[type="radio"]:checked').forEach(input => toggleConfirmNote(input));
+});
+
+function loadState() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch (e) { saved = {}; }
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (!saved[key]) return;
+    if (el.type === 'radio') {
+      if (el.value === saved[key]) el.checked = true;
+    } else {
+      el.value = saved[key];
+    }
+  });
+}
+
+function saveState() {
+  const state = {};
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (el.type === 'radio') {
+      if (el.checked) state[key] = el.value;
+    } else {
+      if (el.value) state[key] = el.value;
+    }
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  showSaveNotice();
+}
+
+function attachListeners() {
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const event = el.type === 'radio' ? 'change' : 'input';
+    el.addEventListener(event, (e) => {
+      if (e.target.type === 'radio') toggleConfirmNote(e.target);
+      saveState();
+    });
+  });
+}
+
+function toggleConfirmNote(radio) {
+  const note = document.querySelector(`.confirm-note[data-for="${radio.name}"]`);
+  if (!note) return;
+  // Show note input whenever user picked an option that needs free-text follow-up
+  const needsNote = ['edit', 'edit-line', 'rewrite', 'name'].includes(radio.value);
+  if (needsNote) note.classList.add('show');
+  else note.classList.remove('show');
+}
+
+function clearAll() {
+  if (!confirm('Clear all your answers? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('[data-save]').forEach(el => {
+    if (el.type === 'radio') el.checked = false;
+    else el.value = '';
+  });
+  document.querySelectorAll('.confirm-note').forEach(n => n.classList.remove('show'));
+  document.getElementById('send-output').classList.remove('show');
+}
+
+let saveTimer;
+function showSaveNotice() {
+  const n = document.getElementById('save-notice');
+  n.classList.add('show');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => n.classList.remove('show'), 800);
+}
+
+function getVal(key) {
+  const el = document.querySelector(`[data-save="${key}"]`);
+  return el ? (el.value || '').trim() : '';
+}
+function getMark(name) {
+  const sel = document.querySelector(`input[name="${name}"]:checked`);
+  return sel ? sel.value : null;
+}
+
+function compileAnswers() {
+  const lines = [];
+  lines.push("Karlyn's answers for AIO Research — Oh Snap! Social®");
+  lines.push('Sent ' + new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}));
+  lines.push('='.repeat(56));
+  lines.push('');
+
+  // Section 1 — data fields
+  lines.push('SCHEMA DATA');
+  const fields = [
+    ['Phone', 'phone'],
+    ['Public address', 'address'],
+    ['Logo URL', 'logo'],
+    ['EEE Founding-Member — full payment', 'eee-full'],
+    ['EEE Founding-Member — payment plan', 'eee-plan'],
+    ['Snap Scan price', 'snap-scan'],
+    ['Press URL — Business Insider', 'press-bi'],
+    ['Press URL — ABC 7', 'press-abc'],
+    ['Press URL — Social Media Examiner', 'press-sme'],
+    ['Educational background', 'education']
+  ];
+  fields.forEach(([label, key]) => {
+    const v = getVal(key);
+    lines.push(`- ${label}: ${v || '(skip)'}`);
+  });
+  lines.push('');
+
+  // Section 2 — open FAQ answers
+  lines.push('OPEN FAQ ANSWERS');
+  const qs = [
+    ['Inspired the Fan Firestarter Framework?', 'faq-1'],
+    ['Client NOT a good fit?', 'faq-2'],
+    ['Typical 6-month outcome for Corporate DFY?', 'faq-3'],
+    ['Why pick Oh Snap! Social over a generalist?', 'faq-4'],
+    ['EEE hours per week realistically?', 'faq-5'],
+    ['Common discovery-call question we missed?', 'faq-6'],
+    ['What happens at end of a Corporate engagement?', 'faq-7']
+  ];
+  let any = false;
+  qs.forEach(([q, key]) => {
+    const a = getVal(key);
+    if (a) {
+      lines.push('Q: ' + q);
+      lines.push('A: ' + a);
+      lines.push('');
+      any = true;
+    }
+  });
+  if (!any) {
+    lines.push('(skipped — happy to come back to these later)');
+    lines.push('');
+  }
+
+  // Section 3 — micro-confirms (with context)
+  lines.push('FAQ CONFIRMS');
+  const confirms = [
+    ['"Fake their own death" line in Fan Firestarter FAQ', 'confirm-1', {keep:'SHIP AS-IS', 'drop-line':'DROP JUST THE LINE', 'edit-line':'EDIT THE LINE', rewrite:'REWRITE WHOLE ANSWER'}],
+    ['Shaw Services attribution in paid-advertising FAQ', 'confirm-2', {keep:'KEEP AS ANONYMIZED', name:'NAME SHAW SERVICES', drop:'DROP LAST SENTENCE', rewrite:'REWRITE'}]
+  ];
+  confirms.forEach(([label, key, map]) => {
+    const m = getMark(key);
+    lines.push(`- ${label}: ${m ? map[m] : '(not marked)'}`);
+    const note = getVal(key + '-note');
+    if (note) lines.push('    note: ' + note);
+  });
+
+  // 4 bonus descriptions individually
+  const bonuses = [
+    ['Bonus 1 — Metrics That Matter tracker', 'confirm-3a'],
+    ['Bonus 2 — Content calendar template', 'confirm-3b'],
+    ['Bonus 3 — Rinse + Repurpose e-book', 'confirm-3c'],
+    ['Bonus 4 — Prompt Card Deck', 'confirm-3d']
+  ];
+  bonuses.forEach(([label, key]) => {
+    const m = getMark(key);
+    const mapBonus = {keep: 'SHIP AS-DRAFTED', edit: 'EDIT'};
+    lines.push(`- ${label}: ${m ? mapBonus[m] : '(not marked)'}`);
+    const note = getVal(key + '-note');
+    if (note) lines.push('    note: ' + note);
+  });
+  lines.push('');
+  lines.push('— Reply with anything else you want to add. Full deliverable lands ~5-7 business days after this comes back.');
+
+  const text = lines.join('\n');
+  document.getElementById('send-text').value = text;
+  document.getElementById('send-output').classList.add('show');
+  document.getElementById('send-output').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function openEmail() {
+  const body = document.getElementById('send-text').value;
+  const subject = 'AIO Research — Karlyn answers for Oh Snap! Social®';
+  const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function copyToClipboard() {
+  const textarea = document.getElementById('send-text');
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    alert('Copied. Paste into your email reply.');
+  }).catch(() => {
+    textarea.select();
+    document.execCommand('copy');
+    alert('Copied. Paste into your email reply.');
+  });
+}
+</script>
+</body>
+</html>
