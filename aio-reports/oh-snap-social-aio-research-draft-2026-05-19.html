@@ -288,53 +288,6 @@ footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule);
     <div class="confirm-note" data-for="confirm-2"><label>Your rewrite or correction:</label><input type="text" data-save="confirm-2-note" placeholder="..."></div>
   </div>
 
-  <!-- Confirm 3 — show all 4 bonus descriptions inline -->
-  <div class="confirm-card" data-mark="confirm-3">
-    <div class="confirm-q">EEE bonus descriptions — four short paraphrases for your eyes</div>
-    <div class="confirm-detail">
-      We paraphrased the EEE bonus stack from your /join-eee landing page in four separate FAQs. All four below. Mark each one separately — keep as-drafted or edit:
-    </div>
-
-    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
-      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 1 — Metrics That Matter tracker</div>
-      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"The Metrics That Matter tracker is the exact social media measurement system Oh Snap! Social uses inside the agency, packaged for EEE members. It tracks the signals that actually move book sales and audience growth — engagement quality, content-to-conversation conversion, audience progression — rather than vanity metrics. Yours to keep past EEE."</div>
-      <div class="confirm-options">
-        <label><input type="radio" name="confirm-3a" value="keep" data-save="confirm-3a"><span>Ship as-drafted</span></label>
-        <label><input type="radio" name="confirm-3a" value="edit" data-save="confirm-3a"><span>Edit:</span></label>
-      </div>
-      <div class="confirm-note" data-for="confirm-3a"><label>Your edit:</label><input type="text" data-save="confirm-3a-note" placeholder="..."></div>
-    </div>
-
-    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
-      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 2 — Content calendar template</div>
-      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"EEE members receive Oh Snap! Social's working content calendar template — the same one the agency uses with paying clients. It maps content pillars, posting cadence, repurposing flows, and campaign overlays, ready to populate with your own editorial plan."</div>
-      <div class="confirm-options">
-        <label><input type="radio" name="confirm-3b" value="keep" data-save="confirm-3b"><span>Ship as-drafted</span></label>
-        <label><input type="radio" name="confirm-3b" value="edit" data-save="confirm-3b"><span>Edit:</span></label>
-      </div>
-      <div class="confirm-note" data-for="confirm-3b"><label>Your edit:</label><input type="text" data-save="confirm-3b-note" placeholder="..."></div>
-    </div>
-
-    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
-      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 3 — Rinse + Repurpose e-book</div>
-      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"Rinse + Repurpose is Karlyn's e-book on content repurposing — the discipline of turning one piece of long-form content (your book, a podcast appearance, a keynote) into 10-25 shorter social pieces that work across different platforms. It's a free founder bonus to EEE members and core to the program's leverage thesis."</div>
-      <div class="confirm-options">
-        <label><input type="radio" name="confirm-3c" value="keep" data-save="confirm-3c"><span>Ship as-drafted</span></label>
-        <label><input type="radio" name="confirm-3c" value="edit" data-save="confirm-3c"><span>Edit:</span></label>
-      </div>
-      <div class="confirm-note" data-for="confirm-3c"><label>Your edit:</label><input type="text" data-save="confirm-3c-note" placeholder="..."></div>
-    </div>
-
-    <div style="margin: 14px 0; padding: 14px 16px; background: var(--bg-soft); border-radius: 6px; border-left: 3px solid var(--ink-muted);">
-      <div style="font-weight: 600; margin-bottom: 6px;">Bonus 4 — Prompt Card Deck</div>
-      <div style="font-style: italic; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px;">"The Prompt Card Deck is a curated set of 31 content prompts — ready-to-use ideas you can pull from when you're stuck or running short on creative time. Yours to keep past EEE. Especially useful during the high-velocity months of a book launch when content demand spikes."</div>
-      <div class="confirm-options">
-        <label><input type="radio" name="confirm-3d" value="keep" data-save="confirm-3d"><span>Ship as-drafted</span></label>
-        <label><input type="radio" name="confirm-3d" value="edit" data-save="confirm-3d"><span>Edit:</span></label>
-      </div>
-      <div class="confirm-note" data-for="confirm-3d"><label>Your edit:</label><input type="text" data-save="confirm-3d-note" placeholder="..."></div>
-    </div>
-  </div>
 </section>
 
 <!-- ===== SEND ZONE ===== -->
@@ -517,20 +470,6 @@ function compileAnswers() {
     if (note) lines.push('    note: ' + note);
   });
 
-  // 4 bonus descriptions individually
-  const bonuses = [
-    ['Bonus 1 — Metrics That Matter tracker', 'confirm-3a'],
-    ['Bonus 2 — Content calendar template', 'confirm-3b'],
-    ['Bonus 3 — Rinse + Repurpose e-book', 'confirm-3c'],
-    ['Bonus 4 — Prompt Card Deck', 'confirm-3d']
-  ];
-  bonuses.forEach(([label, key]) => {
-    const m = getMark(key);
-    const mapBonus = {keep: 'SHIP AS-DRAFTED', edit: 'EDIT'};
-    lines.push(`- ${label}: ${m ? mapBonus[m] : '(not marked)'}`);
-    const note = getVal(key + '-note');
-    if (note) lines.push('    note: ' + note);
-  });
   lines.push('');
   lines.push('— Reply with anything else you want to add. Full deliverable lands ~5-7 business days after this comes back.');
 
