@@ -18,6 +18,7 @@
   --bg-soft: #f5f2ee;
   --rule: #e5dfd6;
   --good: #2e7d4f;
+  --warn: #b45a1a;
 }
 * { box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
@@ -32,16 +33,32 @@ header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 70
 section { margin-bottom: 44px; scroll-margin-top: 20px; }
 h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
 h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
 p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
 .lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
 .lead-callout p { margin: 0 0 8px; }
 .lead-callout p:last-child { margin-bottom: 0; }
 
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
 table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
 th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
 td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
 td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
 
 .contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
 .contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
@@ -55,6 +72,13 @@ td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
 .approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
 .approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
 
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
 footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
 footer p { margin: 0 0 6px; }
 
@@ -64,6 +88,7 @@ footer p { margin: 0 0 6px; }
   h2 { font-size: 19px; }
   .contract-row { grid-template-columns: 24px 1fr; }
   .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -73,37 +98,182 @@ footer p { margin: 0 0 6px; }
 <header>
   <div class="preheader">AIO Research — Final Record</div>
   <h1>Empowered Business Networking</h1>
-  <p class="subtitle">Curated Virtual Networking for Creative Entrepreneurs · founded 2020 · Gaithersburg, MD</p>
+  <p class="subtitle">EBN Creates Curated Virtual Networking for Creative Entrepreneurs · founded 2020 · Gaithersburg, MD</p>
   <p class="meta-line">Prepared for Stephanie Bonte-Lebair · Apollo Marketing · Prepared: May 20, 2026</p>
 </header>
 
 <div class="lead-callout">
-  <p>This is your record of what Apollo delivered in your AIO Research engagement: every line item from the agreement matched to its delivered artifact, and the full list of changes between your validation response and the final build.</p>
-  <p>Keep this for your reference. The schema package, FAQ batch, entity chain document, and deploy guide ship alongside this record — those files are the substantive deliverables; this is the index that ties them together.</p>
+  <p>This is your AIO Research record. Sections 1–3 walk the analysis findings. Sections 4–5 walk what we built and how it deploys. Sections 6–7 cover delivery against the agreement and the mapping of your validation response into the final build. Section 8 is the next step — scheduling your Zoom deploy session.</p>
+  <p>The schema package, FAQ batch, entity chain document, and deploy guide ship alongside this record — those files are the deployable artifacts; this report is the findings + delivery narrative that ties them together.</p>
 </div>
 
 <section>
-  <h2><span class="num">1.</span> Delivery against the agreement</h2>
+  <h2><span class="num">1.</span> AI Visibility Gap Analysis</h2>
+
+  <p>EBN's AI-surface gap is distinctive. The site is small (about five indexed URLs total — a single-page LeadConnector architecture carries the entity), so the gap isn't unindexed pages. The gap is <strong>no foundational entity established in AI surfaces</strong>.</p>
+  <p class="source-line">Sources: brand authority score captured May 15, 2026 · indexed-page count probed May 18, 2026 · direct AI-surface tests May 18, 2026.</p>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="v">0 / 100</span><span class="l">Brand Signal Score (foundational entity strength) at baseline</span></div>
+    <div class="metric"><span class="v">~5</span><span class="l">URLs indexed in Google (single-page architecture)</span></div>
+    <div class="metric"><span class="v">0 / 4</span><span class="l">Generic-intent buyer queries surface EBN today</span></div>
+    <div class="metric"><span class="v">1 of 1</span><span class="l">Branded query (one tested) — surfaces EBN correctly</span></div>
+  </div>
+
+  <h3>Where the brand is invisible</h3>
+  <p>We tested four high-intent buyer queries that EBN should logically appear in. The brand surfaced in zero of the four:</p>
+  <table>
+    <thead><tr><th>Buyer-intent query tested</th><th>EBN cited?</th><th>Who dominates instead</th></tr></thead>
+    <tbody>
+      <tr><td>best curated business networking communities for service-based entrepreneurs</td><td>No</td><td>BNI · Alignable · EO · RemotelyFounders · SCORE</td></tr>
+      <tr><td>alternative business networking groups to BNI for creative entrepreneurs</td><td>No</td><td>Meetup · LinkedIn Groups · 4Networking · EO · Chamber · AMA</td></tr>
+      <tr><td>monthly virtual networking events with curated breakout rooms</td><td>No</td><td>RingCentral · Remo · GlueUp · Webex · Airmeet · twine (platform tools, not communities)</td></tr>
+      <tr><td>online networking communities with intentional partner matching for women entrepreneurs</td><td>No</td><td>Dreamers &amp; Doers · SheWorx · BossBabe Société · Entreprenista · Women Who Startup</td></tr>
+    </tbody>
+  </table>
+  <p class="source-line">Source: direct AI-surface tests across Gemini · Perplexity · ChatGPT · Google AI Overviews, May 18, 2026.</p>
+
+  <h3>Where the brand IS surfaced</h3>
+  <p>On the branded query <em>"Empowered Business Networking Stephanie Bonte-Lebair,"</em> Gemini identifies EBN by name and returns positioning that aligns with the brand's framing — Empowered Partners®, application-only curated community, aligned partnerships rather than random introductions. The gap is between branded recognition (works) and category recognition (doesn't yet).</p>
+
+  <div class="callout callout-good">
+    <strong>Category gap — "curated breakout-room community":</strong> On the "monthly virtual networking events with curated breakout rooms" query, the answer surface returned platform tools (Remo, Webex, GlueUp, twine, Airmeet) rather than communities. No community brand currently appears to own this category in AI surfaces. EBN's positioning — application-only, capped at 75, hand-curated breakouts by the founder — has a clear lane to claim through schema deployment + ongoing entity establishment.
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">2.</span> Competitor Citation Analysis</h2>
+
+  <p>To understand what AI surfaces return instead of EBN, we mapped competitor brands across the four tested queries. The competitor field splits into three clusters with distinct positioning implications.</p>
+  <p class="source-line">Source: same four-query AI-surface tests, May 18, 2026.</p>
+
+  <h3>Cluster A — Mega-incumbent networking brands</h3>
+  <p>These dominate generic networking queries with decades of presence and broad brand recognition. EBN doesn't compete with them on volume; EBN differentiates on curation quality.</p>
+  <table>
+    <thead><tr><th>Competitor</th><th>Positioning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>BNI</strong></td><td>Global referral-based networking organization; consistently surfaces on referral-networking queries</td></tr>
+      <tr><td><strong>EO (Entrepreneurs' Organization)</strong></td><td>Global peer network; $1M+ revenue threshold; surfaces on executive-peer-network queries</td></tr>
+      <tr><td><strong>Vistage</strong></td><td>CEO coaching + peer advisory groups; surfaces on CEO-peer-advisory queries</td></tr>
+      <tr><td><strong>Alignable</strong></td><td>Local small-business social network; surfaces on small-business networking queries</td></tr>
+      <tr><td><strong>Pavilion</strong></td><td>Go-to-market and revenue leaders community; surfaces on revenue-leadership queries</td></tr>
+      <tr><td><strong>Chamber of Commerce</strong></td><td>Local business community organizations; surfaces on local-civic-networking queries</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Cluster B — Niche / values-driven communities</h3>
+  <p>This is where EBN's most direct comparison set lives. These communities have established AI-surface positions through years of content, member testimonials, and press.</p>
+  <ul>
+    <li><strong>Chief</strong> — invite-only senior women executives</li>
+    <li><strong>Dreamers &amp; Doers</strong> — curated, application-based women entrepreneurs</li>
+    <li><strong>SheWorx</strong> — women + investor networking</li>
+    <li><strong>BossBabe Société</strong> — women entrepreneur scaling community</li>
+    <li><strong>Entreprenista (League)</strong> — women founders, all stages</li>
+    <li><strong>CreativeMornings</strong> — creative community monthly breakfast events</li>
+    <li><strong>AIGA</strong> — design professionals association</li>
+  </ul>
+  <p>EBN's positioning overlaps these in audience (creative service-based entrepreneurs, often women-skewing) but differs in <em>mechanism</em> — none run the curated-breakout-room + next-day-implementation model EBN does. Schema deployment positions EBN as <em>complementary</em> to these communities rather than directly competitive.</p>
+
+  <h3>Cluster C — Platform tools (not community competitors)</h3>
+  <p>When queries center on "curated breakout rooms" specifically, the answer surface returns <em>platform tools</em> rather than communities — Remo, Webex Events, GlueUp, Airmeet, twine, RingCentral. These are SaaS products, not community brands. <strong>The "curated breakout-room community" category appears unoccupied in AI surfaces by a named community.</strong> EBN can claim this position with proper schema + entity establishment.</p>
+
+  <h3>Aggregator listicles cited across queries</h3>
+  <p>Aggregator and category-overview articles surface frequently — including pages from Entrepreneur.com, US Chamber of Commerce CO-, Next Insurance Blog, MDS, Remotelytalents, Connect Space, Insureon, Swisspreneur, and KadoNetworks. Getting EBN into one or more of these is a complementary path to AI visibility — a content outreach motion separate from schema work.</p>
+
+  <h3>Authority Magazine citation</h3>
+  <p>Stephanie's Authority Magazine interview by Vanessa Ogle is a third-party press citation that AI surfaces tend to surface in branded queries. The schema package encodes this citation explicitly via the Organization's <code>mentions</code> field, making it directly addressable rather than incidentally discovered.</p>
+</section>
+
+<section>
+  <h2><span class="num">3.</span> AI Visibility Baseline Snapshot</h2>
+
+  <p>The "before" measurement. This is the reference point to measure against if you re-test at 30, 60, or 90 days post-deploy.</p>
+  <p class="source-line">Sources: brand authority score May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests May 18, 2026 · live page-source review May 18, 2026.</p>
+
+  <table>
+    <thead><tr><th>Metric</th><th>Baseline (May 18, 2026)</th></tr></thead>
+    <tbody>
+      <tr><td>Brand Signal Score</td><td>0 / 100 (Very Low)</td></tr>
+      <tr><td>LLM brand visibility — branded query</td><td>EBN identified by name (Gemini) with positioning matching EBN's own framing</td></tr>
+      <tr><td>LLM brand visibility — generic queries</td><td>Not surfaced on any of 4 generic-intent queries tested</td></tr>
+      <tr><td>AI Overview presence — branded query</td><td>1 of 1</td></tr>
+      <tr><td>AI Overview presence — generic queries</td><td>0 of 4</td></tr>
+      <tr><td>Pages indexed in Google</td><td>~5 URLs (single-page-site + utility pages)</td></tr>
+      <tr><td>Existing FAQ schema deployed</td><td>None (FAQs visible on page but unstructured)</td></tr>
+      <tr><td>Existing Event schema deployed</td><td>None</td></tr>
+      <tr><td>External sameAs URLs available at baseline</td><td>5 verified (LinkedIn · Facebook · YouTube · Eventbrite · Authority Magazine interview)</td></tr>
+      <tr><td>Canonical-URL hygiene</td><td>Issue — <code>/home</code> serves identical content to <code>/</code> (deploy guide addresses)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">4.</span> Schema Prescription</h2>
+
+  <p>The 9-type JSON-LD package was built from your live-site entity data, refined through the validation cycle, and finalized with your May 19 validation response. Every payload validates against schema.org. The bundle is delivered as a single consolidated paste-in for LeadConnector's Custom Code header field.</p>
+
+  <table>
+    <thead><tr><th>#</th><th>Schema type</th><th>What it accomplishes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Organization</strong></td><td>Establishes EBN as a structured entity AI surfaces can recognize — addresses the 0/100 baseline foundationally. Encodes 6 verified <code>sameAs</code> URLs (LinkedIn · Facebook · YouTube · Eventbrite · Authority Magazine · Show Up Aligned Quiz), Authority Magazine <code>mentions</code>, Empowered Partners® trademark, 75-member cap, and disclosed Membership pricing.</td></tr>
+      <tr><td>2</td><td><strong>Person (Stephanie Bonte-Lebair)</strong></td><td>Founder authority signal with biographical depth: classical singer → NYC opera/musical/cabaret → singing teacher → Managing Director with networking facilitation → 2020 EBN founder. Educational credentials (BMus + MMus Vocal Performance, Illinois State University; Master's Certificate in Nonprofit Management, American University) encoded per your validation reply.</td></tr>
+      <tr><td>3</td><td><strong>Service (Membership)</strong></td><td>Encodes the application-only boutique membership — 75-member cap as <code>serviceOutput</code>, audience definition, $99/month + one-year commitment pricing terms, Empowered Partners® framework, member-outcome metrics (95% leave with 2+ aligned connections per event; 64% with 4+).</td></tr>
+      <tr><td>4</td><td><strong>Event — Networking &amp; Connection Experience</strong> ⭐</td><td>Recurring monthly event with full schedule (1st Thursday, 2-3:30 PM ET), Stephanie as performer, virtual location, ~80-attendee context, breakout structure. Claims the "curated breakout-room community" category position in AI surfaces.</td></tr>
+      <tr><td>5</td><td><strong>Event — Implementation &amp; Referral Roundtable</strong></td><td>Recurring sub-event tying conversation to implementation — the distinctive differentiator from "show up and leave" networking. Day-after schedule encoded.</td></tr>
+      <tr><td>6</td><td><strong>WebPage</strong></td><td>Canonical-URL anchor for the single-page architecture.</td></tr>
+      <tr><td>7</td><td><strong>BreadcrumbList</strong></td><td>Minimal hierarchy signal for the single-page surface.</td></tr>
+      <tr><td>8</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td>6 verbatim from your live site + 7 in your founder voice (encoded verbatim from your validation reply) + 37 researched from buyer-intent queries. 50 independently citable Q&amp;A units AI surfaces can quote. The mapping of which validation answers landed in which Q# lives in Section 7.</td></tr>
+      <tr><td>9</td><td><strong>Review × 6 + AggregateRating</strong></td><td>6 member testimonials with location data (KY · MN · CA × 2 · BC Canada · LA) reinforcing your 20+ states + Canada coverage claim with concrete attribution.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The single highest-leverage element in your package</h3>
+  <p>The <strong>Event × 2 schema</strong> (your monthly Networking &amp; Connection Experience + the following-day Implementation Roundtable) deployed with full recurrence, Stephanie as performer, and the breakout structure encoded. Most networking communities don't expose their events as structured data. With your events directly addressable, EBN becomes a candidate answer when AI surfaces respond to "monthly virtual networking event with curated breakouts" queries — a category where you have a clear differentiation story but zero AI-surface presence today.</p>
+</section>
+
+<section>
+  <h2><span class="num">5.</span> Deploy Path Overview</h2>
+
+  <p>EBN runs on GoHighLevel (also called LeadConnector or GHL) — not WordPress. The deploy path is platform-specific: schema injects via the platform's <strong>Custom Code / Header Tracking Code</strong> field rather than via a plugin. The full step-by-step instructions live in your deploy guide; this section is the approach in plain terms.</p>
+
+  <h3>How it goes live</h3>
+  <ol>
+    <li><strong>Validate each payload</strong> at Google's Rich Results Test before any paste-in goes live</li>
+    <li><strong>Single-block paste-in</strong> — because EBN is single-page, all 9 schema types deploy in one consolidated head injection</li>
+    <li><strong>Canonical URL fix</strong> — add a <code>&lt;link rel="canonical"&gt;</code> tag on <code>/home</code> pointing to <code>/</code> (your <code>/home</code> page currently serves identical content to <code>/</code>, splitting entity attribution)</li>
+    <li><strong>Post-deploy validation</strong> — view page source, re-test each block, confirm no errors</li>
+    <li><strong>Google Search Console submission</strong> — URL Inspection on the canonical → Request Indexing → re-crawl triggers on Google's next pass</li>
+  </ol>
+
+  <p>Apollo executes all five steps live during your Zoom deploy session — you watch screen-share and confirm each step as it goes live. Sessions run 45–60 minutes.</p>
+
+  <div class="callout">
+    <strong>Note on the landing-page wording.</strong> The AIO Research page references a "WordPress deployment guide." Your deploy guide is LeadConnector-specific because your site runs on LeadConnector. The done-for-you Zoom session adapts the platform-specific paste-in to your stack — same contract item, adapted to your CMS.
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">6.</span> Delivery against the agreement</h2>
   <p>Each line of the AIO Research scope and where its deliverable lives:</p>
   <div class="contract-grid">
     <div class="contract-row">
       <div class="num">1</div>
-      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see EBN.<span class="where">Findings landed in your validation draft (May 19); your responses confirmed them.</span></div>
+      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see EBN today.<span class="where">Section 1 of this record.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
       <div class="num">2</div>
-      <div class="item"><strong>Competitor Citation Analysis</strong>Which networking communities AI surfaces cite in your category.<span class="where">Findings landed in your validation draft (May 19); your responses confirmed them.</span></div>
+      <div class="item"><strong>Competitor Citation Analysis</strong>Which networking communities AI surfaces cite in your category.<span class="where">Section 2 of this record.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
       <div class="num">3</div>
-      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service · Event × 2 · WebPage · BreadcrumbList · FAQPage · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record.</span></div>
+      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service · Event × 2 · WebPage · BreadcrumbList · FAQPage · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 4.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
       <div class="num">4</div>
-      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Confirmed in the schema bundle's _meta block.</span></div>
+      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
       <div class="status">Confirmed</div>
     </div>
     <div class="contract-row">
@@ -113,7 +283,7 @@ footer p { margin: 0 0 6px; }
     </div>
     <div class="contract-row">
       <div class="num">6</div>
-      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>6 live-site verbatim · 7 in your founder voice (from validation response) · 37 researched.<span class="where">FAQ batch file delivered with this record.</span></div>
+      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>6 live-site verbatim · 7 in your founder voice (from validation reply) · 37 researched.<span class="where">FAQ batch file delivered with this record.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
@@ -123,17 +293,17 @@ footer p { margin: 0 0 6px; }
     </div>
     <div class="contract-row">
       <div class="num">8</div>
-      <div class="item"><strong>Deployment guide</strong>LeadConnector-specific paste-in walkthrough.<span class="where">Deploy guide document delivered with this record.</span></div>
+      <div class="item"><strong>Deployment guide</strong>LeadConnector-specific paste-in walkthrough.<span class="where">Deploy guide document delivered with this record; approach summarized in Section 5.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
       <div class="num">9</div>
-      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live; you watch and confirm each step.<span class="where">Scheduled at delivery.</span></div>
-      <div class="status">Scheduled</div>
+      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live; you watch and confirm each step.<span class="where">Schedule via the link in Section 8.</span></div>
+      <div class="status">Ready to schedule</div>
     </div>
     <div class="contract-row">
       <div class="num">10</div>
-      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 2 of this record.</span></div>
+      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 7 of this record.</span></div>
       <div class="status">Delivered</div>
     </div>
     <div class="contract-row">
@@ -150,7 +320,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">2.</span> Summary of every change made</h2>
+  <h2><span class="num">7.</span> Summary of every change made</h2>
   <p>The mapping from your validation response to what is encoded in the final build:</p>
   <table class="approval-trail-table">
     <tr>
@@ -159,125 +329,101 @@ footer p { margin: 0 0 6px; }
     </tr>
     <tr>
       <td>Phone: 917-251-7866</td>
-      <td>Encoded as Organization.telephone in international format</td>
+      <td>Encoded as <code>Organization.telephone</code> in international format</td>
     </tr>
     <tr>
       <td>Public address: Gaithersburg, MD</td>
-      <td>Encoded as locality + region. Full street address stays gated</td>
+      <td>Encoded as locality + region. Full street address stays gated.</td>
     </tr>
     <tr>
       <td>Logo URL provided</td>
-      <td>Encoded as Organization.logo</td>
+      <td>Encoded as <code>Organization.logo</code></td>
     </tr>
     <tr>
       <td>Membership cap: 75 confirmed</td>
-      <td>Encoded in Service.serviceOutput, reinforced in FAQ Q12 and Q47</td>
+      <td>Encoded in <code>Service.serviceOutput</code>, reinforced in FAQ Q12 ("Is EBN membership capped?")</td>
     </tr>
     <tr>
       <td>Education background</td>
-      <td>Encoded as Person.alumniOf (Illinois State University, American University) + Person.hasCredential × 3 (BMus, MMus, NPM Certificate). Biographical narrative updated to include credentials</td>
+      <td>Encoded as <code>Person.alumniOf</code> (Illinois State University, American University) + <code>Person.hasCredential</code> × 3 (BMus + MMus Vocal Performance from Illinois State; Master's Certificate in Nonprofit Management from American University). Biographical narrative updated to include credentials.</td>
     </tr>
     <tr>
       <td>Show Up Aligned Quiz framing — showupaligned.com</td>
-      <td>FAQ Q26 updated. Quiz URL added to Organization.sameAs lattice</td>
+      <td>FAQ Q26 updated ("Can I take a networking-style assessment before applying?"). Quiz URL added to <code>Organization.sameAs</code></td>
     </tr>
     <tr>
       <td>ebn.empoweryourvoice.com domain retired</td>
-      <td>Removed from sameAs. Entity graph rebuilt around current active domains only</td>
+      <td>Removed from <code>sameAs</code>. Entity graph rebuilt around current active domains only.</td>
     </tr>
     <tr>
       <td>BNI comparison FAQs (×2): SHIP BOTH AS-DRAFTED</td>
-      <td>Q45 and Q46 ship unchanged</td>
+      <td>Q45 ("How is EBN different from BNI?") and Q46 ("How is EBN different from BNI for creative entrepreneurs specifically?") ship unchanged.</td>
     </tr>
     <tr>
       <td>Parent LLC framing: REWRITE → drop entirely</td>
-      <td>Previous parent-LLC FAQ removed. No parentOrganization field in schema. Customer-facing branding is EBN-only</td>
+      <td>Previous parent-LLC FAQ removed. No <code>parentOrganization</code> field in schema. Customer-facing branding is EBN-only.</td>
     </tr>
     <tr>
       <td>Membership pricing: DISCLOSE</td>
-      <td>FAQ Q16 rewritten with $99/month + one-year commitment. Service.offers encoded with full pricing and commitment terms</td>
+      <td>FAQ Q16 ("How much does EBN membership cost?") rewritten with $99/month + one-year commitment. <code>Service.offers</code> encoded with full pricing and commitment terms.</td>
     </tr>
     <tr>
       <td>Open FAQ: What inspired EBN</td>
-      <td>Encoded verbatim as Q8</td>
+      <td>Encoded verbatim as Q8 ("What inspired Stephanie to build EBN?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Who is NOT a good fit</td>
-      <td>Encoded verbatim as Q22</td>
+      <td>Encoded verbatim as Q22 ("Who is NOT a good fit for EBN?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Typical 6-month outcome</td>
-      <td>Encoded verbatim as Q18</td>
+      <td>Encoded verbatim as Q18 ("What is a typical 6-month member outcome at EBN?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Why EBN over Pavilion/Chief</td>
-      <td>Encoded verbatim as Q48</td>
+      <td>Encoded verbatim as Q48 ("Why choose EBN over Pavilion, Chief, or other networking communities?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Meeting cadence and commitment context</td>
-      <td>Encoded verbatim as Q40</td>
+      <td>Encoded verbatim as Q40 ("What should I know about EBN's meeting schedule before joining?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Member business shifts mid-membership</td>
-      <td>Encoded verbatim as Q28</td>
+      <td>Encoded verbatim as Q28 ("What if my business shifts mid-membership?")</td>
     </tr>
     <tr>
       <td>Open FAQ: Handling overlapping niches</td>
-      <td>Encoded verbatim as Q47</td>
+      <td>Encoded verbatim as Q47 ("How does EBN handle overlapping niches among members?")</td>
     </tr>
   </table>
 </section>
 
 <section>
-  <h2><span class="num">3.</span> What's in scope vs. what isn't</h2>
-  <p>Clarifying the engagement boundaries:</p>
-  <table>
-    <tr>
-      <th>Item</th>
-      <th>Status</th>
-    </tr>
-    <tr>
-      <td>9-Type JSON-LD schema package on canonical URL</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>50 FAQ Q&amp;As encoded in FAQPage schema</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>Entity Chain Architecture documentation</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>LeadConnector deployment via Zoom session</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>Canonical URL fix (/ vs /home)</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>Google Search Console re-indexing submission</td>
-      <td class="confirmed">In scope</td>
-    </tr>
-    <tr>
-      <td>Member portal subdomain (login.empoweredbusinessnetworking.com)</td>
-      <td>Out of scope — gated content, excluded from public schema by design</td>
-    </tr>
-    <tr>
-      <td>Auto-updating Event.startDate for next monthly instance</td>
-      <td>Out of scope — schema.org recurrence primitives are used; manual or automated next-date refresh is a separate engagement</td>
-    </tr>
-    <tr>
-      <td>Re-testing AI surface visibility at 30/60/90 days</td>
-      <td>Out of scope — your one-time AIO Research engagement closes at deploy confirmation</td>
-    </tr>
-  </table>
+  <h2><span class="num">8.</span> Next Step — Schedule Your Deploy Session</h2>
+
+  <p>Two things to do, in order:</p>
+  <ol>
+    <li><strong>Skim the 50 FAQs.</strong> 13 are already verbatim from your live site or your validation reply — those you can skip. The other 37 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
+    <li><strong>Book your 60-min Zoom session.</strong> On the call we share screen, install the schema on your site live, fix the <code>/home</code> page duplicate, and submit your site to Google Search Console for re-crawl. You watch and confirm.</li>
+  </ol>
+
+  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
+    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
+    <p>Open in your browser. Sectioned by source so you can skip the 13 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
+    <a class="cta-button" style="background: var(--good);" href="https://sageharper-ai.github.io/apollo-preview/aio-reports/empowered-business-networking-aio-faqs-2026-05-20.html">Open FAQ Batch →</a>
+  </div>
+
+  <div class="cta-block">
+    <h3>Step 2 → Book your 60-min Zoom deploy session</h3>
+    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
+    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
+    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
+  </div>
 </section>
 
 <footer>
   <p>Prepared by Apollo Marketing for Empowered Business Networking · May 20, 2026</p>
-  <p>Engagement closes at deploy session confirmation. Reach Apollo via the email used to schedule your Zoom.</p>
+  <p>Engagement closes at deploy session confirmation.</p>
 </footer>
 
 </div>
