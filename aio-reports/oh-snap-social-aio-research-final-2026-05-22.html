@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Oh Snap! Social® — AIO Research Final Record</title>
+<style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="preheader">AIO Research — Final Record</div>
+  <h1>Oh Snap! Social®</h1>
+  <p class="subtitle">Done-for-You &amp; Done-with-You Social Media for Service-Based Businesses · founded 2018 · National (US)</p>
+  <p class="meta-line">Prepared for Karlyn Ankrom · Apollo Marketing · Prepared: May 22, 2026</p>
+</header>
+
+<div class="lead-callout">
+  <p>This is your AIO Research record. Sections 1–3 walk the analysis findings. Sections 4–5 walk what we built and how it deploys. Sections 6–7 cover delivery against the agreement and the mapping of your validation response into the final build. Section 8 is the next step — scheduling your Zoom deploy session.</p>
+  <p>The schema package, FAQ batch, entity chain document, and deploy guide ship alongside this record — those files are the deployable artifacts; this report is the findings + delivery narrative that ties them together.</p>
+</div>
+
+<section>
+  <h2><span class="num">1.</span> AI Visibility Gap Analysis</h2>
+
+  <p>Oh Snap! Social® has a strong foundation — eight years operating, the registered <code>Oh Snap! Social®</code> brand, six named client testimonials, three named press citations (Business Insider, ABC 7, Social Media Examiner), and a five-person team led by your proprietary <strong>Fan Firestarter Framework</strong>. The foundation is real. What's missing is the structured-data layer that lets AI surfaces (Gemini, Perplexity, ChatGPT, Copilot, Google AI Mode, Grok) find and cite that foundation when buyers are researching the category.</p>
+  <p class="source-line">Sources: brand authority score captured May 15, 2026 · indexed-page count probed May 18, 2026 · direct AI-surface tests across 6 platforms May 18, 2026.</p>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="v">38.43 / 100</span><span class="l">Brand Signal Score at baseline (Low tier — orange)</span></div>
+    <div class="metric"><span class="v">~110 / 218</span><span class="l">URLs in Google's index (~50% of sitemap)</span></div>
+    <div class="metric"><span class="v">13.3%</span><span class="l">Brand visibility across 6 LLMs (ranked ~36 of 53 tracked agencies)</span></div>
+    <div class="metric"><span class="v">2 / 6</span><span class="l">AI platforms citing Oh Snap! Social at least once</span></div>
+  </div>
+
+  <h3>Where the brand is invisible</h3>
+  <p>We tested five high-intent buyer queries that Oh Snap! Social should logically appear in. The brand surfaced in zero of the five:</p>
+  <table>
+    <thead><tr><th>Buyer-intent query tested</th><th>Cited?</th><th>Who dominates instead</th></tr></thead>
+    <tbody>
+      <tr><td>best done-for-you social media services for small service-based businesses</td><td>No</td><td>Thryv · 99DollarSocial · GlowSocial · FitSmallBusiness · Feedbird · LYFE Marketing</td></tr>
+      <tr><td>how much does done-for-you social media cost</td><td>No</td><td>LYFE Marketing (×2) · Sprout Social · SocialPilot · Planable · HawkSEM · WebFX</td></tr>
+      <tr><td>social media agency for solopreneurs</td><td>No</td><td>CoolNerdsMarketing · Smarcomms · FitSmallBusiness · Bamf · 99DollarSocial · NoGood</td></tr>
+      <tr><td>social media marketing for published authors</td><td>No</td><td>Reedsy · EvergreenAuthors · AuthorHouse · BookBub · TheUrbanWriters · BarkerBooks</td></tr>
+      <tr><td>book marketing on social media for nonfiction authors</td><td>No</td><td>Flatpage · BookBub · Networlding · TheCreativePenn · SelfPublishingAdvice · WritersDigest</td></tr>
+    </tbody>
+  </table>
+  <p class="source-line">Source: direct AI-surface tests across Gemini · Perplexity · ChatGPT · Copilot · Google AI Mode · Grok, May 18, 2026.</p>
+
+  <h3>Where the brand IS surfaced</h3>
+  <p>On secondary queries, Oh Snap! Social appears partially in the result set — most notably <code>ohsnapsocial.com</code> is cited as a source within LLM responses about the social media services category (2 citations across tests). That's a positive signal worth amplifying: AI surfaces are partially aware of your domain; they just don't reach for the named brand on the primary buyer queries.</p>
+
+  <div class="callout callout-good">
+    <strong>EEE category opportunity — the highest-leverage move:</strong> the "social media for published nonfiction authors" niche surfaced no incumbent brand in our research. Only publishing-industry aggregators appeared (Reedsy, BookBub, AuthorHouse, Writers Digest). With EEE's specific positioning — six-month structured program, Karlyn as instructor, defined syllabus — schema on <code>/join-eee</code> can claim category position rather than fight entrenched competitors. <strong>This is the single highest-leverage move in your AIO package.</strong>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Upstream gap — the EEE page isn't indexed.</strong> Your Founding-Member sales page at <code>resources.ohsnapsocial.com/join-eee</code> is currently NOT in Google's index. Schema on that page cannot reach AI surfaces until Google indexes it. The deploy guide addresses this with a 3-part fix (noindex audit + internal links + GSC request).
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">2.</span> Competitor Citation Analysis</h2>
+
+  <p>To understand what AI surfaces return instead of Oh Snap! Social, we mapped competitor brands across the five tested queries. The competitor field splits into three clusters with distinct positioning implications.</p>
+  <p class="source-line">Source: same five-query AI-surface tests, May 18, 2026.</p>
+
+  <h3>Cluster A — Top-tier visibility competitors (100% visibility)</h3>
+  <p>These dominate generic done-for-you social queries with massive press footprints and decade-plus AI-surface presence. Oh Snap! Social doesn't compete with them on volume; you differentiate on framework + curation quality.</p>
+  <table>
+    <thead><tr><th>Competitor</th><th>Positioning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>VaynerMedia</strong></td><td>Mega-agency, founder-led celebrity-grade brand; massive press footprint</td></tr>
+      <tr><td><strong>GlowSocial</strong></td><td>$49/mo "set-and-forget" social automation; owns aggressive price-point positioning</td></tr>
+      <tr><td><strong>787Social</strong></td><td>Boutique social media agency with strong topical-content footprint</td></tr>
+      <tr><td><strong>Ampfluence</strong></td><td>Influencer + social marketing agency; clear niche specificity</td></tr>
+      <tr><td><strong>LYFE Marketing</strong></td><td>Established small-business social agency; owns the "how much does it cost" answer surface</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Cluster B — Most-cited sources (URLs that LLMs reference)</h3>
+  <ul>
+    <li><strong>freshcontentsociety.com</strong> — 3 citations across tests</li>
+    <li><strong>ohsnapsocial.com</strong> — 2 citations (your domain — positive signal)</li>
+    <li><strong>surgecreative.co</strong> — 2 citations</li>
+    <li><strong>twostepsocial.com</strong> — 2 citations</li>
+    <li><strong>bloomsocialbiz.com</strong> — 2 citations</li>
+  </ul>
+  <p>The fact that <code>ohsnapsocial.com</code> appears in LLM citations even when your brand isn't named in the response means AI surfaces are partially aware of your domain as a content source. Schema deployment is the move that converts "occasional source citation" into "named entity returned in answers."</p>
+
+  <h3>Cluster C — Aggregator listicles dominate the answer surface</h3>
+  <p>A meaningful slice of AI-surface answers in this category aren't direct brand citations — they're aggregator listicles. AI surfaces frequently quote Thryv's "9 Best..." blog, FitSmallBusiness's "Hand-Picked Companies" listicle, DesignRush's "Top 50" agency rankings, and similar. Getting Oh Snap! Social into one or more of these listicles is a complementary path to AI visibility — a content outreach motion separate from schema work.</p>
+
+  <h3>Category gap — EEE side</h3>
+  <p>Across the two EEE-specific queries we tested, <strong>no agency-side competitor appeared</strong>. The answer surface was dominated by publishing-industry sites (Reedsy, BookBub, AuthorHouse, Writers Digest, NonFiction Authors Association) that don't offer the kind of structured author-platform program EEE provides. <strong>This category position is actively unclaimed by an established competitor.</strong> The <code>Course</code> schema for EEE, the dedicated 25-FAQ deployment on `/join-eee`, and the indexing fix together give Oh Snap! Social a defensible position in this space.</p>
+
+  <h3>Press citation as authority signal</h3>
+  <p>Your three press features — Business Insider, ABC 7 (WJLA), Social Media Examiner — are encoded explicitly via <code>Organization.mentions</code>. AI surfaces weight third-party press citations heavily as authority signals; making these directly addressable rather than incidentally discovered closes a measurable gap.</p>
+</section>
+
+<section>
+  <h2><span class="num">3.</span> AI Visibility Baseline Snapshot</h2>
+
+  <p>The "before" measurement. This is the reference point to measure against if you re-test at 30, 60, or 90 days post-deploy.</p>
+  <p class="source-line">Sources: brand authority score May 15, 2026 · LLM Visibility test May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests May 18, 2026 · live page-source review May 18, 2026.</p>
+
+  <table>
+    <thead><tr><th>Metric</th><th>Baseline (May 18, 2026)</th></tr></thead>
+    <tbody>
+      <tr><td>Brand Signal Score</td><td>38.43 / 100 (Low tier — orange)</td></tr>
+      <tr><td>Holistic SEO Overall</td><td>42 / 100 (Needs Work)</td></tr>
+      <tr><td>LLM brand visibility (avg across 6 platforms)</td><td>13.3%</td></tr>
+      <tr><td>LLM platforms citing brand at least once</td><td>2 / 6</td></tr>
+      <tr><td>Share of Voice across tested prompts</td><td>10.0%</td></tr>
+      <tr><td>AI Overview presence on high-intent buyer queries</td><td>0 / 5</td></tr>
+      <tr><td>Pages indexed in Google</td><td>~110 of 218 sitemap URLs (~50%)</td></tr>
+      <tr><td>EEE landing page (`resources.ohsnapsocial.com/join-eee`)</td><td>NOT indexed — single highest-leverage hygiene fix</td></tr>
+      <tr><td>Existing on-page schema</td><td>None detected</td></tr>
+      <tr><td>Social profile sameAs URLs deployable</td><td>5 (Facebook · Twitter · LinkedIn · Instagram · Pinterest)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="source-line">Re-running this snapshot at 30/60/90 days is available as a Monthly AI Visibility Monitoring add-on (separate engagement). This snapshot is yours to track manually if preferred.</p>
+</section>
+
+<section>
+  <h2><span class="num">4.</span> Schema Prescription</h2>
+
+  <p>Your AIO package ships a 9-type JSON-LD bundle built from verified live-site entity data and validated against your 2026-05-20 reply. Every payload validates against Schema.org; every field is sourced from your live pages or your validated input.</p>
+
+  <table>
+    <thead><tr><th>#</th><th>Schema type</th><th>Where it deploys</th><th>What it accomplishes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Organization</strong></td><td>Sitewide (head)</td><td>Establishes Oh Snap! Social® as a structured entity for AI surfaces; encodes 3 press <code>mentions</code></td></tr>
+      <tr><td>2</td><td><strong>Person (Karlyn)</strong></td><td>Sitewide (head)</td><td>Founder authority signal; ties Karlyn to Fan Firestarter Framework + JMU credential</td></tr>
+      <tr><td>3</td><td><strong>Service — DFY umbrella</strong></td><td><code>/services/</code></td><td>5-offering <code>OfferCatalog</code>; serves "how much does it cost" + "what's included" queries</td></tr>
+      <tr><td>4</td><td><strong>Course — EEE</strong></td><td><code>/join-eee</code> (subdomain)</td><td>Establishes category position in the unclaimed "social media for authors" niche · disclosed Founding-Member pricing</td></tr>
+      <tr><td>5</td><td><strong>WebPage</strong></td><td>Per-page</td><td>Page-level entity wrapper; ties each URL to the Organization graph</td></tr>
+      <tr><td>6</td><td><strong>BreadcrumbList</strong></td><td>Per-page</td><td>Site hierarchy signal for crawlers + AI surfaces</td></tr>
+      <tr><td>7</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td><code>/services/</code> (25) + <code>/join-eee</code> (25)</td><td>50 directly-citable Q&amp;A units — split for page-level topical alignment</td></tr>
+      <tr><td>8</td><td><strong>Article (3 examples)</strong></td><td>Selected blog posts</td><td>Establishes Karlyn as topical author authority; pattern extensible to all 186 posts</td></tr>
+      <tr><td>9</td><td><strong>Review × 6 + AggregateRating</strong></td><td>Home + Services</td><td>Trust signal — 6 named testimonials with 5/5 aggregate (Shaw Services named explicitly per your validation)</td></tr>
+    </tbody>
+  </table>
+
+  <p>Detailed entity relationships and AI-surface implications are mapped in the Entity Chain Architecture document delivered alongside this report.</p>
+
+  <div class="callout callout-warn">
+    <strong>Deliberate omissions:</strong> Full street address (UPS box only per your direction); JobPosting schemas for /careers/ pages (out of scope); Article schemas for all 186 blog posts (3 examples encoded; bulk pattern available as expansion); additional certifications beyond JMU BA Journalism (omitted unless you want them added).
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">5.</span> Deploy Path Overview</h2>
+
+  <p>Your site runs on WordPress. The deploy mechanism is the <strong>HFCM plugin (Header Footer Code Manager)</strong> — surgical insertion of JSON-LD into the <code>&lt;head&gt;</code> without touching theme files. Full step-by-step instructions live in the deploy guide delivered with this report.</p>
+
+  <h3>What deploys where</h3>
+  <ul>
+    <li><strong>Sitewide</strong> (HFCM "Site Wide" scope): Organization + Person + AggregateRating</li>
+    <li><strong><code>/services/</code></strong>: Service (DFY) + FAQPage (25 DFY Q&amp;As) + Review collection + WebPage + BreadcrumbList</li>
+    <li><strong><code>/join-eee</code></strong> (subdomain): Course (EEE) + FAQPage (25 EEE Q&amp;As) + WebPage + BreadcrumbList</li>
+    <li><strong>Selected blog posts</strong>: Article (3 representative posts; pattern extensible)</li>
+  </ul>
+
+  <h3>Two hygiene fixes in scope at the Zoom session</h3>
+  <ol>
+    <li><strong><code>/services-old/</code> → <code>/services/</code> 301 redirect</strong> — removes duplicate-content dilution between the legacy and current pages</li>
+    <li><strong>EEE landing page indexing fix (3-part)</strong> — verify no `noindex` tag · add internal links from `/services/` and `/about/` · submit URL to Google Search Console for indexing. This is the single highest-leverage hygiene move in the engagement: schema on `/join-eee` cannot reach AI surfaces until Google indexes the page.</li>
+  </ol>
+
+  <p>The Zoom session (60-90 min, included per contract #9) walks all of this with you screen-share. Apollo executes; you watch and confirm each step as it goes live.</p>
+</section>
+
+<section>
+  <h2><span class="num">6.</span> Delivery against the agreement</h2>
+  <p>Each line of the AIO Research scope and where its deliverable lives:</p>
+  <div class="contract-grid">
+    <div class="contract-row">
+      <div class="num">1</div>
+      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see Oh Snap! Social today.<span class="where">Section 1 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">2</div>
+      <div class="item"><strong>Competitor Citation Analysis</strong>Which agencies and listicles AI surfaces cite in your category.<span class="where">Section 2 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">3</div>
+      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service (DFY) · Course (EEE) · WebPage · BreadcrumbList · FAQPage · Article · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 4.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">4</div>
+      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">5</div>
+      <div class="item"><strong>All JSON files ready to install</strong>Page-scoped paste-in via HFCM (Header Footer Code Manager).<span class="where">In the schema bundle file + the deploy guide.</span></div>
+      <div class="status">Ready</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">6</div>
+      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>Split 25 DFY-area + 25 EEE-area · 7 in your verbatim founder voice (from validation reply) · Shaw Services named explicitly · Fan Firestarter line edited per your direction.<span class="where">FAQ batch file delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">7</div>
+      <div class="item"><strong>Entity Chain Architecture document</strong>Relationship map across brand · person · two service lines · content · trust signals.<span class="where">Entity chain document delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">8</div>
+      <div class="item"><strong>Deployment guide</strong>WordPress + HFCM walkthrough · includes the two hygiene fixes (services-old 301 + EEE indexing).<span class="where">Deploy guide document delivered with this record; approach summarized in Section 5.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">9</div>
+      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live · you watch and confirm each step · 60-90 min including the two hygiene fixes.<span class="where">Schedule via the link in Section 8.</span></div>
+      <div class="status" style="color: #c2410c; background: #fff4e6; padding: 4px 10px; border-radius: 999px; border: 1px solid #fbbf6c; font-weight: 700;">Ready to schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">10</div>
+      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 7 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">11</div>
+      <div class="item"><strong>Turnaround within window</strong>Discovery + validation draft + your review + build complete.<span class="where">Engagement progressed on schedule.</span></div>
+      <div class="status">On schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">12</div>
+      <div class="item"><strong>One-time fee · no subscription</strong>Engagement closes at deploy confirmation. No recurring billing.<span class="where">Per terms of purchase.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">7.</span> Summary of every change made</h2>
+  <p>The mapping from your validation response to what is encoded in the final build:</p>
+  <table class="approval-trail-table">
+    <tr>
+      <th>Your input</th>
+      <th>How it landed in the final build</th>
+    </tr>
+    <tr>
+      <td>Phone: (202) 930-3241</td>
+      <td>Encoded as <code>Organization.telephone</code> in international format (<code>+1-202-930-3241</code>)</td>
+    </tr>
+    <tr>
+      <td>Public address: LEAVE BLANK (UPS box only — no brick-and-mortar)</td>
+      <td>Omitted entirely from schema; <code>address</code> field not encoded. National-virtual positioning preserved.</td>
+    </tr>
+    <tr>
+      <td>Logo URL provided (with GA tracking params)</td>
+      <td>GA tracking params stripped to canonical URL before encoding. <code>Organization.logo</code> set to clean URL. (Verify canonical logo image path during deploy session if a direct WordPress media URL is preferred.)</td>
+    </tr>
+    <tr>
+      <td>EEE Founding-Member full payment: $3,000</td>
+      <td>Encoded as <code>Course.offers</code> — "Founding Member Rate — Full Payment" at $3,000 USD with checkout URL</td>
+    </tr>
+    <tr>
+      <td>EEE Founding-Member payment plan: 4 × $825</td>
+      <td>Encoded as a second <code>Course.offers</code> — "Founding Member Rate — Payment Plan" at $825 USD with 4-installment <code>PriceSpecification</code> noting $3,300 total</td>
+    </tr>
+    <tr>
+      <td>Snap Scan pricing: Contact for pricing</td>
+      <td>Encoded as <code>PriceSpecification</code> with description "Contact for pricing" — no exposed dollar amount</td>
+    </tr>
+    <tr>
+      <td>Press URLs ×3 provided (Business Insider · ABC 7 · Social Media Examiner)</td>
+      <td>Each encoded as <code>Article</code> entity within <code>Organization.mentions</code> with publisher attribution. Authority signal directly addressable by AI surfaces.</td>
+    </tr>
+    <tr>
+      <td>Education: James Madison University, BA Journalism</td>
+      <td>Encoded as <code>Person.alumniOf</code> (James Madison University) + <code>Person.hasCredential</code> (Bachelor of Arts in Journalism, JMU)</td>
+    </tr>
+    <tr>
+      <td>"Fake their own death" line in Fan Firestarter FAQ → EDIT to "Strategize (make a plan for progress)"</td>
+      <td>FAQ Q9 ("What is the Fan Firestarter Framework?") updated. The new line preserves the founder-voice cadence while removing the previous phrasing per your direction.</td>
+    </tr>
+    <tr>
+      <td>Shaw Services attribution in paid-advertising FAQ: NAME explicitly (don't anonymize)</td>
+      <td>FAQ Q8 updated to name Shaw Services explicitly with the testimonial quote about consistent call-volume increases. Also encoded as a named Review entity in the Review collection.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: What inspired the Fan Firestarter Framework</td>
+      <td>Encoded verbatim as Q11 ("What inspired the Fan Firestarter Framework?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: When is a client NOT a good fit</td>
+      <td>Encoded verbatim as Q22 ("When is a client NOT a good fit for Oh Snap! Social?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: Typical 6-month outcome for Corporate DFY</td>
+      <td>Encoded verbatim as Q3 ("What is a typical 6-month outcome for Corporate DFY clients?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: Why pick Oh Snap! Social over a generalist agency</td>
+      <td>Encoded verbatim as Q14 ("Why pick Oh Snap! Social over a generalist agency?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: EEE hours per week realistically</td>
+      <td>Encoded verbatim as Q49 ("Realistically, how many hours per week does EEE require?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: What happens at end of Corporate engagement</td>
+      <td>Encoded verbatim as Q19 ("What happens at the end of a Corporate DFY engagement?") — Karlyn voice preserved.</td>
+    </tr>
+    <tr>
+      <td>Open FAQ: Common discovery-call question we missed (Karlyn: "Not sure...")</td>
+      <td>Dropped — no useful verbatim. Existing FAQ coverage retained.</td>
+    </tr>
+    <tr>
+      <td>Two-service-line architecture (DFY agency + EEE Founding-Member)</td>
+      <td>Encoded as two distinct schema entries: <code>Service</code> (DFY) at <code>/services/</code> with <code>OfferCatalog</code> + <code>Course</code> (EEE) at <code>/join-eee</code> with disclosed pricing offers. Both reference the same <code>Organization</code> entity.</td>
+    </tr>
+    <tr>
+      <td>WordPress site (not LeadConnector) — HFCM-based deployment</td>
+      <td>Deploy guide built specifically for WordPress + HFCM workflow. Two hygiene fixes (services-old 301 + EEE indexing) folded into the in-session walkthrough.</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">8.</span> Next Step — Schedule Your Deploy Session</h2>
+
+  <p>Two things to do, in order:</p>
+  <ol>
+    <li><strong>Skim the 50 FAQs.</strong> 7 are already verbatim from your validation reply (your founder voice) — those you can skip. The other 43 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
+    <li><strong>Book your 60–90 min Zoom deploy session.</strong> On the call we share screen, install the schema on your site live, fix the <code>/services-old/</code> redirect, execute the EEE indexing fix (the single biggest unlock), and submit your URLs to Google Search Console for re-crawl. You watch and confirm each step.</li>
+  </ol>
+
+  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
+    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
+    <p>Sectioned by source so you can skip the 7 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
+    <a class="cta-button" style="background: var(--good);" href="mailto:sage.harper@apollollc.com?subject=Oh%20Snap!%20Social%20FAQ%20review" target="_blank" rel="noopener noreferrer">Reply with FAQ edits →</a>
+  </div>
+
+  <div class="cta-block">
+    <h3>Step 2 → Book your 60–90 min Zoom deploy session</h3>
+    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
+    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
+    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Prepared by Apollo Marketing for Oh Snap! Social® · May 22, 2026</p>
+  <p>Engagement closes at deploy session confirmation.</p>
+</footer>
+
+</div>
+</body>
+</html>
