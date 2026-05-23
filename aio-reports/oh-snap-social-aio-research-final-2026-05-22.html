@@ -79,6 +79,11 @@ td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
 .cta-button:hover { background: var(--apollo-orange-dark); }
 .cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
 
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
 footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
 footer p { margin: 0 0 6px; }
 
@@ -103,12 +108,150 @@ footer p { margin: 0 0 6px; }
 </header>
 
 <div class="lead-callout">
-  <p>This is your AIO Research record. Sections 1–3 walk the analysis findings. Sections 4–5 walk what we built and how it deploys. Sections 6–7 cover delivery against the agreement and the mapping of your validation response into the final build. Section 8 is the next step — scheduling your Zoom deploy session.</p>
+  <p>This is your AIO Research record. The first three sections cover where Oh Snap! Social stands today in AI surfaces, what Apollo built for you, and how to schedule your deploy session. The remaining sections hold the full methodology, evidence, and delivery detail underneath — available whenever you want to go deep.</p>
   <p>The schema package, FAQ batch, entity chain document, and deploy guide ship alongside this record — those files are the deployable artifacts; this report is the findings + delivery narrative that ties them together.</p>
 </div>
 
 <section>
-  <h2><span class="num">1.</span> AI Visibility Gap Analysis</h2>
+  <h2><span class="num">1.</span> Where you stand today</h2>
+
+  <p>Oh Snap! Social® has eight years of operating history, the registered <code>Oh Snap! Social®</code> brand, six named client testimonials, three named press citations (Business Insider, ABC 7, Social Media Examiner), a five-person team, and your proprietary Fan Firestarter Framework. The foundation is real and well-earned. What's missing is the structured-data layer that lets AI surfaces (Gemini, Perplexity, ChatGPT, Copilot, Google AI Mode, Grok) actually find and cite that foundation when buyers are researching the category.</p>
+
+  <p>We tested five high-intent buyer queries Oh Snap! Social should logically appear in — phrases like <em>"best done-for-you social media services for small service-based businesses"</em> and <em>"social media marketing for published authors."</em> The brand surfaced in zero of the five. AI surfaces are partially aware of your domain (<code>ohsnapsocial.com</code> appears as a cited source in two responses), but they're not yet reaching for the named brand on the primary buyer queries — and the EEE founding-member sales page that anchors your highest-leverage category opportunity isn't indexed by Google yet.</p>
+
+  <p>Both gaps are addressable. That's what this engagement fixes.</p>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="v">38.43 / 100</span><span class="l">Brand Signal Score at baseline (Low tier — orange)</span></div>
+    <div class="metric"><span class="v">13.3%</span><span class="l">Brand visibility across 6 LLMs (ranked ~36 of 53 tracked agencies)</span></div>
+    <div class="metric"><span class="v">2 / 6</span><span class="l">AI platforms citing Oh Snap! Social at least once</span></div>
+    <div class="metric"><span class="v">~110 / 218</span><span class="l">URLs in Google's index (~50% of sitemap)</span></div>
+  </div>
+
+  <p class="source-line">Sources: brand authority score May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests across 6 platforms May 18, 2026. Full evidence in Section 5.</p>
+</section>
+
+<section>
+  <h2><span class="num">2.</span> What we built for you</h2>
+
+  <p>A 9-type JSON-LD schema package, a 50-question FAQ batch (split 25 for DFY + 25 for EEE), an entity chain architecture document, and a WordPress-specific deploy guide that uses the HFCM plugin for surgical insertion into the <code>&lt;head&gt;</code> without touching theme files. Every payload was built from your live-site data, validated against your May 20 reply, and is ready to install.</p>
+
+  <table class="compact-table">
+    <thead><tr><th>#</th><th>Schema type</th><th>What it accomplishes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Organization</strong></td><td>Establishes Oh Snap! Social® as a structured entity for AI surfaces; encodes 3 press <code>mentions</code>.</td></tr>
+      <tr><td>2</td><td><strong>Person (Karlyn)</strong></td><td>Founder authority signal; ties Karlyn to the Fan Firestarter Framework and JMU credential.</td></tr>
+      <tr><td>3</td><td><strong>Service — DFY umbrella</strong></td><td>5-offering catalog at <code>/services/</code>; serves "how much does it cost" and "what's included" queries.</td></tr>
+      <tr><td>4</td><td><strong>Course — EEE</strong></td><td>Stakes category position in the unclaimed "social media for authors" niche with disclosed Founding-Member pricing.</td></tr>
+      <tr><td>5</td><td><strong>WebPage</strong></td><td>Page-level entity wrapper; ties each URL to the Organization graph.</td></tr>
+      <tr><td>6</td><td><strong>BreadcrumbList</strong></td><td>Site hierarchy signal for crawlers and AI surfaces.</td></tr>
+      <tr><td>7</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td>50 directly-citable Q&amp;A units — 25 on <code>/services/</code> + 25 on <code>/join-eee</code> for page-level topical alignment.</td></tr>
+      <tr><td>8</td><td><strong>Article (3 examples)</strong></td><td>Establishes Karlyn as topical author authority; pattern extensible to all 186 blog posts.</td></tr>
+      <tr><td>9</td><td><strong>Review × 6 + AggregateRating</strong></td><td>Trust signal — 6 named testimonials with 5/5 aggregate (Shaw Services named explicitly per your validation).</td></tr>
+    </tbody>
+  </table>
+
+  <p>The single highest-leverage element in your package is the <strong>Course schema on <code>/join-eee</code></strong> paired with the indexing fix. The "social media for published nonfiction authors" niche surfaced no incumbent brand in our research — only publishing-industry aggregators (Reedsy, BookBub, AuthorHouse). EEE's specific positioning gives Oh Snap! Social a clear lane to claim category position rather than fight entrenched DFY competitors. Full schema-by-schema breakdown is in Section 8.</p>
+</section>
+
+<section>
+  <h2><span class="num">3.</span> Book your deploy session</h2>
+
+  <p>The schema, FAQs, entity chain, and deploy guide are ready. The remaining step is a 60–90 minute Zoom session where Apollo screen-shares and installs the schema on your WordPress site live via HFCM, fixes the <code>/services-old/</code> redirect, executes the 3-part EEE indexing fix, and submits your URLs to Google Search Console. You watch and confirm each step as it goes live.</p>
+
+  <p>Two things to do, in order:</p>
+  <ol>
+    <li><strong>Skim the 50 FAQs.</strong> 7 are already verbatim from your validation reply (your founder voice) — those you can skip. The other 43 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
+    <li><strong>Book your 60–90 min Zoom deploy session.</strong> Pick a time that works in the next week or two. FAQ edits should arrive a day or two before the session so we can incorporate.</li>
+  </ol>
+
+  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
+    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
+    <p>Sectioned by source so you can skip the 7 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
+    <a class="cta-button" style="background: var(--good);" href="mailto:sage.harper@apollollc.com?subject=Oh%20Snap!%20Social%20FAQ%20review" target="_blank" rel="noopener noreferrer">Reply with FAQ edits →</a>
+  </div>
+
+  <div class="cta-block">
+    <h3>Step 2 → Book your 60–90 min Zoom deploy session</h3>
+    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
+    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
+    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
+  </div>
+</section>
+
+<div class="section-divider">
+  <div class="label">Detail · Methodology · Proof</div>
+</div>
+
+<section>
+  <h2><span class="num">4.</span> Delivery against the agreement</h2>
+  <p>Each line of the AIO Research scope and where its deliverable lives:</p>
+  <div class="contract-grid">
+    <div class="contract-row">
+      <div class="num">1</div>
+      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see Oh Snap! Social today.<span class="where">Section 5 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">2</div>
+      <div class="item"><strong>Competitor Citation Analysis</strong>Which agencies and listicles AI surfaces cite in your category.<span class="where">Section 6 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">3</div>
+      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service (DFY) · Course (EEE) · WebPage · BreadcrumbList · FAQPage · Article · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 8.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">4</div>
+      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">5</div>
+      <div class="item"><strong>All JSON files ready to install</strong>Page-scoped paste-in via HFCM (Header Footer Code Manager).<span class="where">In the schema bundle file + the deploy guide.</span></div>
+      <div class="status">Ready</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">6</div>
+      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>Split 25 DFY-area + 25 EEE-area · 7 in your verbatim founder voice (from validation reply) · Shaw Services named explicitly · Fan Firestarter line edited per your direction.<span class="where">FAQ batch file delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">7</div>
+      <div class="item"><strong>Entity Chain Architecture document</strong>Relationship map across brand · person · two service lines · content · trust signals.<span class="where">Entity chain document delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">8</div>
+      <div class="item"><strong>Deployment guide</strong>WordPress + HFCM walkthrough · includes the two hygiene fixes (services-old 301 + EEE indexing).<span class="where">Deploy guide document delivered with this record; approach summarized in Section 9.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">9</div>
+      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live · you watch and confirm each step · 60-90 min including the two hygiene fixes.<span class="where">Schedule via the link in Section 3.</span></div>
+      <div class="status" style="color: #c2410c; background: #fff4e6; padding: 4px 10px; border-radius: 999px; border: 1px solid #fbbf6c; font-weight: 700;">Ready to schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">10</div>
+      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 10 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">11</div>
+      <div class="item"><strong>Turnaround within window</strong>Discovery + validation draft + your review + build complete.<span class="where">Engagement progressed on schedule.</span></div>
+      <div class="status">On schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">12</div>
+      <div class="item"><strong>One-time fee · no subscription</strong>Engagement closes at deploy confirmation. No recurring billing.<span class="where">Per terms of purchase.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">5.</span> AI Visibility Gap Analysis</h2>
 
   <p>Oh Snap! Social® has a strong foundation — eight years operating, the registered <code>Oh Snap! Social®</code> brand, six named client testimonials, three named press citations (Business Insider, ABC 7, Social Media Examiner), and a five-person team led by your proprietary <strong>Fan Firestarter Framework</strong>. The foundation is real. What's missing is the structured-data layer that lets AI surfaces (Gemini, Perplexity, ChatGPT, Copilot, Google AI Mode, Grok) find and cite that foundation when buyers are researching the category.</p>
   <p class="source-line">Sources: brand authority score captured May 15, 2026 · indexed-page count probed May 18, 2026 · direct AI-surface tests across 6 platforms May 18, 2026.</p>
@@ -147,7 +290,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">2.</span> Competitor Citation Analysis</h2>
+  <h2><span class="num">6.</span> Competitor Citation Analysis</h2>
 
   <p>To understand what AI surfaces return instead of Oh Snap! Social, we mapped competitor brands across the five tested queries. The competitor field splits into three clusters with distinct positioning implications.</p>
   <p class="source-line">Source: same five-query AI-surface tests, May 18, 2026.</p>
@@ -186,7 +329,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">3.</span> AI Visibility Baseline Snapshot</h2>
+  <h2><span class="num">7.</span> AI Visibility Baseline Snapshot</h2>
 
   <p>The "before" measurement. This is the reference point to measure against if you re-test at 30, 60, or 90 days post-deploy.</p>
   <p class="source-line">Sources: brand authority score May 15, 2026 · LLM Visibility test May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests May 18, 2026 · live page-source review May 18, 2026.</p>
@@ -211,7 +354,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">4.</span> Schema Prescription</h2>
+  <h2><span class="num">8.</span> Schema Prescription</h2>
 
   <p>Your AIO package ships a 9-type JSON-LD bundle built from verified live-site entity data and validated against your 2026-05-20 reply. Every payload validates against Schema.org; every field is sourced from your live pages or your validated input.</p>
 
@@ -238,7 +381,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">5.</span> Deploy Path Overview</h2>
+  <h2><span class="num">9.</span> Deploy Path Overview</h2>
 
   <p>Your site runs on WordPress. The deploy mechanism is the <strong>HFCM plugin (Header Footer Code Manager)</strong> — surgical insertion of JSON-LD into the <code>&lt;head&gt;</code> without touching theme files. Full step-by-step instructions live in the deploy guide delivered with this report.</p>
 
@@ -260,74 +403,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">6.</span> Delivery against the agreement</h2>
-  <p>Each line of the AIO Research scope and where its deliverable lives:</p>
-  <div class="contract-grid">
-    <div class="contract-row">
-      <div class="num">1</div>
-      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see Oh Snap! Social today.<span class="where">Section 1 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">2</div>
-      <div class="item"><strong>Competitor Citation Analysis</strong>Which agencies and listicles AI surfaces cite in your category.<span class="where">Section 2 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">3</div>
-      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service (DFY) · Course (EEE) · WebPage · BreadcrumbList · FAQPage · Article · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 4.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">4</div>
-      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
-      <div class="status">Confirmed</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">5</div>
-      <div class="item"><strong>All JSON files ready to install</strong>Page-scoped paste-in via HFCM (Header Footer Code Manager).<span class="where">In the schema bundle file + the deploy guide.</span></div>
-      <div class="status">Ready</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">6</div>
-      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>Split 25 DFY-area + 25 EEE-area · 7 in your verbatim founder voice (from validation reply) · Shaw Services named explicitly · Fan Firestarter line edited per your direction.<span class="where">FAQ batch file delivered with this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">7</div>
-      <div class="item"><strong>Entity Chain Architecture document</strong>Relationship map across brand · person · two service lines · content · trust signals.<span class="where">Entity chain document delivered with this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">8</div>
-      <div class="item"><strong>Deployment guide</strong>WordPress + HFCM walkthrough · includes the two hygiene fixes (services-old 301 + EEE indexing).<span class="where">Deploy guide document delivered with this record; approach summarized in Section 5.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">9</div>
-      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live · you watch and confirm each step · 60-90 min including the two hygiene fixes.<span class="where">Schedule via the link in Section 8.</span></div>
-      <div class="status" style="color: #c2410c; background: #fff4e6; padding: 4px 10px; border-radius: 999px; border: 1px solid #fbbf6c; font-weight: 700;">Ready to schedule</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">10</div>
-      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 7 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">11</div>
-      <div class="item"><strong>Turnaround within window</strong>Discovery + validation draft + your review + build complete.<span class="where">Engagement progressed on schedule.</span></div>
-      <div class="status">On schedule</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">12</div>
-      <div class="item"><strong>One-time fee · no subscription</strong>Engagement closes at deploy confirmation. No recurring billing.<span class="where">Per terms of purchase.</span></div>
-      <div class="status">Confirmed</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">7.</span> Summary of every change made</h2>
+  <h2><span class="num">10.</span> Summary of every change made</h2>
   <p>The mapping from your validation response to what is encoded in the final build:</p>
   <table class="approval-trail-table">
     <tr>
@@ -411,29 +487,6 @@ footer p { margin: 0 0 6px; }
       <td>Deploy guide built specifically for WordPress + HFCM workflow. Two hygiene fixes (services-old 301 + EEE indexing) folded into the in-session walkthrough.</td>
     </tr>
   </table>
-</section>
-
-<section>
-  <h2><span class="num">8.</span> Next Step — Schedule Your Deploy Session</h2>
-
-  <p>Two things to do, in order:</p>
-  <ol>
-    <li><strong>Skim the 50 FAQs.</strong> 7 are already verbatim from your validation reply (your founder voice) — those you can skip. The other 43 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
-    <li><strong>Book your 60–90 min Zoom deploy session.</strong> On the call we share screen, install the schema on your site live, fix the <code>/services-old/</code> redirect, execute the EEE indexing fix (the single biggest unlock), and submit your URLs to Google Search Console for re-crawl. You watch and confirm each step.</li>
-  </ol>
-
-  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
-    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
-    <p>Sectioned by source so you can skip the 7 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
-    <a class="cta-button" style="background: var(--good);" href="mailto:sage.harper@apollollc.com?subject=Oh%20Snap!%20Social%20FAQ%20review" target="_blank" rel="noopener noreferrer">Reply with FAQ edits →</a>
-  </div>
-
-  <div class="cta-block">
-    <h3>Step 2 → Book your 60–90 min Zoom deploy session</h3>
-    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
-    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
-    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
-  </div>
 </section>
 
 <footer>

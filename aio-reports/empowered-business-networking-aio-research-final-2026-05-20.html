@@ -79,6 +79,11 @@ td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
 .cta-button:hover { background: var(--apollo-orange-dark); }
 .cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
 
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
 footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
 footer p { margin: 0 0 6px; }
 
@@ -103,12 +108,150 @@ footer p { margin: 0 0 6px; }
 </header>
 
 <div class="lead-callout">
-  <p>This is your AIO Research record. Sections 1–3 walk the analysis findings. Sections 4–5 walk what we built and how it deploys. Sections 6–7 cover delivery against the agreement and the mapping of your validation response into the final build. Section 8 is the next step — scheduling your Zoom deploy session.</p>
+  <p>This is your AIO Research record. The first three sections cover where EBN stands today in AI surfaces, what Apollo built for you, and how to schedule your deploy session. The remaining sections hold the full methodology, evidence, and delivery detail underneath — available whenever you want to go deep.</p>
   <p>The schema package, FAQ batch, entity chain document, and deploy guide ship alongside this record — those files are the deployable artifacts; this report is the findings + delivery narrative that ties them together.</p>
 </div>
 
 <section>
-  <h2><span class="num">1.</span> AI Visibility Gap Analysis</h2>
+  <h2><span class="num">1.</span> Where you stand today</h2>
+
+  <p>EBN's brand works when someone already knows your name. Search Gemini for <em>"Empowered Business Networking Stephanie Bonte-Lebair"</em> and the answer comes back with your real positioning — Empowered Partners®, application-only, curated by you. The branded surface is intact.</p>
+
+  <p>The gap is on the category side. We tested four buyer-intent queries that EBN should logically appear in — phrases like <em>"alternative business networking groups to BNI for creative entrepreneurs"</em> and <em>"monthly virtual networking events with curated breakout rooms."</em> EBN surfaced in zero of the four. AI surfaces don't yet recognize EBN as a structured entity in the curated-networking category, so when buyers ask the category question, the answer returns BNI, Alignable, EO, and platform tools — not EBN.</p>
+
+  <p>The reason is foundational, not content-quality: your single-page LeadConnector site has no structured-data layer for AI surfaces to read. That's what this engagement fixes.</p>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="v">0 / 100</span><span class="l">Brand Signal Score (foundational entity strength) at baseline</span></div>
+    <div class="metric"><span class="v">0 / 4</span><span class="l">Generic-intent buyer queries surface EBN today</span></div>
+    <div class="metric"><span class="v">1 of 1</span><span class="l">Branded query (one tested) — surfaces EBN correctly</span></div>
+    <div class="metric"><span class="v">~5</span><span class="l">URLs indexed in Google (single-page architecture)</span></div>
+  </div>
+
+  <p class="source-line">Sources: brand authority score May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests May 18, 2026. Full evidence in Section 5.</p>
+</section>
+
+<section>
+  <h2><span class="num">2.</span> What we built for you</h2>
+
+  <p>A 9-type JSON-LD schema package, a 50-question FAQ batch, an entity chain architecture document, and a LeadConnector-specific deploy guide. Every payload was built from your live-site data, refined through validation, and finalized against your May 19 reply. Everything validates against schema.org and is ready to deploy as a single consolidated paste-in for LeadConnector's Custom Code header field.</p>
+
+  <table class="compact-table">
+    <thead><tr><th>#</th><th>Schema type</th><th>What it accomplishes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Organization</strong></td><td>Establishes EBN as a recognized entity in AI surfaces — addresses the 0/100 baseline at the foundation.</td></tr>
+      <tr><td>2</td><td><strong>Person (Stephanie)</strong></td><td>Founder authority signal — biographical depth and credentials tied to EBN.</td></tr>
+      <tr><td>3</td><td><strong>Service (Membership)</strong></td><td>Application-only boutique membership with disclosed pricing and 75-member cap encoded.</td></tr>
+      <tr><td>4</td><td><strong>Event — Networking &amp; Connection Experience</strong></td><td>Monthly recurring event with Stephanie as performer — claims the curated-breakout category in AI surfaces.</td></tr>
+      <tr><td>5</td><td><strong>Event — Implementation &amp; Referral Roundtable</strong></td><td>The next-day implementation session — the distinctive differentiator from "show up and leave" networking.</td></tr>
+      <tr><td>6</td><td><strong>WebPage</strong></td><td>Canonical-URL anchor for your single-page architecture.</td></tr>
+      <tr><td>7</td><td><strong>BreadcrumbList</strong></td><td>Minimal hierarchy signal for the single-page surface.</td></tr>
+      <tr><td>8</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td>50 independently citable Q&amp;A units AI surfaces can quote in answers.</td></tr>
+      <tr><td>9</td><td><strong>Review × 6 + AggregateRating</strong></td><td>6 member testimonials with location data, reinforcing 20+ states + Canada coverage with concrete attribution.</td></tr>
+    </tbody>
+  </table>
+
+  <p>The single highest-leverage element in your package is the <strong>Event × 2 schema</strong> — most networking communities don't expose their events as structured data, so with yours directly addressable, EBN becomes a candidate answer for "monthly virtual networking event with curated breakouts" queries where you have differentiation but no AI-surface presence today. Full schema-by-schema breakdown is in Section 8.</p>
+</section>
+
+<section>
+  <h2><span class="num">3.</span> Book your deploy session</h2>
+
+  <p>The schema, FAQs, entity chain, and deploy guide are ready. The remaining step is a 60-minute Zoom session where Apollo screen-shares and installs the schema on your LeadConnector site live, fixes the <code>/home</code> page duplicate, and submits your site to Google Search Console for re-crawl. You watch and confirm each step as it goes live.</p>
+
+  <p>Two things to do, in order:</p>
+  <ol>
+    <li><strong>Skim the 50 FAQs.</strong> 13 are already verbatim from your live site or your validation reply — those you can skip. The other 37 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
+    <li><strong>Book your 60-min Zoom session.</strong> Pick a time that works in the next week or two. FAQ edits should arrive a day or two before the session so we can incorporate.</li>
+  </ol>
+
+  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
+    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
+    <p>Open in your browser. Sectioned by source so you can skip the 13 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
+    <a class="cta-button" style="background: var(--good);" href="https://sageharper-ai.github.io/apollo-preview/aio-reports/empowered-business-networking-aio-faqs-2026-05-20.html" target="_blank" rel="noopener noreferrer">Open FAQ Batch →</a>
+  </div>
+
+  <div class="cta-block">
+    <h3>Step 2 → Book your 60-min Zoom deploy session</h3>
+    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
+    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
+    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
+  </div>
+</section>
+
+<div class="section-divider">
+  <div class="label">Detail · Methodology · Proof</div>
+</div>
+
+<section>
+  <h2><span class="num">4.</span> Delivery against the agreement</h2>
+  <p>Each line of the AIO Research scope and where its deliverable lives:</p>
+  <div class="contract-grid">
+    <div class="contract-row">
+      <div class="num">1</div>
+      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see EBN today.<span class="where">Section 5 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">2</div>
+      <div class="item"><strong>Competitor Citation Analysis</strong>Which networking communities AI surfaces cite in your category.<span class="where">Section 6 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">3</div>
+      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service · Event × 2 · WebPage · BreadcrumbList · FAQPage · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 8.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">4</div>
+      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">5</div>
+      <div class="item"><strong>All JSON files ready to install</strong>Consolidated single-block paste-in for LeadConnector's Custom Code Header field.<span class="where">In the schema bundle file.</span></div>
+      <div class="status">Ready</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">6</div>
+      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>6 live-site verbatim · 7 in your founder voice (from validation reply) · 37 researched.<span class="where">FAQ batch file delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">7</div>
+      <div class="item"><strong>Entity Chain Architecture document</strong>Relationship map across brand · person · service · events · content · trust signals.<span class="where">Entity chain document delivered with this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">8</div>
+      <div class="item"><strong>Deployment guide</strong>LeadConnector-specific paste-in walkthrough.<span class="where">Deploy guide document delivered with this record; approach summarized in Section 9.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">9</div>
+      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live; you watch and confirm each step.<span class="where">Schedule via the link in Section 3.</span></div>
+      <div class="status" style="color: #c2410c; background: #fff4e6; padding: 4px 10px; border-radius: 999px; border: 1px solid #fbbf6c; font-weight: 700;">Ready to schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">10</div>
+      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 10 of this record.</span></div>
+      <div class="status">Delivered</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">11</div>
+      <div class="item"><strong>Turnaround within window</strong>Discovery + validation draft + your review + build complete.<span class="where">Engagement progressed on schedule.</span></div>
+      <div class="status">On schedule</div>
+    </div>
+    <div class="contract-row">
+      <div class="num">12</div>
+      <div class="item"><strong>One-time fee · no subscription</strong>Engagement closes at deploy confirmation. No recurring billing.<span class="where">Per terms of purchase.</span></div>
+      <div class="status">Confirmed</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">5.</span> AI Visibility Gap Analysis</h2>
 
   <p>EBN's AI-surface gap is distinctive. The site is small (about five indexed URLs total — a single-page LeadConnector architecture carries the entity), so the gap isn't unindexed pages. The gap is <strong>no foundational entity established in AI surfaces</strong>.</p>
   <p class="source-line">Sources: brand authority score captured May 15, 2026 · indexed-page count probed May 18, 2026 · direct AI-surface tests May 18, 2026.</p>
@@ -142,7 +285,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">2.</span> Competitor Citation Analysis</h2>
+  <h2><span class="num">6.</span> Competitor Citation Analysis</h2>
 
   <p>To understand what AI surfaces return instead of EBN, we mapped competitor brands across the four tested queries. The competitor field splits into three clusters with distinct positioning implications.</p>
   <p class="source-line">Source: same four-query AI-surface tests, May 18, 2026.</p>
@@ -185,7 +328,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">3.</span> AI Visibility Baseline Snapshot</h2>
+  <h2><span class="num">7.</span> AI Visibility Baseline Snapshot</h2>
 
   <p>The "before" measurement. This is the reference point to measure against if you re-test at 30, 60, or 90 days post-deploy.</p>
   <p class="source-line">Sources: brand authority score May 15, 2026 · indexed-page count May 18, 2026 · direct AI-surface tests May 18, 2026 · live page-source review May 18, 2026.</p>
@@ -208,7 +351,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">4.</span> Schema Prescription</h2>
+  <h2><span class="num">8.</span> Schema Prescription</h2>
 
   <p>The 9-type JSON-LD package was built from your live-site entity data, refined through the validation cycle, and finalized with your May 19 validation response. Every payload validates against schema.org. The bundle is delivered as a single consolidated paste-in for LeadConnector's Custom Code header field.</p>
 
@@ -222,7 +365,7 @@ footer p { margin: 0 0 6px; }
       <tr><td>5</td><td><strong>Event — Implementation &amp; Referral Roundtable</strong></td><td>Recurring sub-event tying conversation to implementation — the distinctive differentiator from "show up and leave" networking. Day-after schedule encoded.</td></tr>
       <tr><td>6</td><td><strong>WebPage</strong></td><td>Canonical-URL anchor for the single-page architecture.</td></tr>
       <tr><td>7</td><td><strong>BreadcrumbList</strong></td><td>Minimal hierarchy signal for the single-page surface.</td></tr>
-      <tr><td>8</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td>6 verbatim from your live site + 7 in your founder voice (encoded verbatim from your validation reply) + 37 researched from buyer-intent queries. 50 independently citable Q&amp;A units AI surfaces can quote. The mapping of which validation answers landed in which Q# lives in Section 7.</td></tr>
+      <tr><td>8</td><td><strong>FAQPage (50 Q&amp;As)</strong></td><td>6 verbatim from your live site + 7 in your founder voice (encoded verbatim from your validation reply) + 37 researched from buyer-intent queries. 50 independently citable Q&amp;A units AI surfaces can quote. The mapping of which validation answers landed in which Q# lives in Section 10.</td></tr>
       <tr><td>9</td><td><strong>Review × 6 + AggregateRating</strong></td><td>6 member testimonials with location data (KY · MN · CA × 2 · BC Canada · LA) reinforcing your 20+ states + Canada coverage claim with concrete attribution.</td></tr>
     </tbody>
   </table>
@@ -232,7 +375,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">5.</span> Deploy Path Overview</h2>
+  <h2><span class="num">9.</span> Deploy Path Overview</h2>
 
   <p>EBN runs on GoHighLevel (also called LeadConnector or GHL) — not WordPress. The deploy path is platform-specific: schema injects via the platform's <strong>Custom Code / Header Tracking Code</strong> field rather than via a plugin. The full step-by-step instructions live in your deploy guide; this section is the approach in plain terms.</p>
 
@@ -253,74 +396,7 @@ footer p { margin: 0 0 6px; }
 </section>
 
 <section>
-  <h2><span class="num">6.</span> Delivery against the agreement</h2>
-  <p>Each line of the AIO Research scope and where its deliverable lives:</p>
-  <div class="contract-grid">
-    <div class="contract-row">
-      <div class="num">1</div>
-      <div class="item"><strong>AI Visibility Gap Analysis</strong>Audit of how AI surfaces see EBN today.<span class="where">Section 1 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">2</div>
-      <div class="item"><strong>Competitor Citation Analysis</strong>Which networking communities AI surfaces cite in your category.<span class="where">Section 2 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">3</div>
-      <div class="item"><strong>9-Type JSON-LD Schema Package</strong>Organization · Person · Service · Event × 2 · WebPage · BreadcrumbList · FAQPage · Review + AggregateRating.<span class="where">Schema bundle file delivered with this record; explained in Section 4.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">4</div>
-      <div class="item"><strong>Schema validated</strong>Each payload validated against Google Rich Results Test and schema.org spec.<span class="where">Validated pre-deploy in the bundle's _meta block; re-validated live during the Zoom deploy session.</span></div>
-      <div class="status">Confirmed</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">5</div>
-      <div class="item"><strong>All JSON files ready to install</strong>Consolidated single-block paste-in for LeadConnector's Custom Code Header field.<span class="where">In the schema bundle file.</span></div>
-      <div class="status">Ready</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">6</div>
-      <div class="item"><strong>50 FAQ Q&amp;A pairs</strong>6 live-site verbatim · 7 in your founder voice (from validation reply) · 37 researched.<span class="where">FAQ batch file delivered with this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">7</div>
-      <div class="item"><strong>Entity Chain Architecture document</strong>Relationship map across brand · person · service · events · content · trust signals.<span class="where">Entity chain document delivered with this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">8</div>
-      <div class="item"><strong>Deployment guide</strong>LeadConnector-specific paste-in walkthrough.<span class="where">Deploy guide document delivered with this record; approach summarized in Section 5.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">9</div>
-      <div class="item"><strong>Done-for-you Zoom deployment</strong>Apollo executes the paste-in live; you watch and confirm each step.<span class="where">Schedule via the link in Section 8.</span></div>
-      <div class="status" style="color: #c2410c; background: #fff4e6; padding: 4px 10px; border-radius: 999px; border: 1px solid #fbbf6c; font-weight: 700;">Ready to schedule</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">10</div>
-      <div class="item"><strong>Summary of every change made</strong>Validation response → final build, mapped item-by-item.<span class="where">Section 7 of this record.</span></div>
-      <div class="status">Delivered</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">11</div>
-      <div class="item"><strong>Turnaround within window</strong>Discovery + validation draft + your review + build complete.<span class="where">Engagement progressed on schedule.</span></div>
-      <div class="status">On schedule</div>
-    </div>
-    <div class="contract-row">
-      <div class="num">12</div>
-      <div class="item"><strong>One-time fee · no subscription</strong>Engagement closes at deploy confirmation. No recurring billing.<span class="where">Per terms of purchase.</span></div>
-      <div class="status">Confirmed</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">7.</span> Summary of every change made</h2>
+  <h2><span class="num">10.</span> Summary of every change made</h2>
   <p>The mapping from your validation response to what is encoded in the final build:</p>
   <table class="approval-trail-table">
     <tr>
@@ -396,29 +472,6 @@ footer p { margin: 0 0 6px; }
       <td>Encoded verbatim as Q47 ("How does EBN handle overlapping niches among members?")</td>
     </tr>
   </table>
-</section>
-
-<section>
-  <h2><span class="num">8.</span> Next Step — Schedule Your Deploy Session</h2>
-
-  <p>Two things to do, in order:</p>
-  <ol>
-    <li><strong>Skim the 50 FAQs.</strong> 13 are already verbatim from your live site or your validation reply — those you can skip. The other 37 were drafted by Apollo from buyer-intent research; reply with the Q# of any you'd reword (or "ship as-is" if no edits). 5–10 minutes.</li>
-    <li><strong>Book your 60-min Zoom session.</strong> On the call we share screen, install the schema on your site live, fix the <code>/home</code> page duplicate, and submit your site to Google Search Console for re-crawl. You watch and confirm.</li>
-  </ol>
-
-  <div class="cta-block" style="background: #e7f1ec; margin-bottom: 16px;">
-    <h3 style="color: var(--good);">Step 1 → Review the 50 FAQs</h3>
-    <p>Open in your browser. Sectioned by source so you can skip the 13 already in your voice. Reply to Apollo's email with edits, or "ship as-is."</p>
-    <a class="cta-button" style="background: var(--good);" href="https://sageharper-ai.github.io/apollo-preview/aio-reports/empowered-business-networking-aio-faqs-2026-05-20.html" target="_blank" rel="noopener noreferrer">Open FAQ Batch →</a>
-  </div>
-
-  <div class="cta-block">
-    <h3>Step 2 → Book your 60-min Zoom deploy session</h3>
-    <p>Pick a time that works in the next week or two. Edits to the FAQs should arrive a day or two before the session so we can incorporate.</p>
-    <a class="cta-button" href="https://calendly.com/sageharper/one-on-one">Schedule Deploy Session →</a>
-    <p class="cta-fineprint">Included in your $297 AIO Research per contract item #9.</p>
-  </div>
 </section>
 
 <footer>
