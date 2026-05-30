@@ -62,6 +62,23 @@ footer p { margin: 0 0 6px; }
   header h1 { font-size: 24px; }
   .legend { gap: 10px; }
 }
+
+/* per-FAQ review comments */
+body { padding-bottom: 76px; }
+.faq-comment-wrap { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.faq-comment-wrap label { display: block; font-size: 12px; font-weight: 600; color: var(--apollo-orange-dark); margin-bottom: 5px; }
+textarea.faq-comment { width: 100%; min-height: 46px; border: 1px solid var(--rule); border-radius: 6px; padding: 9px 11px; font: inherit; font-size: 14px; line-height: 1.5; color: var(--ink); background: #fffdfb; resize: vertical; }
+textarea.faq-comment:focus { outline: none; border-color: var(--apollo-orange); background: #fff; }
+.faq.has-comment { border-color: var(--apollo-orange); box-shadow: 0 0 0 1px var(--apollo-orange-soft); }
+.callout-inline { margin-top: 10px; background: #fff; border: 1px solid var(--apollo-orange-soft); border-radius: 6px; padding: 10px 12px; }
+.review-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid var(--rule); padding: 11px 0; z-index: 50; box-shadow: 0 -2px 12px rgba(0,0,0,.07); }
+.review-bar .inner { max-width: 780px; margin: 0 auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.review-bar .count { font-size: 14px; font-weight: 600; color: var(--apollo-orange-dark); }
+.review-bar button { font: inherit; font-weight: 600; font-size: 14px; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--apollo-orange); background: var(--apollo-orange); color: #fff; cursor: pointer; }
+.review-bar button.ghost { background: #fff; color: var(--ink-muted); border-color: var(--rule); }
+.export-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 60; align-items: center; justify-content: center; padding: 24px; }
+.export-modal .box { background: #fff; border-radius: 10px; padding: 20px; max-width: 640px; width: 100%; max-height: 82vh; overflow: auto; }
+.export-modal textarea { width: 100%; height: 320px; font: 13px ui-monospace, monospace; border: 1px solid var(--rule); border-radius: 6px; padding: 10px; }
 </style>
 </head>
 <body>
@@ -79,6 +96,7 @@ footer p { margin: 0 0 6px; }
   <p>Skim the 50 FAQs below. The ones marked <span class="badge badge-verbatim">YOUR FOUNDER VOICE</span> are verbatim from your May 20 validation reply — no review needed. The ones marked <span class="badge badge-yours">YOUR EDIT APPLIED</span> already carry the specific changes you asked for (Shaw Services named on Q8; the Fan Firestarter line reworded on Q9) — a quick glance at most.</p>
   <p>The ones marked <span class="badge badge-research">APOLLO-DRAFTED</span> are the ones to focus on. They're drafted from buyer-intent research, validated against your live site and your May 20 reply.</p>
   <p>Reply to Apollo's delivery email with the Q# of any you'd reword, or just reply <strong>"ship as-is"</strong> — we deploy from there.</p>
+  <p class="callout-inline"><strong>New — edit right here:</strong> type changes in the box under any FAQ (saves automatically on your device). When you're done, click <strong>"Copy my edits"</strong> at the bottom and paste them into your reply. Or still just reply "ship as-is."</p>
   <div class="legend">
     <span class="legend-item"><span class="badge badge-verbatim">YOUR FOUNDER VOICE</span> verbatim from your validation reply (6)</span>
     <span class="legend-item"><span class="badge badge-yours">YOUR EDIT APPLIED</span> your validation change applied (2)</span>
@@ -372,5 +390,55 @@ footer p { margin: 0 0 6px; }
 </footer>
 
 </div>
+
+<div class="review-bar"><div class="inner">
+  <span class="count" id="rev-count">No edits yet — type under any FAQ</span>
+  <div style="display:flex;gap:8px">
+    <button onclick="exportFaqComments()">📋 Copy my edits</button>
+    <button class="ghost" onclick="resetFaqComments()">↺ Clear</button>
+  </div>
+</div></div>
+<div class="export-modal" id="rev-modal" onclick="if(event.target===this)this.style.display='none'">
+  <div class="box">
+    <div style="font-weight:600;margin-bottom:4px">Your edits — copied to clipboard.</div>
+    <div style="font-size:12px;color:var(--ink-muted);margin-bottom:10px">Paste them into your reply to Apollo. (If copy didn't fire, select all below and copy manually.)</div>
+    <textarea id="rev-text" readonly></textarea>
+    <div style="margin-top:10px;text-align:right"><button onclick="document.getElementById('rev-modal').style.display='none'" style="border:1px solid var(--rule);background:#fff;color:var(--ink-muted);padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600">Close</button></div>
+  </div>
+</div>
+<script>
+(function(){
+  const KEY='ohsnap-faq-review-v1';
+  const state=JSON.parse(localStorage.getItem(KEY)||'{}');
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+  document.querySelectorAll('.faq').forEach(faq=>{
+    const numEl=faq.querySelector('.faq-num'); if(!numEl)return;
+    const key=numEl.textContent.replace(/[^0-9]/g,''); if(!key)return;
+    const qEl=faq.querySelector('.faq-q');
+    const wrap=document.createElement('div'); wrap.className='faq-comment-wrap';
+    const lab=document.createElement('label'); lab.textContent='✍️ Your edits / comments on Q'+key+' (optional · saves automatically)';
+    const ta=document.createElement('textarea'); ta.className='faq-comment'; ta.dataset.q=key; ta.dataset.qtext=qEl?qEl.textContent:'';
+    ta.placeholder='Reword it, flag it, or approve — e.g. "change X to Y", or "good as-is".';
+    ta.value=state[key]||''; if(ta.value.trim())faq.classList.add('has-comment');
+    ta.addEventListener('input',()=>{state[key]=ta.value;save();faq.classList.toggle('has-comment',!!ta.value.trim());updateCount()});
+    wrap.appendChild(lab); wrap.appendChild(ta); faq.appendChild(wrap);
+  });
+  function commented(){return [...document.querySelectorAll('textarea.faq-comment')].filter(t=>t.value.trim())}
+  function updateCount(){const n=commented().length;document.getElementById('rev-count').textContent=n?(n+' FAQ'+(n>1?'s':'')+' with edits'):'No edits yet — type under any FAQ'}
+  window.exportFaqComments=function(){
+    const list=commented();const out=['Oh Snap! Social — FAQ edits ('+new Date().toLocaleDateString()+')',''];
+    if(!list.length)out.push('(No edits — ship as-is.)');
+    list.forEach(t=>out.push('Q'+t.dataset.q+' — '+t.dataset.qtext,'  → '+t.value.trim(),''));
+    const txt=out.join('\n');document.getElementById('rev-text').value=txt;document.getElementById('rev-modal').style.display='flex';
+    try{navigator.clipboard.writeText(txt)}catch(e){}
+  };
+  window.resetFaqComments=function(){
+    if(!confirm('Clear all your edits on this device?'))return;
+    localStorage.removeItem(KEY);for(const k in state)delete state[k];
+    document.querySelectorAll('textarea.faq-comment').forEach(t=>{t.value='';t.closest('.faq').classList.remove('has-comment')});updateCount();
+  };
+  updateCount();
+})();
+</script>
 </body>
 </html>
