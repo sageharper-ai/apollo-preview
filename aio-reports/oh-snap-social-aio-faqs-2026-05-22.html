@@ -96,7 +96,7 @@ textarea.faq-comment:focus { outline: none; border-color: var(--apollo-orange); 
   <p>Skim the 50 FAQs below. The ones marked <span class="badge badge-verbatim">YOUR FOUNDER VOICE</span> are verbatim from your May 20 validation reply — no review needed. The ones marked <span class="badge badge-yours">YOUR EDIT APPLIED</span> already carry the specific changes you asked for (Shaw Services named on Q8; the Fan Firestarter line reworded on Q9) — a quick glance at most.</p>
   <p>The ones marked <span class="badge badge-research">APOLLO-DRAFTED</span> are the ones to focus on. They're drafted from buyer-intent research, validated against your live site and your May 20 reply.</p>
   <p>Reply to Apollo's delivery email with the Q# of any you'd reword, or just reply <strong>"ship as-is"</strong> — we deploy from there.</p>
-  <p class="callout-inline"><strong>New — edit right here:</strong> type changes in the box under any FAQ (saves automatically on your device). When you're done, click <strong>"Copy my edits"</strong> at the bottom and paste them into your reply. Or still just reply "ship as-is."</p>
+  <p class="callout-inline"><strong>New — edit right here (optional):</strong> <strong>Leave a box blank to approve that FAQ as-is</strong> — you only type under the few you'd change. When done, click <strong>"Copy my edits"</strong> to grab just those and paste them into your reply. (Prefer email? Reply with the Q# as before, or just "ship as-is.")</p>
   <div class="legend">
     <span class="legend-item"><span class="badge badge-verbatim">YOUR FOUNDER VOICE</span> verbatim from your validation reply (6)</span>
     <span class="legend-item"><span class="badge badge-yours">YOUR EDIT APPLIED</span> your validation change applied (2)</span>
@@ -418,7 +418,7 @@ textarea.faq-comment:focus { outline: none; border-color: var(--apollo-orange); 
     const wrap=document.createElement('div'); wrap.className='faq-comment-wrap';
     const lab=document.createElement('label'); lab.textContent='✍️ Your edits / comments on Q'+key+' (optional · saves automatically)';
     const ta=document.createElement('textarea'); ta.className='faq-comment'; ta.dataset.q=key; ta.dataset.qtext=qEl?qEl.textContent:'';
-    ta.placeholder='Reword it, flag it, or approve — e.g. "change X to Y", or "good as-is".';
+    ta.placeholder='Leave blank if this one is good — only type here if you want it changed.';
     ta.value=state[key]||''; if(ta.value.trim())faq.classList.add('has-comment');
     ta.addEventListener('input',()=>{state[key]=ta.value;save();faq.classList.toggle('has-comment',!!ta.value.trim());updateCount()});
     wrap.appendChild(lab); wrap.appendChild(ta); faq.appendChild(wrap);

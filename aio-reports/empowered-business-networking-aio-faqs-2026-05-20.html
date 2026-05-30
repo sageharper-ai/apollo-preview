@@ -95,7 +95,7 @@ textarea.faq-comment:focus { outline: none; border-color: var(--apollo-orange); 
   <p>Skim through the 50 FAQs below. The ones marked <span class="badge badge-yours">YOUR LIVE SITE</span> are verbatim from your existing site — no review needed. The ones marked <span class="badge badge-verbatim">YOUR VALIDATION REPLY</span> are verbatim from your May 19 reply — also no review needed.</p>
   <p>The <strong>37 marked <span class="badge badge-research">APOLLO-DRAFTED</span> are the ones to focus on.</strong> They're drafted from buyer-intent research; reply with the Q# of any you'd reword, and we'll incorporate before deploy.</p>
   <p>Reply with the Q# of any edits, or just reply "ship as-is" — we deploy from there.</p>
-  <p class="callout-inline"><strong>New — edit right here:</strong> type changes in the box under any FAQ (saves automatically on your device). When you're done, click <strong>"Copy my edits"</strong> at the bottom and paste them into your reply. Or still just reply "ship as-is."</p>
+  <p class="callout-inline"><strong>New — edit right here (optional):</strong> <strong>Leave a box blank to approve that FAQ as-is</strong> — you only type under the few you'd change. When done, click <strong>"Copy my edits"</strong> to grab just those and paste them into your reply. (Prefer email? Reply with the Q# as before, or just "ship as-is.")</p>
 </div>
 
 <section class="faq-section">
@@ -397,7 +397,7 @@ textarea.faq-comment:focus { outline: none; border-color: var(--apollo-orange); 
     const wrap=document.createElement('div'); wrap.className='faq-comment-wrap';
     const lab=document.createElement('label'); lab.textContent='✍️ Your edits / comments on Q'+key+' (optional · saves automatically)';
     const ta=document.createElement('textarea'); ta.className='faq-comment'; ta.dataset.q=key; ta.dataset.qtext=qEl?qEl.textContent:'';
-    ta.placeholder='Reword it, flag it, or approve — e.g. "change X to Y", or "good as-is".';
+    ta.placeholder='Leave blank if this one is good — only type here if you want it changed.';
     ta.value=state[key]||''; if(ta.value.trim())faq.classList.add('has-comment');
     ta.addEventListener('input',()=>{state[key]=ta.value;save();faq.classList.toggle('has-comment',!!ta.value.trim());updateCount()});
     wrap.appendChild(lab); wrap.appendChild(ta); faq.appendChild(wrap);
