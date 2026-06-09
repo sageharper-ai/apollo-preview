@@ -228,6 +228,124 @@
     .row { grid-template-columns: 1fr; gap: 10px; }
     .status-cell { flex-direction: row; }
   }
+
+  /* ---- interactive review layer ---- */
+  .review-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .review-bar .review-note {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    flex: 1;
+    min-width: 240px;
+  }
+  .review-bar .review-note strong { color: var(--text); font-weight: 700; }
+  .btn {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a1205;
+    background: var(--apollo);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.15s ease;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.btn-ghost {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+  .btn.btn-ghost:hover { background: var(--bg-card); filter: none; }
+
+  /* clickable rows */
+  .row.interactive { cursor: pointer; }
+  .row.interactive:hover { border-color: var(--apollo); }
+  .row .action-cell .edit-hint {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .row.interactive:hover .edit-hint { color: var(--apollo); }
+  .has-note .edit-hint { color: var(--apollo); }
+
+  .editor {
+    grid-column: 1 / -1;
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    display: none;
+    cursor: default;
+  }
+  .row.open .editor { display: block; }
+  .editor .ed-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .editor label.ed-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 4px;
+  }
+  .editor select {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .editor textarea {
+    width: 100%;
+    min-height: 84px;
+    resize: vertical;
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .editor textarea::placeholder { color: var(--text-mute); }
+  .editor textarea:focus, .editor select:focus { outline: none; border-color: var(--apollo); }
+  .editor .ed-actions { display: flex; align-items: center; gap: 12px; }
+  .editor .save-state {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--done);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .editor .save-state.show { opacity: 1; }
 </style>
 </head>
 <body>
@@ -264,6 +382,10 @@
       </div>
     </div>
   </header>
+
+  <div class="review-bar">
+    <p class="review-note">Click any item to set a <strong>status</strong> and add <strong>notes</strong>. Your status and notes save in this browser. Scroll to the bottom and hit <strong>Export</strong> when you are done.</p>
+  </div>
 
   <div class="legend">
     <div class="legend-item"><span class="dot todo"></span><span class="legend-label">To do</span><span class="legend-count">19</span></div>
@@ -516,10 +638,311 @@
   </section>
 
   <footer>
+    <div class="review-bar review-bar-bottom" style="margin:26px 0 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" id="exportBtn" type="button">⬇ Export my notes</button><button class="btn btn-ghost" id="copyBtn" type="button">Copy to clipboard</button></div>
     <div class="footer-brand">Apollo <span>Marketing</span></div>
     <div class="footer-meta">Action Register · June 9, 2026 · Path to launch</div>
   </footer>
 
 </div>
+
+<script>
+(function () {
+  "use strict";
+
+  var NS = "parsons:";
+  var STATUSES = [
+    { key: "todo",    label: "To do" },
+    { key: "inprog",  label: "In progress" },
+    { key: "blocked", label: "Blocked" },
+    { key: "done",    label: "Done" }
+  ];
+  var STATUS_CLASSES = STATUSES.map(function (s) { return s.key; });
+
+  function storeGet(key) {
+    try { return window.localStorage.getItem(key); }
+    catch (e) { return null; }
+  }
+  function storeSet(key, val) {
+    try { window.localStorage.setItem(key, val); return true; }
+    catch (e) { return false; }
+  }
+
+  // Stable per-item id derived from owner section + position + a slug of the title.
+  function slugify(text) {
+    return (text || "")
+      .toLowerCase()
+      .replace(/[‘’“”]/g, "")
+      .replace(/&[a-z]+;/g, " ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 48);
+  }
+
+  function labelFor(key) {
+    for (var i = 0; i < STATUSES.length; i++) {
+      if (STATUSES[i].key === key) return STATUSES[i].label;
+    }
+    return key;
+  }
+
+  var sections = document.querySelectorAll("section");
+  var items = []; // { id, row, pill, select, textarea, title, owner, section }
+
+  for (var s = 0; s < sections.length; s++) {
+    var section = sections[s];
+    var sectionId = section.getAttribute("id") || ("section-" + s);
+    var rows = section.querySelectorAll(".row");
+
+    for (var r = 0; r < rows.length; r++) {
+      var row = rows[r];
+      var titleEl = row.querySelector(".action-title");
+      var title = titleEl ? titleEl.textContent.trim() : "Item " + (r + 1);
+      var ownerEl = row.querySelector(".owner-line .owner-name");
+      var owner = ownerEl ? ownerEl.textContent.trim() : "";
+      var id = sectionId + "-" + (r + 1) + "-" + slugify(title);
+
+      var pill = row.querySelector(".pill");
+      // Default status: read from the original markup's pill class.
+      var defaultStatus = "todo";
+      for (var c = 0; c < STATUS_CLASSES.length; c++) {
+        if (pill && pill.classList.contains(STATUS_CLASSES[c])) { defaultStatus = STATUS_CLASSES[c]; }
+      }
+
+      var savedStatus = storeGet(NS + id + ":status");
+      if (STATUS_CLASSES.indexOf(savedStatus) === -1) { savedStatus = defaultStatus; }
+      var savedNotes = storeGet(NS + id + ":notes") || "";
+
+      // Build the editor UI.
+      var editor = document.createElement("div");
+      editor.className = "editor";
+
+      var edRow = document.createElement("div");
+      edRow.className = "ed-row";
+
+      var lbl = document.createElement("label");
+      lbl.className = "ed-label";
+      lbl.textContent = "Status";
+
+      var select = document.createElement("select");
+      for (var o = 0; o < STATUSES.length; o++) {
+        var opt = document.createElement("option");
+        opt.value = STATUSES[o].key;
+        opt.textContent = STATUSES[o].label;
+        select.appendChild(opt);
+      }
+      select.value = savedStatus;
+      lbl.setAttribute("for", "sel-" + id);
+      select.id = "sel-" + id;
+
+      edRow.appendChild(lbl);
+      edRow.appendChild(select);
+
+      var textarea = document.createElement("textarea");
+      textarea.placeholder = "Add your notes for this item…";
+      textarea.value = savedNotes;
+
+      var edActions = document.createElement("div");
+      edActions.className = "ed-actions";
+
+      var saveBtn = document.createElement("button");
+      saveBtn.type = "button";
+      saveBtn.className = "btn";
+      saveBtn.textContent = "Save";
+
+      var saveState = document.createElement("span");
+      saveState.className = "save-state";
+      saveState.textContent = "Saved";
+
+      edActions.appendChild(saveBtn);
+      edActions.appendChild(saveState);
+
+      editor.appendChild(edRow);
+      editor.appendChild(textarea);
+      editor.appendChild(edActions);
+
+      var actionCell = row.querySelector(".action-cell");
+      var hint = document.createElement("div");
+      hint.className = "edit-hint";
+      hint.textContent = "Click to set status + notes";
+      if (actionCell) { actionCell.appendChild(hint); }
+
+      row.appendChild(editor);
+      row.classList.add("interactive");
+
+      var item = {
+        id: id, row: row, pill: pill, select: select, textarea: textarea,
+        saveState: saveState, hint: hint, title: title, owner: owner,
+        section: sectionId
+      };
+      items.push(item);
+
+      applyStatus(item, savedStatus, false);
+      reflectNotePresence(item);
+
+      // --- wiring ---
+      (function (item, editor, select, textarea, saveBtn, saveState) {
+        // Toggle open on row click, but not when interacting with the editor.
+        item.row.addEventListener("click", function (ev) {
+          if (editor.contains(ev.target)) { return; }
+          item.row.classList.toggle("open");
+        });
+
+        // Persist + reflect status immediately on change.
+        select.addEventListener("change", function () {
+          applyStatus(item, select.value, true);
+          storeSet(NS + item.id + ":status", select.value);
+          flash(saveState);
+        });
+
+        saveBtn.addEventListener("click", function () {
+          storeSet(NS + item.id + ":notes", textarea.value);
+          storeSet(NS + item.id + ":status", select.value);
+          applyStatus(item, select.value, true);
+          reflectNotePresence(item);
+          flash(saveState);
+        });
+      })(item, editor, select, textarea, saveBtn, saveState);
+    }
+  }
+
+  function applyStatus(item, statusKey, updateCounts) {
+    if (item.pill) {
+      item.pill.classList.remove.apply(item.pill.classList, STATUS_CLASSES);
+      item.pill.classList.add(statusKey);
+      item.pill.textContent = labelFor(statusKey);
+    }
+    item.row.classList.remove.apply(item.row.classList, STATUS_CLASSES);
+    item.row.classList.add(statusKey);
+    item.status = statusKey;
+    if (updateCounts) { updateLegend(); }
+  }
+
+  function reflectNotePresence(item) {
+    if (item.textarea.value.trim().length > 0) {
+      item.row.classList.add("has-note");
+      item.hint.textContent = "Notes added · click to view";
+    } else {
+      item.row.classList.remove("has-note");
+      item.hint.textContent = "Click to set status + notes";
+    }
+  }
+
+  function flash(el) {
+    el.classList.add("show");
+    window.setTimeout(function () { el.classList.remove("show"); }, 1400);
+  }
+
+  // Keep the top-of-page legend counts in sync with live statuses.
+  var legendCounts = {
+    todo: document.querySelector(".legend-item .dot.todo"),
+    inprog: document.querySelector(".legend-item .dot.inprog"),
+    blocked: document.querySelector(".legend-item .dot.blocked"),
+    done: document.querySelector(".legend-item .dot.done")
+  };
+  function countEl(dot) {
+    if (!dot) return null;
+    var li = dot.closest ? dot.closest(".legend-item") : dot.parentNode;
+    return li ? li.querySelector(".legend-count") : null;
+  }
+  function updateLegend() {
+    var counts = { todo: 0, inprog: 0, blocked: 0, done: 0 };
+    for (var i = 0; i < items.length; i++) {
+      var st = items[i].status || "todo";
+      if (counts.hasOwnProperty(st)) { counts[st]++; }
+    }
+    for (var key in counts) {
+      if (!counts.hasOwnProperty(key)) continue;
+      var el = countEl(legendCounts[key]);
+      if (el) { el.textContent = counts[key]; }
+    }
+  }
+  updateLegend();
+
+  // --- Export ---
+  function buildMarkdown() {
+    var now = new Date();
+    var lines = [];
+    lines.push("# Shopautoequip.com — Action Register: My Review");
+    lines.push("");
+    lines.push("Exported " + now.toLocaleString());
+    lines.push("");
+
+    var currentSection = null;
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      if (it.section !== currentSection) {
+        currentSection = it.section;
+        var sectionEl = document.getElementById(currentSection);
+        var heading = sectionEl ? sectionEl.querySelector(".group-header h2") : null;
+        var headingText = heading ? heading.textContent.replace(/\s+/g, " ").trim() : currentSection;
+        lines.push("");
+        lines.push("## " + headingText);
+        lines.push("");
+      }
+      var status = labelFor(it.status || "todo");
+      lines.push("- [" + status + "] " + it.title);
+      var note = it.textarea.value.trim();
+      if (note) {
+        var noteLines = note.split(/\r?\n/);
+        for (var n = 0; n < noteLines.length; n++) {
+          lines.push("    " + noteLines[n]);
+        }
+      }
+    }
+    lines.push("");
+    return lines.join("\n");
+  }
+
+  function download(filename, text) {
+    var blob = new Blob([text], { type: "text/markdown;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+
+  var exportBtn = document.getElementById("exportBtn");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", function () {
+      download("shopautoequip-action-register-my-notes.md", buildMarkdown());
+    });
+  }
+
+  var copyBtn = document.getElementById("copyBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var text = buildMarkdown();
+      var original = copyBtn.textContent;
+      function done(ok) {
+        copyBtn.textContent = ok ? "Copied ✓" : "Copy failed";
+        window.setTimeout(function () { copyBtn.textContent = original; }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallbackCopy(text, done); });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  }
+
+  function fallbackCopy(text, cb) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      cb(ok);
+    } catch (e) { cb(false); }
+  }
+})();
+</script>
 </body>
 </html>
