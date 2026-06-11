@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Shopautoequip.com — Site-Completion Action Register | Apollo Marketing</title>
+<style>
+  :root {
+    --bg: #0e1421;
+    --bg-elev: #161e2d;
+    --bg-card: #131b29;
+    --border: #28324a;
+    --text: #f3f4f6;
+    --text-soft: #d1d5db;
+    --text-mute: #9ca3af;
+    --apollo: #faa523;
+    --apollo-soft: rgba(250, 165, 35, 0.14);
+    --client: #60a5fa;
+    --apollo-do: #34d399;
+    --question: #fbbf24;
+    --future: #a78bfa;
+    --decided: #10b981;
+    --decided-soft: rgba(16, 185, 129, 0.18);
+    /* status pills */
+    --todo: #fbbf24;
+    --todo-soft: rgba(251, 191, 36, 0.16);
+    --inprog: #60a5fa;
+    --inprog-soft: rgba(96, 165, 250, 0.16);
+    --blocked: #f87171;
+    --blocked-soft: rgba(248, 113, 113, 0.16);
+    --done: #34d399;
+    --done-soft: rgba(52, 211, 153, 0.16);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 96px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--apollo);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  h1 span.brand { color: var(--apollo); }
+  .lede { font-size: 18px; color: var(--text-soft); max-width: 780px; line-height: 1.55; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .meta-item .meta-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* status legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    flex: 1;
+    min-width: 180px;
+  }
+  .legend-item .legend-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+  }
+  .legend-item .legend-count {
+    margin-left: auto;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .dot.todo { background: var(--todo); }
+  .dot.inprog { background: var(--inprog); }
+  .dot.blocked { background: var(--blocked); }
+  .dot.done { background: var(--done); }
+
+  /* owner group sections */
+  section { margin-bottom: 44px; }
+  .group-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .group-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .group-header h2 .num {
+    color: var(--apollo);
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .group-sub { color: var(--text-soft); font-size: 13.5px; flex: 1; min-width: 240px; }
+  .group-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  /* register rows */
+  .row {
+    display: grid;
+    grid-template-columns: 116px 1fr;
+    gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    align-items: start;
+  }
+  .row.todo { border-left: 3px solid var(--todo); }
+  .row.inprog { border-left: 3px solid var(--inprog); }
+  .row.blocked { border-left: 3px solid var(--blocked); }
+  .row.done { border-left: 3px solid var(--done); }
+
+  .status-cell { display: flex; flex-direction: column; gap: 8px; }
+  .pill {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 5px 9px;
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .pill.todo { background: var(--todo-soft); color: var(--todo); }
+  .pill.inprog { background: var(--inprog-soft); color: var(--inprog); }
+  .pill.blocked { background: var(--blocked-soft); color: var(--blocked); }
+  .pill.done { background: var(--done-soft); color: var(--done); }
+
+  .action-cell .action-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .action-cell .action-note {
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .action-cell .action-note strong { color: var(--text); font-weight: 700; }
+  .action-cell .owner-line {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .action-cell .owner-line .owner-name { color: var(--apollo); }
+
+  footer { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+  .footer-brand { font-size: 16px; font-weight: 700; }
+  .footer-brand span { color: var(--apollo); }
+  .footer-meta { font-family: var(--mono); font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 32px 18px 64px; }
+    .row { grid-template-columns: 1fr; gap: 10px; }
+    .status-cell { flex-direction: row; }
+  }
+
+  /* ---- interactive review layer ---- */
+  .review-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .review-bar .review-note {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    flex: 1;
+    min-width: 240px;
+  }
+  .review-bar .review-note strong { color: var(--text); font-weight: 700; }
+  .btn {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a1205;
+    background: var(--apollo);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.15s ease;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.btn-ghost {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+  .btn.btn-ghost:hover { background: var(--bg-card); filter: none; }
+
+  /* clickable rows */
+  .row.interactive { cursor: pointer; }
+  .row.interactive:hover { border-color: var(--apollo); }
+  .row .action-cell .edit-hint {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .row.interactive:hover .edit-hint { color: var(--apollo); }
+  .has-note .edit-hint { color: var(--apollo); }
+
+  .editor {
+    grid-column: 1 / -1;
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    display: none;
+    cursor: default;
+  }
+  .row.open .editor { display: block; }
+  .editor .ed-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .editor label.ed-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 4px;
+  }
+  .editor select {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .editor textarea {
+    width: 100%;
+    min-height: 84px;
+    resize: vertical;
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .editor textarea::placeholder { color: var(--text-mute); }
+  .editor textarea:focus, .editor select:focus { outline: none; border-color: var(--apollo); }
+  .editor .ed-actions { display: flex; align-items: center; gap: 12px; }
+  .editor .save-state {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--done);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .editor .save-state.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Apollo Marketing · Site-Completion Tracker</div>
+    <h1>Shopautoequip.com<br><span class="brand">Action Register</span></h1>
+    <p class="lede">The complete list of items left to finish the site, organized by owner with a status for each. Synthesized from the June 11 full-team review call — every status, decision, and new item from that session is reflected here, building on the May 21 prep call and the April 28 launch plan. Use this as the shared checklist heading into launch.</p>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Parsons</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Storefront</div>
+        <div class="meta-value">Shopautoequip.com</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Platform</div>
+        <div class="meta-value">BigCommerce</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Open items</div>
+        <div class="meta-value">23 of 27</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Synthesized from</div>
+        <div class="meta-value">June 11 full-team call</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Updated</div>
+        <div class="meta-value">June 11, 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="review-bar">
+    <p class="review-note">Click any item to set a <strong>status</strong> and add <strong>notes</strong>. Your status and notes save in this browser. Scroll to the bottom and hit <strong>Export</strong> when you are done. Next full-team review: <strong>Wednesday, June 24 at 10:30 AM</strong>.</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot todo"></span><span class="legend-label">To do</span><span class="legend-count">12</span></div>
+    <div class="legend-item"><span class="dot inprog"></span><span class="legend-label">In progress</span><span class="legend-count">7</span></div>
+    <div class="legend-item"><span class="dot blocked"></span><span class="legend-label">Blocked</span><span class="legend-count">4</span></div>
+    <div class="legend-item"><span class="dot done"></span><span class="legend-label">Done</span><span class="legend-count">4</span></div>
+  </div>
+
+  <!-- ============ PARSONS — ALI ============ -->
+  <section id="ali">
+    <div class="group-header">
+      <h2><span class="num">01</span>Parsons — Ali</h2>
+      <span class="group-sub">Content, brand, and policy source material that unblocks the page builds.</span>
+      <span class="group-count">7 items</span>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Draft Terms, Warranty &amp; Return policies, then route to legal</div>
+        <div class="action-note">The drafts are written — built from the established industry approach, with the company-specific details (phone numbers, site references) highlighted for fill-in. <strong>As of June 11 they are moving to legal:</strong> Ali sends the documents to Tom, and the full set goes to the company attorneys as one bulk submission. Attorney review is expected to take about a week.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; Drafts complete — handoff to legal in flight</div>
+      </div>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Warranty page — list manufacturer brands and link to each brand's warranty</div>
+        <div class="action-note">Drafted and ready for legal. The manufacturer-brand approach keeps the page accurate without manual upkeep — name the brands and point to each maker's own warranty page. This travels in the same bulk package to the attorneys as the policy documents above.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; Riding with the policy bundle to legal</div>
+      </div>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Rewrite the &ldquo;How We Show Up&rdquo; copy — nationwide, not regional</div>
+        <div class="action-note">The nationwide rewrite is complete and was placed on the homepage during the June 11 working session. <strong>Ready for review:</strong> final wording — together with the carousel slide titles and the section heading itself — gets confirmed at Parsons&rsquo; internal marketing review next week, and any adjustments flow back into the page.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; Copy live in draft — wording review scheduled</div>
+      </div>
+    </div>
+
+    <div class="row done">
+      <div class="status-cell"><span class="pill done">Done</span></div>
+      <div class="action-cell">
+        <div class="action-title">Add ALI-certification logos to the lift product pages</div>
+        <div class="action-note"><strong>Done — confirmed live on the June 11 call.</strong> Every lift listing now carries the ALI-certification image in its product photo set, reinforcing that all rotary lifts are ALI-certified.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; Completed — verified June 11</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Create Facebook + Instagram pages, then supply the handles for the site's social links</div>
+        <div class="action-note"><strong>Owner updated June 11:</strong> Tom creates the new Facebook and Instagram business pages first — a single Meta login can manage multiple business pages without any public attribution between them — then Ali adds the imagery and business details. The site theme picks up the handles automatically once they exist.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Tom (create) → Ali (populate)</span> &nbsp;·&nbsp; Accounts first, then site links</div>
+      </div>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Send the remaining hero-image screenshots for the homepage carousel</div>
+        <div class="action-note"><strong>3 of 5 in place as of June 11</strong> — the lifts, tires, and oil/lubrication slides are live in the rebuilt homepage carousel. Still to come: the air-compressor slide and the revised lubrication artwork (see the logo-removal item below).</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; 3 of 5 delivered</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Revise hero imagery — no manufacturer logos or brand names</div>
+        <div class="action-note"><strong>New item from the June 11 call.</strong> Decision: carousel slides stay logo-free, with brand names blacked out of any source imagery, so the homepage doesn't single out individual manufacturers. Ali updates the affected slides; where a clean source image isn't available, Apollo can produce a generic equivalent that still reads clearly.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Ali</span> &nbsp;·&nbsp; Added June 11 &nbsp;·&nbsp; Apollo assists with generic imagery if needed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARSONS — TOM / RAJ ============ -->
+  <section id="tom-raj">
+    <div class="group-header">
+      <h2><span class="num">02</span>Parsons — Tom / Raj</h2>
+      <span class="group-sub">Finance and account setup that only Parsons can complete.</span>
+      <span class="group-count">2 items</span>
+    </div>
+
+    <div class="row blocked">
+      <div class="status-cell"><span class="pill blocked">Blocked</span></div>
+      <div class="action-cell">
+        <div class="action-title">Set up PayPal Business account + complete payment underwriting</div>
+        <div class="action-note">This is a finance-side task that only Parsons can complete — underwriting requires the EIN, bank details, business address, and a U.S. PayPal Business account. BigCommerce Payments is powered by PayPal, so once the PayPal Business account exists, Apollo connects it on the store side. <strong>This blocks enabling live checkout.</strong> Status June 11: still in process — Tom is following up with Raj for an update.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Tom / Raj (Controller)</span> &nbsp;·&nbsp; Apollo connects the store side after approval</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Set up the Google Business Profile for Shopautoequip.com</div>
+        <div class="action-note"><strong>New item from the June 11 call.</strong> The team confirmed they want this: a verified business profile adds real-world credibility for the storefront and is the prerequisite for collecting Google reviews later. Google will require business documentation for verification, and the profile can sit under the existing central account without any public attribution. Apollo consults through the setup. (Pairs with the paused Google-reviews item in the Apollo section.)</div>
+        <div class="owner-line">Owner: <span class="owner-name">Tom</span> &nbsp;·&nbsp; Added June 11 &nbsp;·&nbsp; Apollo consults on setup &amp; verification</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARSONS — MIKE ============ -->
+  <section id="mike">
+    <div class="group-header">
+      <h2><span class="num">03</span>Parsons — Mike</h2>
+      <span class="group-sub">Financing partner coordination.</span>
+      <span class="group-count">2 items</span>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Get the financing-page update and post-approval flow from Bill Waddell</div>
+        <div class="action-note"><strong>Bill's input is in</strong> — he outlined the process step by step: the customer applies from the financing page, the lender runs the credit review, the customer e-signs, and a purchase order is cut to the distributor. Financing settles entirely alongside the storefront, so checkout itself stays untouched for launch. Apollo is now incorporating the outlined steps into the financing page, with the update landing at the June 24 review. The team agreed to run the first financed sales manually and refine the flow from real cases.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Mike</span> &nbsp;·&nbsp; Input received — financing-page update in build, publishes with the next site update</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Brief the financing partner on storefront-only branding in customer communications</div>
+        <div class="action-note"><strong>New item from the June 11 call.</strong> Customer-facing communications from the financing partner should reference Shopautoequip.com exclusively. A quick heads-up to Bill Waddell keeps the storefront's branding consistent end-to-end before the first financed sale comes through.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Mike</span> &nbsp;·&nbsp; Added June 11</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARSONS — SANNY ============ -->
+  <section id="sandy">
+    <div class="group-header">
+      <h2><span class="num">04</span>Parsons — Sanny</h2>
+      <span class="group-sub">Legal routing for the policy documents.</span>
+      <span class="group-count">1 item</span>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Send Ali's policy documents to the company attorney for review</div>
+        <div class="action-note"><strong>In motion as of June 11:</strong> Ali is passing the completed drafts over, and the full set — terms, warranty, and return policies — goes to the company attorneys as a single bulk submission. Attorney turnaround is expected to take about a week, which sets the timing for the June 24 follow-up review. Final legal sign-off remains a Parsons business decision.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Sanny</span> &nbsp;·&nbsp; Bulk submission to the attorney in flight</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARSONS TEAM / NATALIE ============ -->
+  <section id="team-natalie">
+    <div class="group-header">
+      <h2><span class="num">05</span>Parsons team / Natalie</h2>
+      <span class="group-sub">A strategic decision deliberately parked until after launch.</span>
+      <span class="group-count">1 item</span>
+    </div>
+
+    <div class="row blocked">
+      <div class="status-cell"><span class="pill blocked">Blocked</span></div>
+      <div class="action-cell">
+        <div class="action-title">Decide the post-sale email / CRM / data strategy</div>
+        <div class="action-note"><strong>Deferred by agreement on the June 11 call — and it does not hold up launch.</strong> Order, shipping-confirmation, and abandoned-cart emails are already enabled in the store. The bigger picture — post-sale follow-up, newsletters, review requests, and connecting customer data across systems — gets decided after launch: run the site for 30–45 days, see real traffic and sales, then re-engage Natalie on the broader strategy with actual data in hand.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Parsons team / Natalie</span> &nbsp;·&nbsp; Tom re-engages post-launch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APOLLO ============ -->
+  <section id="apollo">
+    <div class="group-header">
+      <h2><span class="num">06</span>Apollo</h2>
+      <span class="group-sub">Build, configuration, research, and QA that Apollo owns through launch.</span>
+      <span class="group-count">14 items</span>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Configure shipping for the contiguous U.S. — CONUS only</div>
+        <div class="action-note"><strong>Scope confirmed by the full team on June 11: the store ships to the lower 48 states only — Alaska and Hawaii are excluded.</strong> This replaces the earlier zone-and-surcharge concept. Shipping stays included in the listed price for the equipment lines, matching how the market leaders sell. Apollo configures the storefront accordingly, with an update at the June 24 review.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; CONUS-only confirmed June 11 — AK/HI excluded</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Research the platform's freight options, then write the shipping-policy page</div>
+        <div class="action-note"><strong>Reframed on June 11.</strong> Most equipment ships freight-included, but as the catalog grows into parts, some items will need weight-based freight rates. Before the policy page is written, Apollo is researching what the platform's freight tooling actually allows — carrier rates by weight, per-item freight flags, and the options in between — and brings the findings back for the team to evaluate at the next review. The policy page then gets written to match the chosen setup, with the CONUS-only scope clearly stated.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Capabilities first, team evaluates, then the page</div>
+      </div>
+    </div>
+
+    <div class="row inprog">
+      <div class="status-cell"><span class="pill inprog">In progress</span></div>
+      <div class="action-cell">
+        <div class="action-title">Build the standalone About Us page</div>
+        <div class="action-note">The About Us entry is now in the site navigation and the final content is in hand — the fill-in happens with the batch page build below. The homepage flow was also settled on June 11: featured products → categories → on sale → How We Show Up → brands, with the About Us section placed below the brand block.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Nav in place, content received</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Batch-build all standalone pages at once</div>
+        <div class="action-note">Rather than editing piecemeal, all page content is collected and applied in one pass to avoid rework on a moving target. Pages queued: About Us (content in hand), FAQ (received), How We Show Up (final wording pending Parsons&rsquo; marketing review), and the legal pages — Terms, Warranty, Returns, Shipping — once attorney review completes. Privacy is boilerplate Apollo builds at publish. Support-style policy pages link from the footer, per the June 11 navigation decisions.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Applied as a single batch once legal copy clears</div>
+      </div>
+    </div>
+
+    <div class="row done">
+      <div class="status-cell"><span class="pill done">Done</span></div>
+      <div class="action-cell">
+        <div class="action-title">Rebuild the brand-header blocks with Ali</div>
+        <div class="action-note"><strong>Done — finished on the June 11 working session.</strong> The brand-section headers were rebuilt with Ali and now match the refreshed homepage styling, alongside the rebuilt hero carousel and the icon-style featured categories.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Completed June 11</div>
+      </div>
+    </div>
+
+    <div class="row done">
+      <div class="status-cell"><span class="pill done">Done</span></div>
+      <div class="action-cell">
+        <div class="action-title">Research a standalone LinkedIn business page</div>
+        <div class="action-note"><strong>Research complete — closed June 11.</strong> Finding: LinkedIn requires a visible personal profile behind every company page, so a fully standalone page isn't possible on that platform. With that constraint on the table, the team is passing on LinkedIn for now; the social presence proceeds through the new Facebook and Instagram pages instead.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Closed June 11 — findings shared by email</div>
+      </div>
+    </div>
+
+    <div class="row done">
+      <div class="status-cell"><span class="pill done">Done</span></div>
+      <div class="action-cell">
+        <div class="action-title">Research connecting the financing partner into checkout</div>
+        <div class="action-note"><strong>Research complete — closed June 11.</strong> Outcome: the partner's process runs alongside the storefront (application → credit review → e-sign → purchase order to the distributor), so no checkout integration is needed for launch. A code-based checkout option remains a future possibility once real financed sales prove the flow — the team chose to run it manually first. Folded into the financing-page work in Mike's section.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Closed June 11 — see financing-page item</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Build the transactional + abandoned-cart email templates</div>
+        <div class="action-note">The notification emails — order confirmation, follow-up, and abandoned-cart reminders at 1 hour / 1 day / 2 days — are already enabled with the platform's default copy. <strong>Next step from June 11:</strong> Apollo sends the default wording to the Parsons team for review, then applies the requested edits and branding. The new sales mailbox Parsons created will be wired in for order routing during setup.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Default copy going to Parsons for review</div>
+      </div>
+    </div>
+
+    <div class="row blocked">
+      <div class="status-cell"><span class="pill blocked">Blocked</span></div>
+      <div class="action-cell">
+        <div class="action-title">Apply SEO schema at product/page launch</div>
+        <div class="action-note"><strong>On hold as of June 11:</strong> schema rides on final page content, so it waits until the page builds and policy copy land. It still executes at launch — the site ships with schema markup so products are well-positioned in both classic search and AI answer results, including specific part-number searches. No owner action required.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Holds until pages finalize — executes at launch</div>
+      </div>
+    </div>
+
+    <div class="row blocked">
+      <div class="status-cell"><span class="pill blocked">Blocked</span></div>
+      <div class="action-cell">
+        <div class="action-title">Google customer-reviews integration — paused</div>
+        <div class="action-note">Remains paused. The June 11 call clarified the path: customer reviews hang off a verified Google Business Profile, so the new profile-setup item (Tom, section 02) comes first — including the business documentation Google requires for verification. Revisit once the profile is verified, as part of the post-launch reviews strategy.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Pending Google Business Profile setup</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Pre-launch checkpoints — website nitpick + full-team review</div>
+        <div class="action-note">Two working checkpoints before launch: a website nitpick session (Ali + Apollo) to button up the small details, and a full-team progress review — including Raj for the payment/finance connection. <strong>The next full-team review is on the calendar: Wednesday, June 24 at 10:30 AM</strong>, timed to land after the attorney's policy review comes back.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Next review June 24, 10:30 AM — invite sent</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Present hero-slide title options — standing headline with category subtitles</div>
+        <div class="action-note"><strong>New item from the June 11 call.</strong> Feedback: the first slide shouldn't read as lifts-only when the store carries the full equipment range. Apollo will duplicate the carousel section and present both versions side by side at the next review — the current category-led titles versus a standing headline (e.g., &ldquo;best-in-class automotive equipment&rdquo;) with the category as the subtitle.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Added June 11 — both versions at the next review</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Add a storefront tagline to the utility header</div>
+        <div class="action-note"><strong>New item from the June 11 call.</strong> Requested: a one-line answer to &ldquo;what is Shopautoequip.com?&rdquo; above the main menu — along the lines of &ldquo;your home for all your automotive equipment needs&rdquo; — with room for a contact link or social icons on the right side. The header block is theme-controlled, so Apollo explores what it allows and shows the best available version.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Added June 11 — within theme constraints</div>
+      </div>
+    </div>
+
+    <div class="row todo">
+      <div class="status-cell"><span class="pill todo">To do</span></div>
+      <div class="action-cell">
+        <div class="action-title">Tighten the shop-menu drop-down layout</div>
+        <div class="action-note"><strong>New item from the June 11 call — explicitly time-boxed.</strong> The category drop-down shows a lot of white space; the ask is a tighter, more vertical layout if the theme allows it. This is theme-controlled, so the agreement is: improve it where possible, and move on without sinking time if the theme resists.</div>
+        <div class="owner-line">Owner: <span class="owner-name">Apollo</span> &nbsp;·&nbsp; Added June 11 — light touch, theme permitting</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="review-bar review-bar-bottom" style="margin:26px 0 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" id="exportBtn" type="button">⬇ Export my notes</button><button class="btn btn-ghost" id="copyBtn" type="button">Copy to clipboard</button></div>
+    <div class="footer-brand">Apollo <span>Marketing</span></div>
+    <div class="footer-meta">Action Register · June 11, 2026 · Path to launch</div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var NS = "parsons-0611:";
+  var STATUSES = [
+    { key: "todo",    label: "To do" },
+    { key: "inprog",  label: "In progress" },
+    { key: "blocked", label: "Blocked" },
+    { key: "done",    label: "Done" }
+  ];
+  var STATUS_CLASSES = STATUSES.map(function (s) { return s.key; });
+
+  function storeGet(key) {
+    try { return window.localStorage.getItem(key); }
+    catch (e) { return null; }
+  }
+  function storeSet(key, val) {
+    try { window.localStorage.setItem(key, val); return true; }
+    catch (e) { return false; }
+  }
+
+  // Stable per-item id derived from owner section + position + a slug of the title.
+  function slugify(text) {
+    return (text || "")
+      .toLowerCase()
+      .replace(/[‘’“”]/g, "")
+      .replace(/&[a-z]+;/g, " ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 48);
+  }
+
+  function labelFor(key) {
+    for (var i = 0; i < STATUSES.length; i++) {
+      if (STATUSES[i].key === key) return STATUSES[i].label;
+    }
+    return key;
+  }
+
+  var sections = document.querySelectorAll("section");
+  var items = []; // { id, row, pill, select, textarea, title, owner, section }
+
+  for (var s = 0; s < sections.length; s++) {
+    var section = sections[s];
+    var sectionId = section.getAttribute("id") || ("section-" + s);
+    var rows = section.querySelectorAll(".row");
+
+    for (var r = 0; r < rows.length; r++) {
+      var row = rows[r];
+      var titleEl = row.querySelector(".action-title");
+      var title = titleEl ? titleEl.textContent.trim() : "Item " + (r + 1);
+      var ownerEl = row.querySelector(".owner-line .owner-name");
+      var owner = ownerEl ? ownerEl.textContent.trim() : "";
+      var id = sectionId + "-" + (r + 1) + "-" + slugify(title);
+
+      var pill = row.querySelector(".pill");
+      // Default status: read from the original markup's pill class.
+      var defaultStatus = "todo";
+      for (var c = 0; c < STATUS_CLASSES.length; c++) {
+        if (pill && pill.classList.contains(STATUS_CLASSES[c])) { defaultStatus = STATUS_CLASSES[c]; }
+      }
+
+      var savedStatus = storeGet(NS + id + ":status");
+      if (STATUS_CLASSES.indexOf(savedStatus) === -1) { savedStatus = defaultStatus; }
+      var savedNotes = storeGet(NS + id + ":notes") || "";
+
+      // Build the editor UI.
+      var editor = document.createElement("div");
+      editor.className = "editor";
+
+      var edRow = document.createElement("div");
+      edRow.className = "ed-row";
+
+      var lbl = document.createElement("label");
+      lbl.className = "ed-label";
+      lbl.textContent = "Status";
+
+      var select = document.createElement("select");
+      for (var o = 0; o < STATUSES.length; o++) {
+        var opt = document.createElement("option");
+        opt.value = STATUSES[o].key;
+        opt.textContent = STATUSES[o].label;
+        select.appendChild(opt);
+      }
+      select.value = savedStatus;
+      lbl.setAttribute("for", "sel-" + id);
+      select.id = "sel-" + id;
+
+      edRow.appendChild(lbl);
+      edRow.appendChild(select);
+
+      var textarea = document.createElement("textarea");
+      textarea.placeholder = "Add your notes for this item…";
+      textarea.value = savedNotes;
+
+      var edActions = document.createElement("div");
+      edActions.className = "ed-actions";
+
+      var saveBtn = document.createElement("button");
+      saveBtn.type = "button";
+      saveBtn.className = "btn";
+      saveBtn.textContent = "Save";
+
+      var saveState = document.createElement("span");
+      saveState.className = "save-state";
+      saveState.textContent = "Saved";
+
+      edActions.appendChild(saveBtn);
+      edActions.appendChild(saveState);
+
+      editor.appendChild(edRow);
+      editor.appendChild(textarea);
+      editor.appendChild(edActions);
+
+      var actionCell = row.querySelector(".action-cell");
+      var hint = document.createElement("div");
+      hint.className = "edit-hint";
+      hint.textContent = "Click to set status + notes";
+      if (actionCell) { actionCell.appendChild(hint); }
+
+      row.appendChild(editor);
+      row.classList.add("interactive");
+
+      var item = {
+        id: id, row: row, pill: pill, select: select, textarea: textarea,
+        saveState: saveState, hint: hint, title: title, owner: owner,
+        section: sectionId
+      };
+      items.push(item);
+
+      applyStatus(item, savedStatus, false);
+      reflectNotePresence(item);
+
+      // --- wiring ---
+      (function (item, editor, select, textarea, saveBtn, saveState) {
+        // Toggle open on row click, but not when interacting with the editor.
+        item.row.addEventListener("click", function (ev) {
+          if (editor.contains(ev.target)) { return; }
+          item.row.classList.toggle("open");
+        });
+
+        // Persist + reflect status immediately on change.
+        select.addEventListener("change", function () {
+          applyStatus(item, select.value, true);
+          storeSet(NS + item.id + ":status", select.value);
+          flash(saveState);
+        });
+
+        saveBtn.addEventListener("click", function () {
+          storeSet(NS + item.id + ":notes", textarea.value);
+          storeSet(NS + item.id + ":status", select.value);
+          applyStatus(item, select.value, true);
+          reflectNotePresence(item);
+          flash(saveState);
+        });
+      })(item, editor, select, textarea, saveBtn, saveState);
+    }
+  }
+
+  function applyStatus(item, statusKey, updateCounts) {
+    if (item.pill) {
+      item.pill.classList.remove.apply(item.pill.classList, STATUS_CLASSES);
+      item.pill.classList.add(statusKey);
+      item.pill.textContent = labelFor(statusKey);
+    }
+    item.row.classList.remove.apply(item.row.classList, STATUS_CLASSES);
+    item.row.classList.add(statusKey);
+    item.status = statusKey;
+    if (updateCounts) { updateLegend(); }
+  }
+
+  function reflectNotePresence(item) {
+    if (item.textarea.value.trim().length > 0) {
+      item.row.classList.add("has-note");
+      item.hint.textContent = "Notes added · click to view";
+    } else {
+      item.row.classList.remove("has-note");
+      item.hint.textContent = "Click to set status + notes";
+    }
+  }
+
+  function flash(el) {
+    el.classList.add("show");
+    window.setTimeout(function () { el.classList.remove("show"); }, 1400);
+  }
+
+  // Keep the top-of-page legend counts in sync with live statuses.
+  var legendCounts = {
+    todo: document.querySelector(".legend-item .dot.todo"),
+    inprog: document.querySelector(".legend-item .dot.inprog"),
+    blocked: document.querySelector(".legend-item .dot.blocked"),
+    done: document.querySelector(".legend-item .dot.done")
+  };
+  function countEl(dot) {
+    if (!dot) return null;
+    var li = dot.closest ? dot.closest(".legend-item") : dot.parentNode;
+    return li ? li.querySelector(".legend-count") : null;
+  }
+  function updateLegend() {
+    var counts = { todo: 0, inprog: 0, blocked: 0, done: 0 };
+    for (var i = 0; i < items.length; i++) {
+      var st = items[i].status || "todo";
+      if (counts.hasOwnProperty(st)) { counts[st]++; }
+    }
+    for (var key in counts) {
+      if (!counts.hasOwnProperty(key)) continue;
+      var el = countEl(legendCounts[key]);
+      if (el) { el.textContent = counts[key]; }
+    }
+  }
+  updateLegend();
+
+  // --- Export ---
+  function buildMarkdown() {
+    var now = new Date();
+    var lines = [];
+    lines.push("# Shopautoequip.com — Action Register: My Review");
+    lines.push("");
+    lines.push("Exported " + now.toLocaleString());
+    lines.push("");
+
+    var currentSection = null;
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      if (it.section !== currentSection) {
+        currentSection = it.section;
+        var sectionEl = document.getElementById(currentSection);
+        var heading = sectionEl ? sectionEl.querySelector(".group-header h2") : null;
+        var headingText = heading ? heading.textContent.replace(/\s+/g, " ").trim() : currentSection;
+        lines.push("");
+        lines.push("## " + headingText);
+        lines.push("");
+      }
+      var status = labelFor(it.status || "todo");
+      lines.push("- [" + status + "] " + it.title);
+      var note = it.textarea.value.trim();
+      if (note) {
+        var noteLines = note.split(/\r?\n/);
+        for (var n = 0; n < noteLines.length; n++) {
+          lines.push("    " + noteLines[n]);
+        }
+      }
+    }
+    lines.push("");
+    return lines.join("\n");
+  }
+
+  function download(filename, text) {
+    var blob = new Blob([text], { type: "text/markdown;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+
+  var exportBtn = document.getElementById("exportBtn");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", function () {
+      download("shopautoequip-action-register-my-notes.md", buildMarkdown());
+    });
+  }
+
+  var copyBtn = document.getElementById("copyBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var text = buildMarkdown();
+      var original = copyBtn.textContent;
+      function done(ok) {
+        copyBtn.textContent = ok ? "Copied ✓" : "Copy failed";
+        window.setTimeout(function () { copyBtn.textContent = original; }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallbackCopy(text, done); });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  }
+
+  function fallbackCopy(text, cb) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      cb(ok);
+    } catch (e) { cb(false); }
+  }
+})();
+</script>
+</body>
+</html>
