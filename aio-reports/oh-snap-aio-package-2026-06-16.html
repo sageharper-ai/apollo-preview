@@ -617,7 +617,58 @@ footer{text-align:center;padding:2rem;color:var(--g600);font-size:.8rem;border-t
     }
   ]
 }
-&lt;/script&gt;</pre><div class="val">After install, validate at <a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a>.</div></div><div class="block"><div class="label">Deploy on: EEE landing — resources.ohsnapsocial.com/join-eee<span class="held">HOLD — install last</span></div><div class="settings">HFCM scope: EEE landing only · location: Header · one block — copy &amp; paste the whole thing</div><pre>&lt;script type="application/ld+json"&gt;
+&lt;/script&gt;</pre><div class="val">After install, validate at <a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a>.</div></div><div class="block"><div class="label" style="background:#7c2d12;">⚠ SKIP — no install needed (already handled by your SEO plugin)</div><div class="settings" style="background:#fff7ed;color:#7c2d12;">Do <strong>not</strong> install this block. Your site already runs the <strong>Yoast SEO</strong> plugin, which automatically generates WebPage + Breadcrumb schema on every page. Pasting this would create duplicate, conflicting schema. Kept below as a <strong>reference pattern only</strong> — useful if you ever want to hand-enrich a single cornerstone page.</div><pre>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ohsnapsocial.com/#webpage",
+      "url": "https://ohsnapsocial.com/",
+      "name": "Oh Snap! Social® — Social Media Made Easy!",
+      "description": "Done-for-you and done-with-you social media marketing for service-based businesses. Founded by Karlyn Ankrom, creator of the Fan Firestarter Framework.",
+      "isPartOf": {
+        "@id": "https://ohsnapsocial.com/#organization"
+      },
+      "about": {
+        "@id": "https://ohsnapsocial.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://ohsnapsocial.com/#breadcrumb-home"
+      },
+      "datePublished": "2018",
+      "dateModified": "[SET AT DEPLOY]"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ohsnapsocial.com/#breadcrumb-home",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ohsnapsocial.com/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/#article",
+      "headline": "Why Authority Beats Authenticity in Online Spaces",
+      "url": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/",
+      "author": {
+        "@id": "https://ohsnapsocial.com/#karlyn-ankrom"
+      },
+      "publisher": {
+        "@id": "https://ohsnapsocial.com/#organization"
+      },
+      "datePublished": "[PULL — from post metadata at deploy]",
+      "dateModified": "[PULL — from post metadata at deploy]",
+      "mainEntityOfPage": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/"
+    }
+  ]
+}
+&lt;/script&gt;</pre><div class="val">Reference only — no install, no validation needed.</div></div><div class="block"><div class="label">Deploy on: EEE landing — resources.ohsnapsocial.com/join-eee<span class="held">HOLD — install last</span></div><div class="settings">HFCM scope: EEE landing only · location: Header · one block — copy &amp; paste the whole thing</div><pre>&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -873,57 +924,6 @@ footer{text-align:center;padding:2rem;color:var(--g600);font-size:.8rem;border-t
           }
         }
       ]
-    }
-  ]
-}
-&lt;/script&gt;</pre><div class="val">After install, validate at <a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a>.</div></div><div class="block"><div class="label" style="background:#7c2d12;">⚠ SKIP — no install needed (already handled by your SEO plugin)</div><div class="settings" style="background:#fff7ed;color:#7c2d12;">Do <strong>not</strong> install this block. Your site already runs the <strong>Yoast SEO</strong> plugin, which automatically generates WebPage + Breadcrumb schema on every page. Pasting this would create duplicate, conflicting schema. Kept below as a <strong>reference pattern only</strong> — useful if you ever want to hand-enrich a single cornerstone page.</div><pre>&lt;script type="application/ld+json"&gt;
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://ohsnapsocial.com/#webpage",
-      "url": "https://ohsnapsocial.com/",
-      "name": "Oh Snap! Social® — Social Media Made Easy!",
-      "description": "Done-for-you and done-with-you social media marketing for service-based businesses. Founded by Karlyn Ankrom, creator of the Fan Firestarter Framework.",
-      "isPartOf": {
-        "@id": "https://ohsnapsocial.com/#organization"
-      },
-      "about": {
-        "@id": "https://ohsnapsocial.com/#organization"
-      },
-      "breadcrumb": {
-        "@id": "https://ohsnapsocial.com/#breadcrumb-home"
-      },
-      "datePublished": "2018",
-      "dateModified": "[SET AT DEPLOY]"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://ohsnapsocial.com/#breadcrumb-home",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ohsnapsocial.com/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/#article",
-      "headline": "Why Authority Beats Authenticity in Online Spaces",
-      "url": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/",
-      "author": {
-        "@id": "https://ohsnapsocial.com/#karlyn-ankrom"
-      },
-      "publisher": {
-        "@id": "https://ohsnapsocial.com/#organization"
-      },
-      "datePublished": "[PULL — from post metadata at deploy]",
-      "dateModified": "[PULL — from post metadata at deploy]",
-      "mainEntityOfPage": "https://ohsnapsocial.com/why-authority-beats-authenticity-in-online-spaces/"
     }
   ]
 }
