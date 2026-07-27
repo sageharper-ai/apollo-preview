@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pure Pilates NJ — Performance Update — June &amp; July 2026</title>
+<style>
+:root {
+  --accent: #C56B3F;
+  --accent-dark: #A8552E;
+  --accent-soft: #f6e4d6;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --good-soft: #e8f3ec;
+  --warn: #b87d1a;
+  --warn-soft: #fbf2e0;
+  --bad: #b14545;
+  --bad-soft: #f4e3e3;
+  --neutral-soft: #eef0f3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 4px solid var(--accent); padding-bottom: 36px; margin-bottom: 40px; }
+.preheader {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 14px;
+}
+header h1 { font-size: 40px; line-height: 1.1; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.015em; }
+.subtitle { font-size: 19px; color: var(--ink-soft); margin: 0 0 22px; font-weight: 500; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.pill strong { color: var(--ink); }
+
+.tldr {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+.tldr h2 {
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin: 0 0 10px; border: 0; padding: 0;
+}
+.tldr p { margin: 0 0 12px; font-size: 16px; line-height: 1.6; }
+.tldr p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 56px; scroll-margin-top: 20px; }
+h2 {
+  font-size: 26px; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em;
+  padding-bottom: 12px; border-bottom: 2px solid var(--accent);
+}
+h2 .num { color: var(--accent); font-weight: 700; margin-right: 10px; }
+h3 { font-size: 19px; margin: 28px 0 12px; font-weight: 600; color: var(--ink); }
+h4 {
+  font-size: 13px; margin: 18px 0 8px; font-weight: 700; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+p { margin: 0 0 14px; font-size: 16px; }
+ul, ol { padding-left: 22px; margin: 0 0 16px; }
+li { margin-bottom: 8px; line-height: 1.55; }
+
+.month-band {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  padding: 14px 24px;
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+  margin-top: 12px;
+}
+.month-wrap {
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 28px 26px 8px;
+  margin-bottom: 44px;
+  background: var(--bg);
+}
+.month-wrap h3:first-of-type { margin-top: 4px; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px 20px;
+  position: relative;
+}
+.stat-card .num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.stat-card .lbl {
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: block;
+  line-height: 1.4;
+}
+.stat-card .trend {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.trend-up { background: var(--good-soft); color: var(--good); }
+.trend-down { background: var(--bad-soft); color: var(--bad); }
+.trend-flat { background: var(--neutral-soft); color: var(--ink-soft); }
+
+.callout {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  padding: 20px 22px;
+  margin: 22px 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.callout-good { border-left-color: var(--good); background: var(--good-soft); }
+.callout.callout-warn { border-left-color: var(--warn); background: var(--warn-soft); }
+.callout.callout-bad { border-left-color: var(--bad); background: var(--bad-soft); }
+.callout.callout-action { border-left-color: var(--accent); background: var(--accent-soft); }
+.callout strong { color: var(--ink); }
+.callout-meta { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; font-style: italic; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; vertical-align: middle; }
+.badge-good { background: var(--good-soft); color: var(--good); }
+.badge-warn { background: var(--warn-soft); color: var(--warn); }
+.badge-bad { background: var(--bad-soft); color: var(--bad); }
+.badge-neutral { background: var(--neutral-soft); color: var(--ink-soft); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+th {
+  background: var(--bg-soft);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink);
+}
+td { padding: 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.row-total td { background: var(--bg-soft); font-weight: 700; }
+
+.wins-watchouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .wins-watchouts { grid-template-columns: 1fr; } }
+.lane {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 22px 24px;
+}
+.lane-wins { border-left: 4px solid var(--good); }
+.lane-watchouts { border-left: 4px solid var(--warn); }
+.lane h3 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 14px; font-weight: 700; }
+.lane-wins h3 { color: var(--good); }
+.lane-watchouts h3 { color: var(--warn); }
+.lane ul { padding-left: 18px; margin: 0; }
+.lane li { font-size: 15px; margin-bottom: 10px; }
+.lane li:last-child { margin-bottom: 0; }
+
+.section-divider {
+  text-align: center;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-muted); font-weight: 700;
+  margin: 70px 0 50px; position: relative; padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.scope-table { font-size: 14px; }
+.scope-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.scope-included { background: var(--good-soft); }
+.scope-notincluded { background: var(--warn-soft); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 720px) { .timeline { grid-template-columns: 1fr; } }
+.timeline-step { padding: 20px; border-right: 1px solid var(--rule); position: relative; }
+.timeline-step:last-child { border-right: none; }
+@media (max-width: 720px) {
+  .timeline-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .timeline-step:last-child { border-bottom: none; }
+}
+.timeline-step .when { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.timeline-step .what { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.timeline-step .why { font-size: 13px; color: var(--ink-soft); }
+
+footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+footer .brand { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.fineprint { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: 12px; }
+
+.lead { font-size: 17px; color: var(--ink-soft); }
+.text-muted { color: var(--ink-muted); }
+.text-good { color: var(--good); font-weight: 600; }
+.text-warn { color: var(--warn); font-weight: 600; }
+.text-bad { color: var(--bad); font-weight: 600; }
+.text-emph { font-weight: 600; color: var(--ink); }
+hr.soft { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+
+.toc {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.toc h4 { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.toc ol { padding-left: 20px; margin: 0; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: var(--ink-soft); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+
+@media print {
+  body { background: white; }
+  .container { padding: 20px; }
+  section { page-break-inside: avoid; }
+  .callout { page-break-inside: avoid; }
+  .month-wrap { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============================================ -->
+<!-- HEADER                                       -->
+<!-- ============================================ -->
+<header>
+  <div class="preheader">Performance Update · Apollo Marketing</div>
+  <h1>Pure Pilates NJ</h1>
+  <div class="subtitle">Google Ads · June &amp; July 2026</div>
+  <div class="meta-pills">
+    <span class="pill"><strong>Covering:</strong> June 1 – July 26, 2026</span>
+    <span class="pill"><strong>Campaign:</strong> Private Pilates Sessions</span>
+    <span class="pill"><strong>Prepared:</strong> July 26, 2026</span>
+    <span class="pill"><strong>Next report:</strong> end of August</span>
+  </div>
+</header>
+
+<!-- TL;DR -->
+<div class="tldr">
+  <h2>This update at a glance</h2>
+  <p>This is a combined June + July report — reporting had stopped generating automatically, so we've pulled both months directly from your Google Ads account and put them here. You can see each month on its own below, plus the three-month trend.</p>
+  <p>The headline: <strong>the keywords that were spending money without booking anyone in the spring have turned into your best performers.</strong> "Book pilates session" and "pilates near me" booked zero in May — together they drove 8 of July's 9 bookings. June was your most efficient month yet ($41 a booking); July's higher spend (the budget shift off Meta hiring and onto Google) bought nearly double the bookings at a still-healthy cost. The single biggest upgrade still ahead is connecting Google to your Momence scheduler so booking numbers become exact — that work is in motion.</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h4>In this report</h4>
+  <ol>
+    <li><a href="#trend">The three-month trend</a></li>
+    <li><a href="#june">June in detail</a></li>
+    <li><a href="#july">July in detail (through the 26th)</a></li>
+    <li><a href="#keywords">Where the budget converts — the turnaround</a></li>
+    <li><a href="#tracking">The one thing we're fixing next</a></li>
+    <li><a href="#ask">What we need from you</a></li>
+    <li><a href="#next">What's coming in August</a></li>
+    <li><a href="#scope">What your monthly retainer covers</a></li>
+  </ol>
+</div>
+
+<!-- ============================================ -->
+<!-- 1. THREE-MONTH TREND                         -->
+<!-- ============================================ -->
+<section id="trend">
+  <h2><span class="num">1.</span>The three-month trend</h2>
+  <p class="lead">May, June, and July side by side — all pulled from the Google Ads account, all on calendar months so they compare cleanly.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>May (1–31)</th>
+        <th>June (1–30)</th>
+        <th>July (1–26)*</th>
+        <th>Direction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Discovery Session bookings</strong> (tracked)</td>
+        <td>4</td>
+        <td>5</td>
+        <td><strong>9</strong></td>
+        <td><span class="badge badge-good">Climbing</span></td>
+      </tr>
+      <tr>
+        <td>Google Ads spend</td>
+        <td>$212.89</td>
+        <td>$206.64</td>
+        <td>$492.06</td>
+        <td><span class="badge badge-neutral">Ramped in July</span></td>
+      </tr>
+      <tr>
+        <td>Cost per booking</td>
+        <td>$53.22</td>
+        <td><strong>$41.33</strong></td>
+        <td>$54.67</td>
+        <td><span class="badge badge-good">Healthy range</span></td>
+      </tr>
+      <tr>
+        <td>Clicks</td>
+        <td>164</td>
+        <td>130</td>
+        <td>188</td>
+        <td><span class="badge badge-neutral">Up with budget</span></td>
+      </tr>
+      <tr>
+        <td>Click-through rate</td>
+        <td>6.24%</td>
+        <td>5.62%</td>
+        <td>6.41%</td>
+        <td><span class="badge badge-good">Strong &amp; steady</span></td>
+      </tr>
+      <tr>
+        <td>Average cost per click</td>
+        <td>$1.30</td>
+        <td>$1.59</td>
+        <td>$2.62</td>
+        <td><span class="badge badge-warn">Rising</span></td>
+      </tr>
+      <tr>
+        <td>Attributed revenue (bookings × $75)</td>
+        <td>$300</td>
+        <td>$375</td>
+        <td>$675</td>
+        <td><span class="badge badge-good">Up 125% vs May</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-muted" style="font-size: 13px;">*July covers July 1–26 — a partial month, so the full-month totals will land higher. A rising average cost per click is the expected trade-off of scaling into higher-intent, more competitive searches: you're buying more of the clicks that actually book.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- 2. JUNE                                      -->
+<!-- ============================================ -->
+<section id="june">
+  <h2><span class="num">2.</span>June in detail</h2>
+
+  <div class="month-band">June 2026 · June 1 – 30</div>
+  <div class="month-wrap">
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="num">$206.64</span>
+        <span class="lbl">Google Ads spend</span>
+        <span class="trend trend-flat">~$6.89/day · held at the $7 cap</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">5</span>
+        <span class="lbl">Discovery Session bookings</span>
+        <span class="trend trend-up">+1 vs May</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">$41.33</span>
+        <span class="lbl">Cost per booking</span>
+        <span class="trend trend-up">Your best month yet</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">1.81x</span>
+        <span class="lbl">Return on ad spend</span>
+        <span class="trend trend-up">$375 from bookings</span>
+      </div>
+    </div>
+
+    <div class="wins-watchouts">
+      <div class="lane lane-wins">
+        <h3>✓ Working</h3>
+        <ul>
+          <li><strong>Most efficient month on record</strong> — 5 bookings at $41.33 each, down from $53 in May.</li>
+          <li><strong>"Pilates Summit" is your standout</strong> — 2 bookings from 25 clicks at just <strong>$22.83 a booking</strong>. Your backyard converts.</li>
+          <li><strong>The "near me / book" keywords started converting</strong> — "book pilates session" and "pilates near me" each booked their first client this month after booking zero in May.</li>
+        </ul>
+      </div>
+      <div class="lane lane-watchouts">
+        <h3>⚠ Watch</h3>
+        <ul>
+          <li><strong>Click-through rate eased to 5.62%</strong> (from 6.24% in May) — fewer, better-qualified clicks. Fewer clicks, more bookings is a fair trade, but worth watching.</li>
+          <li><strong>Budget was still capped at ~$7/day</strong> all month — June is the "before" picture, ahead of the July budget shift you directed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>What we did in June</h4>
+    <p>June ran on the campaign structure carried over from the spring optimization work — steady state while we waited on your Google Ads direction (which arrived July 1) and the Meta hiring decision. The month's job was to hold a clean, well-tracked baseline. It did.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 3. JULY                                      -->
+<!-- ============================================ -->
+<section id="july">
+  <h2><span class="num">3.</span>July in detail <span class="text-muted" style="font-size:15px; font-weight:400;">(through the 26th)</span></h2>
+
+  <div class="month-band">July 2026 · July 1 – 26 (month in progress)</div>
+  <div class="month-wrap">
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="num">$492.06</span>
+        <span class="lbl">Google Ads spend</span>
+        <span class="trend trend-flat">ramped $7 → $25/day mid-month</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">9</span>
+        <span class="lbl">Discovery Session bookings</span>
+        <span class="trend trend-up">+80% vs June, +125% vs May</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">$54.67</span>
+        <span class="lbl">Cost per booking</span>
+        <span class="trend trend-flat">Up with the ramp · still healthy</span>
+      </div>
+      <div class="stat-card">
+        <span class="num">1.37x</span>
+        <span class="lbl">Return on ad spend</span>
+        <span class="trend trend-up">$675 from bookings</span>
+      </div>
+    </div>
+
+    <div class="wins-watchouts">
+      <div class="lane lane-wins">
+        <h3>✓ Working</h3>
+        <ul>
+          <li><strong>Most bookings of any month — 9 so far, with days left.</strong> The budget shift off Meta hiring onto Google is doing what it was meant to.</li>
+          <li><strong>"Book pilates session" is now your #1 booker</strong> — 5 bookings at <strong>$39.70 each</strong>, from the keyword that booked zero in May.</li>
+          <li><strong>"Pilates near me" added 3 more bookings.</strong> Together, that "near me / book" family delivered 8 of the month's 9 bookings.</li>
+          <li><strong>Click-through rate recovered to 6.41%</strong> even as spend rose — the ads are holding quality at higher volume.</li>
+        </ul>
+      </div>
+      <div class="lane lane-watchouts">
+        <h3>⚠ Watch</h3>
+        <ul>
+          <li><strong>Cost per click rose to $2.62</strong> (from $1.59). Expected — you're bidding into more competitive, higher-intent searches — but it's why cost per booking ticked up to $55.</li>
+          <li><strong>"Pilates Summit" quieted this month</strong> — 1 booking. Your directive to weight toward it is in place; the "near me / book" terms simply out-produced it in July.</li>
+          <li><strong>Booking numbers are still Google's estimate, not Momence-confirmed</strong> — see the next section. This is the fix that makes every number above exact.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>What we did in July — your directives, executed</h4>
+    <table>
+      <thead>
+        <tr><th>What</th><th>Why</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paused the <strong>"Performance &amp; Flexibility"</strong> ad group</td>
+          <td>Your call — clicks without sign-ups; that budget now flows to the groups that book</td>
+          <td><span class="badge badge-good">Done</span></td>
+        </tr>
+        <tr>
+          <td>Concentrated budget on <strong>"Pilates Booking Discovery"</strong>, weighted toward Pilates Summit &amp; Pilates near me</td>
+          <td>Your read on the winners — put the money where it converts</td>
+          <td><span class="badge badge-good">Done</span></td>
+        </tr>
+        <tr>
+          <td>Added negative keywords: <strong>heated, Lagree</strong></td>
+          <td>Your homework list — stop paying for the wrong searches. Good news: cheap, low-cost, ClassPass, and classes were already blocked, so your money wasn't leaking there</td>
+          <td><span class="badge badge-good">Done</span></td>
+        </tr>
+        <tr>
+          <td>Raised daily budget <strong>$7 → $25/day</strong></td>
+          <td>Step one of your $7 → $50/day plan — scaled deliberately, not all at once</td>
+          <td><span class="badge badge-good">Done</span></td>
+        </tr>
+        <tr>
+          <td>Diagnosed the <strong>Momence booking-tracking gap</strong></td>
+          <td>Google currently sees people reach the booking page, not finish booking inside Momence</td>
+          <td><span class="badge badge-warn">In progress (with Brook)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 4. KEYWORD TURNAROUND                        -->
+<!-- ============================================ -->
+<section id="keywords">
+  <h2><span class="num">4.</span>Where the budget converts — the turnaround</h2>
+  <p class="lead">The clearest story in the data: the keywords that spent money without booking anyone this spring are now your engine.</p>
+
+  <h3>Bookings by keyword, month over month</h3>
+  <table>
+    <thead>
+      <tr><th>Keyword</th><th>May</th><th>June</th><th>July (to 26th)</th><th>The story</th></tr>
+    </thead>
+    <tbody>
+      <tr class="scope-included">
+        <td><strong>book pilates session</strong></td>
+        <td>0</td>
+        <td>1</td>
+        <td><strong>5</strong></td>
+        <td>Was the biggest "spends but doesn't book" term in May. Now your #1 booker.</td>
+      </tr>
+      <tr class="scope-included">
+        <td><strong>pilates near me</strong></td>
+        <td>0</td>
+        <td>1</td>
+        <td><strong>3</strong></td>
+        <td>Same turnaround — zero in May, three bookings in July.</td>
+      </tr>
+      <tr>
+        <td><strong>pilates summit</strong></td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>Steady local performer; June was its strongest ($22.83/booking).</td>
+      </tr>
+      <tr>
+        <td><strong>sports pilates</strong></td>
+        <td>3</td>
+        <td>1</td>
+        <td>0</td>
+        <td>Was the spring star; has cooled as the "near me / book" terms took over.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>July spend by keyword</h3>
+  <table>
+    <thead>
+      <tr><th>Keyword</th><th>Spend</th><th>Clicks</th><th>Bookings</th><th>Cost per booking</th></tr>
+    </thead>
+    <tbody>
+      <tr class="scope-included">
+        <td><strong>book pilates session</strong></td>
+        <td>$198.49</td><td>88</td><td>5</td><td>$39.70</td>
+      </tr>
+      <tr class="scope-included">
+        <td><strong>pilates near me</strong></td>
+        <td>$193.65</td><td>61</td><td>3</td><td>$64.55</td>
+      </tr>
+      <tr>
+        <td><strong>pilates summit</strong></td>
+        <td>$71.30</td><td>24</td><td>1</td><td>$71.30</td>
+      </tr>
+      <tr>
+        <td>sports pilates</td>
+        <td>$15.62</td><td>7</td><td>0</td><td>—</td>
+      </tr>
+      <tr>
+        <td>pilates studio near me</td>
+        <td>$12.19</td><td>7</td><td>0</td><td>—</td>
+      </tr>
+      <tr>
+        <td>book private pilates</td>
+        <td>$0.81</td><td>1</td><td>0</td><td>—</td>
+      </tr>
+      <tr class="row-total">
+        <td>Total</td><td>$492.06</td><td>188</td><td>9</td><td>$54.67 avg</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-good">
+    <strong>Why this matters:</strong> In May we flagged "book pilates session" and "pilates near me" as clicks that weren't converting, and pointed at the landing page as the likely fix. Since then the campaign has been focused down onto the terms that book, and those two keywords have come all the way around. The remaining landing-page headline tweak (handled with Brook) is the last lever to push their conversion rate even higher.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 5. TRACKING FIX                              -->
+<!-- ============================================ -->
+<section id="tracking">
+  <h2><span class="num">5.</span>The one thing we're fixing next</h2>
+  <p>The most important upgrade isn't more budget — it's <strong>trust in the numbers</strong>. Right now Google can see when someone <em>reaches</em> your booking page, but not when they actually <em>finish</em> booking inside your Momence scheduler. So the bookings counted in this report reflect Google's best estimate of booking intent, not a Momence-confirmed headcount.</p>
+  <p>We're wiring Google directly to Momence (Apollo + Brook) so the numbers become exact — every real sign-up counted, nothing over- or under-stated. This is the single biggest upgrade to everything downstream: once it's live, the budget can open to the full $50/day with every extra dollar chasing confirmed clients, not doorway traffic.</p>
+  <div class="callout callout-action">
+    <strong>Bottom line:</strong> The trend is real and it's up — May to July, bookings more than doubled. The Momence connection is what turns "up and to the right" into a number you can take to the bank.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 6. WHAT WE NEED FROM YOU                      -->
+<!-- ============================================ -->
+<section id="ask">
+  <h2><span class="num">6.</span>What we need from you</h2>
+  <div class="callout callout-action">
+    <strong>Nothing urgent — you're in good shape. Two small things when you have a moment:</strong>
+    <ol style="margin-top: 12px;">
+      <li><strong>A quick thumbs-up on staying the course.</strong> The plan is: hold at $25/day, get the Momence tracking live, then open to $50/day. If that matches your thinking, we'll keep rolling.</li>
+      <li><strong>Nothing on the SEO homework.</strong> That keeps — no pressure, especially right now. This report is Google Ads only.</li>
+    </ol>
+    <p class="callout-meta">One round of edits to this report is included in your retainer — send any feedback to Sage or Brook and we'll fold it in.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 7. WHAT'S COMING IN AUGUST                    -->
+<!-- ============================================ -->
+<section id="next">
+  <h2><span class="num">7.</span>What's coming in August</h2>
+  <div class="timeline">
+    <div class="timeline-step">
+      <div class="when">Early August</div>
+      <div class="what">Momence tracking goes live</div>
+      <div class="why">Apollo + Brook connect Google to your Momence scheduler so booking numbers become exact. Also: the landing-page headline tweak ships (Brook).</div>
+    </div>
+    <div class="timeline-step">
+      <div class="when">Mid August</div>
+      <div class="what">Open the budget to $50/day</div>
+      <div class="why">With real booking data in hand, we scale the rest of the way — confident every extra dollar is chasing confirmed clients. Keep weighting toward the keywords that book.</div>
+    </div>
+    <div class="timeline-step">
+      <div class="when">End August</div>
+      <div class="what">Your next monthly report</div>
+      <div class="why">First full month on the higher budget with exact tracking — the cleanest read yet on cost per real client.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- DIVIDER                                      -->
+<!-- ============================================ -->
+<div class="section-divider">Coverage · Methodology</div>
+
+<!-- ============================================ -->
+<!-- 8. SCOPE                                     -->
+<!-- ============================================ -->
+<section id="scope">
+  <h2><span class="num">8.</span>What your monthly retainer covers</h2>
+  <p class="lead">For transparency on what's included in your monthly Google Ads management — and what we'd scope separately if needed.</p>
+
+  <table class="scope-table">
+    <thead>
+      <tr>
+        <th style="width: 50%;">Included in monthly retainer</th>
+        <th style="width: 50%;">Scoped separately (when needed)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="scope-included"><strong>Campaign management &amp; optimization</strong><br><span class="text-muted">Budget pacing, bid strategy, negative-keyword pruning, ad-group focus, ad strength</span></td>
+        <td class="scope-notincluded"><strong>Landing page builds or rewrites</strong><br><span class="text-muted">Handled by your web team; we provide the spec</span></td>
+      </tr>
+      <tr>
+        <td class="scope-included"><strong>Monthly performance report</strong><br><span class="text-muted">This document, every month, one round of edits included</span></td>
+        <td class="scope-notincluded"><strong>New campaign builds (Meta, LinkedIn, etc.)</strong><br><span class="text-muted">One-time setup fee; quoted per scope</span></td>
+      </tr>
+      <tr>
+        <td class="scope-included"><strong>Conversion tracking &amp; setup</strong><br><span class="text-muted">Including the Momence booking-tracking connection now in progress</span></td>
+        <td class="scope-notincluded"><strong>On-page SEO work</strong><br><span class="text-muted">Site code, FAQ pages, structured data — separate service line</span></td>
+      </tr>
+      <tr>
+        <td class="scope-included"><strong>Ad-hoc questions &amp; adjustments</strong><br><span class="text-muted">Routed through your account manager; turnaround within 2 business days</span></td>
+        <td class="scope-notincluded"><strong>Major creative production</strong><br><span class="text-muted">Photo/video shoots, copywriting beyond ad copy</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<footer>
+  <div class="brand">Apollo Marketing</div>
+  <p>
+    Hickory, NC · <a href="mailto:sage.harper@apollollc.com">sage.harper@apollollc.com</a> · 301-744-9697<br>
+    Account manager: Brook Borup, My Clone Solution · <a href="mailto:brook@myclonesolutions.com">brook@myclonesolutions.com</a>
+  </p>
+  <p style="margin-top: 14px;"><strong>Next report:</strong> end of August 2026 · covering the full month of August</p>
+  <p class="fineprint">
+    All figures sourced directly from the Pure Pilates Google Ads account (ID 889-502-9721), pulled July 26, 2026.
+    June covers June 1–30; July covers July 1–26 (month in progress). "Discovery Session bookings" reflect the
+    account's "Book appointment" conversion, measured on booking-page completion; full Momence-side confirmation
+    is being connected and will make these counts exact. Attributed revenue = tracked bookings × $75; real return
+    is higher when a Discovery Session becomes a regular client. Meta hiring ads were brought down in early July
+    per your direction; this report covers Google Ads only. Send feedback within 7 days for the next cycle.
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
