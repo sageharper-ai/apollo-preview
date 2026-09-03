@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pure Pilates NJ — Performance Update — August 2026</title>
+<style>
+:root {
+  --accent: #C56B3F;
+  --accent-dark: #A8552E;
+  --accent-soft: #f6e4d6;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --good-soft: #e8f3ec;
+  --warn: #b87d1a;
+  --warn-soft: #fbf2e0;
+  --bad: #b14545;
+  --bad-soft: #f4e3e3;
+  --neutral-soft: #eef0f3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 4px solid var(--accent); padding-bottom: 36px; margin-bottom: 40px; }
+.preheader {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 14px;
+}
+header h1 { font-size: 40px; line-height: 1.1; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.015em; }
+.subtitle { font-size: 19px; color: var(--ink-soft); margin: 0 0 22px; font-weight: 500; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.pill strong { color: var(--ink); }
+
+.tldr {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+.tldr h2 {
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin: 0 0 10px; border: 0; padding: 0;
+}
+.tldr p { margin: 0 0 12px; font-size: 16px; line-height: 1.6; }
+.tldr p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 56px; scroll-margin-top: 20px; }
+h2 {
+  font-size: 26px; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em;
+  padding-bottom: 12px; border-bottom: 2px solid var(--accent);
+}
+h2 .num { color: var(--accent); font-weight: 700; margin-right: 10px; }
+h3 { font-size: 19px; margin: 28px 0 12px; font-weight: 600; color: var(--ink); }
+h4 {
+  font-size: 13px; margin: 18px 0 8px; font-weight: 700; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+p { margin: 0 0 14px; font-size: 16px; }
+ul, ol { padding-left: 22px; margin: 0 0 16px; }
+li { margin-bottom: 8px; line-height: 1.55; }
+
+.month-band {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  padding: 14px 24px;
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+  margin-top: 12px;
+}
+.month-wrap {
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 28px 26px 8px;
+  margin-bottom: 44px;
+  background: var(--bg);
+}
+.month-wrap h3:first-of-type { margin-top: 4px; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px 20px;
+  position: relative;
+}
+.stat-card .num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.stat-card .lbl {
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: block;
+  line-height: 1.4;
+}
+.stat-card .trend {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.trend-up { background: var(--good-soft); color: var(--good); }
+.trend-down { background: var(--bad-soft); color: var(--bad); }
+.trend-flat { background: var(--neutral-soft); color: var(--ink-soft); }
+
+.callout {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  padding: 20px 22px;
+  margin: 22px 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.callout-good { border-left-color: var(--good); background: var(--good-soft); }
+.callout.callout-warn { border-left-color: var(--warn); background: var(--warn-soft); }
+.callout.callout-bad { border-left-color: var(--bad); background: var(--bad-soft); }
+.callout.callout-action { border-left-color: var(--accent); background: var(--accent-soft); }
+.callout strong { color: var(--ink); }
+.callout-meta { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; font-style: italic; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; vertical-align: middle; }
+.badge-good { background: var(--good-soft); color: var(--good); }
+.badge-warn { background: var(--warn-soft); color: var(--warn); }
+.badge-bad { background: var(--bad-soft); color: var(--bad); }
+.badge-neutral { background: var(--neutral-soft); color: var(--ink-soft); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+th {
+  background: var(--bg-soft);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink);
+}
+td { padding: 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.row-total td { background: var(--bg-soft); font-weight: 700; }
+
+.wins-watchouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .wins-watchouts { grid-template-columns: 1fr; } }
+.lane {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 22px 24px;
+}
+.lane-wins { border-left: 4px solid var(--good); }
+.lane-watchouts { border-left: 4px solid var(--warn); }
+.lane h3 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 14px; font-weight: 700; }
+.lane-wins h3 { color: var(--good); }
+.lane-watchouts h3 { color: var(--warn); }
+.lane ul { padding-left: 18px; margin: 0; }
+.lane li { font-size: 15px; margin-bottom: 10px; }
+.lane li:last-child { margin-bottom: 0; }
+
+.section-divider {
+  text-align: center;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-muted); font-weight: 700;
+  margin: 70px 0 50px; position: relative; padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.scope-table { font-size: 14px; }
+.scope-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.scope-included { background: var(--good-soft); }
+.scope-notincluded { background: var(--warn-soft); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 720px) { .timeline { grid-template-columns: 1fr; } }
+.timeline-step { padding: 20px; border-right: 1px solid var(--rule); position: relative; }
+.timeline-step:last-child { border-right: none; }
+@media (max-width: 720px) {
+  .timeline-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .timeline-step:last-child { border-bottom: none; }
+}
+.timeline-step .when { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.timeline-step .what { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.timeline-step .why { font-size: 13px; color: var(--ink-soft); }
+
+footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+footer .brand { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.fineprint { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: 12px; }
+
+.lead { font-size: 17px; color: var(--ink-soft); }
+.text-muted { color: var(--ink-muted); }
+.text-good { color: var(--good); font-weight: 600; }
+.text-warn { color: var(--warn); font-weight: 600; }
+.text-bad { color: var(--bad); font-weight: 600; }
+.text-emph { font-weight: 600; color: var(--ink); }
+hr.soft { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+
+.toc {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.toc h4 { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.toc ol { padding-left: 20px; margin: 0; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: var(--ink-soft); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+
+@media print {
+  body { background: white; }
+  .container { padding: 20px; }
+  section { page-break-inside: avoid; }
+  .callout { page-break-inside: avoid; }
+  .month-wrap { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="preheader">Performance Update · Apollo Marketing</div>
+  <h1>Pure Pilates NJ</h1>
+  <div class="subtitle">Google Ads · August 2026</div>
+  <div class="meta-pills">
+    <span class="pill"><strong>Covering:</strong> August 1 – 31, 2026</span>
+    <span class="pill"><strong>Campaign:</strong> Private Pilates Sessions</span>
+    <span class="pill"><strong>Prepared: September 3, 2026</strong></span>
+    <span class="pill"><strong>Next report:</strong> end of September</span>
+  </div>
+</header>
+
+<div class="tldr">
+  <h2>This update at a glance</h2>
+  <p>August was your most visible month yet: your ads appeared in <strong>28% of the searches they were eligible for</strong> (June was 14%), impressions nearly doubled July's, and 370 people clicked through — the most in any month so far.</p>
+  <p><strong>The honest number:</strong> 12 tracked bookings against $760 of spend puts August's cost per booking at $63 — higher than July's $40. Part of the story is a leak we found and fixed mid-month: about one dollar in five was going to searches for towns you don't serve — people nearby searching for Morristown, Westfield, Newark and five others. Your location targeting was set correctly from day one; it controls where the searcher is, not what they type, so this is the layer it can't catch. Your own question about "pilates near me" on August 24 kicked off that audit. We blocked all eight towns on August 25.</p>
+  <p><strong>Early read since the fix:</strong> zero dollars have gone to those towns, and "pilates near me" — your best-converting search — is now the single biggest spend line. The full before-and-after lands next week, as promised.</p>
+</div>
+
+<div class="section-divider"></div>
+<h2>1. The three-month trend</h2>
+<p class="lead">June, July, and August side by side — all pulled from the Google Ads account, all full calendar months.</p>
+<table>
+  <thead><tr><th>Metric</th><th>June (1–30)</th><th>July (1–31)</th><th>Aug (1–31)</th><th>Direction</th></tr></thead>
+  <tbody>
+    <tr><td>Discovery Session bookings (tracked)</td><td>5</td><td>15</td><td>12</td><td><span class="badge badge-neutral">Second-best month</span></td></tr>
+    <tr><td>Google Ads spend</td><td>$206.64</td><td>$598.76</td><td>$760.12</td><td><span class="badge badge-neutral">First full-budget month</span></td></tr>
+    <tr><td>Cost per booking</td><td>$41.33</td><td>$39.92</td><td>$63.34</td><td><span class="badge badge-warn">Higher — see the fix below</span></td></tr>
+    <tr><td>Clicks</td><td>130</td><td>234</td><td>370</td><td><span class="badge badge-good">Up</span></td></tr>
+    <tr><td>Click-through rate</td><td>5.62%</td><td>6.39%</td><td>5.78%</td><td><span class="badge badge-neutral">Strong &amp; steady</span></td></tr>
+    <tr><td>Average cost per click</td><td>$1.59</td><td>$2.56</td><td>$2.05</td><td><span class="badge badge-good">Down from July</span></td></tr>
+    <tr><td>Attributed revenue (bookings × $75)</td><td>$375</td><td>$1,125</td><td>$900</td><td><span class="badge badge-neutral">—</span></td></tr>
+  </tbody>
+</table>
+<p class="fineprint">July's column is the final full month (the last report covered July only through the 26th). Same counting method all three months.</p>
+
+<div class="section-divider"></div>
+<h2>2. What we did in August</h2>
+<ul>
+  <li><strong>Blocked eight out-of-area town searches (Aug 25).</strong> Searches for Morristown, Westfield, Newark, Florham Park, Springfield, Basking Ridge, Livingston, and Cranford had taken roughly $98 over the prior 30 days without producing a single booking. All eight are now negative keywords — added to the campaign's list (264 → 272 terms) and verified live in Google Ads.</li>
+  <li><strong>Protected your service area while doing it.</strong> Summit, New Providence, Berkeley Heights, Chatham, Short Hills, and Millburn are untouched. We deliberately did <em>not</em> block "union," "elizabeth," or "warren" — those words are ambiguous (Summit sits in Union County) and blocking them could cost real local searches.</li>
+  <li><strong>Answered your Aug 24 question with data.</strong> You noticed "pilates near me" converts best on the least money — confirmed: over the 30 days ending Aug 25, the near-me family produced 8 of 9 bookings on 49% of spend, and "pilates near me" itself booked at $35.86 each.</li>
+</ul>
+
+<div class="callout callout-good">
+  <p><strong>Where the budget converts:</strong> the near-me searches. Since the town fix (Aug 26 – Sep 2): zero dollars to the blocked towns, and "pilates near me" is now the top spend line — exactly where the bookings come from.</p>
+  <p class="callout-meta">Early read on 8 days of data; the full before-and-after comes next week.</p>
+</div>
+
+<div class="section-divider"></div>
+<h2>3. The one thing we're doing next</h2>
+<p>Finish the town-fix before-and-after (you'll have it by ~Sept 8) and use it to answer your separate-campaign question: if the near-me searches are still hitting their budget ceiling even after the reclaimed spend concentrates on them, we'll make the case for breaking "pilates near me" into its own campaign — with numbers, not hunches.</p>
+
+<div class="section-divider"></div>
+<h2>4. What we need from you</h2>
+<p>Nothing this month. The next decision (the separate campaign) is ours to bring you data for.</p>
+
+<div class="section-divider"></div>
+<h2>5. What your monthly retainer covers</h2>
+<p class="lead">For transparency on what's included in your monthly Google Ads management — and what we'd scope separately if needed.</p>
+<table class="scope-table">
+  <thead><tr><th>Included in monthly retainer</th><th>Scoped separately (when needed)</th></tr></thead>
+  <tbody>
+    <tr><td class="scope-included">Campaign management &amp; optimization<br><span class="text-muted">This month: the eight-town negative-keyword fix, verified live</span></td><td class="scope-notincluded">Landing page builds or rewrites — handled by your web team; we provide the spec</td></tr>
+    <tr><td class="scope-included">Monthly performance report<br><span class="text-muted">This document, every month, one round of edits included</span></td><td class="scope-notincluded">New campaign builds (Meta, LinkedIn, etc.) — one-time setup fee, quoted per scope</td></tr>
+    <tr><td class="scope-included">Conversion tracking &amp; setup<br><span class="text-muted">Bookings currently count when someone reaches your booking page; the deeper Momence connection stays on our list</span></td><td class="scope-notincluded">On-page SEO work — site code, FAQ pages, structured data (your on-page project + 24-question FAQ upgrade was delivered separately on Aug 18)</td></tr>
+    <tr><td class="scope-included">Ad-hoc questions &amp; adjustments<br><span class="text-muted">Routed through your account manager; turnaround within 2 business days</span></td><td class="scope-notincluded">Major creative production — photo/video shoots, copywriting beyond ad copy</td></tr>
+  </tbody>
+</table>
+
+<p class="fineprint">Reporting windows: June 1–30, July 1–31, August 1–31, 2026 (calendar months). Post-fix window: August 26 – September 2. Bookings are counted when a visitor reaches the booking page — the same method all three months; actual bookings may run slightly higher than tracked.</p>
+
+<div class="brand">Apollo Marketing</div>
+  <p>
+    Hickory, NC · <a href="mailto:sage.harper@apollollc.com">sage.harper@apollollc.com</a> · 301-744-9697<br>
+    Account manager: Brook Borup, My Clone Solution · <a href="mailto:brook@myclonesolutions.com">brook@myclonesolutions.com</a>
+  </p>
+  <p style="margin-top: 14px;"><strong>Next report:</strong> end of September 2026 · covering the full month of September</p>
+  <p class="fineprint">
+    All figures sourced directly from the Pure Pilates Google Ads account (ID 889-502-9721), pulled September 3, 2026.
+
+    June, July, and August are full calendar months. "Discovery Session bookings" reflect the account's "Book appointment"
+
+    conversion, measured on booking-page completion; a deeper Momence-side confirmation remains on our list and will make
+
+    these counts exact. Attributed revenue = tracked bookings × $75; real return is higher when a Discovery Session becomes
+
+    a regular client. This report covers Google Ads only. Send feedback within 7 days for the next cycle.
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
