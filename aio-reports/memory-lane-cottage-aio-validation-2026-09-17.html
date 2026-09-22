@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What we need from you — Memory Lane Cottage AIO Research</title>
+<style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b87d1a;
+  --warn-soft: #fdf7e8;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 36px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+.intro-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 36px; border-radius: 0 6px 6px 0; }
+.intro-callout p { margin: 0 0 8px; }
+.intro-callout p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+.section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+
+/* Input fields (Section 1) */
+.input-row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.input-row .field-label { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.input-row .field-note { font-size: 13px; color: var(--ink-muted); font-style: italic; margin-bottom: 8px; }
+.input-row input[type="text"] { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; font-family: inherit; font-size: 14px; }
+.input-row input[type="text"]:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.input-row.optional .field-label::after { content: " (optional)"; color: var(--ink-muted); font-weight: 400; font-size: 13px; font-style: italic; }
+
+/* Open FAQ questions (Section 2) */
+.open-q { background: var(--warn-soft); border: 1px solid #f0d99a; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; }
+.open-q .q-text { font-weight: 600; font-size: 15px; }
+.open-q .q-why { font-size: 13px; color: var(--ink-soft); margin-top: 6px; font-style: italic; }
+.open-q textarea { width: 100%; border: 1px solid #d9b96d; border-radius: 4px; padding: 10px 12px; margin-top: 10px; min-height: 70px; font-family: inherit; font-size: 14px; background: #fff; resize: vertical; }
+.open-q textarea:focus { outline: 2px solid var(--warn); outline-offset: -1px; }
+
+/* Micro-confirmations (Section 3) */
+.confirm-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; margin: 12px 0; }
+.confirm-card .confirm-q { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.confirm-card .confirm-detail { font-size: 14px; color: var(--ink-soft); margin: 6px 0 12px; }
+.confirm-card .confirm-detail .quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; }
+.confirm-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.confirm-options label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px;
+  padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; transition: all 0.15s;
+}
+.confirm-options label:hover { border-color: var(--ink-muted); }
+.confirm-options input[type="radio"] { margin: 0; }
+.confirm-options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.confirm-note { margin-top: 10px; display: none; }
+.confirm-note.show { display: block; }
+.confirm-note label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.confirm-note input { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; font-family: inherit; font-size: 14px; }
+
+/* Send zone */
+.send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
+.send-zone h3 { color: #fff; margin: 0 0 6px; font-size: 20px; }
+.send-zone p { color: #d8d4cd; margin: 0 0 16px; font-size: 14px; }
+.send-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary { background: var(--apollo-orange); color: #fff; border: none; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--apollo-orange-dark); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+.send-output { display: none; margin-top: 16px; }
+.send-output.show { display: block; }
+.send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
+.send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
+
+.save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.save-notice.show { opacity: 1; }
+
+/* Sticky top bar */
+.top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.top-bar .top-bar-msg { color: var(--ink-soft); }
+.top-bar .top-bar-actions { display: flex; gap: 8px; }
+.btn-small { background: var(--bg-soft); border: 1px solid var(--rule); color: var(--ink-soft); padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.btn-small:hover { background: var(--rule); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="top-bar">
+  <div class="top-bar-msg">Your answers auto-save in your browser</div>
+  <div class="top-bar-actions">
+    <button class="btn-small" onclick="document.getElementById('send-section').scrollIntoView({behavior:'smooth'})">↓ Jump to send</button>
+    <button class="btn-small" onclick="clearAll()">Clear my answers</button>
+  </div>
+</div>
+
+<header>
+  <div class="preheader">Apollo Marketing · AIO Research</div>
+  <h1>Quick — what we need from you to finish your AIO Research</h1>
+  <p class="subtitle">For Brook Borup (My Clone Solution) · Memory Lane Cottage™ at Tampa Palms</p>
+  <p class="meta-line">Prepared: September 22, 2026 · Read time: ~15 minutes · Some answers may need Kelly or the owners</p>
+</header>
+
+<div class="intro-callout">
+  <p>Your AIO Research package is being built right now: the analysis report, the schema package, the 50 FAQs, the entity chain document, the deploy guide, and installation on your site.</p>
+  <p>A few things only the Cottage can answer. There are three short sections below. Fill in what you can and skip anything you&#x27;d rather not publish.</p>
+  <p><strong>How to send your answers:</strong> at the bottom, press “Compile my answers”, then “Copy my answers”, and paste them into a reply to Sage&#x27;s email. Answers save in this browser only, so if Kelly or the owners answer some questions, forward them this link. Each person can fill in their part and send it separately.</p>
+</div>
+
+<section id="sec-data">
+  <h2><span class="num">1.</span>Details we need for your schema</h2>
+  <p class="section-intro">These go into the structured information that search engines and AI tools read about the Cottage. Leave anything blank that you&#x27;d rather we leave out.</p>
+  <div class="input-row">
+    <div class="field-label">Main public phone number</div>
+    <div class="field-note">Your website, Facebook page and state license record all show (813) 632-1270. Your Google Business Profile, which is what people see on Google Maps, shows (813) 428-3350. Which one should families call, and what is the other number for?</div>
+    <input type="text" data-save="phone" placeholder="Main number · what the other number is">
+  </div>
+  <div class="input-row">
+    <div class="field-label">Hours families can call or tour</div>
+    <div class="field-note">Your Facebook page says “Always open” and your Google profile has no hours. Care is around the clock, but when can families reach someone about moving in or book a tour?</div>
+    <input type="text" data-save="inquiry-hours" placeholder="e.g. Mon–Fri 9–5, tours by appointment">
+  </div>
+  <div class="input-row">
+    <div class="field-label">Current visiting hours</div>
+    <div class="field-note">Your visitation policy (dated May 2022) covers essential-caregiver visits of up to 8 hours a day and lobby screening, and a review on your homepage says families are always welcome. Is there a general visiting schedule, and is the 2022 policy still current?</div>
+    <input type="text" data-save="visit-hours" placeholder="Visiting hours · policy still current?">
+  </div>
+  <div class="input-row">
+    <div class="field-label">Taylor Conley and Andrew Brokenborough</div>
+    <div class="field-note">Your About page has 2023 bios for Taylor Conley (family caregiver focus) and Andrew Brokenborough (behind the Regional Support card). Are they both still with the Cottage, what are their roles, and is Taylor the caregiver consultant?</div>
+    <input type="text" data-save="team" placeholder="Taylor: role · Andrew: role · or no longer with us">
+  </div>
+  <div class="input-row">
+    <div class="field-label">How Kelly should be named</div>
+    <div class="field-note">Your About page says “Kelly Irish, Executive Director.” The state record lists the administrator as Kelly Jean Irish O’Keefe. Which name and title should we use?</div>
+    <input type="text" data-save="kelly-name" placeholder="e.g. Kelly Irish, Executive Director">
+  </div>
+  <div class="input-row">
+    <div class="field-label">OK to say you accept the Medicaid waiver, VA benefits and insurance?</div>
+    <div class="field-note">The state&#x27;s facility profile lists all three, but your website doesn&#x27;t mention them. Families ask AI tools about this directly (it&#x27;s one of the gaps we found). Yes / no for each, plus any wording you want.</div>
+    <input type="text" data-save="payment-publish" placeholder="Medicaid waiver: yes/no · VA: yes/no · Insurance: yes/no">
+  </div>
+  <div class="input-row">
+    <div class="field-label">Pricing on the website</div>
+    <div class="field-note">Should the FAQs give a starting monthly price, say “call us for current pricing”, or not mention price?</div>
+    <input type="text" data-save="pricing-publish" placeholder="Starting price $___ · or &#x27;call us&#x27; · or leave out">
+  </div>
+  <div class="input-row">
+    <div class="field-label">A respite page on the site</div>
+    <div class="field-note">Respite stays are one of your biggest AI gaps: 0 of 6 answers mention you. Will a respite page or section be added, and who builds it (Mayank)? If you already know the web address, add it.</div>
+    <input type="text" data-save="respite-page" placeholder="Yes/no · who · URL if known">
+  </div>
+  <div class="input-row">
+    <div class="field-label">Directory listings with a different address</div>
+    <div class="field-note">Caring.com shows your address as 4100 E. Fletcher Ave. Is that an old location or a mistake? (Fixing directory listings is not part of this package; we&#x27;re just flagging it.)</div>
+    <input type="text" data-save="directory-address" placeholder="Old location / mistake / not sure">
+  </div>
+</section>
+
+<section id="sec-faqs">
+  <h2><span class="num">2.</span>FAQ answers only the Cottage can give</h2>
+  <p class="section-intro">We drafted 50 FAQs from what families actually search for and from what your website and state record already say. These gaps need facts from you; we won&#x27;t guess about care, prices or policies. Short notes are fine, and we&#x27;ll write them up in your voice.</p>
+  <div class="open-q">
+    <div class="q-text">Respite stays: the shortest and longest stay you offer, and whether a stay can be extended.</div>
+    <div class="q-why">Families ask this first. Without an answer, AI tools send them to places that publish it.</div>
+    <textarea data-save="respite-length" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Respite stays: how a family arranges one. Is there an assessment, paperwork, notice needed, and how are openings checked?</div>
+    <div class="q-why">Turns “we offer respite” into an answer a family can act on.</div>
+    <textarea data-save="respite-booking" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Respite stays: what&#x27;s included (room, meals, activities, care), what to bring, and how medications are handed over.</div>
+    <div class="q-why">Helps families prepare and answers the “what&#x27;s it like” questions.</div>
+    <textarea data-save="respite-included" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Respite stays: the rate (daily or weekly), any deposit, and anything billed separately. Or “call us for rates.”</div>
+    <div class="q-why">“How much does a week of respite care cost?” is a question Google shows for respite searches.</div>
+    <textarea data-save="respite-cost" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Moving in: how you decide whether someone is a good fit, and what the assessment and paperwork involve.</div>
+    <div class="q-why">Answers “how do you decide whether my parent can move in?”</div>
+    <textarea data-save="admission" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">When care needs change: beyond the therapy and hospice services your site mentions, what happens as needs increase, and when would someone need a different setting?</div>
+    <div class="q-why">Your site lists therapy “as needed”, hospice “when needed” and no add-on fees for levels of care. Families want to know where the limits are.</div>
+    <textarea data-save="needs-change" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Staffing: who is on duty overnight, and your typical staff-to-resident ratio (day and night).</div>
+    <div class="q-why">One of your Kudos reviews praises the staff-to-resident ratio. Giving the actual numbers makes that praise concrete.</div>
+    <textarea data-save="staffing" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Monthly fee: what&#x27;s included and what isn&#x27;t, private-pay billing (monthly? deposit?), and notice before rate changes.</div>
+    <div class="q-why">Answers the payment questions without anyone having to guess.</div>
+    <textarea data-save="fees" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Insurance / HMO: which plans or programs you work with, if any, and what they typically cover.</div>
+    <div class="q-why">The state profile lists insurance/HMO. Families will ask which plans.</div>
+    <textarea data-save="insurance-plans" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Caregiver consulting: can families whose loved one lives elsewhere use it? What does it cost, is it by phone, video or in person, and how long is a session?</div>
+    <div class="q-why">Family caregiver support is your other big gap: 0 of 6 AI answers mention you, though you offer it.</div>
+    <textarea data-save="caregiver-consulting" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Tours: how to book one, and the times you offer.</div>
+    <div class="q-why">Turns interest into a visit.</div>
+    <textarea data-save="tours" placeholder="Your answer..."></textarea>
+  </div>
+  <div class="open-q">
+    <div class="q-text">Family updates: how often families hear from you, who their contact is, and options for relatives who live out of town.</div>
+    <div class="q-why">A common worry for adult children who live far away.</div>
+    <textarea data-save="family-updates" placeholder="Your answer..."></textarea>
+  </div>
+</section>
+
+<section id="sec-confirms">
+  <h2><span class="num">3.</span>A few quick decisions</h2>
+  <p class="section-intro">Three choices that shape how the package gets onto your site.</p>
+  <div class="confirm-card" data-mark="deploy-route">
+    <div class="confirm-q">How the schema gets installed on your site</div>
+    <div class="confirm-detail">
+      Your $297 package includes done-for-you installation. Your site is maintained by My Clone (Mayank), so there are two ways to do it:
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="deploy-route" value="apollo-zoom" data-save="deploy-route"><span>Apollo installs it live on a Zoom call (Mayank or Brook watching)</span></label>
+      <label><input type="radio" name="deploy-route" value="mayank-installs" data-save="deploy-route"><span>Mayank installs it from our guide, and Apollo checks it live afterwards</span></label>
+      <label><input type="radio" name="deploy-route" value="talk" data-save="deploy-route"><span>Let&#x27;s talk it through</span></label>
+    </div>
+    <div class="confirm-note" data-for="deploy-route"><label>Your note:</label><input type="text" data-save="deploy-route-note" placeholder="..."></div>
+  </div>
+  <div class="confirm-card" data-mark="faq-placement">
+    <div class="confirm-q">Where the FAQs show on the site</div>
+    <div class="confirm-detail">
+      Structured FAQ answers only count when the same questions and answers are visible on the page. We&#x27;ve drafted 50, grouped for these pages: About, a new Respite page, a new FAQ page, Caregiver Support, Resources and Visitation Policy. Adding the visible text to those pages is website content work.
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="faq-placement" value="mayank-builds" data-save="faq-placement"><span>Mayank adds the visible FAQ sections to those pages</span></label>
+      <label><input type="radio" name="faq-placement" value="one-page" data-save="faq-placement"><span>Put them all on one new FAQ page</span></label>
+      <label><input type="radio" name="faq-placement" value="talk" data-save="faq-placement"><span>Let&#x27;s talk it through</span></label>
+    </div>
+    <div class="confirm-note" data-for="faq-placement"><label>Your note:</label><input type="text" data-save="faq-placement-note" placeholder="..."></div>
+  </div>
+  <div class="confirm-card" data-mark="general-faqs">
+    <div class="confirm-q">The 10 general “choosing memory care” FAQs</div>
+    <div class="confirm-detail">
+      Ten of the FAQs answer general questions families search for (when is it time for memory care, assisted living vs memory care, touring tips). They&#x27;re written in your voice, avoid medical advice, and suggest talking with the family&#x27;s physician. Here&#x27;s one:
+      <div class="quote">Q. What is the difference between assisted living and memory care?<br><br>A. We explain assisted living as residential support with everyday tasks, while memory care typically adds a focus on the needs of people living with dementia. Memory care may be provided within an assisted living setting. Compare the actual staffing, environment, and services, and ask your loved one's physician about medical needs.</div>
+    </div>
+    <div class="confirm-options">
+      <label><input type="radio" name="general-faqs" value="keep" data-save="general-faqs"><span>Keep this style</span></label>
+      <label><input type="radio" name="general-faqs" value="edit" data-save="general-faqs"><span>Change the tone:</span></label>
+    </div>
+    <div class="confirm-note" data-for="general-faqs"><label>Your note:</label><input type="text" data-save="general-faqs-note" placeholder="..."></div>
+  </div>
+</section>
+
+<section id="send-section">
+  <div class="send-zone">
+    <h3>Send back to Apollo</h3>
+    <p>Press the button to gather your answers. Then copy them and paste into a reply to Sage&#x27;s email (sage.harper@apollollc.com). Partial answers are fine; send what you have.</p>
+    <div class="send-actions">
+      <button class="btn-primary" onclick="compileAnswers()">📋 Compile my answers</button>
+    </div>
+    <div class="send-output" id="send-output">
+      <p style="color: #d8d4cd; font-size: 13px; margin-top: 14px;">Your answers, ready to send:</p>
+      <textarea id="send-text" readonly></textarea>
+      <div class="post-actions">
+        <button class="btn-primary" onclick="copyToClipboard()">📋 Copy my answers</button>
+        <button class="btn-secondary" onclick="openEmail()">✉ Or open a new email (desktop email apps only)</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Apollo Marketing · Questions? Just reply to the email this link came in.</p>
+</footer>
+
+</div>
+
+<div class="save-notice" id="save-notice">✓ Saved</div>
+<script>
+const STORAGE_KEY = 'aio-input-memory-lane-cottage-2026-09-17';
+const RECIPIENT_EMAIL = 'sage.harper@apollollc.com';
+
+window.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  attachListeners();
+  document.querySelectorAll('input[type="radio"]:checked').forEach(input => toggleConfirmNote(input));
+});
+
+function loadState() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch (e) { saved = {}; }
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (!saved[key]) return;
+    if (el.type === 'radio') {
+      if (el.value === saved[key]) el.checked = true;
+    } else {
+      el.value = saved[key];
+    }
+  });
+}
+
+function saveState() {
+  const state = {};
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const key = el.dataset.save;
+    if (el.type === 'radio') {
+      if (el.checked) state[key] = el.value;
+    } else {
+      if (el.value) state[key] = el.value;
+    }
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  showSaveNotice();
+}
+
+function attachListeners() {
+  document.querySelectorAll('[data-save]').forEach(el => {
+    const event = el.type === 'radio' ? 'change' : 'input';
+    el.addEventListener(event, (e) => {
+      if (e.target.type === 'radio') toggleConfirmNote(e.target);
+      saveState();
+    });
+  });
+}
+
+function toggleConfirmNote(radio) {
+  const note = document.querySelector(`.confirm-note[data-for="${radio.name}"]`);
+  if (!note) return;
+  // Show note input whenever user picked an option that needs free-text follow-up
+  const needsNote = ['edit', 'edit-line', 'rewrite', 'name', 'talk'].includes(radio.value);
+  if (needsNote) note.classList.add('show');
+  else note.classList.remove('show');
+}
+
+function clearAll() {
+  
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('[data-save]').forEach(el => {
+    if (el.type === 'radio') el.checked = false;
+    else el.value = '';
+  });
+  document.querySelectorAll('.confirm-note').forEach(n => n.classList.remove('show'));
+  document.getElementById('send-output').classList.remove('show');
+}
+
+let saveTimer;
+function showSaveNotice() {
+  const n = document.getElementById('save-notice');
+  n.classList.add('show');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => n.classList.remove('show'), 800);
+}
+
+function getVal(key) {
+  const el = document.querySelector(`[data-save="${key}"]`);
+  return el ? (el.value || '').trim() : '';
+}
+function getMark(name) {
+  const sel = document.querySelector(`input[name="${name}"]:checked`);
+  return sel ? sel.value : null;
+}
+
+function compileAnswers() {
+  const lines = [];
+  lines.push('Answers for AIO Research — Memory Lane Cottage at Tampa Palms');
+  lines.push('Sent ' + new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}));
+  lines.push('='.repeat(56));
+  lines.push('');
+  lines.push('SCHEMA DETAILS');
+  const fields = [["Main public phone number", "phone"], ["Hours families can call or tour", "inquiry-hours"], ["Current visiting hours", "visit-hours"], ["Taylor Conley and Andrew Brokenborough", "team"], ["How Kelly should be named", "kelly-name"], ["OK to say you accept the Medicaid waiver, VA benefits and insurance?", "payment-publish"], ["Pricing on the website", "pricing-publish"], ["A respite page on the site", "respite-page"], ["Directory listings with a different address", "directory-address"]];
+  fields.forEach(([label, key]) => { const v = getVal(key); lines.push(`- ${label}: ${v || '(skip)'}`); });
+  lines.push('');
+  lines.push('FAQ ANSWERS');
+  const qs = [["Respite stays: the shortest and longest stay you offer, and whether a stay can be extended.", "respite-length"], ["Respite stays: how a family arranges one. Is there an assessment, paperwork, notice needed, and how are openings checked?", "respite-booking"], ["Respite stays: what's included (room, meals, activities, care), what to bring, and how medications are handed over.", "respite-included"], ["Respite stays: the rate (daily or weekly), any deposit, and anything billed separately. Or “call us for rates.”", "respite-cost"], ["Moving in: how you decide whether someone is a good fit, and what the assessment and paperwork involve.", "admission"], ["When care needs change: beyond the therapy and hospice services your site mentions, what happens as needs increase, and when would someone need a different setting?", "needs-change"], ["Staffing: who is on duty overnight, and your typical staff-to-resident ratio (day and night).", "staffing"], ["Monthly fee: what's included and what isn't, private-pay billing (monthly? deposit?), and notice before rate changes.", "fees"], ["Insurance / HMO: which plans or programs you work with, if any, and what they typically cover.", "insurance-plans"], ["Caregiver consulting: can families whose loved one lives elsewhere use it? What does it cost, is it by phone, video or in person, and how long is a session?", "caregiver-consulting"], ["Tours: how to book one, and the times you offer.", "tours"], ["Family updates: how often families hear from you, who their contact is, and options for relatives who live out of town.", "family-updates"]];
+  let any = false;
+  qs.forEach(([q, key]) => { const a = getVal(key); if (a) { lines.push('Q: ' + q); lines.push('A: ' + a); lines.push(''); any = true; } });
+  if (!any) { lines.push('(skipped for now)'); lines.push(''); }
+  lines.push('DECISIONS');
+  const confirms = [["How the schema gets installed on your site", "deploy-route", {"apollo-zoom": "Apollo installs it live on a Zoom call (Mayank or Brook watching)", "mayank-installs": "Mayank installs it from our guide, and Apollo checks it live afterwards", "talk": "Let's talk it through"}], ["Where the FAQs show on the site", "faq-placement", {"mayank-builds": "Mayank adds the visible FAQ sections to those pages", "one-page": "Put them all on one new FAQ page", "talk": "Let's talk it through"}], ["The 10 general “choosing memory care” FAQs", "general-faqs", {"keep": "Keep this style", "edit": "Change the tone:"}]];
+  confirms.forEach(([label, key, map]) => { const m = getMark(key); lines.push(`- ${label}: ${m ? map[m] : '(not marked)'}`); const note = getVal(key + '-note'); if (note) lines.push('    note: ' + note); });
+  lines.push('');
+  lines.push('— Add anything else you want us to know.');
+  const text = lines.join('\n');
+  document.getElementById('send-text').value = text;
+  document.getElementById('send-output').classList.add('show');
+  document.getElementById('send-output').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function openEmail() {
+  const body = document.getElementById('send-text').value;
+  const subject = 'AIO Research — answers for Memory Lane Cottage';
+  const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
+
+function copyToClipboard() {
+  const textarea = document.getElementById('send-text');
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    copiedNotice();
+  }).catch(() => {
+    textarea.select();
+    document.execCommand('copy');
+    copiedNotice();
+  });
+}
+function copiedNotice() {
+  const n = document.getElementById('save-notice');
+  n.textContent = '✓ Copied. Now paste into a reply to Sage\'s email.';
+  n.classList.add('show');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => { n.classList.remove('show'); n.textContent = '✓ Saved'; }, 4000);
+}
+</script>
+</body>
+</html>
