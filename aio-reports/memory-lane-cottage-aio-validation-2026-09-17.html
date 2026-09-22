@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>What we need from you — Memory Lane Cottage AIO Research</title>
+<title>Confirm or correct — Memory Lane Cottage AIO Research</title>
 <style>
 :root {
   --apollo-orange: #C56B3F;
@@ -40,39 +40,28 @@ h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em
 h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
 .section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
 
-/* Input fields (Section 1) */
-.input-row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
-.input-row .field-label { font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-.input-row .field-note { font-size: 13px; color: var(--ink-muted); font-style: italic; margin-bottom: 8px; }
-.input-row input[type="text"] { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; font-family: inherit; font-size: 14px; }
-.input-row input[type="text"]:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
-.input-row.optional .field-label::after { content: " (optional)"; color: var(--ink-muted); font-weight: 400; font-size: 13px; font-style: italic; }
+/* Confirm-or-correct rows (Section 1) */
+.row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.row.needs { background: var(--warn-soft); border-color: #f0d99a; border-left: 4px solid var(--warn); }
+.row .label { font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: var(--warn); color: #fff; }
+.badge.ok { background: var(--bg-soft); color: var(--ink-muted); border: 1px solid var(--rule); }
+.row .use { margin: 6px 0 4px; font-size: 15px; }
+.row .use b { color: var(--good); font-weight: 600; }
+.row .why { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 8px; }
+.row input[type="text"], .row textarea { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 12px; font-family: inherit; font-size: 14px; background: #fff; }
+.row textarea { min-height: 64px; resize: vertical; }
+.row input[type="text"]:focus, .row textarea:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.row.needs input[type="text"]:focus, .row.needs textarea:focus { outline-color: var(--warn); }
+.row .default { font-size: 13px; color: var(--ink-muted); margin-top: 6px; }
 
-/* Open FAQ questions (Section 2) */
-.open-q { background: var(--warn-soft); border: 1px solid #f0d99a; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; }
-.open-q .q-text { font-weight: 600; font-size: 15px; }
-.open-q .q-why { font-size: 13px; color: var(--ink-soft); margin-top: 6px; font-style: italic; }
-.open-q textarea { width: 100%; border: 1px solid #d9b96d; border-radius: 4px; padding: 10px 12px; margin-top: 10px; min-height: 70px; font-family: inherit; font-size: 14px; background: #fff; resize: vertical; }
-.open-q textarea:focus { outline: 2px solid var(--warn); outline-offset: -1px; }
-
-/* Micro-confirmations (Section 3) */
-.confirm-card { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; margin: 12px 0; }
-.confirm-card .confirm-q { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
-.confirm-card .confirm-detail { font-size: 14px; color: var(--ink-soft); margin: 6px 0 12px; }
-.confirm-card .confirm-detail .quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; }
-.confirm-options { display: flex; flex-wrap: wrap; gap: 8px; }
-.confirm-options label {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px;
-  padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; transition: all 0.15s;
-}
-.confirm-options label:hover { border-color: var(--ink-muted); }
-.confirm-options input[type="radio"] { margin: 0; }
-.confirm-options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
-.confirm-note { margin-top: 10px; display: none; }
-.confirm-note.show { display: block; }
-.confirm-note label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
-.confirm-note input { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; font-family: inherit; font-size: 14px; }
+/* Choices (Section 3) */
+.options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.options label { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px; padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; }
+.options label:hover { border-color: var(--ink-muted); }
+.options input[type="radio"] { margin: 0; }
+.options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; font-size: 14px; }
 
 /* Send zone */
 .send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
@@ -83,18 +72,14 @@ h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
 .btn-primary:hover { background: var(--apollo-orange-dark); }
 .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
-
 .send-output { display: none; margin-top: 16px; }
 .send-output.show { display: block; }
 .send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
 .send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 
 footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
-
 .save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
 .save-notice.show { opacity: 1; }
-
-/* Sticky top bar */
 .top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
 .top-bar .top-bar-msg { color: var(--ink-soft); }
 .top-bar .top-bar-actions { display: flex; gap: 8px; }
@@ -115,177 +100,193 @@ footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule);
 
 <header>
   <div class="preheader">Apollo Marketing · AIO Research</div>
-  <h1>Quick — what we need from you to finish your AIO Research</h1>
+  <h1>Here&#x27;s what we&#x27;re about to publish about the Cottage. Confirm or correct.</h1>
   <p class="subtitle">For Brook Borup (My Clone Solution) · Memory Lane Cottage™ at Tampa Palms</p>
-  <p class="meta-line">Prepared: September 22, 2026 · Read time: ~15 minutes · Some answers may need Kelly or the owners</p>
+  <p class="meta-line">Prepared: September 22, 2026 · About 10 minutes · The items marked <span class="badge">Needs you</span> are the ones we can&#x27;t answer from your website</p>
 </header>
 
 <div class="intro-callout">
-  <p>Your AIO Research package is being built right now: the analysis report, the schema package, the 50 FAQs, the entity chain document, the deploy guide, and installation on your site.</p>
-  <p>A few things only the Cottage can answer. There are three short sections below. Fill in what you can and skip anything you&#x27;d rather not publish.</p>
-  <p><strong>How to send your answers:</strong> at the bottom, press “Compile my answers”, then “Copy my answers”, and paste them into a reply to Sage&#x27;s email. Answers save in this browser only, so if Kelly or the owners answer some questions, forward them this link. Each person can fill in their part and send it separately.</p>
+  <p>Your AIO Research package tells Google and AI assistants (ChatGPT, Gemini, Google&#x27;s AI answers) the facts about Memory Lane Cottage in a form they can read and repeat. Only facts you&#x27;re comfortable publishing go in; anything you don&#x27;t confirm stays out.</p>
+  <p>Below is what we&#x27;ll publish, filled in from your website. Most items just need a nod. Where we found nothing on your site, we&#x27;ve written what we&#x27;ll say if you leave it blank, so a blank is a safe answer too.</p>
+  <p><strong>To send:</strong> press “Compile my answers” at the bottom, copy, and paste into a reply to Sage&#x27;s email. If Kelly or the owners hold some answers, forward them this link; each person can send their part separately.</p>
 </div>
 
-<section id="sec-data">
-  <h2><span class="num">1.</span>Details we need for your schema</h2>
-  <p class="section-intro">These go into the structured information that search engines and AI tools read about the Cottage. Leave anything blank that you&#x27;d rather we leave out.</p>
-  <div class="input-row">
-    <div class="field-label">Main public phone number</div>
-    <div class="field-note">Your website, Facebook page and state license record all show (813) 632-1270. Your Google Business Profile, which is what people see on Google Maps, shows (813) 428-3350. Which one should families call, and what is the other number for?</div>
-    <input type="text" data-save="phone" placeholder="Main number · what the other number is">
+<section id="sec-facts">
+  <h2><span class="num">1.</span>The facts we&#x27;ll publish</h2>
+  <p class="section-intro">Each line shows what we&#x27;ll use. Leave the box empty if it&#x27;s right; type the correction if it isn&#x27;t.</p>
+
+  <div class="row">
+    <div class="label">Business name <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll use: <b>Memory Lane Cottage™ at Tampa Palms</b>, with the licensed name <b>Memory Lane Cottage at Tampa Palms, LLC</b> behind it.</div>
+    <div class="why">Your site shows the ™ mark. If the name is federally registered (®), tell us and we&#x27;ll use that instead.</div>
+    <input type="text" data-save="name" placeholder="Leave blank if this is right">
   </div>
-  <div class="input-row">
-    <div class="field-label">Hours families can call or tour</div>
-    <div class="field-note">Your Facebook page says “Always open” and your Google profile has no hours. Care is around the clock, but when can families reach someone about moving in or book a tour?</div>
-    <input type="text" data-save="inquiry-hours" placeholder="e.g. Mon–Fri 9–5, tours by appointment">
+
+  <div class="row">
+    <div class="label">Address <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll publish: <b>5175 Cypress Preserve Drive, Tampa, FL 33647</b>.</div>
+    <input type="text" data-save="address" placeholder="Leave blank if this is right">
   </div>
-  <div class="input-row">
-    <div class="field-label">Current visiting hours</div>
-    <div class="field-note">Your visitation policy (dated May 2022) covers essential-caregiver visits of up to 8 hours a day and lobby screening, and a review on your homepage says families are always welcome. Is there a general visiting schedule, and is the 2022 policy still current?</div>
-    <input type="text" data-save="visit-hours" placeholder="Visiting hours · policy still current?">
+
+  <div class="row needs">
+    <div class="label">Phone number families should call <span class="badge">Needs you</span></div>
+    <div class="use">We&#x27;ll use: <b>(813) 632-1270</b>, the number on your website, Facebook page and state license record.</div>
+    <div class="why">Your Google listing (what people see on Google Maps) shows (813) 428-3350. AI assistants read both and may pick either. If 428-3350 is the one families should call, say so. Either way the report will note the mismatch so it can be set straight.</div>
+    <input type="text" data-save="phone" placeholder="Blank = 632-1270 · or tell us which number and what the other one is for">
   </div>
-  <div class="input-row">
-    <div class="field-label">Taylor Conley and Andrew Brokenborough</div>
-    <div class="field-note">Your About page has 2023 bios for Taylor Conley (family caregiver focus) and Andrew Brokenborough (behind the Regional Support card). Are they both still with the Cottage, what are their roles, and is Taylor the caregiver consultant?</div>
-    <input type="text" data-save="team" placeholder="Taylor: role · Andrew: role · or no longer with us">
+
+  <div class="row needs">
+    <div class="label">When families can reach you <span class="badge">Needs you</span></div>
+    <div class="use">If you leave this blank we&#x27;ll write: <b>“Care is provided around the clock. To ask about availability or arrange a tour, call (813) 632-1270.”</b> and publish no hours.</div>
+    <div class="why">Neither your website nor your Google listing gives office hours; Facebook says “Always open.” Families asking an AI assistant “when can I call?” get nothing today.</div>
+    <input type="text" data-save="hours" placeholder="e.g. Mon–Fri 9–5, tours by appointment · or leave blank">
   </div>
-  <div class="input-row">
-    <div class="field-label">How Kelly should be named</div>
-    <div class="field-note">Your About page says “Kelly Irish, Executive Director.” The state record lists the administrator as Kelly Jean Irish O’Keefe. Which name and title should we use?</div>
-    <input type="text" data-save="kelly-name" placeholder="e.g. Kelly Irish, Executive Director">
+
+  <div class="row">
+    <div class="label">Logo <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll use the logo already on your site: <a href="https://memorylanecottage.com/wp-content/uploads/2023/09/Memory-Lane-Cottage-1-1.png" target="_blank" rel="noopener">Memory-Lane-Cottage-1-1.png</a>.</div>
+    <input type="text" data-save="logo" placeholder="Leave blank, or paste a link to a preferred version">
   </div>
-  <div class="input-row">
-    <div class="field-label">OK to say you accept the Medicaid waiver, VA benefits and insurance?</div>
-    <div class="field-note">The state&#x27;s facility profile lists all three, but your website doesn&#x27;t mention them. Families ask AI tools about this directly (it&#x27;s one of the gaps we found). Yes / no for each, plus any wording you want.</div>
-    <input type="text" data-save="payment-publish" placeholder="Medicaid waiver: yes/no · VA: yes/no · Insurance: yes/no">
+
+  <div class="row">
+    <div class="label">Executive Director <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll name: <b>Kelly Irish, Executive Director</b>, exactly as your About page has it.</div>
+    <input type="text" data-save="kelly" placeholder="Leave blank if this is right">
   </div>
-  <div class="input-row">
-    <div class="field-label">Pricing on the website</div>
-    <div class="field-note">Should the FAQs give a starting monthly price, say “call us for current pricing”, or not mention price?</div>
-    <input type="text" data-save="pricing-publish" placeholder="Starting price $___ · or &#x27;call us&#x27; · or leave out">
+
+  <div class="row">
+    <div class="label">Other team members <span class="badge ok">Our default: leave out</span></div>
+    <div class="use">Your About page also has 2023 bios for Taylor Conley and Andrew Brokenborough. We&#x27;ll name only Kelly in the published data unless you tell us those two are current and should be included, with their titles.</div>
+    <input type="text" data-save="team" placeholder="Blank = Kelly only · or 'Taylor: <title> · Andrew: <title>'">
   </div>
-  <div class="input-row">
-    <div class="field-label">A respite page on the site</div>
-    <div class="field-note">Respite stays are one of your biggest AI gaps: 0 of 6 answers mention you. Will a respite page or section be added, and who builds it (Mayank)? If you already know the web address, add it.</div>
-    <input type="text" data-save="respite-page" placeholder="Yes/no · who · URL if known">
+
+  <div class="row">
+    <div class="label">License <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll state: <b>Florida Assisted Living Facility License #12675</b>, issued by the Agency for Health Care Administration.</div>
+    <input type="text" data-save="license" placeholder="Leave blank if this is right">
   </div>
-  <div class="input-row">
-    <div class="field-label">Directory listings with a different address</div>
-    <div class="field-note">Caring.com shows your address as 4100 E. Fletcher Ave. Is that an old location or a mistake? (Fixing directory listings is not part of this package; we&#x27;re just flagging it.)</div>
-    <input type="text" data-save="directory-address" placeholder="Old location / mistake / not sure">
+
+  <div class="row">
+    <div class="label">Resident and family reviews <span class="badge ok">Our default: keep anonymous</span></div>
+    <div class="use">Your Kudos page reviews are unsigned. We&#x27;ll keep them that way, which means the package makes <b>no star-rating claim</b> (Google only allows ratings from named, independent sources).</div>
+    <input type="text" data-save="reviews" placeholder="Blank = keep anonymous · or tell us which reviews may carry a name">
+  </div>
+
+  <div class="row needs">
+    <div class="label">Ways to pay <span class="badge">Needs you</span></div>
+    <div class="use">If you leave this blank we&#x27;ll <b>say nothing about payment types</b>.</div>
+    <div class="why">Your website doesn&#x27;t mention the Medicaid waiver, VA benefits or insurance, but the state&#x27;s public facility profile lists all three, and “does memory care near me take Medicaid / VA?” is one of the questions families put to AI assistants where no answer names the Cottage. A yes on any of these gets it into the FAQs.</div>
+    <input type="text" data-save="payment" placeholder="Medicaid waiver: yes/no · VA benefits: yes/no · Insurance: yes/no">
+  </div>
+
+  <div class="row">
+    <div class="label">Pricing <span class="badge ok">Our default: “call us”</span></div>
+    <div class="use">If you leave this blank we&#x27;ll write: <b>“Call (813) 632-1270 for current pricing.”</b></div>
+    <input type="text" data-save="pricing" placeholder="Blank = 'call us' · or a starting monthly price you're happy to publish">
+  </div>
+
+  <div class="row">
+    <div class="label">Parent or management company <span class="badge ok">Our default: none listed</span></div>
+    <div class="use">We&#x27;ll publish the Cottage as its own business, with no parent or management company named.</div>
+    <input type="text" data-save="parent" placeholder="Blank = none · or the company name you'd like shown">
+  </div>
+
+  <div class="row">
+    <div class="label">Profiles we&#x27;ll link together <span class="badge ok">From your site</span></div>
+    <div class="use">We&#x27;ll connect your website with your <b>Facebook page</b>, <b>LinkedIn page</b> and <b>Google Business Profile</b> so AI assistants treat them as one business.</div>
+    <input type="text" data-save="links" placeholder="Leave blank, or list any old website address or profile we should NOT connect">
+  </div>
+
+  <div class="row">
+    <div class="label">Press or news coverage <span class="badge ok">Our default: none</span></div>
+    <div class="use">We found no news coverage to cite. If the Cottage has been written up anywhere (local news, a senior-living publication), paste the links.</div>
+    <input type="text" data-save="press" placeholder="Blank = none · or paste links">
   </div>
 </section>
 
-<section id="sec-faqs">
-  <h2><span class="num">2.</span>FAQ answers only the Cottage can give</h2>
-  <p class="section-intro">We drafted 50 FAQs from what families actually search for and from what your website and state record already say. These gaps need facts from you; we won&#x27;t guess about care, prices or policies. Short notes are fine, and we&#x27;ll write them up in your voice.</p>
-  <div class="open-q">
-    <div class="q-text">Respite stays: the shortest and longest stay you offer, and whether a stay can be extended.</div>
-    <div class="q-why">Families ask this first. Without an answer, AI tools send them to places that publish it.</div>
-    <textarea data-save="respite-length" placeholder="Your answer..."></textarea>
+<section id="sec-voice">
+  <h2><span class="num">2.</span>Answers only the Cottage can give</h2>
+  <p class="section-intro">These are questions families put to AI assistants where today no answer names the Cottage, because your website doesn&#x27;t cover them. A few plain sentences from you become the answer, in your voice. Under each one is what we&#x27;ll write if you leave it blank.</p>
+
+  <div class="row needs">
+    <div class="label">Respite stays: how long, and how a family arranges one <span class="badge">Needs you</span></div>
+    <div class="why">“Short-term respite care near me” is the biggest gap we found: none of the AI answers mention you. Your site doesn&#x27;t mention respite at all, so we can&#x27;t say more than the state profile does.</div>
+    <textarea data-save="respite-how" placeholder="Shortest and longest stay · whether it can be extended · how to arrange one (call, assessment, notice)"></textarea>
+    <div class="default">Blank = “Short-term respite stays are available. Call (813) 632-1270 for availability and how to arrange one.”</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Respite stays: how a family arranges one. Is there an assessment, paperwork, notice needed, and how are openings checked?</div>
-    <div class="q-why">Turns “we offer respite” into an answer a family can act on.</div>
-    <textarea data-save="respite-booking" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">Respite stays: what&#x27;s included and what it costs <span class="badge">Needs you</span></div>
+    <textarea data-save="respite-what" placeholder="Room, meals, activities, care · what to bring · daily or weekly rate, or 'call for rates'"></textarea>
+    <div class="default">Blank = “A respite stay includes the same care, meals and activities as our residents; call for current rates.”</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Respite stays: what&#x27;s included (room, meals, activities, care), what to bring, and how medications are handed over.</div>
-    <div class="q-why">Helps families prepare and answers the “what&#x27;s it like” questions.</div>
-    <textarea data-save="respite-included" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">Moving in: how you decide someone is a good fit <span class="badge">Needs you</span></div>
+    <div class="why">Families ask “how do you decide whether my parent can move in?” Your site invites a call but doesn&#x27;t describe the steps.</div>
+    <textarea data-save="admission" placeholder="Assessment, paperwork, who's involved, how long it takes"></textarea>
+    <div class="default">Blank = “Every move-in begins with a personal assessment so we can be sure the Cottage is the right fit. Call to start the conversation.”</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Respite stays: the rate (daily or weekly), any deposit, and anything billed separately. Or “call us for rates.”</div>
-    <div class="q-why">“How much does a week of respite care cost?” is a question Google shows for respite searches.</div>
-    <textarea data-save="respite-cost" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">When care needs increase <span class="badge">Needs you</span></div>
+    <div class="why">Your site says therapy “as needed,” hospice “when needed,” and no added fees for levels of care. Families want to know where the limits are.</div>
+    <textarea data-save="needs-change" placeholder="What changes as needs grow · when someone would need a different setting"></textarea>
+    <div class="default">Blank = we repeat what your site says and stop there.</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Moving in: how you decide whether someone is a good fit, and what the assessment and paperwork involve.</div>
-    <div class="q-why">Answers “how do you decide whether my parent can move in?”</div>
-    <textarea data-save="admission" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">Staffing, day and night <span class="badge">Needs you</span></div>
+    <div class="why">One of your Kudos reviews praises the staff-to-resident ratio. Real numbers make that concrete; without them we won&#x27;t state a ratio.</div>
+    <textarea data-save="staffing" placeholder="Who is on duty overnight · typical staff-to-resident ratio day and night"></textarea>
+    <div class="default">Blank = “Care staff are on site around the clock.” No ratio given.</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">When care needs change: beyond the therapy and hospice services your site mentions, what happens as needs increase, and when would someone need a different setting?</div>
-    <div class="q-why">Your site lists therapy “as needed”, hospice “when needed” and no add-on fees for levels of care. Families want to know where the limits are.</div>
-    <textarea data-save="needs-change" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">The monthly fee: what&#x27;s in it <span class="badge">Needs you</span></div>
+    <textarea data-save="fees" placeholder="What the monthly fee covers and what's billed separately · deposit · notice before rate changes"></textarea>
+    <div class="default">Blank = “One monthly fee covers care, meals and activities, with no added charges as care needs change. Call for current pricing.” (from your site)</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Staffing: who is on duty overnight, and your typical staff-to-resident ratio (day and night).</div>
-    <div class="q-why">One of your Kudos reviews praises the staff-to-resident ratio. Giving the actual numbers makes that praise concrete.</div>
-    <textarea data-save="staffing" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">Caregiver consulting for families <span class="badge">Needs you</span></div>
+    <div class="why">Family caregiver support is the other big gap: you offer it, and none of the AI answers mention you. Your Caregiver Support page describes it but not who can use it or how.</div>
+    <textarea data-save="caregiver" placeholder="Open to families whose loved one lives elsewhere? · phone, video or in person · length · cost"></textarea>
+    <div class="default">Blank = we describe it as your Caregiver Support page does and invite a call.</div>
   </div>
-  <div class="open-q">
-    <div class="q-text">Monthly fee: what&#x27;s included and what isn&#x27;t, private-pay billing (monthly? deposit?), and notice before rate changes.</div>
-    <div class="q-why">Answers the payment questions without anyone having to guess.</div>
-    <textarea data-save="fees" placeholder="Your answer..."></textarea>
-  </div>
-  <div class="open-q">
-    <div class="q-text">Insurance / HMO: which plans or programs you work with, if any, and what they typically cover.</div>
-    <div class="q-why">The state profile lists insurance/HMO. Families will ask which plans.</div>
-    <textarea data-save="insurance-plans" placeholder="Your answer..."></textarea>
-  </div>
-  <div class="open-q">
-    <div class="q-text">Caregiver consulting: can families whose loved one lives elsewhere use it? What does it cost, is it by phone, video or in person, and how long is a session?</div>
-    <div class="q-why">Family caregiver support is your other big gap: 0 of 6 AI answers mention you, though you offer it.</div>
-    <textarea data-save="caregiver-consulting" placeholder="Your answer..."></textarea>
-  </div>
-  <div class="open-q">
-    <div class="q-text">Tours: how to book one, and the times you offer.</div>
-    <div class="q-why">Turns interest into a visit.</div>
-    <textarea data-save="tours" placeholder="Your answer..."></textarea>
-  </div>
-  <div class="open-q">
-    <div class="q-text">Family updates: how often families hear from you, who their contact is, and options for relatives who live out of town.</div>
-    <div class="q-why">A common worry for adult children who live far away.</div>
-    <textarea data-save="family-updates" placeholder="Your answer..."></textarea>
+
+  <div class="row needs">
+    <div class="label">Tours and staying in touch <span class="badge">Needs you</span></div>
+    <textarea data-save="tours-updates" placeholder="How to book a tour and when · how often families hear from you and who their contact is"></textarea>
+    <div class="default">Blank = “Tours are by appointment; call (813) 632-1270. Families have a named contact at the Cottage and hear from us regularly.”</div>
   </div>
 </section>
 
-<section id="sec-confirms">
-  <h2><span class="num">3.</span>A few quick decisions</h2>
-  <p class="section-intro">Three choices that shape how the package gets onto your site.</p>
-  <div class="confirm-card" data-mark="deploy-route">
-    <div class="confirm-q">How the schema gets installed on your site</div>
-    <div class="confirm-detail">
-      Your $297 package includes done-for-you installation. Your site is maintained by My Clone (Mayank), so there are two ways to do it:
-    </div>
-    <div class="confirm-options">
-      <label><input type="radio" name="deploy-route" value="apollo-zoom" data-save="deploy-route"><span>Apollo installs it live on a Zoom call (Mayank or Brook watching)</span></label>
-      <label><input type="radio" name="deploy-route" value="mayank-installs" data-save="deploy-route"><span>Mayank installs it from our guide, and Apollo checks it live afterwards</span></label>
-      <label><input type="radio" name="deploy-route" value="talk" data-save="deploy-route"><span>Let&#x27;s talk it through</span></label>
-    </div>
-    <div class="confirm-note" data-for="deploy-route"><label>Your note:</label><input type="text" data-save="deploy-route-note" placeholder="..."></div>
+<section id="sec-final">
+  <h2><span class="num">3.</span>Two last things</h2>
+
+  <div class="row">
+    <div class="label">Anything you&#x27;d rather we not publish?</div>
+    <div class="why">Anything above, or anything on your website, that should stay out of what AI assistants repeat.</div>
+    <input type="text" data-save="omit" placeholder="Blank = nothing to leave out">
   </div>
-  <div class="confirm-card" data-mark="faq-placement">
-    <div class="confirm-q">Where the FAQs show on the site</div>
-    <div class="confirm-detail">
-      Structured FAQ answers only count when the same questions and answers are visible on the page. We&#x27;ve drafted 50, grouped for these pages: About, a new Respite page, a new FAQ page, Caregiver Support, Resources and Visitation Policy. Adding the visible text to those pages is website content work.
+
+  <div class="row" data-mark="tone">
+    <div class="label">The general “choosing memory care” answers</div>
+    <div class="why">Ten of the fifty FAQs answer questions families search for in general (when is it time, assisted living vs memory care, what to ask on a tour). They&#x27;re in your voice, avoid medical advice, and point families to their physician. One of them:</div>
+    <div class="quote">Q. What is the difference between assisted living and memory care?<br><br>A. We explain assisted living as residential support with everyday tasks, while memory care typically adds a focus on the needs of people living with dementia. Memory care may be provided within an assisted living setting. Compare the actual staffing, environment, and services, and ask your loved one&#x27;s physician about medical needs.</div>
+    <div class="options">
+      <label><input type="radio" name="tone" value="keep" data-save="tone"><span>Keep this style</span></label>
+      <label><input type="radio" name="tone" value="edit" data-save="tone"><span>Change it (say how below)</span></label>
     </div>
-    <div class="confirm-options">
-      <label><input type="radio" name="faq-placement" value="mayank-builds" data-save="faq-placement"><span>Mayank adds the visible FAQ sections to those pages</span></label>
-      <label><input type="radio" name="faq-placement" value="one-page" data-save="faq-placement"><span>Put them all on one new FAQ page</span></label>
-      <label><input type="radio" name="faq-placement" value="talk" data-save="faq-placement"><span>Let&#x27;s talk it through</span></label>
-    </div>
-    <div class="confirm-note" data-for="faq-placement"><label>Your note:</label><input type="text" data-save="faq-placement-note" placeholder="..."></div>
-  </div>
-  <div class="confirm-card" data-mark="general-faqs">
-    <div class="confirm-q">The 10 general “choosing memory care” FAQs</div>
-    <div class="confirm-detail">
-      Ten of the FAQs answer general questions families search for (when is it time for memory care, assisted living vs memory care, touring tips). They&#x27;re written in your voice, avoid medical advice, and suggest talking with the family&#x27;s physician. Here&#x27;s one:
-      <div class="quote">Q. What is the difference between assisted living and memory care?<br><br>A. We explain assisted living as residential support with everyday tasks, while memory care typically adds a focus on the needs of people living with dementia. Memory care may be provided within an assisted living setting. Compare the actual staffing, environment, and services, and ask your loved one's physician about medical needs.</div>
-    </div>
-    <div class="confirm-options">
-      <label><input type="radio" name="general-faqs" value="keep" data-save="general-faqs"><span>Keep this style</span></label>
-      <label><input type="radio" name="general-faqs" value="edit" data-save="general-faqs"><span>Change the tone:</span></label>
-    </div>
-    <div class="confirm-note" data-for="general-faqs"><label>Your note:</label><input type="text" data-save="general-faqs-note" placeholder="..."></div>
+    <input type="text" data-save="tone-note" placeholder="Warmer, shorter, more clinical, ..." style="margin-top:8px">
   </div>
 </section>
 
 <section id="send-section">
   <div class="send-zone">
     <h3>Send back to Apollo</h3>
-    <p>Press the button to gather your answers. Then copy them and paste into a reply to Sage&#x27;s email (sage.harper@apollollc.com). Partial answers are fine; send what you have.</p>
+    <p>Press the button to gather your answers, then copy and paste them into a reply to Sage&#x27;s email (sage.harper@apollollc.com). Blanks are fine; they mean “use the default.”</p>
     <div class="send-actions">
       <button class="btn-primary" onclick="compileAnswers()">📋 Compile my answers</button>
     </div>
@@ -308,74 +309,41 @@ footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule);
 
 <div class="save-notice" id="save-notice">✓ Saved</div>
 <script>
-const STORAGE_KEY = 'aio-input-memory-lane-cottage-2026-09-17';
+const STORAGE_KEY = 'aio-validation-memory-lane-cottage-2026-09-22';
 const RECIPIENT_EMAIL = 'sage.harper@apollollc.com';
 
-window.addEventListener('DOMContentLoaded', () => {
-  loadState();
-  attachListeners();
-  document.querySelectorAll('input[type="radio"]:checked').forEach(input => toggleConfirmNote(input));
-});
+window.addEventListener('DOMContentLoaded', () => { loadState(); attachListeners(); });
 
 function loadState() {
   let saved;
-  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
-  catch (e) { saved = {}; }
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { saved = {}; }
   document.querySelectorAll('[data-save]').forEach(el => {
     const key = el.dataset.save;
     if (!saved[key]) return;
-    if (el.type === 'radio') {
-      if (el.value === saved[key]) el.checked = true;
-    } else {
-      el.value = saved[key];
-    }
+    if (el.type === 'radio') { if (el.value === saved[key]) el.checked = true; }
+    else { el.value = saved[key]; }
   });
 }
-
 function saveState() {
   const state = {};
   document.querySelectorAll('[data-save]').forEach(el => {
     const key = el.dataset.save;
-    if (el.type === 'radio') {
-      if (el.checked) state[key] = el.value;
-    } else {
-      if (el.value) state[key] = el.value;
-    }
+    if (el.type === 'radio') { if (el.checked) state[key] = el.value; }
+    else if (el.value) { state[key] = el.value; }
   });
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   showSaveNotice();
 }
-
 function attachListeners() {
   document.querySelectorAll('[data-save]').forEach(el => {
-    const event = el.type === 'radio' ? 'change' : 'input';
-    el.addEventListener(event, (e) => {
-      if (e.target.type === 'radio') toggleConfirmNote(e.target);
-      saveState();
-    });
+    el.addEventListener(el.type === 'radio' ? 'change' : 'input', saveState);
   });
 }
-
-function toggleConfirmNote(radio) {
-  const note = document.querySelector(`.confirm-note[data-for="${radio.name}"]`);
-  if (!note) return;
-  // Show note input whenever user picked an option that needs free-text follow-up
-  const needsNote = ['edit', 'edit-line', 'rewrite', 'name', 'talk'].includes(radio.value);
-  if (needsNote) note.classList.add('show');
-  else note.classList.remove('show');
-}
-
 function clearAll() {
-  
   localStorage.removeItem(STORAGE_KEY);
-  document.querySelectorAll('[data-save]').forEach(el => {
-    if (el.type === 'radio') el.checked = false;
-    else el.value = '';
-  });
-  document.querySelectorAll('.confirm-note').forEach(n => n.classList.remove('show'));
+  document.querySelectorAll('[data-save]').forEach(el => { if (el.type === 'radio') el.checked = false; else el.value = ''; });
   document.getElementById('send-output').classList.remove('show');
 }
-
 let saveTimer;
 function showSaveNotice() {
   const n = document.getElementById('save-notice');
@@ -383,15 +351,8 @@ function showSaveNotice() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => n.classList.remove('show'), 800);
 }
-
-function getVal(key) {
-  const el = document.querySelector(`[data-save="${key}"]`);
-  return el ? (el.value || '').trim() : '';
-}
-function getMark(name) {
-  const sel = document.querySelector(`input[name="${name}"]:checked`);
-  return sel ? sel.value : null;
-}
+function getVal(key) { const el = document.querySelector(`[data-save="${key}"]:not([type="radio"])`); return el ? (el.value || '').trim() : ''; }
+function getMark(name) { const sel = document.querySelector(`input[name="${name}"]:checked`); return sel ? sel.value : null; }
 
 function compileAnswers() {
   const lines = [];
@@ -399,18 +360,20 @@ function compileAnswers() {
   lines.push('Sent ' + new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}));
   lines.push('='.repeat(56));
   lines.push('');
-  lines.push('SCHEMA DETAILS');
-  const fields = [["Main public phone number", "phone"], ["Hours families can call or tour", "inquiry-hours"], ["Current visiting hours", "visit-hours"], ["Taylor Conley and Andrew Brokenborough", "team"], ["How Kelly should be named", "kelly-name"], ["OK to say you accept the Medicaid waiver, VA benefits and insurance?", "payment-publish"], ["Pricing on the website", "pricing-publish"], ["A respite page on the site", "respite-page"], ["Directory listings with a different address", "directory-address"]];
-  fields.forEach(([label, key]) => { const v = getVal(key); lines.push(`- ${label}: ${v || '(skip)'}`); });
+  lines.push('1. FACTS (blank = use the default shown on the page)');
+  const facts = [["Business name","name"],["Address","address"],["Phone families should call","phone"],["When families can reach you","hours"],["Logo","logo"],["Executive Director","kelly"],["Other team members","team"],["License","license"],["Reviews","reviews"],["Ways to pay","payment"],["Pricing","pricing"],["Parent or management company","parent"],["Profiles to link / exclude","links"],["Press or news coverage","press"]];
+  facts.forEach(([label, key]) => { const v = getVal(key); lines.push(`- ${label}: ${v || '(default)'}`); });
   lines.push('');
-  lines.push('FAQ ANSWERS');
-  const qs = [["Respite stays: the shortest and longest stay you offer, and whether a stay can be extended.", "respite-length"], ["Respite stays: how a family arranges one. Is there an assessment, paperwork, notice needed, and how are openings checked?", "respite-booking"], ["Respite stays: what's included (room, meals, activities, care), what to bring, and how medications are handed over.", "respite-included"], ["Respite stays: the rate (daily or weekly), any deposit, and anything billed separately. Or “call us for rates.”", "respite-cost"], ["Moving in: how you decide whether someone is a good fit, and what the assessment and paperwork involve.", "admission"], ["When care needs change: beyond the therapy and hospice services your site mentions, what happens as needs increase, and when would someone need a different setting?", "needs-change"], ["Staffing: who is on duty overnight, and your typical staff-to-resident ratio (day and night).", "staffing"], ["Monthly fee: what's included and what isn't, private-pay billing (monthly? deposit?), and notice before rate changes.", "fees"], ["Insurance / HMO: which plans or programs you work with, if any, and what they typically cover.", "insurance-plans"], ["Caregiver consulting: can families whose loved one lives elsewhere use it? What does it cost, is it by phone, video or in person, and how long is a session?", "caregiver-consulting"], ["Tours: how to book one, and the times you offer.", "tours"], ["Family updates: how often families hear from you, who their contact is, and options for relatives who live out of town.", "family-updates"]];
+  lines.push('2. ANSWERS IN YOUR VOICE');
+  const qs = [["Respite stays: how long, and how a family arranges one","respite-how"],["Respite stays: what's included and what it costs","respite-what"],["Moving in: how you decide someone is a good fit","admission"],["When care needs increase","needs-change"],["Staffing, day and night","staffing"],["The monthly fee: what's in it","fees"],["Caregiver consulting for families","caregiver"],["Tours and staying in touch","tours-updates"]];
   let any = false;
   qs.forEach(([q, key]) => { const a = getVal(key); if (a) { lines.push('Q: ' + q); lines.push('A: ' + a); lines.push(''); any = true; } });
-  if (!any) { lines.push('(skipped for now)'); lines.push(''); }
-  lines.push('DECISIONS');
-  const confirms = [["How the schema gets installed on your site", "deploy-route", {"apollo-zoom": "Apollo installs it live on a Zoom call (Mayank or Brook watching)", "mayank-installs": "Mayank installs it from our guide, and Apollo checks it live afterwards", "talk": "Let's talk it through"}], ["Where the FAQs show on the site", "faq-placement", {"mayank-builds": "Mayank adds the visible FAQ sections to those pages", "one-page": "Put them all on one new FAQ page", "talk": "Let's talk it through"}], ["The 10 general “choosing memory care” FAQs", "general-faqs", {"keep": "Keep this style", "edit": "Change the tone:"}]];
-  confirms.forEach(([label, key, map]) => { const m = getMark(key); lines.push(`- ${label}: ${m ? map[m] : '(not marked)'}`); const note = getVal(key + '-note'); if (note) lines.push('    note: ' + note); });
+  if (!any) { lines.push('(all left blank — use the defaults)'); lines.push(''); }
+  lines.push('3. LAST THINGS');
+  lines.push(`- Do not publish: ${getVal('omit') || '(nothing)'}`);
+  const tone = getMark('tone');
+  lines.push(`- General FAQ style: ${tone === 'keep' ? 'Keep this style' : tone === 'edit' ? 'Change it' : '(not marked)'}`);
+  const tn = getVal('tone-note'); if (tn) lines.push('    note: ' + tn);
   lines.push('');
   lines.push('— Add anything else you want us to know.');
   const text = lines.join('\n');
@@ -418,23 +381,14 @@ function compileAnswers() {
   document.getElementById('send-output').classList.add('show');
   document.getElementById('send-output').scrollIntoView({behavior: 'smooth', block: 'start'});
 }
-
 function openEmail() {
   const body = document.getElementById('send-text').value;
   const subject = 'AIO Research — answers for Memory Lane Cottage';
-  const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
+  window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
-
 function copyToClipboard() {
   const textarea = document.getElementById('send-text');
-  navigator.clipboard.writeText(textarea.value).then(() => {
-    copiedNotice();
-  }).catch(() => {
-    textarea.select();
-    document.execCommand('copy');
-    copiedNotice();
-  });
+  navigator.clipboard.writeText(textarea.value).then(copiedNotice).catch(() => { textarea.select(); document.execCommand('copy'); copiedNotice(); });
 }
 function copiedNotice() {
   const n = document.getElementById('save-notice');
