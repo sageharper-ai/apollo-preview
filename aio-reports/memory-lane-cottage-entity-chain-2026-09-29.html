@@ -1,0 +1,93 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Entity chain | Memory Lane Cottage</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+
+.table-scroll {max-width:100%;overflow-x:auto;} pre {white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg-soft);padding:16px;font-size:12px;} a {overflow-wrap:anywhere;} .status.pending {color:var(--warn);} .cta-green {background:#eaf3ec;} .cta-green .cta-button {background:var(--good);} nav {font-size:13px;margin:18px 0;} .status-pill {background:var(--apollo-orange-soft);border-radius:4px;padding:4px 6px;color:var(--warn);} @media print {.container {max-width:none;padding:20px;} .table-scroll {overflow:visible;} tr, .callout {break-inside:avoid;}}
+</style></head><body><div class="container"><header><div class="preheader">Apollo Marketing · AIO Research</div><h1>Entity chain</h1><p class="subtitle">Memory Lane Cottage™ at Tampa Palms</p><p class="meta-line">September 29, 2026 · Prepared for Kelly Irish and Brook Borup · $297 one-time engagement</p></header><nav><a href="memory-lane-cottage-aio-research-final-2026-09-29.html">Return to your AIO Research record</a> · <a href="memory-lane-cottage-faq-batch-2026-09-29.html">FAQs</a> · <a href="memory-lane-cottage-schema-package-2026-09-29.html">Schema</a> · <a href="memory-lane-cottage-entity-chain-2026-09-29.html">Entity chain</a> · <a href="memory-lane-cottage-wordpress-divi-deploy-guide-2026-09-29.html">Deploy guide</a></nav><p class="source-line">Sources: Client defaults and reply September 29, 2026; entity inventory September 17, 2026; YouTube video publisher metadata checked September 29, 2026.</p><p>The entity chain connects the same business, people, services, location, and public profiles. Consistent facts help search systems distinguish the Cottage from unrelated businesses.</p><div class="table-scroll" role="region" aria-label="Scrollable data table" tabindex="0"><table class=""><thead><tr><th>Connection</th><th>How it is represented</th></tr></thead><tbody><tr><td>Business and location</td><td>One business identity describes Memory Lane Cottage™ at Tampa Palms and its licensed legal name. No parent or management company is named.</td></tr><tr><td>Location and contact</td><td>5175 Cypress Preserve Drive, Tampa, FL 33647; 813-428-3350 for inquiries, 9 a.m.–5 p.m. every day. Residential care remains around the clock.</td></tr><tr><td>Person</td><td>Kelly Irish → works for the Cottage. Debra is a tour contact in visible FAQs only; no surname or separate staff identity is invented.</td></tr><tr><td>Services</td><td>Memory care, five-day-minimum respite, and caregiver support each point back to the same provider.</td></tr><tr><td>Pages and answers</td><td>Each of five existing pages keeps its own identity. Its FAQ record contains only the answers visible there.</td></tr><tr><td>License</td><td>Florida Assisted Living Facility License #12675 identifies the facility; it is not your personal credential.</td></tr><tr><td>Profiles</td><td>Website → Facebook, LinkedIn, Google Business Profile, and the public Memory Lane Cottage YouTube channel.</td></tr><tr><td>Logo</td><td>The existing website logo stays connected to the business.</td></tr><tr><td>Reviews and press</td><td>You choose the actual Google reviews for visible use. No review or rating records are included. No press coverage was supplied; no press relationships are invented.</td></tr></tbody></table></div><h2>Your YouTube question</h2><p>Yes, YouTube belongs in the profile links: the video in your email is publicly attributed to <a href="https://www.youtube.com/@MemoryLaneCottage">Memory Lane Cottage’s existing channel</a>. We added that channel to the business identity links, called <code>sameAs</code>. We did not use a single video as the business identity or add a video record without a matching page. Future videos are optional; keep resident and family permissions in place before publishing them.</p><p>The two former team members are excluded. Their old biographies and pop-ups also need removal from the site during deployment. Your choice of reviews remains open.</p><footer><p>Internal draft for Sage review</p><p>No client delivery or live-site changes have occurred. One Pulse follow-up is due 30 days after deployment.</p></footer></div></body></html>

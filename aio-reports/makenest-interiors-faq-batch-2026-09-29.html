@@ -1,0 +1,228 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>MakeNest FAQ batch · 2026-09-29</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; }
+a { overflow-wrap: anywhere; }
+.cta-button { max-width: 100%; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+
+.faq-review-controls{border-top:1px solid var(--rule);margin:16px 0 28px;padding-top:12px}.faq-review-controls label{display:block;font-size:14px;font-weight:600;margin:8px 0}.faq-review-controls select,.faq-review-controls textarea{font:inherit;border:1px solid var(--rule);border-radius:5px;padding:9px;background:#fff;max-width:100%}.faq-review-controls textarea{display:block;width:100%;min-height:80px;resize:vertical}.review-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.review-actions button{font:inherit;cursor:pointer;padding:10px 16px;border:1px solid var(--rule);border-radius:6px;background:var(--apollo-orange);color:#fff}.review-actions button.ghost{background:#fff;color:var(--ink)}#rev-text{width:100%;min-height:280px;font:14px/1.5 monospace}#review-export{padding:20px;border:1px solid var(--rule);border-radius:8px;margin:24px 0}#review-export[hidden]{display:none}:focus-visible{outline:2px solid var(--apollo-orange);outline-offset:2px}
+</style></head><body><main class="container"><div class="lead-callout" role="status"><p><strong>This FAQ review opens after you validate the details</strong></p></div><header><div class="preheader">Apollo Marketing · MakeNest Interiors</div><h1>MakeNest FAQ batch · 2026-09-29</h1><p class="meta-line">September 29, 2026 · Prepared for Paul Miller</p></header><div class="lead-callout" id="faq-review-instructions"><h2>Review these FAQs in place</h2><ol><li>Review each FAQ.</li><li>Choose <strong>Keep, Reword or Remove</strong> under each FAQ and add your replacement wording or a note when needed.</li><li>Press <strong>Copy my edits</strong>.</li><li>Paste the result into a reply to <a href="mailto:sage.harper@apollollc.com">sage.harper@apollollc.com</a>.</li></ol><p>Your 35 unanswered candidates remain pending your answers even if you choose Keep; this does not approve missing answers for publication.</p><p><strong>Review time:</strong> Allow 60–90 minutes to read the FAQs and note any edits.</p><p id="rev-storage">Edits save automatically in this browser on this device. Nothing is sent automatically.</p><p id="rev-count" role="status"></p><div class="review-actions"><button onclick="exportFaqComments()">📋 Copy my edits</button><button class="ghost" onclick="resetFaqComments()">↺ Clear</button></div></div><div class="lead-callout"><p><a href="makenest-interiors-aio-research-final-2026-09-29.html">Return to the research record</a></p><p>Your validation, the October 6/7 pages, and final FAQ copy remain open. This companion is readable now but is not a completed installation package.</p></div>
+<p>Sources: visible <a href="https://www.makenestinteriors.com/process">process page</a> read September 29, 2026, and Google buyer-question research September 25, 2026. FAQ means frequently asked questions; FAQPage is structured code describing the questions and answers visible on one page. Eleven site Q&amp;As below are verbatim. Buyer-question candidates remain pending your answers and page-specific content. Do not mark up an FAQ until the identical question and answer are visible on that page. No Google FAQ rich-result claim.</p>
+<h2>Existing, visible on /process — 11 pairs</h2>
+<h3>Q1. What is your design style?</h3>
+<p>Design style can mean one thing to one person and another to someone else. We try to avoid labels that might limit our imagination or narrow our expertise. What matters to us is creating designs that you feel represents you honestly, with an emphasis on choices that are timelessly joyful and just fearless enough to create a memorable impression.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="1"><label for="review-q1">Review Q1</label><select id="review-q1" aria-label="Review Q1"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q1">Your wording or note for Q1 (optional)</label><textarea id="note-q1" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q2. What should I expect at the first house call?</h3>
+<p>On the first house call, we gather detailed information about the desired outcomes of the project. We guide the discussion to help reveal important details and viable options for your project. Potential costs and key timelines will be reviewed.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="2"><label for="review-q2">Review Q2</label><select id="review-q2" aria-label="Review Q2"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q2">Your wording or note for Q2 (optional)</label><textarea id="note-q2" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q3. What happens after the house call?</h3>
+<p>We outline our goals and estimate design costs in a scope of work document to assure utmost transparency before we begin. When the scope of work has been agreed upon, we return to the house to get detailed measurements and site photos. After that, the development stage begins as we further craft our concept; create renderings and specifications; research the best options; and select materials. This is where the design challenges are met with solutions and our creativity shines.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="3"><label for="review-q3">Review Q3</label><select id="review-q3" aria-label="Review Q3"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q3">Your wording or note for Q3 (optional)</label><textarea id="note-q3" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q4. What should I expect at the presentation?</h3>
+<p>At presentation we provide tactile and visual aids as we discuss our proposed ideas. Often our clients want to move forward with exactly what we’ve presented, but sometimes we need to tweak a few details to make the design a little more perfect. The subsequent editing stage is dedicated to alternate selections and refinements.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="4"><label for="review-q4">Review Q4</label><select id="review-q4" aria-label="Review Q4"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q4">Your wording or note for Q4 (optional)</label><textarea id="note-q4" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q5. How do we get the ball rolling?</h3>
+<p>Once the details are agreed on, it’s time to get orders placed. After we prepare the invoices and receive your deposit, we process and track orders, consult with third party contractors, and maintain contact with all parties to assure a smooth and timely design installation.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="5"><label for="review-q5">Review Q5</label><select id="review-q5" aria-label="Review Q5"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q5">Your wording or note for Q5 (optional)</label><textarea id="note-q5" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q6. How long does it take to complete a design project?</h3>
+<p>Depending on the scope of the project, completion dates will vary. If we are beginning a project while the site is still in the planning and blueprint stage, we will work closely with you to schedule special orders in advance of a projected move-in date to assure prompt completion. For all projects, custom furnishings, window treatments, and home decor typically can take up to three months from order date to delivery.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="6"><label for="review-q6">Review Q6</label><select id="review-q6" aria-label="Review Q6"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q6">Your wording or note for Q6 (optional)</label><textarea id="note-q6" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q7. How much will my interior design cost?</h3>
+<p>There are three primary areas of cost in a design project: interior design fees, special order item costs, and sub-contractor fees. Each project has unique challenges and demands that impact the time it takes for a design to be conceptualized and created, which is why we provide our scope of work document. While the scope of work is only an estimate of time required and does not factor in time spent in later project edits, it does help to establish a baseline of design fees. At our first house call, we will talk about your budget and project goals and how to tailor the design to best meet those requirements. The costs of subcontractors will depend on the project goals. We do not directly provide services such as carpentry and painting or quotes for such services, but we can often recommend excellent resources for this work to make sure your best interests are represented.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="7"><label for="review-q7">Review Q7</label><select id="review-q7" aria-label="Review Q7"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q7">Your wording or note for Q7 (optional)</label><textarea id="note-q7" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q8. When will design fees apply?</h3>
+<p>When we are researching, designing, overseeing work related to your project, and meeting with you to discuss your project, our hourly design fee of $140.00 will apply. Examples of typical scenarios for which our clients are billed include time spent on site visits; time in our office creating floor plans, elevations, and making selections; and time spent in research at third party suppliers such as flooring or cabinetry retailers. Beyond a thirty minute drive from our studio, travel time is billed at our full rate. All design and travel fees are billed in quarter hour increments.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="8"><label for="review-q8">Review Q8</label><select id="review-q8" aria-label="Review Q8"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q8">Your wording or note for Q8 (optional)</label><textarea id="note-q8" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q9. When will design fees not apply?</h3>
+<p>There are no design fees for our initial complimentary studio meeting; when we are placing and tracking orders; and during scheduling and oversight of installations.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="9"><label for="review-q9">Review Q9</label><select id="review-q9" aria-label="Review Q9"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q9">Your wording or note for Q9 (optional)</label><textarea id="note-q9" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q10. Am I obligated to purchase the items my designer recommends?</h3>
+<p>We base all of our recommendations on the merits of each piece, assembling a collection to solve problems and offer comfort and beauty. While our design agreement does not require that you purchase the items we specify, our intent is to understand your goals and budget so well that purchasing our recommended furnishings and decor elements is an intuitive choice. Our selections make realizing your design more seamless and successful.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="10"><label for="review-q10">Review Q10</label><select id="review-q10" aria-label="Review Q10"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q10">Your wording or note for Q10 (optional)</label><textarea id="note-q10" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q11. When will I be billed?</h3>
+<p>Your first design fee invoice will be billed after our presentation. Subsequent design fees are billed monthly as your project unfolds. After installation of your design project, any open balances for furnishings and decor will be billed for payment upon receipt. We are happy to offer an online payment option through links we send via email. Alternatively, all invoices are payable by check or credit card.</p>
+<p>Source: https://www.makenestinteriors.com/process (visible, 2026-09-29).</p>
+<div class="faq-review-controls" data-q="11"><label for="review-q11">Review Q11</label><select id="review-q11" aria-label="Review Q11"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q11">Your wording or note for Q11 (optional)</label><textarea id="note-q11" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h2>Buyer-question candidates from PAA — pending your answers and visible page copy</h2>
+<h3>Q12. Who is the best interior designer in Washington DC?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="12"><label for="review-q12">Review Q12</label><select id="review-q12" aria-label="Review Q12"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q12">Your wording or note for Q12 (optional)</label><textarea id="note-q12" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q13. Who are the best interior designers in Winchester, Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="13"><label for="review-q13">Review Q13</label><select id="review-q13" aria-label="Review Q13"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q13">Your wording or note for Q13 (optional)</label><textarea id="note-q13" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q14. What is the typical cost for an interior designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="14"><label for="review-q14">Review Q14</label><select id="review-q14" aria-label="Review Q14"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q14">Your wording or note for Q14 (optional)</label><textarea id="note-q14" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q15. Recommend an interior designer near Winchester, VA for a whole-home design project.</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="15"><label for="review-q15">Review Q15</label><select id="review-q15" aria-label="Review Q15"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q15">Your wording or note for Q15 (optional)</label><textarea id="note-q15" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q16. How much does an interior designer charge for a project?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="16"><label for="review-q16">Review Q16</label><select id="review-q16" aria-label="Review Q16"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q16">Your wording or note for Q16 (optional)</label><textarea id="note-q16" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q17. How much should I pay for an interior designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="17"><label for="review-q17">Review Q17</label><select id="review-q17" aria-label="Review Q17"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q17">Your wording or note for Q17 (optional)</label><textarea id="note-q17" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q18. Can Chatgpt design a room?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="18"><label for="review-q18">Review Q18</label><select id="review-q18" aria-label="Review Q18"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q18">Your wording or note for Q18 (optional)</label><textarea id="note-q18" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q19. Which interior design firms serve homeowners in Frederick County and the northern Shenandoah Valley of Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="19"><label for="review-q19">Review Q19</label><select id="review-q19" aria-label="Review Q19"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q19">Your wording or note for Q19 (optional)</label><textarea id="note-q19" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q20. What is the average cost of an interior designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="20"><label for="review-q20">Review Q20</label><select id="review-q20" aria-label="Review Q20"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q20">Your wording or note for Q20 (optional)</label><textarea id="note-q20" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q21. What is the best interior design company?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="21"><label for="review-q21">Review Q21</label><select id="review-q21" aria-label="Review Q21"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q21">Your wording or note for Q21 (optional)</label><textarea id="note-q21" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q22. I need an interior designer near Front Royal, Virginia. Who should I talk to?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="22"><label for="review-q22">Review Q22</label><select id="review-q22" aria-label="Review Q22"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q22">Your wording or note for Q22 (optional)</label><textarea id="note-q22" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q23. How much should I expect to pay for an interior designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="23"><label for="review-q23">Review Q23</label><select id="review-q23" aria-label="Review Q23"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q23">Your wording or note for Q23 (optional)</label><textarea id="note-q23" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q24. When to call an interior designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="24"><label for="review-q24">Review Q24</label><select id="review-q24" aria-label="Review Q24"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q24">Your wording or note for Q24 (optional)</label><textarea id="note-q24" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q25. Who are the best interior designers in Leesburg, Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="25"><label for="review-q25">Review Q25</label><select id="review-q25" aria-label="Review Q25"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q25">Your wording or note for Q25 (optional)</label><textarea id="note-q25" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q26. Recommend a residential interior designer serving western Loudoun County, such as Purcellville, VA.</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="26"><label for="review-q26">Review Q26</label><select id="review-q26" aria-label="Review Q26"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q26">Your wording or note for Q26 (optional)</label><textarea id="note-q26" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q27. Who can design a kitchen remodel in Winchester, Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="27"><label for="review-q27">Review Q27</label><select id="review-q27" aria-label="Review Q27"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q27">Your wording or note for Q27 (optional)</label><textarea id="note-q27" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q28. How much does it cost to have someone design a kitchen?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="28"><label for="review-q28">Review Q28</label><select id="review-q28" aria-label="Review Q28"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q28">Your wording or note for Q28 (optional)</label><textarea id="note-q28" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q29. What is the typical cost range for remodeling a kitchen in Northern Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="29"><label for="review-q29">Review Q29</label><select id="review-q29" aria-label="Review Q29"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q29">Your wording or note for Q29 (optional)</label><textarea id="note-q29" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q30. What is a realistic budget for a kitchen remodel?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="30"><label for="review-q30">Review Q30</label><select id="review-q30" aria-label="Review Q30"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q30">Your wording or note for Q30 (optional)</label><textarea id="note-q30" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q31. Is it worth it to hire a kitchen designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="31"><label for="review-q31">Review Q31</label><select id="review-q31" aria-label="Review Q31"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q31">Your wording or note for Q31 (optional)</label><textarea id="note-q31" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q32. Recommend a kitchen and bath designer serving Winchester and Loudoun County, VA.</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="32"><label for="review-q32">Review Q32</label><select id="review-q32" aria-label="Review Q32"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q32">Your wording or note for Q32 (optional)</label><textarea id="note-q32" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q33. How much does it cost to have a kitchen designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="33"><label for="review-q33">Review Q33</label><select id="review-q33" aria-label="Review Q33"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q33">Your wording or note for Q33 (optional)</label><textarea id="note-q33" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q34. What is the typical cost of a kitchen remodel in Northern Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="34"><label for="review-q34">Review Q34</label><select id="review-q34" aria-label="Review Q34"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q34">Your wording or note for Q34 (optional)</label><textarea id="note-q34" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q35. Who is the best kitchen designer?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="35"><label for="review-q35">Review Q35</label><select id="review-q35" aria-label="Review Q35"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q35">Your wording or note for Q35 (optional)</label><textarea id="note-q35" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q36. Which interior designers near Winchester, VA take on commercial and office projects?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="36"><label for="review-q36">Review Q36</label><select id="review-q36" aria-label="Review Q36"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q36">Your wording or note for Q36 (optional)</label><textarea id="note-q36" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q37. How much does a commercial interior designer cost?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="37"><label for="review-q37">Review Q37</label><select id="review-q37" aria-label="Review Q37"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q37">Your wording or note for Q37 (optional)</label><textarea id="note-q37" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q38. How to get commercial interior design projects?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="38"><label for="review-q38">Review Q38</label><select id="review-q38" aria-label="Review Q38"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q38">Your wording or note for Q38 (optional)</label><textarea id="note-q38" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q39. Recommend a commercial interior design firm for a medical or dental office in the Winchester, Virginia area.</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="39"><label for="review-q39">Review Q39</label><select id="review-q39" aria-label="Review Q39"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q39">Your wording or note for Q39 (optional)</label><textarea id="note-q39" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q40. What does a healthcare interior designer do?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="40"><label for="review-q40">Review Q40</label><select id="review-q40" aria-label="Review Q40"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q40">Your wording or note for Q40 (optional)</label><textarea id="note-q40" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q41. Is there an interior designer near Winchester, VA who can refresh one or two rooms instead of redesigning the whole house?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="41"><label for="review-q41">Review Q41</label><select id="review-q41" aria-label="Review Q41"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q41">Your wording or note for Q41 (optional)</label><textarea id="note-q41" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q42. How much does an interior designer cost for two rooms?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="42"><label for="review-q42">Review Q42</label><select id="review-q42" aria-label="Review Q42"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q42">Your wording or note for Q42 (optional)</label><textarea id="note-q42" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q43. What are the red flags when hiring a decorator?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="43"><label for="review-q43">Review Q43</label><select id="review-q43" aria-label="Review Q43"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q43">Your wording or note for Q43 (optional)</label><textarea id="note-q43" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q44. Which interior designers in Northern Virginia or the Shenandoah Valley offer room-by-room design?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="44"><label for="review-q44">Review Q44</label><select id="review-q44" aria-label="Review Q44"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q44">Your wording or note for Q44 (optional)</label><textarea id="note-q44" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q45. How much do interior designers charge for a room?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="45"><label for="review-q45">Review Q45</label><select id="review-q45" aria-label="Review Q45"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q45">Your wording or note for Q45 (optional)</label><textarea id="note-q45" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><h3>Q46. Who are some good interior designers in Northern Virginia?</h3>
+<p><strong>Answer:</strong> Pending Paul’s validation and the relevant service page.</p>
+<div class="faq-review-controls" data-q="46"><label for="review-q46">Review Q46</label><select id="review-q46" aria-label="Review Q46"><option value="keep">Keep</option><option value="reword">Reword</option><option value="remove">Remove</option></select><label for="note-q46">Your wording or note for Q46 (optional)</label><textarea id="note-q46" placeholder="Leave blank to keep; add replacement wording or a removal note here."></textarea></div><p>Candidate count: 35; total in batch: 46. The remaining 50-pair capacity, if any, stays open rather than filled with unrelated questions.</p><div id="review-export" hidden><h2>Your FAQ edits</h2><p id="rev-copy-status" role="status"></p><label for="rev-text">Copy and paste into your reply to sage.harper@apollollc.com</label><textarea id="rev-text" readonly></textarea></div><div class="review-actions"><button onclick="exportFaqComments()">📋 Copy my edits</button><button class="ghost" onclick="resetFaqComments()">↺ Clear</button></div><footer><p>Thank you for helping us prepare your FAQs.</p></footer></main><script>
+(function(){
+ const KEY="makenest-interiors-faq-review-2026-09-29-v1", CLIENT="MakeNest Interiors";
+ let state={};
+ function unavailable(){document.getElementById('rev-storage').textContent='Browser saving unavailable. Copy your edits before leaving.';}
+ try{const data=JSON.parse(localStorage.getItem(KEY)||'{}');if(data&&typeof data==='object')state=data;}catch(e){unavailable();}
+ const controls=[...document.querySelectorAll('.faq-review-controls')];
+ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){unavailable();}updateCount();}
+ controls.forEach(w=>{const k=w.dataset.q,s=w.querySelector('select'),t=w.querySelector('textarea'),v=state[k]||{};
+  s.value=['keep','reword','remove'].includes(v.action)?v.action:'keep';t.value=typeof v.note==='string'?v.note:'';
+  const changed=()=>{state[k]={action:s.value,note:t.value};save();};s.addEventListener('change',changed);t.addEventListener('input',changed);
+ });
+ function edited(){return controls.filter(w=>w.querySelector('select').value!=='keep'||w.querySelector('textarea').value.trim());}
+ function updateCount(){const n=edited().length;document.getElementById('rev-count').textContent=n?n+' FAQ entries with edits or notes':'No edits yet — keep the current text or add changes below.';}
+ window.exportFaqComments=async function(){
+  const list=edited(),out=[CLIENT+' — FAQ edits ('+new Date().toLocaleDateString('en-US')+')',''];
+  if(!list.length)out.push("(No edits to these FAQs. Unanswered candidates remain pending; this is not approval to publish missing answers.)");
+  list.forEach(w=>{const action=w.querySelector('select').value,note=w.querySelector('textarea').value.trim();out.push('Q'+w.dataset.q+' → '+action.toUpperCase()+(note?': '+note:action==='reword'?': [Replacement wording still needed]':''),'');});
+  out.push('Reply to sage.harper@apollollc.com.');const text=out.join('\n'),box=document.getElementById('review-export'),ta=document.getElementById('rev-text');ta.value=text;box.hidden=false;
+  try{await navigator.clipboard.writeText(text);document.getElementById('rev-copy-status').textContent='Copied. Paste into your reply to Sage.';}catch(e){document.getElementById('rev-copy-status').textContent='Copy the text below manually and paste it into your reply to Sage.';}
+  box.scrollIntoView({behavior:'smooth',block:'center'});ta.focus();ta.select();
+ };
+ window.resetFaqComments=function(){if(!confirm('Clear all your FAQ edits on this device?'))return;try{localStorage.removeItem(KEY);}catch(e){unavailable();}state={};controls.forEach(w=>{w.querySelector('select').value='keep';w.querySelector('textarea').value='';});document.getElementById('rev-text').value='';document.getElementById('review-export').hidden=true;updateCount();};
+ updateCount();
+})();
+</script></body></html>

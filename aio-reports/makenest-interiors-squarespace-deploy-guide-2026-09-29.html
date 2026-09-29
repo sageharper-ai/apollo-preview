@@ -1,0 +1,100 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>MakeNest Squarespace deploy guide · Review draft · 2026-09-29</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; }
+a { overflow-wrap: anywhere; }
+.cta-button { max-width: 100%; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+</style></head><body><main class="container"><header><div class="preheader">Apollo Marketing · MakeNest Interiors · Review draft</div><h1>MakeNest Squarespace deploy guide · Review draft · 2026-09-29</h1><p class="meta-line">September 29, 2026 · Proposed, not installed</p></header><div class="lead-callout"><p><a href="makenest-interiors-aio-research-final-2026-09-29.html">Return to the research record</a></p><p>Client validation, the October 6/7 pages, and final FAQ copy remain open. This companion is readable now but is not a completed installation package.</p></div>
+<p>Sources: site inventory September 25, 2026; deployment design and purchase-page check September 29, 2026. This is a proposed installation sequence. JSON-LD is structured code describing your business and pages; a canonical URL is a page’s preferred public address.</p>
+<p><strong>Squarespace path:</strong> sitewide Code Injection for approved business corrections; Advanced → Page Header Code Injection for each service page. The purchase page describes WordPress; the preparation steps below cover Squarespace access, plan support, and the deployment commitment.</p>
+<ol><li>Complete your <a href="makenest-interiors-aio-validation-2026-09-29.html">validation page</a> and send the reply. Then review the completed <a href="makenest-interiors-faq-batch-2026-09-29.html">FAQ batch</a> and send Q# edits or “ship as-is.”</li><li>Have the October 6/7 pages live with approved visible copy and final canonical URLs. Confirm Squarespace account access, plan support, and the deployment commitment with Apollo.</li><li><a href="https://calendly.com/sageharper/one-to-one-30min-apollo-marketing-clone">Book your 30-minute Zoom deploy session</a> after those preparations are complete.</li><li>On the call, save existing sitewide and homepage Code Injection for rollback. Inspect rendered JSON-LD and IDs. Remove the invalid handwritten homepage LocalBusiness block and reconcile Squarespace’s generated business identity. Prepare a replacement only if needed; avoid conflicting business entities.</li><li>Prepare each Service block with the actual canonical URL and matching visible service text. Commercial uses <code>/commercial</code> after your October 7 content refresh. Publish approved FAQ answers visibly before preparing matching FAQPage code. No Review or AggregateRating for self-controlled reviews; no FAQ rich-result promise.</li><li>Parse each final JSON block, check Schema.org vocabulary, and use Google Rich Results Test only for eligible features before installation. Never install placeholder tokens or code for a page that is not live.</li><li>Install approved business corrections sitewide. On each matching live page, use <strong>Advanced → Page Header Code Injection</strong> for only that page’s Service or FAQ block.</li><li>Inspect rendered source for duplicate IDs and canonical URLs; check mobile and desktop output and record what went live. If a change fails, restore the saved injection code or remove the new page block, recheck, and record the reversal.</li><li>Record any separately approved client-hub, title, meta, alt-text, or placeholder cleanup as individual site changes. Change search exposure only with your explicit approval.</li><li>Record the deployment date and schedule one re-measurement of the frozen 12-question set 30 days after execution.</li></ol>
+<p>Research/design only: no Squarespace edit, validation pass, publication, or deployment has occurred in this Review draft.</p>
+
+<footer><p>No client delivery or live-site deployment has occurred.</p></footer></main></body></html>

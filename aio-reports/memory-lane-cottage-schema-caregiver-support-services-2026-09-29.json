@@ -1,0 +1,117 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://memorylanecottage.com/caregiver-support-services/",
+      "url": "https://memorylanecottage.com/caregiver-support-services/",
+      "name": "Caregiver support services",
+      "isPartOf": {
+        "@id": "https://memorylanecottage.com/#website"
+      },
+      "about": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://memorylanecottage.com/caregiver-support-services/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where can family caregivers of someone with dementia get support and guidance in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our caregiver support and resources are available to everyone, whether or not their loved one lives at Memory Lane Cottage. We offer personalized caregiving strategies, resources, and empathetic guidance. Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week, to discuss what support you are looking for."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of support can I get as a caregiver for someone with dementia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer guidance that includes personalized caregiving strategies, self-care strategies, resources, and proactive planning. Our approach recognizes that each family's situation is different. You may be trying to understand your next steps, organize competing responsibilities, or feel less overwhelmed by decisions; our published caregiver service is intended to support that process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does your caregiver consulting service focus on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our caregiver consulting service focuses on the family's caregiving situation through resources, personalized strategies, and empathetic support. We emphasize proactive planning and customized approaches to caregiving and self-care. The goal is to help you think through decisions with greater clarity while recognizing the demands that supporting a loved one can place on you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help me think about my own needs as a caregiver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our published caregiver support service includes customized self-care strategies as well as guidance about caring for a loved one. We recognize that planning for your own rest, responsibilities, and available help belongs in the conversation. If you have concerns about your physical or mental health, please speak with your own healthcare professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use caregiver consulting if my loved one does not live at the Cottage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our caregiver support and resources are available to everyone, whether or not their loved one is a resident. Please call 813-428-3350 and tell us about your caregiving situation and the guidance you are looking for."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does caregiver consulting cost, and how do appointments work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Please call 813-428-3350 for current caregiver consulting fees and appointment arrangements. Our support and resources are available to everyone, including families whose loved one does not live here. Confirm the format, timing, and cost before arranging a conversation; we do not promise a particular format or a free appointment here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I prepare before speaking with a caregiver consultant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We suggest writing down your main questions, the support your loved one currently needs, and the parts of caregiving that feel hardest to manage. Include what is working well, too. Our service emphasizes personalized strategies, so a simple picture of your routines and available help can make the conversation more focused."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact you about caregiver support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week, or use our website's contact form. Say you are asking about caregiver support and briefly describe the guidance you need. Support and resources are available whether or not your loved one is a resident."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://memorylanecottage.com/caregiver-support-services/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://memorylanecottage.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Caregiver support services",
+          "item": "https://memorylanecottage.com/caregiver-support-services/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://memorylanecottage.com/#service-caregiver-support",
+      "name": "Family caregiver support and consulting",
+      "provider": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "url": "https://memorylanecottage.com/caregiver-support-services/",
+      "description": "Caregiver support and resources for everyone, whether or not their loved one is a resident. Personalized caregiving and self-care strategies, resources, and planning; call to discuss appointments and fees."
+    }
+  ]
+}

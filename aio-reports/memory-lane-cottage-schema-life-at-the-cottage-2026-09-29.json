@@ -1,0 +1,192 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://memorylanecottage.com/life-at-the-cottage/",
+      "url": "https://memorylanecottage.com/life-at-the-cottage/",
+      "name": "Life at the Cottage: memory care and respite",
+      "isPartOf": {
+        "@id": "https://memorylanecottage.com/#website"
+      },
+      "about": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://memorylanecottage.com/life-at-the-cottage/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where can I get short-term respite care for a parent with dementia in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer respite stays of five days or longer at Memory Lane Cottage in Tampa Palms, subject to bed availability. Care and services are all-inclusive. Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week, to discuss dates, care needs, availability, and pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is considered short-term respite care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We describe respite care as a temporary care arrangement that gives a family caregiver time away from their usual responsibilities. It may help during a planned break or a change in the caregiver's availability. The length and services vary by provider, so families should confirm the details before arranging a stay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum length of a respite stay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Respite stays are available for five days or longer, subject to bed availability. Call 813-428-3350 to discuss your dates and confirm the length of stay we can accommodate. Please check with us before making travel arrangements or planning an extension."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to get respite care for a dementia patient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week. Tell us your preferred dates and your loved one's care needs. Respite stays require at least five days and depend on bed availability. We will discuss fit and the arrangements needed before arrival; ask us which documents are required for the stay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should we bring for a respite stay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Please call us before arrival for packing and medication handoff instructions. Ask about clothing, personal belongings, documents, and how medications should be supplied. Our respite care and services are all-inclusive, but preparation should follow the instructions for your loved one's stay. We have not published a standard packing list here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will a respite guest join meals and activities with other residents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Respite care and services are all-inclusive. Our residential program includes shared meals, daily activities, and spaces for spending time together. Discuss your loved one's routines, care needs, and participation with us when arranging the stay. Stays are five days or longer and subject to bed availability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a week of respite care cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 for current respite pricing and availability for your requested dates. Care and services are all-inclusive, and stays are five days or longer. We do not publish a weekly rate here; please confirm the total for the stay with us before making arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a respite stay the same as adult day care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We offer short-term respite stays, and we do not offer adult day care. Generally, adult day care involves attending for part of the day rather than staying overnight. Please describe the arrangement you need so the distinction is clear."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does memory care at Memory Lane Cottage cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 for current pricing. Our monthly rate is all-inclusive across levels of care, with a separate one-time move-in fee. Ask us to confirm the current monthly amount, move-in fee, and your family's responsibilities before making arrangements. Families supply disposable underwear."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which memory care facilities in Tampa accept the Medicaid waiver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Memory Lane Cottage accepts Medicaid. Our state facility profile lists the Assisted Living Waiver, but each family's eligibility and payment arrangements need to be confirmed. Call 813-428-3350 to discuss your situation, and check with your Medicaid program or plan before assuming that a particular service or full cost is covered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the VA pay for memory care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept VA benefits as a payment source. Eligibility and covered costs depend on the particular benefit, so accepting VA benefits does not mean every veteran's stay is paid in full. Please confirm your benefit with the VA and discuss payment arrangements with us before budgeting for care."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we pay privately for my parent’s care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 to discuss paying for care and confirm the current monthly rate, separate move-in fee, billing schedule, and payment methods. We accept Medicaid, VA benefits, and long-term care insurance policies. We will discuss the arrangements for your situation; no particular payment schedule or private-pay terms are published here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the monthly fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our all-inclusive monthly rate covers all levels of care we can safely provide, medication management, laundry and showers three times per week, all meals and snacks, a fully furnished room, and personal hygiene supplies. Families supply disposable underwear. A separate one-time move-in fee applies. Call 813-428-3350 for current pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the price increase if my parent needs more help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our rate includes all levels of care we can safely accommodate; there are no added charges for moving between those care levels. This is not a promise that the base rate will never change. Our ability to continue care depends on state regulations and the needs we can safely meet. Call for current pricing and terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you accept insurance or an HMO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept long-term care insurance policies, as well as Medicaid and VA benefits. Please check your policy's eligibility, covered services, and payment process with the insurer, then discuss arrangements with us. We are not claiming that every insurance policy or HMO is accepted or that all costs will be covered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to pay for memory care in Florida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the current price and the benefits or funds available to your family. We accept Medicaid, VA benefits, and long-term care insurance policies. Confirm eligibility and covered costs with the relevant program or insurer, and call us at 813-428-3350 to discuss the remaining costs and payment arrangements."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://memorylanecottage.com/life-at-the-cottage/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://memorylanecottage.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Life at the Cottage: memory care and respite",
+          "item": "https://memorylanecottage.com/life-at-the-cottage/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://memorylanecottage.com/#service-memory-care",
+      "name": "Memory care assisted living",
+      "serviceType": "Residential memory care",
+      "provider": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "url": "https://memorylanecottage.com/life-at-the-cottage/",
+      "description": "Memory care only, with all-inclusive levels of care within state rules and the needs the community can safely accommodate. Call 813-428-3350 for current pricing. A separate move-in fee applies; families provide disposable underwear."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://memorylanecottage.com/#service-respite",
+      "name": "Short-term respite stays",
+      "provider": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "url": "https://memorylanecottage.com/life-at-the-cottage/",
+      "description": "Respite stays of five days or longer, subject to bed availability. Care and services are all-inclusive. Call 813-428-3350 for availability and pricing."
+    }
+  ]
+}

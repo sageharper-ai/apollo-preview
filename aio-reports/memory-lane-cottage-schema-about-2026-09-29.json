@@ -1,0 +1,149 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://memorylanecottage.com/about/",
+      "url": "https://memorylanecottage.com/about/",
+      "name": "About Memory Lane Cottage",
+      "isPartOf": {
+        "@id": "https://memorylanecottage.com/#website"
+      },
+      "about": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://memorylanecottage.com/about/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Memory Lane Cottage at Tampa Palms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are a licensed assisted living residence in Tampa Palms, and we provide memory care only. Our 20 private suites and familiar shared spaces serve people with Alzheimer's disease and other forms of dementia. The site is fully secured for residents who may wander, with a large secured outdoor area, animals, and certified butterfly gardens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there small residential memory care homes in Tampa, FL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our cottage offers 20 private suites in a small, home-like memory care setting in Tampa Palms. We provide memory care only. Residents have shared living spaces and a large secured outdoor area with animals and certified butterfly gardens. A visit can help your family consider how the setting fits your loved one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I find memory care near New Tampa for a parent with Alzheimer’s?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve residents in and around Tampa Palms at 5175 Cypress Preserve Drive, Tampa, FL 33647. Our focus is care for people with memory difficulties, including Alzheimer's disease. If you are looking in the New Tampa area, you can call us at 813-428-3350 to learn about the Cottage and discuss your family's questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Memory Lane Cottage a licensed assisted living facility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We are licensed by Florida's Agency for Health Care Administration (AHCA) as an assisted living facility, license number 12675, with 20 licensed private beds. Our residential setting focuses on people with Alzheimer's disease and dementia; families can look up our license number on the state's public facility profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my parent have a private room and bathroom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our cottage has 20 furnished private suites, each with a full bathroom. Shared living and dining spaces provide places to spend time outside the bedroom, while each suite offers personal space. We encourage you to look at the room layout and bathroom during a visit and discuss your loved one's everyday needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What help do residents receive with everyday tasks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide assistance with bathing, dressing, dining, and walking, along with medication management and incontinence management. Our services also include housekeeping, laundry, and daily companionship. Individualized care plans use prompts and cues suited to residents' needs. Please describe the help your loved one currently receives so you can discuss their needs with us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What activities can my parent take part in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer structured activities seven days a week, with opportunities such as games, movies, reminiscing, arts and crafts, and gardening. Our program includes activities developed with current residents in mind and skill stations reflecting their interests. We also learn about residents' life experiences so those personal details can inform everyday engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a secure garden where residents can spend time outside?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our large secured outdoor area includes animals, certified butterfly gardens, walking paths, gardening stations, and two covered patios. The Cottage is fully secured for residents who may be at risk of wandering. Please discuss your loved one's mobility and supervision needs with us when you visit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What meals do you provide, and can you accommodate dietary needs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide three meals daily, along with snacks, beverages, and freshly baked goods. Meals are prepared in a home-like kitchen and served in our dining room. Our published services include dining assistance and accommodation of residents' dietary needs. Please discuss any allergies, food preferences, or eating support your loved one needs before making arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are staff there overnight, and how many residents does each caregiver support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Alzheimer's-trained care staff are on site around the clock. Typical staffing is one caregiver for six residents during the day and one caregiver for ten residents overnight. These are typical ratios, not a promise of one-to-one care. Please discuss the support your loved one needs across each shift."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who leads the Tampa Palms community?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kelly Irish is Executive Director of our Tampa Palms community. Her background includes activities, administration, employee training, and opening memory care communities. She describes the relationship between residents and their families as central to her work. We encourage families to bring questions about their loved one's routines, preferences, and care concerns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you get to know my loved one as a person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with families to learn about each resident's life experiences and include family participation in care planning. Those details help us understand the person beyond their care needs. We welcome information about familiar routines, meaningful interests, and personal preferences as part of understanding what matters to your loved one."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://memorylanecottage.com/about/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://memorylanecottage.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Memory Lane Cottage",
+          "item": "https://memorylanecottage.com/about/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://memorylanecottage.com/#kelly-irish",
+      "name": "Kelly Irish",
+      "jobTitle": "Executive Director",
+      "url": "https://memorylanecottage.com/about/",
+      "worksFor": {
+        "@id": "https://memorylanecottage.com/#organization"
+      }
+    }
+  ]
+}

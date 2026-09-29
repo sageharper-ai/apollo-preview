@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
+      "@id": "https://memorylanecottage.com/#organization",
+      "name": "Memory Lane Cottage™ at Tampa Palms",
+      "legalName": "Memory Lane Cottage at Tampa Palms, LLC",
+      "url": "https://memorylanecottage.com/",
+      "description": "A 20-suite assisted living residence in Tampa Palms providing memory care only for people with Alzheimer's disease and dementia. The fully secured setting includes a large secured outdoor area, animals, and certified butterfly gardens.",
+      "telephone": "+1-813-428-3350",
+      "email": "info@memorylanecottage.com",
+      "logo": {
+        "@id": "https://memorylanecottage.com/#/schema/logo/image/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5175 Cypress Preserve Drive",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "postalCode": "33647",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.110114,
+        "longitude": -82.3882721
+      },
+      "hasMap": "https://www.google.com/maps?cid=4369568066215609461",
+      "sameAs": [
+        "https://www.facebook.com/MemoryLaneCottageTampa/",
+        "https://www.linkedin.com/company/memory-lane-cottage-llc/",
+        "https://www.google.com/maps?cid=4369568066215609461",
+        "https://www.youtube.com/@MemoryLaneCottage"
+      ],
+      "identifier": "Florida Assisted Living Facility License #12675",
+      "paymentAccepted": "Medicaid, VA benefits, long-term care insurance policies",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-813-428-3350",
+        "contactType": "Family inquiries and tours",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday",
+            "https://schema.org/Saturday",
+            "https://schema.org/Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      },
+      "employee": {
+        "@id": "https://memorylanecottage.com/#kelly-irish"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://memorylanecottage.com/#website",
+      "url": "https://memorylanecottage.com/",
+      "name": "Memory Lane Cottage™",
+      "publisher": {
+        "@id": "https://memorylanecottage.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://memorylanecottage.com/#/schema/logo/image/",
+      "url": "https://memorylanecottage.com/wp-content/uploads/2023/09/Memory-Lane-Cottage-1-1.png",
+      "contentUrl": "https://memorylanecottage.com/wp-content/uploads/2023/09/Memory-Lane-Cottage-1-1.png",
+      "caption": "Memory Lane Cottage logo"
+    }
+  ]
+}

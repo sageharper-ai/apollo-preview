@@ -1,0 +1,93 @@
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>WordPress + Divi deploy guide | Memory Lane Cottage</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+
+.table-scroll {max-width:100%;overflow-x:auto;} pre {white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg-soft);padding:16px;font-size:12px;} a {overflow-wrap:anywhere;} .status.pending {color:var(--warn);} .cta-green {background:#eaf3ec;} .cta-green .cta-button {background:var(--good);} nav {font-size:13px;margin:18px 0;} .status-pill {background:var(--apollo-orange-soft);border-radius:4px;padding:4px 6px;color:var(--warn);} @media print {.container {max-width:none;padding:20px;} .table-scroll {overflow:visible;} tr, .callout {break-inside:avoid;}}
+</style></head><body><div class="container"><header><div class="preheader">Apollo Marketing · AIO Research</div><h1>WordPress + Divi deploy guide</h1><p class="subtitle">Memory Lane Cottage™ at Tampa Palms</p><p class="meta-line">September 29, 2026 · Prepared for Kelly Irish and Brook Borup · $297 one-time engagement</p></header><nav><a href="memory-lane-cottage-aio-research-final-2026-09-29.html">Return to your AIO Research record</a> · <a href="memory-lane-cottage-faq-batch-2026-09-29.html">FAQs</a> · <a href="memory-lane-cottage-schema-package-2026-09-29.html">Schema</a> · <a href="memory-lane-cottage-entity-chain-2026-09-29.html">Entity chain</a> · <a href="memory-lane-cottage-wordpress-divi-deploy-guide-2026-09-29.html">Deploy guide</a></nav><p class="source-line">Sources: WordPress + Divi + Yoast site capture and hygiene audit September 17, 2026; client reply and deployment plan September 29, 2026.</p><p>The included walkthrough is a 30-minute Zoom call. The preparation steps below keep the call focused on installation and verification. The WordPress guide matches your site. No live-site work has happened yet.</p><ol class="deployment-steps"><li><h2>Prepare your review decisions and access</h2><p>Review the <a href="memory-lane-cottage-faq-batch-2026-09-29.html">50 FAQs</a> and send Q# edits or “ship as-is.” Choose the Google reviews and send the original source links for any replacements you want published. Confirm authorized WordPress access through your normal route. Coordinate with your site manager so two people do not change schema at once. No passwords belong in this report.</p></li><li><h2>Book and prepare the 30-minute Zoom session</h2><p><a href="https://calendly.com/sageharper/one-to-one-30min-apollo-marketing-clone">Book your session</a> once the approved copy and access are ready; send FAQ edits a day or two before it. Apollo installs while you watch. Before changes begin, prepare a site backup and copies of existing code, Yoast settings, redirect rules, and Divi layouts. Prepare the location redirect review and contact corrections for the call; broader cleanup needs a separately agreed scope.</p></li><li><h2>Publish the visible facts in Divi</h2><p>Use Divi Text or Accordion modules to publish the assigned answers on About, Life at the Cottage, Caregiver Support Services, Resources, and Visitor Policy. Keep all answers available to visitors, including accessible accordion content. Add respite information to Life at the Cottage and link to it from navigation or the relevant care pages; a new page is not required for this package. Publish the corrected phone, inquiry hours, payment sources, tour contacts, staffing, care limits, secured outdoor setting, and fee inclusions. Keep numeric pricing unpublished under the retained “call us” default.</p></li><li><h2>Remove outdated people and prepare reviews</h2><p>Remove Taylor Conley and Andrew Brokenborough from team cards, Divi pop-ups, biographies, and any person records. Check pop-up templates as well as the About page. Do not replace them with guessed roles. Use only the Google reviews you have chosen; preserve exact wording, attribution, and an original source link for each approved quote. Until you supply them, do not select or publish replacement reviews. Do not install Review or AggregateRating, including for embedded Google reviews.</p></li><li><h2>Reconcile Yoast before injecting code</h2><p>Inspect the current rendered JSON-LD. The public homepage checked September 29 confirms the existing logo identity; keep it when merging the supplied image record. Correct the existing site description that still names Oviedo if it no longer describes the represented business. Reuse Yoast’s existing organization, website, logo, page, and breadcrumb identities. The supplied blocks describe the target combined graph: use Yoast’s supported schema filters to enrich or replace matching pieces, or retain Yoast and add only the missing properties through a page-scoped code manager. Do not paste competing full Organization, WebSite, WebPage, or breadcrumb definitions beside Yoast. Preserve existing Article markup on posts. The business and location share one identity; remove an earlier standalone location draft if one was ever installed.</p></li><li><h2>Validate the final code before installation</h2><p>Parse every final payload as JSON. Use Schema.org Validator for the complete graph and Google Rich Results Test only for supported features. FAQPage must exactly match the approved visible answers; no Google FAQ rich result is promised. No eligible rich-result items does not mean the schema failed.</p></li><li><h2>Install approved, page-scoped JSON-LD</h2><p>Use the site’s existing code manager if it can target pages. Otherwise Apollo may install Header Footer Code Manager during the authorized deploy session. Choose an HTML snippet in the header, wrap only the downloaded JSON-LD in a script of type application/ld+json, and set display rules to the named page. Only the reconciled sitewide identity belongs on all pages. Do not put every FAQ or service block into Divi Theme Options → Integration, which is global. Do not paste package metadata or this guide into a code field. If using Divi Code modules instead, target only the matching page and inspect rendered output after saving.</p></li><li><h2>Verify the installed pages</h2><p>After saving, clear SiteGround Optimizer and Divi caches, inspect rendered desktop and mobile pages, compare the actual Q&A text to markup, check there is one consistent business identity, and confirm no outdated phone or removed people remain. Test every changed canonical URL and redirect.</p></li><li><h2>Record proof and retain rollback</h2><p>Save the tested page addresses, timestamps, final JSON-LD, validator results, screenshots, and the exact changes made. Confirm the canonical pages are indexable and submit them for re-crawl in Search Console when authorized access is available. If output conflicts or page layout breaks, disable the new snippets, restore the saved Yoast/Divi settings and redirect rules, clear caches, and recheck the original pages. Never delete existing working schema without a restoration copy.</p></li><li><h2>Schedule the single follow-up</h2><p>Freeze the supplied baseline as the dated pre-deployment research record; add deployment date and verification in a separate receipt without rewriting the capture. Run one Pulse check 30 days after execution using the same tracked project, fixed questions, platform set, and comparable time window. Keep the September 17 one-run capture separate. If the gap between research and deployment makes a new baseline necessary, preserve this file and capture a new dated baseline rather than overwriting it.</p></li></ol><section><h2>Hygiene fixes from the site review</h2><p>The list below records cleanup findings and possible work outside the prepared session. Any extra page, image, or sitemap fixes need a separately agreed scope; a full-site content cleanup is not promised within 30 minutes.</p><div class="table-scroll" role="region" aria-label="Scrollable data table" tabindex="0"><table class=""><thead><tr><th>Issue</th><th>Action and check</th></tr></thead><tbody><tr><td>/locations and /locations/; /locations/tampa-palms/</td><td>13 incoming links were recorded across old location variants. Check each referring URL and destination. Use a single 301 to the matching current Tampa Palms page only when the old page represents this facility. Verify the target returns 200 with the intended canonical; avoid chains.</td></tr><tr><td>/locations/oviedo/ and /contact-us/corporate/</td><td>These old URLs returned 404. Do not redirect an unrelated Oviedo location or an unconfirmed corporate page to Tampa Palms just to remove a 404. Preserve a real 404/410 unless a true equivalent is established; request correction of relevant external links through the normal client workflow.</td></tr><tr><td>Stale or spam URLs</td><td>The capture found indexed spam URLs that already return 404. Recheck the affected URLs and root cause. Keep genuine removed spam at 404/410, out of the sitemap; use Search Console removal only as a temporary accelerator if needed. Do not send spam URLs to the homepage.</td></tr><tr><td>Page titles and descriptions</td><td>The 21-page content capture found missing meta descriptions. Write distinct, accurate descriptions for priority care, caregiver, About, and Contact pages in Yoast. Check titles and canonical settings; do not apply broad canonical changes when the sampled pages already passed.</td></tr><tr><td>Image descriptions</td><td>109 of 149 image occurrences had missing or empty alternative text in the September 17 audit. Add meaningful alt text to informative images; keep decorative images empty. Do not assume every empty alt value is an error.</td></tr><tr><td>Sitemap and orphaned pages</td><td>The 31-entry sitemap includes pop-ups, testimonial entries, archives, thank-you pages, and other utility pages. Review which should be searchable; remove utility-only entries from search and the sitemap only after confirming their purpose. Keep valid legal and care content accessible. Link important care pages internally. The four recorded orphans include three thank-you pages and Legal; do not treat them all as new sales pages.</td></tr><tr><td>Phone, hours, and old staff</td><td>Use 813-428-3350 in visible text, tel links, contact forms, and schema. Show 9 a.m.–5 p.m. daily as inquiry hours, not visiting or residential-care hours. Reconcile Facebook and Google Business Profile through the owner’s normal workflow after site changes. Remove the two stale team biographies and related pop-up entries.</td></tr></tbody></table></div></section><p><a href="https://validator.schema.org/">Schema.org Validator</a> · <a href="https://search.google.com/test/rich-results">Google Rich Results Test</a> · <a href="https://calendly.com/sageharper/one-to-one-30min-apollo-marketing-clone">Book the 30-minute Zoom session</a></p><footer><p>Internal draft for Sage review</p><p>No client delivery or live-site changes have occurred. One Pulse follow-up is due 30 days after deployment.</p></footer></div></body></html>

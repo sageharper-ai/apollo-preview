@@ -1,0 +1,123 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://memorylanecottage.com/resources/",
+      "url": "https://memorylanecottage.com/resources/",
+      "name": "Memory care resources",
+      "isPartOf": {
+        "@id": "https://memorylanecottage.com/#website"
+      },
+      "about": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://memorylanecottage.com/resources/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should a dementia patient go into care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We encourage families to consider whether the person's current support still meets their everyday needs and whether caregivers can sustain that arrangement. There is no single right moment for every family. Discuss safety concerns, increasing assistance needs, and changes in health with the person's physician, then compare care options with those needs in mind."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "At what stage of dementia do you need memory care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We would not use a stage label alone to decide whether a move is appropriate. People's support needs and home circumstances differ, so the decision often involves daily assistance, safety, and the help available to caregivers. Your loved one's physician can advise on medical needs while your family considers suitable living arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between assisted living and memory care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Assisted living supports everyday needs, while memory care focuses on people living with dementia. At Memory Lane Cottage, we provide memory care only. Our site is fully secured for residents who may wander, with a large secured outdoor area, animals, and certified butterfly gardens. Compare each community's actual staffing, environment, and care, and discuss medical needs with your loved one's physician."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know when to move from assisted living to memory care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We suggest starting with a conversation about what the current community can provide and where your loved one may need additional support. A memory care setting may be worth exploring when those needs no longer fit the existing arrangement. Include your loved one where possible, and discuss changes in health or behavior with their physician."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a small memory care cottage better than a large memory care community in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We encourage families to look beyond size alone. A smaller setting may suit someone who prefers a more intimate environment, while individual preferences and care needs still matter most. Compare staff interactions, daily routines, shared spaces, and available support. A visit can help you judge how each setting might fit your loved one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I look for when touring a memory care community?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We suggest watching everyday interactions as well as looking at the building. Ask about staff training, assistance with daily tasks, activities, family communication, and what happens when care needs change. Bring questions specific to your loved one, and take time to notice whether the atmosphere and available support seem appropriate for them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I arrange a tour of Memory Lane Cottage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kelly or Debra will show you around the Cottage. We can normally accommodate drop-ins, but we prefer appointments so we can give your family time. Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week, to arrange a tour and discuss any particular care questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you decide whether my parent can move in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our assessment includes meeting with the family and potential new resident so we can decide whether the Cottage is a good fit for everyone. The doctor overseeing your loved one's care will also need to complete documentation. Please discuss the person's needs with us before making arrangements to move in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can we prepare our loved one for a move to memory care?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We suggest planning the transition around the person's preferences and the support they need, involving them in decisions as much as possible. Families often find it useful to discuss familiar belongings and routines with the receiving community. Ask your loved one's physician about medical concerns, and agree on practical moving arrangements with the care team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my parent stay at the Cottage if their needs change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We hope to be a resident's final home, and our rates include all levels of care we can safely provide. Continued care depends on state regulations and what our community can safely accommodate. We do not accept residents with tracheostomies, feeding tubes, or insulin dependence; behavioral care needs also limit admission. Discuss those needs directly during the assessment. We cannot promise lifetime residency."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://memorylanecottage.com/resources/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://memorylanecottage.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Memory care resources",
+          "item": "https://memorylanecottage.com/resources/"
+        }
+      ]
+    }
+  ]
+}

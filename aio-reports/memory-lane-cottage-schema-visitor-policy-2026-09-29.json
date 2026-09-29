@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://memorylanecottage.com/visitor-policy/",
+      "url": "https://memorylanecottage.com/visitor-policy/",
+      "name": "Visiting and staying connected",
+      "isPartOf": {
+        "@id": "https://memorylanecottage.com/#website"
+      },
+      "about": {
+        "@id": "https://memorylanecottage.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://memorylanecottage.com/visitor-policy/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When can I visit my family member?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 to confirm arrangements before your first visit. Our team takes inquiries from 9 a.m. to 5 p.m., seven days a week; those are inquiry hours, not a new restriction on visiting. Please refer to our visitor policy and speak with us about your family's visiting needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I know before my first visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our published visitor policy describes lobby screening, signing in, and hand hygiene. Please contact us before your first visit to confirm current procedures, particularly if you feel unwell. We have not added new screening requirements or visiting limits in these answers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can our family stay involved in care planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We describe family participation as an integral part of our care planning approach. We work with families to understand residents' life experiences and individual preferences. Sharing what matters to your loved one helps keep that personal history present in conversations about their daily life and support at the Cottage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I stay updated if I live out of town?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 813-428-3350 between 9 a.m. and 5 p.m., seven days a week, to discuss how your family can stay connected. Ask who to contact and agree on how information will be shared. We have not promised a particular update schedule or remote communication service here."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://memorylanecottage.com/visitor-policy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://memorylanecottage.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Visiting and staying connected",
+          "item": "https://memorylanecottage.com/visitor-policy/"
+        }
+      ]
+    }
+  ]
+}

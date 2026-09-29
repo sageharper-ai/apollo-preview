@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Confirm or correct — MakeNest Interiors AIO Research</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b87d1a;
+  --warn-soft: #fdf7e8;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 36px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+.intro-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 36px; border-radius: 0 6px 6px 0; }
+.intro-callout p { margin: 0 0 8px; }
+.intro-callout p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+.section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+
+/* Confirm-or-correct rows (Section 1) */
+.row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.row.needs { background: var(--warn-soft); border-color: #f0d99a; border-left: 4px solid var(--warn); }
+.row .label { font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: var(--warn); color: #fff; }
+.badge.ok { background: var(--bg-soft); color: var(--ink-muted); border: 1px solid var(--rule); }
+.row .use { margin: 6px 0 4px; font-size: 15px; }
+.row .use b { color: var(--good); font-weight: 600; }
+.row .why { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 8px; }
+.row input[type="text"], .row textarea { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 12px; font-family: inherit; font-size: 14px; background: #fff; }
+.row textarea { min-height: 64px; resize: vertical; }
+.row input[type="text"]:focus, .row textarea:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.row.needs input[type="text"]:focus, .row.needs textarea:focus { outline-color: var(--warn); }
+.row .default { font-size: 13px; color: var(--ink-muted); margin-top: 6px; }
+
+/* Choices (Section 3) */
+.options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.options label { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px; padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; }
+.options label:hover { border-color: var(--ink-muted); }
+.options input[type="radio"] { margin: 0; }
+.options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; font-size: 14px; }
+
+/* Send zone */
+.send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
+.send-zone h3 { color: #fff; margin: 0 0 6px; font-size: 20px; }
+.send-zone p { color: #d8d4cd; margin: 0 0 16px; font-size: 14px; }
+.send-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary { background: var(--apollo-orange); color: #fff; border: none; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--apollo-orange-dark); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.send-output { display: none; margin-top: 16px; }
+.send-output.show { display: block; }
+.send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
+.send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
+.save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.save-notice.show { opacity: 1; }
+.top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.top-bar .top-bar-msg { color: var(--ink-soft); }
+.top-bar .top-bar-actions { display: flex; gap: 8px; }
+.btn-small { background: var(--bg-soft); border: 1px solid var(--rule); color: var(--ink-soft); padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.btn-small:hover { background: var(--rule); }
+
+.use {overflow-wrap:anywhere} textarea {max-width:100%} :focus-visible {outline:2px solid var(--apollo-orange)}
+@media(max-width:600px){.container{padding:40px 20px 60px}.top-bar{margin:-40px -20px 24px;flex-wrap:wrap}header h1{font-size:26px}}
+</style></head><body><main class="container"><div class="top-bar"><span id="storage-status">Your answers auto-save in this browser</span><div class="top-bar-actions"><button class="btn-small" onclick="document.getElementById('send-section').scrollIntoView()">↓ Jump to send</button><button class="btn-small" onclick="clearAll()">Clear my answers</button></div></div>
+<header><div class="preheader">Apollo Marketing · AIO Research · Gate 2</div><h1>Here’s what we’re about to publish about MakeNest. Confirm or correct.</h1><p class="subtitle">For Paul Miller · MakeNest Interiors</p><p class="meta-line">September 29, 2026 · Facts from your public site and research record</p></header>
+<div class="intro-callout"><p>Work through the four numbered sections below. <strong>Blank = keep the default shown.</strong> Where a fact needs confirmation, the default says what stays out.</p><p>Your answers stay in this browser on this device. Nothing is submitted automatically.</p><p><a href="makenest-interiors-aio-research-final-2026-09-29.html">Research record</a> · <a href="makenest-interiors-faq-batch-2026-09-29.html">FAQ draft</a> · <a href="makenest-interiors-schema-package-2026-09-29.html">Schema draft</a></p></div>
+<ol class="validation-steps"><li><section><h2>The facts we’ll use</h2><p class="section-intro">Review each pre-filled fact and type what you want to confirm, correct, or add. A submitted reply preserves the defaults wherever you leave a field blank.</p>
+<div class="row" data-item="name" data-group="facts" data-label="Business name" data-default="MakeNest Interiors">
+<label class="label" for="answer-name">Business name</label><div class="use">Blank = <b>MakeNest Interiors</b></div><div class="why">Your site title shortens this to MakeNest; its business record uses MakeNest Interiors.</div>
+<textarea id="answer-name" data-save="name" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="address" data-group="facts" data-label="Address and disclosure" data-default="1 S. Loudoun St., Winchester, VA 22601">
+<label class="label" for="answer-address">Address and disclosure</label><div class="use">Blank = <b>1 S. Loudoun St., Winchester, VA 22601</b></div><div class="why">This is the public site address. Tell us if you prefer a service area without a street address.</div>
+<textarea id="answer-address" data-save="address" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="phone" data-group="facts" data-label="Public phone" data-default="540-336-3385">
+<label class="label" for="answer-phone">Public phone</label><div class="use">Blank = <b>540-336-3385</b></div><div class="why">This is the site, Facebook and captured Google listing number. Tell us if it should be withheld or replaced.</div>
+<textarea id="answer-phone" data-save="phone" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="email" data-group="facts" data-label="Preferred public email" data-default="Keep design@makenestinteriors.com as the visible contact; leave the structured business email out until you confirm one address.">
+<label class="label" for="answer-email">Preferred public email</label><div class="use">Blank = <b>Keep design@makenestinteriors.com as the visible contact; leave the structured business email out until you confirm one address.</b></div><div class="why">Your footer uses design@; About uses paulmiller@makenestinteriors.com; Facebook uses info@makenestinteriors.com. Which should be canonical?</div>
+<textarea id="answer-email" data-save="email" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="hours" data-group="facts" data-label="Public hours and appointments" data-default="Publish no hours until confirmed.">
+<label class="label" for="answer-hours">Public hours and appointments</label><div class="use">Blank = <b>Publish no hours until confirmed.</b></div><div class="why">Existing site code says Monday–Thursday 10 a.m.–4 p.m., but visible text does not. Confirm those hours, Friday, weekends and any appointment policy.</div>
+<textarea id="answer-hours" data-save="hours" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="logo" data-group="facts" data-label="Logo and canonical asset" data-default="https://images.squarespace-cdn.com/content/v1/55f739f4e4b0550fcc13832a/80209983-8353-42d3-87ab-0b7faebe8dab/MakeNest-Logo-with-Tagline_updated.png">
+<label class="label" for="answer-logo">Logo and canonical asset</label><div class="use">Blank = <b>https://images.squarespace-cdn.com/content/v1/55f739f4e4b0550fcc13832a/80209983-8353-42d3-87ab-0b7faebe8dab/MakeNest-Logo-with-Tagline_updated.png</b></div><div class="why">This is the logo in the captured site record. Leave blank to retain it, or provide the preferred asset URL and any usage limits.</div>
+<textarea id="answer-logo" data-save="logo" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="founded" data-group="facts" data-label="Year established" data-default="2004">
+<label class="label" for="answer-founded">Year established</label><div class="use">Blank = <b>2004</b></div><div class="why">Supported by About and your anniversary posts.</div>
+<textarea id="answer-founded" data-save="founded" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="paul" data-group="facts" data-label="Owner and designer" data-default="Paul Miller — Owner, Interior Designer">
+<label class="label" for="answer-paul">Owner and designer</label><div class="use">Blank = <b>Paul Miller — Owner, Interior Designer</b></div><div class="why">As shown on your About page.</div>
+<textarea id="answer-paul" data-save="paul" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="team" data-group="facts" data-label="Other team members" data-default="Name only you, Paul Miller.">
+<label class="label" for="answer-team">Other team members</label><div class="use">Blank = <b>Name only you, Paul Miller.</b></div><div class="why">Your homepage says “Paul Miller and his team.” Add anyone else who should be named, with their title.</div>
+<textarea id="answer-team" data-save="team" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="credentials" data-group="facts" data-label="Education and credentials" data-default="Leave credentials and education out until confirmed.">
+<label class="label" for="answer-credentials">Education and credentials</label><div class="use">Blank = <b>Leave credentials and education out until confirmed.</b></div><div class="why">Eighteen blog bylines say “IDS Professional Member.” Is that membership current and may we include it? Add any degree/school or other current credential you want named.</div>
+<textarea id="answer-credentials" data-save="credentials" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="services" data-group="facts" data-label="Services" data-default="Whole House Design; Room-by-Room Design; Kitchen &amp; Bath Design; Single or Multiple Room Refresh; Commercial Interior Design.">
+<label class="label" for="answer-services">Services</label><div class="use">Blank = <b>Whole House Design; Room-by-Room Design; Kitchen &amp; Bath Design; Single or Multiple Room Refresh; Commercial Interior Design.</b></div><div class="why">These services are already described on the site. The new October pages and their final wording remain pending.</div>
+<textarea id="answer-services" data-save="services" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="area" data-group="facts" data-label="Service area" data-default="Northern Shenandoah Valley, Northern Virginia and parts of West Virginia; no guaranteed town-by-town coverage.">
+<label class="label" for="answer-area">Service area</label><div class="use">Blank = <b>Northern Shenandoah Valley, Northern Virginia and parts of West Virginia; no guaranteed town-by-town coverage.</b></div><div class="why">Your site and portfolio reference Clarke County, Martinsburg, Charles Town and Front Royal. Confirm the towns/counties you serve, including whether Leesburg and western Loudoun belong.</div>
+<textarea id="answer-area" data-save="area" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="pricing" data-group="facts" data-label="Pricing disclosure" data-default="Keep the published $140 hourly design fee, quarter-hour increments, travel beyond a 30-minute drive billed at the full rate, and initial complimentary studio meeting.">
+<label class="label" for="answer-pricing">Pricing disclosure</label><div class="use">Blank = <b>Keep the published $140 hourly design fee, quarter-hour increments, travel beyond a 30-minute drive billed at the full rate, and initial complimentary studio meeting.</b></div><div class="why">These terms come from /process. Correct current terms or say which prices you would rather withhold; no new project minimum or total price will be invented.</div>
+<textarea id="answer-pricing" data-save="pricing" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="commercial" data-group="facts" data-label="Permission to name commercial projects" data-default="Do not add named commercial project examples to the refreshed content until you approve them.">
+<label class="label" for="answer-commercial">Permission to name commercial projects</label><div class="use">Blank = <b>Do not add named commercial project examples to the refreshed content until you approve them.</b></div><div class="why">Your site already references Spelunkers in Front Royal and Winchester Oral Surgery Center. May the refreshed Commercial page name either or both? Note any limits.</div>
+<textarea id="answer-commercial" data-save="commercial" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="hubs" data-group="facts" data-label="Client design hubs in search" data-default="No search or sitemap changes without your explicit approval.">
+<label class="label" for="answer-hubs">Client design hubs in search</label><div class="use">Blank = <b>No search or sitemap changes without your explicit approval.</b></div><div class="why">We found 38 client design-hub pages in the public sitemap, with surnames and plans. May we remove them from search and the sitemap while preserving intended client links? This answer records your preference; it does not change the site.</div>
+<textarea id="answer-hubs" data-save="hubs" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="reviews" data-group="facts" data-label="Testimonials: named or anonymous" data-default="Add no Google/Facebook review quotations and no review or star-rating markup.">
+<label class="label" for="answer-reviews">Testimonials: named or anonymous</label><div class="use">Blank = <b>Add no Google/Facebook review quotations and no review or star-rating markup.</b></div><div class="why">There is no site testimonial section. May specific reviews appear as visible text? Identify the exact review and approved name or anonymous attribution; note any permission limits.</div>
+<textarea id="answer-reviews" data-save="reviews" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="identity" data-group="facts" data-label="LGBTQ+ owned wording" data-default="Keep this statement on the existing Google and Instagram profiles; do not add it to the site or structured data without your approval.">
+<label class="label" for="answer-identity">LGBTQ+ owned wording</label><div class="use">Blank = <b>Keep this statement on the existing Google and Instagram profiles; do not add it to the site or structured data without your approval.</b></div><div class="why">Your public profiles already say LGBTQ+ owned. Tell us whether and how you want it included.</div>
+<textarea id="answer-identity" data-save="identity" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="trademark" data-group="facts" data-label="Trademark or named framework" data-default="Use MakeNest Interiors without an added trademark symbol or named proprietary framework.">
+<label class="label" for="answer-trademark">Trademark or named framework</label><div class="use">Blank = <b>Use MakeNest Interiors without an added trademark symbol or named proprietary framework.</b></div><div class="why">No confirmed registration or named framework is in the captured record. Supply exact wording and status if one should be included.</div>
+<textarea id="answer-trademark" data-save="trademark" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="parent" data-group="facts" data-label="Parent organization or LLC" data-default="Present MakeNest Interiors as its own business; name no parent or separate legal entity.">
+<label class="label" for="answer-parent">Parent organization or LLC</label><div class="use">Blank = <b>Present MakeNest Interiors as its own business; name no parent or separate legal entity.</b></div><div class="why">If a parent company or legal LLC name should appear, give the exact name and relationship.</div>
+<textarea id="answer-parent" data-save="parent" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="instagram" data-group="facts" data-label="Instagram profile" data-default="https://www.instagram.com/makenest/">
+<label class="label" for="answer-instagram">Instagram profile</label><div class="use">Blank = <b>https://www.instagram.com/makenest/</b></div><div class="why">Already linked from your site; retain unless you correct or exclude it.</div>
+<textarea id="answer-instagram" data-save="instagram" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="facebook" data-group="facts" data-label="Facebook profile" data-default="Hold https://www.facebook.com/makenest/ until ownership is confirmed.">
+<label class="label" for="answer-facebook">Facebook profile</label><div class="use">Blank = <b>Hold https://www.facebook.com/makenest/ until ownership is confirmed.</b></div><div class="why">Confirm it belongs to the business before we add it to the identity links.</div>
+<textarea id="answer-facebook" data-save="facebook" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="houzz" data-group="facts" data-label="Houzz profile" data-default="Hold https://www.houzz.com/professionals/interior-designers-and-decorators/makenest-interiors-pfvwus-pf~344402589 until ownership is confirmed.">
+<label class="label" for="answer-houzz">Houzz profile</label><div class="use">Blank = <b>Hold https://www.houzz.com/professionals/interior-designers-and-decorators/makenest-interiors-pfvwus-pf~344402589 until ownership is confirmed.</b></div><div class="why">This candidate appeared in the captured branded search.</div>
+<textarea id="answer-houzz" data-save="houzz" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="yelp" data-group="facts" data-label="Yelp profile" data-default="Hold https://www.yelp.com/biz/makenest-interiors-winchester-2 until ownership is confirmed.">
+<label class="label" for="answer-yelp">Yelp profile</label><div class="use">Blank = <b>Hold https://www.yelp.com/biz/makenest-interiors-winchester-2 until ownership is confirmed.</b></div><div class="why">Confirm this is the correct business listing.</div>
+<textarea id="answer-yelp" data-save="yelp" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="linkedin-company" data-group="facts" data-label="LinkedIn business profile" data-default="Hold https://www.linkedin.com/company/makenest-interiors until ownership is confirmed.">
+<label class="label" for="answer-linkedin-company">LinkedIn business profile</label><div class="use">Blank = <b>Hold https://www.linkedin.com/company/makenest-interiors until ownership is confirmed.</b></div><div class="why">Keep the business profile separate from your personal profile.</div>
+<textarea id="answer-linkedin-company" data-save="linkedin-company" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="linkedin-paul" data-group="facts" data-label="Your LinkedIn profile" data-default="Hold https://www.linkedin.com/in/paul-miller-58bb729 until you confirm it.">
+<label class="label" for="answer-linkedin-paul">Your LinkedIn profile</label><div class="use">Blank = <b>Hold https://www.linkedin.com/in/paul-miller-58bb729 until you confirm it.</b></div><div class="why">This candidate is linked from one captured site page; if approved, it belongs to your person record.</div>
+<textarea id="answer-linkedin-paul" data-save="linkedin-paul" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="retired" data-group="facts" data-label="Retired domains or profiles" data-default="Exclude no additional domains; add no unconfirmed profile links.">
+<label class="label" for="answer-retired">Retired domains or profiles</label><div class="use">Blank = <b>Exclude no additional domains; add no unconfirmed profile links.</b></div><div class="why">List old websites or profiles that must NOT be connected to MakeNest.</div>
+<textarea id="answer-retired" data-save="retired" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div><div class="row" data-item="press" data-group="facts" data-label="Any other awards or publications?" data-default="Retain Home &amp; Design: Clean + Casual (February 15, 2019) and Hot Talent: Paul Miller (June 25, 2017). The 2019 Winchester Star reader poll remains site-reported; no unverified publisher URL will be added.">
+<label class="label" for="answer-press">Any other awards or publications?</label><div class="use">Blank = <b>Retain Home &amp; Design: Clean + Casual (February 15, 2019) and Hot Talent: Paul Miller (June 25, 2017). The 2019 Winchester Star reader poll remains site-reported; no unverified publisher URL will be added.</b></div><div class="why">The two Home &amp; Design article URLs are already found. Add only other awards or publications, with links if available.</div>
+<textarea id="answer-press" data-save="press" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div>
+<p>Already found: <a href="https://www.homeanddesign.com/2019/02/15/clean-casual/">Clean + Casual</a> · <a href="https://www.homeanddesign.com/2017/06/25/hot-talent-paul-miller/">Hot Talent: Paul Miller</a>. These links do not grant permission to reproduce article text or images.</p></section></li><li><section><h2>Answers in your voice</h2><p class="section-intro">Answer each open FAQ in your own voice; a few plain sentences for each are enough. These map to the unanswered candidates in your FAQ draft; they are not invented answers.</p>
+<div class="row needs" data-item="whole-home" data-group="voice" data-label="Whole-home design (FAQ Q15)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-whole-home">Whole-home design (FAQ Q15)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">What do you handle in a whole-home project, who is it for, and how do we get started?</div>
+<textarea id="answer-whole-home" data-save="whole-home" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="coverage" data-group="voice" data-label="Local coverage (FAQ Q19, Q22, Q25–26)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-coverage">Local coverage (FAQ Q19, Q22, Q25–26)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">Which places do you serve, and how do you decide whether Front Royal, Leesburg or western Loudoun is a fit?</div>
+<textarea id="answer-coverage" data-save="coverage" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="kitchen" data-group="voice" data-label="Kitchen and bath scope (FAQ Q27, Q32)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-kitchen">Kitchen and bath scope (FAQ Q27, Q32)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">What design work do you provide, and what stays with the contractor or other licensed professionals?</div>
+<textarea id="answer-kitchen" data-save="kitchen" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="budget" data-group="voice" data-label="Project budget (FAQ Q16, Q28, Q33, Q37, Q42, Q45)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-budget">Project budget (FAQ Q16, Q28, Q33, Q37, Q42, Q45)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">Beyond the published hourly rate, how should someone plan a budget? Share any minimum or range only if you want it public.</div>
+<textarea id="answer-budget" data-save="budget" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="commercial-voice" data-group="voice" data-label="Commercial and office work (FAQ Q36–37)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-commercial-voice">Commercial and office work (FAQ Q36–37)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">Which business spaces do you design, and what is the process for a commercial client?</div>
+<textarea id="answer-commercial-voice" data-save="commercial-voice" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="medical" data-group="voice" data-label="Medical or dental offices (FAQ Q39–40)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-medical">Medical or dental offices (FAQ Q39–40)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">Do you take these projects? Describe your role and any approved example; leave out claims of clinical or regulatory expertise unless applicable.</div>
+<textarea id="answer-medical" data-save="medical" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="refresh" data-group="voice" data-label="One or two room refresh (FAQ Q41–42)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-refresh">One or two room refresh (FAQ Q41–42)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">What does a refresh include, and how is it different from a complete redesign?</div>
+<textarea id="answer-refresh" data-save="refresh" placeholder="A few sentences in your own voice"></textarea></div><div class="row needs" data-item="room-by-room" data-group="voice" data-label="Room-by-room design (FAQ Q44–45)" data-default="Keep this answer pending; publish no new answer.">
+<label class="label" for="answer-room-by-room">Room-by-room design (FAQ Q44–45)</label><div class="use">Blank = <b>Keep this answer pending; publish no new answer.</b></div><div class="why">Can clients work one room at a time? Describe the scope, sequence and what they receive.</div>
+<textarea id="answer-room-by-room" data-save="room-by-room" placeholder="A few sentences in your own voice"></textarea></div></section></li><li><section><h2>Last things</h2>
+<div class="row" data-item="draft-edits" data-group="facts" data-label="Specific edits to the draft schema or FAQs" data-default="No additional edits; unanswered FAQs and held facts remain pending.">
+<label class="label" for="answer-draft-edits">Specific edits to the draft schema or FAQs</label><div class="use">Blank = <b>No additional edits; unanswered FAQs and held facts remain pending.</b></div><div class="why">Use the FAQ Q# or name the schema field, then give the change you want.</div>
+<textarea id="answer-draft-edits" data-save="draft-edits" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div>
+<div class="row" data-item="omit" data-group="facts" data-label="Anything you would rather we not publish?" data-default="No additional omissions beyond the holds shown above.">
+<label class="label" for="answer-omit">Anything you would rather we not publish?</label><div class="use">Blank = <b>No additional omissions beyond the holds shown above.</b></div><div class="why">Name any fact, project, person, service, profile or answer that should stay out.</div>
+<textarea id="answer-omit" data-save="omit" placeholder="Leave blank to keep the default shown, or confirm / correct here"></textarea></div></section></li><li><section id="send-section"><div class="send-zone"><h3>Send back to Apollo</h3><p>Press &ldquo;Compile my answers,&rdquo; then &ldquo;Copy my answers,&rdquo; paste the result into a reply to <a href="mailto:sage.harper@apollollc.com">sage.harper@apollollc.com</a>, and send it. Alternatively, use &ldquo;Open an email draft&rdquo; after compiling, then review and send that draft.</p><button class="btn-primary" onclick="compileAnswers()">📋 Compile my answers</button><div class="send-output" id="send-output"><label for="send-text">Your structured reply</label><textarea id="send-text" readonly></textarea><div class="post-actions"><button class="btn-primary" onclick="copyToClipboard()">📋 Copy my answers</button><button class="btn-secondary" onclick="openEmail()">✉ Open an email draft</button></div><p id="copy-status" role="status"></p></div></div></section></li></ol><footer>Apollo Marketing · MakeNest Interiors · Reply to Sage with your completed answers.</footer></main>
+<script>
+const STORAGE_KEY='aio-validation-makenest-interiors-2026-09-29';
+const RECIPIENT_EMAIL='sage.harper@apollollc.com';
+const fields=[...document.querySelectorAll('[data-save]')];
+function storageNotice(){document.getElementById('storage-status').textContent='Browser saving unavailable. Copy your answers before leaving.';}
+let saved={};try{saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')||{};}catch(e){storageNotice();}
+fields.forEach(el=>{if(typeof saved[el.dataset.save]==='string')el.value=saved[el.dataset.save];el.addEventListener('input',()=>{const state={};fields.forEach(f=>state[f.dataset.save]=f.value);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){storageNotice();}});});
+function clearAll(){if(!confirm('Clear all your answers on this device?'))return;try{localStorage.removeItem(STORAGE_KEY);}catch(e){storageNotice();}fields.forEach(el=>el.value='');document.getElementById('send-text').value='';document.getElementById('send-output').classList.remove('show');}
+function compileAnswers(){
+ const lines=['Answers for AIO Research — MakeNest Interiors','Sent '+new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}),'='.repeat(56),'','1. FACTS (blank = use the default shown on the page)'];
+ const rows=[...document.querySelectorAll('[data-item]')];
+ function answer(r){return r.querySelector('[data-save]').value.trim()||'(default) '+r.dataset.default;}
+ rows.filter(r=>r.dataset.group==='facts'&&!['draft-edits','omit'].includes(r.dataset.item)).forEach(r=>lines.push('- '+r.dataset.label+': '+answer(r)));
+ lines.push('','2. ANSWERS IN YOUR VOICE');rows.filter(r=>r.dataset.group==='voice').forEach(r=>lines.push('Q: '+r.dataset.label,'A: '+answer(r),''));
+ lines.push('3. LAST THINGS');rows.filter(r=>['draft-edits','omit'].includes(r.dataset.item)).forEach(r=>lines.push('- '+r.dataset.label+': '+answer(r)));
+ document.getElementById('send-text').value=lines.join('\n');document.getElementById('send-output').classList.add('show');document.getElementById('copy-status').textContent='Ready to copy or open in your email app.';
+}
+async function copyToClipboard(){compileAnswers();const t=document.getElementById('send-text');try{await navigator.clipboard.writeText(t.value);document.getElementById('copy-status').textContent='Copied. Paste into your reply to Sage.';}catch(e){t.focus();t.select();document.getElementById('copy-status').textContent='Select and copy the reply above, then paste it into your email to Sage.';}}
+function openEmail(){compileAnswers();window.location.href='mailto:'+RECIPIENT_EMAIL+'?subject='+encodeURIComponent('AIO Research — answers for MakeNest Interiors')+'&body='+encodeURIComponent(document.getElementById('send-text').value);}
+</script></body></html>
