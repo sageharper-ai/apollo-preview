@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
+<title>The Headache Whisperer - Monthly Report - September 2026</title><style>:root {
+  --accent: #C56B3F;
+  --accent-dark: #A8552E;
+  --accent-soft: #f6e4d6;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --good-soft: #e8f3ec;
+  --warn: #b87d1a;
+  --warn-soft: #fbf2e0;
+  --bad: #b14545;
+  --bad-soft: #f4e3e3;
+  --neutral-soft: #eef0f3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 4px solid var(--accent); padding-bottom: 36px; margin-bottom: 40px; }
+.preheader {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 14px;
+}
+header h1 { font-size: 40px; line-height: 1.1; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.015em; }
+.subtitle { font-size: 19px; color: var(--ink-soft); margin: 0 0 22px; font-weight: 500; }
+.meta-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.pill strong { color: var(--ink); }
+
+.tldr {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+.tldr h2 {
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin: 0 0 10px; border: 0; padding: 0;
+}
+.tldr p { margin: 0 0 12px; font-size: 16px; line-height: 1.6; }
+.tldr p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 56px; scroll-margin-top: 20px; }
+h2 {
+  font-size: 26px; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em;
+  padding-bottom: 12px; border-bottom: 2px solid var(--accent);
+}
+h2 .num { color: var(--accent); font-weight: 700; margin-right: 10px; }
+h3 { font-size: 19px; margin: 28px 0 12px; font-weight: 600; color: var(--ink); }
+h4 {
+  font-size: 13px; margin: 18px 0 8px; font-weight: 700; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+p { margin: 0 0 14px; font-size: 16px; }
+ul, ol { padding-left: 22px; margin: 0 0 16px; }
+li { margin-bottom: 8px; line-height: 1.55; }
+
+.month-band {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  padding: 14px 24px;
+  font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+  margin-top: 12px;
+}
+.month-wrap {
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 28px 26px 8px;
+  margin-bottom: 44px;
+  background: var(--bg);
+}
+.month-wrap h3:first-of-type { margin-top: 4px; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px 20px;
+  position: relative;
+}
+.stat-card .num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.stat-card .lbl {
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: block;
+  line-height: 1.4;
+}
+.stat-card .trend {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.trend-up { background: var(--good-soft); color: var(--good); }
+.trend-down { background: var(--bad-soft); color: var(--bad); }
+.trend-flat { background: var(--neutral-soft); color: var(--ink-soft); }
+
+.callout {
+  background: var(--bg-card);
+  border-left: 4px solid var(--accent);
+  padding: 20px 22px;
+  margin: 22px 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.callout-good { border-left-color: var(--good); background: var(--good-soft); }
+.callout.callout-warn { border-left-color: var(--warn); background: var(--warn-soft); }
+.callout.callout-bad { border-left-color: var(--bad); background: var(--bad-soft); }
+.callout.callout-action { border-left-color: var(--accent); background: var(--accent-soft); }
+.callout strong { color: var(--ink); }
+.callout-meta { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; font-style: italic; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; vertical-align: middle; }
+.badge-good { background: var(--good-soft); color: var(--good); }
+.badge-warn { background: var(--warn-soft); color: var(--warn); }
+.badge-bad { background: var(--bad-soft); color: var(--bad); }
+.badge-neutral { background: var(--neutral-soft); color: var(--ink-soft); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+th {
+  background: var(--bg-soft);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink);
+}
+td { padding: 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.row-total td { background: var(--bg-soft); font-weight: 700; }
+
+.wins-watchouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .wins-watchouts { grid-template-columns: 1fr; } }
+.lane {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 22px 24px;
+}
+.lane-wins { border-left: 4px solid var(--good); }
+.lane-watchouts { border-left: 4px solid var(--warn); }
+.lane h3 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 14px; font-weight: 700; }
+.lane-wins h3 { color: var(--good); }
+.lane-watchouts h3 { color: var(--warn); }
+.lane ul { padding-left: 18px; margin: 0; }
+.lane li { font-size: 15px; margin-bottom: 10px; }
+.lane li:last-child { margin-bottom: 0; }
+
+.section-divider {
+  text-align: center;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-muted); font-weight: 700;
+  margin: 70px 0 50px; position: relative; padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.scope-table { font-size: 14px; }
+.scope-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.scope-included { background: var(--good-soft); }
+.scope-notincluded { background: var(--warn-soft); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 0;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 720px) { .timeline { grid-template-columns: 1fr; } }
+.timeline-step { padding: 20px; border-right: 1px solid var(--rule); position: relative; }
+.timeline-step:last-child { border-right: none; }
+@media (max-width: 720px) {
+  .timeline-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .timeline-step:last-child { border-bottom: none; }
+}
+.timeline-step .when { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.timeline-step .what { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.timeline-step .why { font-size: 13px; color: var(--ink-soft); }
+
+footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+footer .brand { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.fineprint { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: 12px; }
+
+.lead { font-size: 17px; color: var(--ink-soft); }
+.text-muted { color: var(--ink-muted); }
+.text-good { color: var(--good); font-weight: 600; }
+.text-warn { color: var(--warn); font-weight: 600; }
+.text-bad { color: var(--bad); font-weight: 600; }
+.text-emph { font-weight: 600; color: var(--ink); }
+hr.soft { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+
+.toc {
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.toc h4 { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); font-weight: 700; }
+.toc ol { padding-left: 20px; margin: 0; }
+.toc li { margin-bottom: 4px; }
+.toc a { color: var(--ink-soft); text-decoration: none; }
+.toc a:hover { color: var(--accent); }
+
+@media print {
+  body { background: white; }
+  .container { padding: 20px; }
+  section { page-break-inside: avoid; }
+  .callout { page-break-inside: avoid; }
+  .month-wrap { page-break-inside: avoid; }
+}
+.hello { font-size: 16px; color: var(--ink-soft); margin: 0 0 8px; }
+.evidence { display: block; font-size: 13px; color: var(--ink-muted); margin-top: 4px; }
+.tldr + h2 { margin-top: 8px; }
+h2 { margin-top: 48px; }
+@media (max-width: 600px) {
+  .container { padding: 32px 16px 48px; }
+  header h1 { font-size: 30px; }
+  table { font-size: 13px; display: block; overflow-x: auto; }
+}
+@media print { h2 { margin-top: 28px; } a { color: var(--ink); } }
+li a, .lead a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 2px; }
+</style></head><body><div class="container">
+<header><div class="preheader">Performance Update · Apollo Marketing</div><h1>The Headache Whisperer</h1>
+<div class="subtitle">Facebook &amp; Instagram Ads · September 2026</div>
+
+<div class="meta-pills"><span class="pill"><strong>Covering:</strong> September 1-30, 2026</span>
+<span class="pill"><strong>Campaign:</strong> Live session registrations</span><span class="pill"><strong>Prepared: October 2, 2026</strong></span><span class="pill"><strong>Next report:</strong> end of October 2026 · covering the full month of October</span></div></header>
+<div class="tldr"><h2>This update at a glance</h2>
+<p>The ads are reaching more people every month: 38,150 impressions in September (14,624 in July) and 1,471 landing page visits, nearly double August&#x27;s 746 and more than four times July&#x27;s 336, at about 34 cents each, the lowest cost per visit so far.</p>
+<p>The problem is what happens on the registration page: those 1,471 visits produced 3 tracked registrations. We checked the tracking on October 2 and it works on both registration pages, so this is a sign-up problem, not a counting problem.</p>
+<p><strong>The honest number:</strong> 3 tracked registrations from 1,471 visits in September (about 1 in 490). Turning visits into sign-ups is the priority.</p></div>
+<h2>1. The three-month trend</h2>
+<p class="lead">July, August, and September side by side, all pulled from the Facebook ad account, all full calendar months.</p>
+<table><thead><tr><th>Metric</th><th>July (1–31)</th><th>Aug (1–31)</th><th>Sept (1–30)</th><th>Direction</th></tr></thead><tbody>
+<tr><td>Impressions (times your ads were shown)</td><td>14,624</td><td>36,921</td><td>38,150</td><td><span class="badge badge-good">Improved</span></td></tr>
+<tr><td>People reached</td><td>10,166</td><td>21,830</td><td>26,385</td><td><span class="badge badge-good">Improved</span></td></tr>
+<tr><td>Link clicks</td><td>397</td><td>969</td><td>1,669</td><td><span class="badge badge-good">Improved</span></td></tr>
+<tr><td>Landing page visits</td><td>336</td><td>746</td><td>1,471</td><td><span class="badge badge-good">Improved</span></td></tr>
+<tr><td>Webinar registrations (tracked)</td><td>not measured this month</td><td>not measured this month</td><td>3</td><td><span class="badge badge-neutral">-</span></td></tr>
+<tr><td>Cost per landing page visit</td><td>$0.60</td><td>$0.54</td><td>$0.34</td><td><span class="badge badge-good">Improved</span></td></tr>
+<tr><td>Facebook and Instagram ad spend</td><td>$202.63</td><td>$402.95</td><td>$503.22</td><td><span class="badge badge-neutral">On the $500 budget</span></td></tr>
+</tbody></table>
+<p class="fineprint">Same ad account and the same counting method for the ad numbers all three months. Registrations are counted when someone reaches the webinar page after signing up (both registration pages); July and August counts weren&#x27;t available from the account, so the row starts in September. Link click-through rate: 2.7% in July, 2.6% in August, 4.4% in September.</p>
+<h2>2. What we did in September</h2><ul>
+<li><strong>Switched all ads to the live September 25 session (Sept 14).</strong> All eight ads were pointed to the live registration page, and the live-session ads ran on their own $25/day budget.</li>
+<li><strong>Kept the on-demand ads ready but paused.</strong> The evergreen ads now point to the on-demand page and stay paused while a live session is being promoted.</li>
+<li><strong>Paused after the session and restarted for October (Sept 25 and 30).</strong> The ads paused when the September session ended and came back on September 30, once the October session dates were on the calendar.</li>
+</ul>
+<div class="callout callout-good"><p><strong>Where the budget converts:</strong> The live-session ads brought in 934 of September&#x27;s 1,471 landing page visits, at about 34 cents each.</p></div>
+<h2>3. The one thing we&#x27;re doing next</h2><p>Find why visitors aren&#x27;t signing up: compare your registration system&#x27;s September count with the 3 tracked, then walk the registration page on a phone with your team to find where people leave.</p>
+<h2>4. What we need from you</h2>
+<ul><li><strong>Share how many people registered in September, including the September 25 live session.</strong> First step: Pull the count from your registration system and send it to Brook; it confirms whether 3 is the real number.</li></ul>
+<h2>5. What your monthly retainer covers</h2>
+<p class="lead">For transparency on what&#x27;s included in your monthly Facebook &amp; Instagram ads management, and what we&#x27;d scope separately if needed.</p>
+<table class="scope-table"><thead><tr><th>Included in monthly retainer</th><th>Scoped separately (when needed)</th></tr></thead><tbody>
+<tr><td class="scope-included">Campaign management and optimization<br><span class="text-muted">Live-session switch on Sept 14; pause and restart around the sessions</span></td><td class="scope-notincluded">Landing pages and the registration funnel, handled by your team</td></tr>
+<tr><td class="scope-included">Monthly performance report<br><span class="text-muted">This report, with one round of edits included</span></td><td class="scope-notincluded">Ad creative and video production</td></tr>
+<tr><td class="scope-included">Registration tracking<br><span class="text-muted">Checked on October 2: firing on both registration pages</span></td><td class="scope-notincluded">Sales after registration (the program offer)</td></tr>
+<tr><td class="scope-included">Ad-hoc questions and adjustments<br><span class="text-muted">Session-date changes handled with Brook</span></td><td class="scope-notincluded">Other ad platforms, quoted per scope</td></tr>
+</tbody></table>
+<footer><div class="brand">Apollo Marketing</div><p>Hickory, NC · <a href="mailto:sage.harper@apollollc.com">sage.harper@apollollc.com</a> · 301-744-9697<br>Account manager: Brook Borup, My Clone Solution · <a href="mailto:brook@myclonesolutions.com">brook@myclonesolutions.com</a></p>
+<p><strong>Next report:</strong> end of October 2026 · covering the full month of October</p>
+<p class="fineprint">All ad figures sourced directly from The Headache Whisperer&#x27;s Facebook ad account (ID 1751999232609460), pulled October 2, 2026. Reporting windows: July (1–31); Aug (1–31); Sept (1–30) (calendar months). Registrations are counted when a visitor reaches the webinar page after signing up, on both the live and on-demand registration pages. Link click-through rate and cost per landing page visit are derived from the account&#x27;s own numbers. This report covers Facebook and Instagram ads only. Send feedback within 7 days for the next cycle.</p></footer></div></body></html>
