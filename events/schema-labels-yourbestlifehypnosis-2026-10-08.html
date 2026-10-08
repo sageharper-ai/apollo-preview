@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Label Demo: Your Best Life Hypnosis</title>
+<style>
+:root{--ink:#2a2b2d;--gray:#555;--cream:#FFF9F0;--accent:#F5A623;--ok:#2e7d32;--warn:#b26a00;--card:#fff;--line:#eadfcf}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.5 "Nunito Sans",system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:30px;margin:0 0 4px}h2{margin:34px 0 8px;font-size:22px}
+.sub{color:var(--gray);margin:0 0 18px}
+.scan{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.box b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--gray)}
+.big{font-size:20px;font-weight:800}
+.ok{color:var(--ok)}.warn{color:var(--warn)}
+.label{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+@media(max-width:800px){.label{grid-template-columns:1fr}}
+.plain{background:var(--card);border:3px solid var(--ink);border-radius:6px;padding:12px 16px}
+.plain h3{margin:0 0 6px;font-size:22px;border-bottom:6px solid var(--ink);padding-bottom:4px}
+.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ccc;padding:5px 0}
+.row span:last-child{text-align:right}
+pre{margin:0;background:#1f2023;color:#f3efe6;border-radius:8px;padding:12px;font-size:12.5px;overflow:auto;max-height:430px}
+.tag{display:inline-block;background:var(--accent);color:#000;font-weight:800;border-radius:6px;padding:2px 8px;font-size:13px;margin-right:6px}
+.note{background:#fff4dc;border-left:5px solid var(--accent);padding:10px 14px;border-radius:6px;margin-top:10px}
+</style></head><body><main>
+<h1>Your Best Life Hypnosis: what AI can read today</h1>
+<p class="sub">Example from Natalie's meetup (with thanks to Jane). Scanned 2026-10-08 from yourbestlifehypnosis.com. Every label below uses only facts visible on her homepage.</p>
+
+<div class="scan">
+ <div class="box"><b>Labels found today</b><span class="big warn">1: "WebSite"</span><br>Says "this is a website." Nothing about who, what or where.</div>
+ <div class="box"><b>Google Business Profile</b><span class="big warn">None found</span><br>Sessions are on Zoom, so there's no storefront. An online-only practice can still label its service area.</div>
+ <div class="box"><b>FAQs on the page</b><span class="big warn">None visible</span><br>The one rule: no FAQ label until the questions show on the page.</div>
+ <div class="box"><b>What the page already says</b><span class="big ok">Plenty</span><br>Who it serves, what it helps with, Zoom sessions, a free call, testimonials, email.</div>
+</div>
+
+<h2><span class="tag">1</span>Where can a client find you? (business label)</h2>
+<div class="label">
+ <div class="plain"><h3>Label Facts</h3>
+  <div class="row"><span>Business</span><span>Your Best Life Hypnosis</span></div>
+  <div class="row"><span>What</span><span>Resilient Mom Mind Reset Program (hypnosis)</span></div>
+  <div class="row"><span>For</span><span>Working mothers</span></div>
+  <div class="row"><span>Where</span><span>Online, via Zoom</span></div>
+  <div class="row"><span>Helps with</span><span>stress, sleep, confidence, mindset, impulse control, resilience, self-esteem, motivation</span></div>
+  <div class="row"><span>First step</span><span>Free curiosity call</span></div>
+  <div class="row"><span>Contact</span><span>jane@yourbestlifehypnosis.com</span></div>
+ </div>
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Your Best Life Hypnosis",
+  "url": "https://yourbestlifehypnosis.com/",
+  "email": "jane@yourbestlifehypnosis.com",
+  "description": "The Resilient Mom Mind Reset Program helps working mothers manage their hectic lives. All sessions are via Zoom.",
+  "audience": { "@type": "Audience", "audienceType": "Working mothers" },
+  "knowsAbout": ["Stress management", "Better sleep", "Confidence",
+    "Positive mindset", "Impulse control", "Resilience",
+    "Self-esteem", "Motivation"],
+  "availableChannel": { "@type": "ServiceChannel",
+    "serviceUrl": "https://yourbestlifehypnosis.com/",
+    "name": "Zoom sessions" },
+  "makesOffer": { "@type": "Offer", "name": "Free curiosity call", "price": "0" },
+  "founder": { "@type": "Person", "name": "Jane Gober" },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61552381439934",
+    "https://www.instagram.com/yourbestlifehypnosis",
+    "https://www.linkedin.com/in/jbgober/"
+  ]
+}</pre>
+</div>
+
+<h2><span class="tag">2</span>Who's behind it? (person label)</h2>
+<div class="label">
+ <div class="plain"><h3>Label Facts</h3>
+  <div class="row"><span>Name</span><span>Jane Gober</span></div>
+  <div class="row"><span>Role</span><span>Hypnosis coach</span></div>
+  <div class="row"><span>Works for</span><span>Your Best Life Hypnosis</span></div>
+  <div class="row"><span>Also found at</span><span>LinkedIn</span></div>
+ </div>
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Gober",
+  "jobTitle": "Hypnosis coach",
+  "worksFor": { "@type": "ProfessionalService",
+    "name": "Your Best Life Hypnosis",
+    "url": "https://yourbestlifehypnosis.com/" },
+  "sameAs": ["https://www.linkedin.com/in/jbgober/"]
+}</pre>
+</div>
+<div class="note">The one rule applies: her full name and any credentials go in this label only if they show on her About page. Add certifications there first, then add them here.</div>
+
+<h2><span class="tag">3</span>What do clients ask? (FAQ label: page first)</h2>
+<div class="label">
+ <div class="plain"><h3>Add to the page first</h3>
+  <div class="row"><span>Do I have to come to an office?</span><span>No. All sessions are via Zoom.</span></div>
+  <div class="row"><span>Who is it for?</span><span>Working moms who feel overwhelmed and want calm, confidence and better sleep.</span></div>
+  <div class="row"><span>How do I start?</span><span>Book a free curiosity call.</span></div>
+ </div>
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I have to come to an office?",
+      "acceptedAnswer": { "@type": "Answer",
+        "text": "No. All sessions are via Zoom to fit your schedule." } },
+    { "@type": "Question", "name": "Who is the Resilient Mom Mind Reset Program for?",
+      "acceptedAnswer": { "@type": "Answer",
+        "text": "Working mothers who want help with stress, sleep, confidence and resilience." } },
+    { "@type": "Question", "name": "How do I get started?",
+      "acceptedAnswer": { "@type": "Answer",
+        "text": "Book a free curiosity call on the website." } }
+  ]
+}</pre>
+</div>
+<div class="note">These are drafts in Jane's own words from her page. They become a valid label only once the same questions and answers are visible on the site.</div>
+
+<h2>Check any site in 60 seconds</h2>
+<p>validator.schema.org → Fetch URL → paste your homepage → see every label found. One label, or none? That's your to-do. Hand it to your web person.</p>
+</main></body></html>
