@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="noindex,nofollow" name="robots"/><title>MakeNest validation record · 2026-10-12</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b87d1a;
+  --warn-soft: #fdf7e8;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 36px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+.intro-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 36px; border-radius: 0 6px 6px 0; }
+.intro-callout p { margin: 0 0 8px; }
+.intro-callout p:last-child { margin-bottom: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+.section-intro { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+
+/* Confirm-or-correct rows (Section 1) */
+.row { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+.row.needs { background: var(--warn-soft); border-color: #f0d99a; border-left: 4px solid var(--warn); }
+.row .label { font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: var(--warn); color: #fff; }
+.badge.ok { background: var(--bg-soft); color: var(--ink-muted); border: 1px solid var(--rule); }
+.row .use { margin: 6px 0 4px; font-size: 15px; }
+.row .use b { color: var(--good); font-weight: 600; }
+.row .why { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 8px; }
+.row input[type="text"], .row textarea { width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 9px 12px; font-family: inherit; font-size: 14px; background: #fff; }
+.row textarea { min-height: 64px; resize: vertical; }
+.row input[type="text"]:focus, .row textarea:focus { outline: 2px solid var(--apollo-orange); outline-offset: -1px; border-color: var(--apollo-orange); }
+.row.needs input[type="text"]:focus, .row.needs textarea:focus { outline-color: var(--warn); }
+.row .default { font-size: 13px; color: var(--ink-muted); margin-top: 6px; }
+
+/* Choices (Section 3) */
+.options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.options label { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-soft); border: 1.5px solid var(--rule); border-radius: 6px; padding: 7px 14px; font-size: 14px; cursor: pointer; user-select: none; }
+.options label:hover { border-color: var(--ink-muted); }
+.options input[type="radio"] { margin: 0; }
+.options label:has(input:checked) { background: var(--apollo-orange-soft); border-color: var(--apollo-orange); color: var(--apollo-orange-dark); font-weight: 600; }
+.quote { background: var(--bg-soft); padding: 8px 12px; border-radius: 4px; border-left: 3px solid var(--ink-muted); margin: 8px 0; font-style: italic; font-size: 14px; }
+
+/* Send zone */
+.send-zone { background: var(--ink); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 36px 0 16px; }
+.send-zone h3 { color: #fff; margin: 0 0 6px; font-size: 20px; }
+.send-zone p { color: #d8d4cd; margin: 0 0 16px; font-size: 14px; }
+.send-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary { background: var(--apollo-orange); color: #fff; border: none; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: var(--apollo-orange-dark); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 12px 18px; border-radius: 6px; font-size: 14px; cursor: pointer; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.send-output { display: none; margin-top: 16px; }
+.send-output.show { display: block; }
+.send-output textarea { width: 100%; min-height: 280px; padding: 14px; border-radius: 6px; border: none; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; background: #2a2a2a; color: #e8e6e1; }
+.send-output .post-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); text-align: center; }
+.save-notice { position: fixed; bottom: 20px; right: 20px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.save-notice.show { opacity: 1; }
+.top-bar { position: sticky; top: 0; z-index: 50; background: var(--bg-card); border-bottom: 1px solid var(--rule); padding: 10px 20px; margin: -60px -32px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.top-bar .top-bar-msg { color: var(--ink-soft); }
+.top-bar .top-bar-actions { display: flex; gap: 8px; }
+.btn-small { background: var(--bg-soft); border: 1px solid var(--rule); color: var(--ink-soft); padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.btn-small:hover { background: var(--rule); }
+
+.use {overflow-wrap:anywhere} textarea {max-width:100%} :focus-visible {outline:2px solid var(--apollo-orange)}
+@media(max-width:600px){.container{padding:40px 20px 60px}.top-bar{margin:-40px -20px 24px;flex-wrap:wrap}header h1{font-size:26px}}
+</style></head><body><main class="container"><header><div class="preheader">Apollo Marketing · MakeNest Interiors</div><h1>Validation record · October 12, 2026</h1><p class="meta-line">Paul Miller's reply received October 12, 2026</p><p class="meta-line">Prepared: October 12, 2026</p></header><div class="intro-callout"><p><a href="makenest-interiors-aio-research-final-2026-10-12.html" target="_blank" rel="noopener">Return to the research record</a> · <a href="makenest-interiors-faq-batch-2026-10-12.html" target="_blank" rel="noopener">Review the FAQ batch</a> · <a href="makenest-interiors-schema-package-2026-10-12.html" target="_blank" rel="noopener">Read the schema package</a></p></div><p>Paul confirmed the public business details, design by appointment, the five services, the $170.00 hourly design fee, Instagram and the approved commercial-page examples. The final FAQ answers are placed in the linked batch.</p><p>Credentials and education, Facebook, Houzz, Yelp, both LinkedIn profiles and changes to client design hubs remain on hold. Q41–42 and Q44–45 remain pending by Paul's choice.</p><p>His own-voice service area differs from the earlier default; the delivery note asks him to confirm the wording. No trademark claim, LGBTQ+ owned wording or unapproved review markup is included.</p><footer><p>This records answers received; it does not request another form submission or claim site deployment.</p></footer></main>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="noindex, nofollow" name="robots"/><title>MakeNest schema package · 2026-10-12</title><style>
+:root {
+  --apollo-orange: #C56B3F;
+  --apollo-orange-dark: #A8552E;
+  --apollo-orange-soft: #F4E5D9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #767676;
+  --bg: #fbfaf8;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f2ee;
+  --rule: #e5dfd6;
+  --good: #2e7d4f;
+  --warn: #b45a1a;
+}
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; padding: 0; }
+.container { max-width: 760px; margin: 0 auto; padding: 60px 32px 80px; }
+
+header { border-bottom: 3px solid var(--apollo-orange); padding-bottom: 28px; margin-bottom: 40px; }
+.preheader { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--apollo-orange); font-weight: 600; margin-bottom: 12px; }
+header h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { font-size: 17px; color: var(--ink-soft); margin: 0 0 12px; }
+.meta-line { font-size: 13px; color: var(--ink-muted); margin: 0; }
+
+section { margin-bottom: 44px; scroll-margin-top: 20px; }
+h2 { font-size: 22px; margin: 0 0 14px; font-weight: 700; letter-spacing: -0.01em; }
+h2 .num { color: var(--apollo-orange); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 16px; margin: 22px 0 8px; font-weight: 600; color: var(--ink); }
+p { margin: 0 0 14px; }
+ul, ol { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { background: var(--bg-soft); padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.lead-callout { background: var(--bg-card); border-left: 4px solid var(--apollo-orange); padding: 18px 22px; margin: 0 0 40px; border-radius: 0 6px 6px 0; }
+.lead-callout p { margin: 0 0 8px; }
+.lead-callout p:last-child { margin-bottom: 0; }
+
+.callout { background: var(--bg-card); border-left: 3px solid var(--apollo-orange); padding: 14px 18px; margin: 14px 0 18px; font-size: 14px; border-radius: 0 4px 4px 0; }
+.callout strong { color: var(--ink); }
+.callout-good { border-left-color: var(--good); }
+.callout-warn { border-left-color: var(--warn); }
+
+.source-line { font-size: 12px; color: var(--ink-muted); font-style: italic; margin-top: -8px; margin-bottom: 14px; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; }
+a { overflow-wrap: anywhere; }
+.cta-button { max-width: 100%; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0 8px; }
+th { text-align: left; font-weight: 600; padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--rule); color: var(--ink); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.confirmed { color: var(--good); font-weight: 600; white-space: nowrap; }
+
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+.metric { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.metric .v { font-size: 22px; font-weight: 700; color: var(--apollo-orange); display: block; line-height: 1.1; margin-bottom: 4px; }
+.metric .l { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
+
+.contract-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+.contract-row { display: grid; grid-template-columns: 28px 1fr 130px; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); align-items: start; }
+.contract-row:last-child { border-bottom: none; }
+.contract-row .num { color: var(--apollo-orange); font-weight: 700; font-size: 14px; }
+.contract-row .item { font-size: 14px; line-height: 1.5; }
+.contract-row .item strong { display: block; margin-bottom: 2px; }
+.contract-row .item .where { color: var(--ink-muted); font-size: 12px; display: block; margin-top: 2px; font-style: italic; }
+.contract-row .status { font-size: 12px; color: var(--good); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; text-align: right; padding-top: 2px; }
+
+.approval-trail-table th, .approval-trail-table td { padding: 8px 10px; font-size: 13px; }
+.approval-trail-table th { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cta-block { background: var(--apollo-orange-soft); border-radius: 8px; padding: 28px 32px; margin: 24px 0 0; text-align: center; }
+.cta-block h3 { font-size: 20px; margin: 0 0 10px; color: var(--ink); font-weight: 700; }
+.cta-block p { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; background: var(--apollo-orange); color: #fff; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 6px; text-decoration: none; letter-spacing: 0.02em; }
+.cta-button:hover { background: var(--apollo-orange-dark); }
+.cta-fineprint { font-size: 12px; color: var(--ink-muted); margin-top: 14px; }
+
+.section-divider { margin: 56px 0 36px; padding-top: 22px; border-top: 1px solid var(--rule); text-align: center; }
+.section-divider .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+
+.compact-table th, .compact-table td { padding: 8px 10px; font-size: 13px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-muted); }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 60px; }
+  header h1 { font-size: 26px; }
+  h2 { font-size: 19px; }
+  .contract-row { grid-template-columns: 24px 1fr; }
+  .contract-row .status { grid-column: 2; text-align: left; padding-top: 0; margin-top: 4px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+</style></head><body><main class="container"><header><div class="preheader">Apollo Marketing · MakeNest Interiors</div><h1>MakeNest schema package · 2026-10-12</h1><p class="meta-line">October 12, 2026 · Prepared for Paul Miller · Research and install package</p><p class="meta-line">Prepared: October 12, 2026</p></header><div class="lead-callout"><p><a href="makenest-interiors-aio-research-final-2026-10-12.html" target="_blank" rel="noopener">Return to the research record</a></p><p>Prepared code and instructions; no change has been installed on your site. Review the placement notes before installation.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Prepared from Paul's October 12 reply and the six published pages captured October 9. These are 12 JSON-LD blocks: one LocalBusiness, one Person, five Services, and five page-specific FAQPage blocks containing 19 question-and-answer pairs. The FAQ blocks are conditional: publish each exact Q&amp;A visibly on its named page first. The Process FAQ block also waits for the visible hourly rate correction. No code has been installed.</p>
+<p>Only Instagram is a confirmed identity profile. Facebook, Houzz, Yelp and both LinkedIn profiles remain outside sameAs. Credentials, education, client design hubs, Review and AggregateRating markup are omitted. There is no trademark claim.</p>
+<h2>Homepage · business identity</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/" target="_blank" rel="noopener">Homepage</a>. Reconcile with Squarespace's existing entity and remove the invalid extra homepage block before adding this replacement. Do not leave duplicate business identities.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.makenestinteriors.com/#business","name":"MakeNest Interiors","url":"https://www.makenestinteriors.com/","telephone":"+1-540-336-3385","email":"design@makenestinteriors.com","address":{"@type":"PostalAddress","streetAddress":"1 S. Loudoun St.","addressLocality":"Winchester","addressRegion":"VA","postalCode":"22601","addressCountry":"US"},"logo":"https://images.squarespace-cdn.com/content/v1/55f739f4e4b0550fcc13832a/80209983-8353-42d3-87ab-0b7faebe8dab/MakeNest-Logo-with-Tagline_updated.png","foundingDate":"2004","openingHours":"Design by appointment.","areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond.","founder":{"@id":"https://www.makenestinteriors.com/about#paul-miller"},"sameAs":["https://www.instagram.com/makenest/"]}
+&lt;/script&gt;
+</code></pre>
+<h2>About · Paul Miller</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/about" target="_blank" rel="noopener">About</a>. No credentials, education, team member, or held LinkedIn profile is encoded.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Person","@id":"https://www.makenestinteriors.com/about#paul-miller","name":"Paul Miller","url":"https://www.makenestinteriors.com/about","jobTitle":"Owner, Interior Designer","worksFor":{"@id":"https://www.makenestinteriors.com/#business"}}
+&lt;/script&gt;
+</code></pre>
+<h2>Whole House Design · Service</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/wholehousedesign" target="_blank" rel="noopener">Whole House Design</a>. Use only on this named page after confirming that its visible copy still describes this service.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Service","@id":"https://www.makenestinteriors.com/wholehousedesign#service","name":"Whole House Design","serviceType":"Whole house interior design","url":"https://www.makenestinteriors.com/wholehousedesign","provider":{"@id":"https://www.makenestinteriors.com/#business"},"areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}
+&lt;/script&gt;
+</code></pre>
+<h2>Room-by-Room Design · Service</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/room-by-room-design-services" target="_blank" rel="noopener">Room-by-Room Design</a>. Use only on this named page after confirming that its visible copy still describes this service.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Service","@id":"https://www.makenestinteriors.com/room-by-room-design-services#service","name":"Room-by-Room Design","serviceType":"Room-by-room interior design","url":"https://www.makenestinteriors.com/room-by-room-design-services","provider":{"@id":"https://www.makenestinteriors.com/#business"},"areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}
+&lt;/script&gt;
+</code></pre>
+<h2>Kitchen &amp; Bath Design · Service</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/kitchenandbathdesign" target="_blank" rel="noopener">Kitchen &amp; Bath Design</a>. Use only on this named page after confirming that its visible copy still describes this service.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Service","@id":"https://www.makenestinteriors.com/kitchenandbathdesign#service","name":"Kitchen &amp; Bath Design","serviceType":"Kitchen and bath interior design","url":"https://www.makenestinteriors.com/kitchenandbathdesign","provider":{"@id":"https://www.makenestinteriors.com/#business"},"areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}
+&lt;/script&gt;
+</code></pre>
+<h2>Single or Multiple Room Refresh · Service</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/roomrefreshservice" target="_blank" rel="noopener">Single or Multiple Room Refresh</a>. Use only on this named page after confirming that its visible copy still describes this service.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Service","@id":"https://www.makenestinteriors.com/roomrefreshservice#service","name":"Single or Multiple Room Refresh","serviceType":"Interior room refresh","url":"https://www.makenestinteriors.com/roomrefreshservice","provider":{"@id":"https://www.makenestinteriors.com/#business"},"areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}
+&lt;/script&gt;
+</code></pre>
+<h2>Commercial Design Services · Service</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/commercialdesignservices" target="_blank" rel="noopener">Commercial Design Services</a>. Use only on this named page after confirming that its visible copy still describes this service.</p>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"Service","@id":"https://www.makenestinteriors.com/commercialdesignservices#service","name":"Commercial Interior Design","serviceType":"Commercial interior design","url":"https://www.makenestinteriors.com/commercialdesignservices","provider":{"@id":"https://www.makenestinteriors.com/#business"},"areaServed":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}
+&lt;/script&gt;
+</code></pre>
+<h2>Process · FAQPage (11 pairs)</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/process" target="_blank" rel="noopener">Process</a>. Install only after these exact visible question-and-answer pairs appear on this page. Correct the visible hourly rate to $170.00 first.</p>
+<p>Questions in this block:</p>
+<ul>
+<li>What is your design style?</li>
+<li>What should I expect at the first house call?</li>
+<li>What happens after the house call?</li>
+<li>What should I expect at the presentation?</li>
+<li>How do we get the ball rolling?</li>
+<li>How long does it take to complete a design project?</li>
+<li>How much will my interior design cost?</li>
+<li>When will design fees apply?</li>
+<li>When will design fees not apply?</li>
+<li>Am I obligated to purchase the items my designer recommends?</li>
+<li>When will I be billed?</li>
+</ul>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.makenestinteriors.com/process#faq","url":"https://www.makenestinteriors.com/process","mainEntity":[{"@type":"Question","name":"What is your design style?","acceptedAnswer":{"@type":"Answer","text":"Design style can mean one thing to one person and another to someone else. We try to avoid labels that might limit our imagination or narrow our expertise. What matters to us is creating designs that you feel represents you honestly, with an emphasis on choices that are timelessly joyful and just fearless enough to create a memorable impression."}},{"@type":"Question","name":"What should I expect at the first house call?","acceptedAnswer":{"@type":"Answer","text":"On the first house call, we gather detailed information about the desired outcomes of the project. We guide the discussion to help reveal important details and viable options for your project. Potential costs and key timelines will be reviewed."}},{"@type":"Question","name":"What happens after the house call?","acceptedAnswer":{"@type":"Answer","text":"We outline our goals and estimate design costs in a scope of work document to assure utmost transparency before we begin. When the scope of work has been agreed upon, we return to the house to get detailed measurements and site photos. After that, the development stage begins as we further craft our concept; create renderings and specifications; research the best options; and select materials. This is where the design challenges are met with solutions and our creativity shines."}},{"@type":"Question","name":"What should I expect at the presentation?","acceptedAnswer":{"@type":"Answer","text":"At presentation we provide tactile and visual aids as we discuss our proposed ideas. Often our clients want to move forward with exactly what we’ve presented, but sometimes we need to tweak a few details to make the design a little more perfect. The subsequent editing stage is dedicated to alternate selections and refinements."}},{"@type":"Question","name":"How do we get the ball rolling?","acceptedAnswer":{"@type":"Answer","text":"Once the details are agreed on, it’s time to get orders placed. After we prepare the invoices and receive your deposit, we process and track orders, consult with third party contractors, and maintain contact with all parties to assure a smooth and timely design installation."}},{"@type":"Question","name":"How long does it take to complete a design project?","acceptedAnswer":{"@type":"Answer","text":"Depending on the scope of the project, completion dates will vary. If we are beginning a project while the site is still in the planning and blueprint stage, we will work closely with you to schedule special orders in advance of a projected move-in date to assure prompt completion. For all projects, custom furnishings, window treatments, and home decor typically can take up to three months from order date to delivery."}},{"@type":"Question","name":"How much will my interior design cost?","acceptedAnswer":{"@type":"Answer","text":"There are three primary areas of cost in a design project: interior design fees, special order item costs, and sub-contractor fees. Each project has unique challenges and demands that impact the time it takes for a design to be conceptualized and created, which is why we provide our scope of work document. While the scope of work is only an estimate of time required and does not factor in time spent in later project edits, it does help to establish a baseline of design fees. At our first house call, we will talk about your budget and project goals and how to tailor the design to best meet those requirements. The costs of subcontractors will depend on the project goals. We do not directly provide services such as carpentry and painting or quotes for such services, but we can often recommend excellent resources for this work to make sure your best interests are represented."}},{"@type":"Question","name":"When will design fees apply?","acceptedAnswer":{"@type":"Answer","text":"When we are researching, designing, overseeing work related to your project, and meeting with you to discuss your project, our hourly design fee of $170.00 will apply. Examples of typical scenarios for which our clients are billed include time spent on site visits; time in our office creating floor plans, elevations, and making selections; and time spent in research at third party suppliers such as flooring or cabinetry retailers. Beyond a thirty minute drive from our studio, travel time is billed at our full rate. All design and travel fees are billed in quarter hour increments."}},{"@type":"Question","name":"When will design fees not apply?","acceptedAnswer":{"@type":"Answer","text":"There are no design fees for our initial complimentary studio meeting; when we are placing and tracking orders; and during scheduling and oversight of installations."}},{"@type":"Question","name":"Am I obligated to purchase the items my designer recommends?","acceptedAnswer":{"@type":"Answer","text":"We base all of our recommendations on the merits of each piece, assembling a collection to solve problems and offer comfort and beauty. While our design agreement does not require that you purchase the items we specify, our intent is to understand your goals and budget so well that purchasing our recommended furnishings and decor elements is an intuitive choice. Our selections make realizing your design more seamless and successful."}},{"@type":"Question","name":"When will I be billed?","acceptedAnswer":{"@type":"Answer","text":"Your first design fee invoice will be billed after our presentation. Subsequent design fees are billed monthly as your project unfolds. After installation of your design project, any open balances for furnishings and decor will be billed for payment upon receipt. We are happy to offer an online payment option through links we send via email. Alternatively, all invoices are payable by check or credit card."}}]}
+&lt;/script&gt;
+</code></pre>
+<h2>Home · FAQPage (1 pair)</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/" target="_blank" rel="noopener">Home</a>. Install only after these exact visible question-and-answer pairs appear on this page.</p>
+<p>Questions in this block:</p>
+<ul>
+<li>Which areas does MakeNest serve?</li>
+</ul>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.makenestinteriors.com/#faq","url":"https://www.makenestinteriors.com/","mainEntity":[{"@type":"Question","name":"Which areas does MakeNest serve?","acceptedAnswer":{"@type":"Answer","text":"MakeNest serves the Northern Shenandoah Valley of Virginia, Washington, DC and some parts of WV and MD. Depending on project specifics, we may be able to provide services beyond."}}]}
+&lt;/script&gt;
+</code></pre>
+<h2>Whole House Design · FAQPage (2 pairs)</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/wholehousedesign" target="_blank" rel="noopener">Whole House Design</a>. Install only after these exact visible question-and-answer pairs appear on this page.</p>
+<p>Questions in this block:</p>
+<ul>
+<li>Do you design whole homes?</li>
+<li>How much does an interior designer charge for a project?</li>
+</ul>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.makenestinteriors.com/wholehousedesign#faq","url":"https://www.makenestinteriors.com/wholehousedesign","mainEntity":[{"@type":"Question","name":"Do you design whole homes?","acceptedAnswer":{"@type":"Answer","text":"With over twenty years of experience, our designer can create a cohesive vision for your entire home, developing floor plans that work and selecting custom elements that will make all of your spaces appealing and comfortable."}},{"@type":"Question","name":"How much does an interior designer charge for a project?","acceptedAnswer":{"@type":"Answer","text":"Our hourly design fee is $170.00. The best way to plan for budgeting is to engage in a conversation with our designer to go over the scope of change you want to see and determine what costs may likely be associated with that."}}]}
+&lt;/script&gt;
+</code></pre>
+<h2>Kitchen &amp; Bath Design · FAQPage (2 pairs)</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/kitchenandbathdesign" target="_blank" rel="noopener">Kitchen &amp; Bath Design</a>. Install only after these exact visible question-and-answer pairs appear on this page.</p>
+<p>Questions in this block:</p>
+<ul>
+<li>Do you design kitchens and bathrooms?</li>
+<li>How much does it cost to have someone design a kitchen?</li>
+</ul>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.makenestinteriors.com/kitchenandbathdesign#faq","url":"https://www.makenestinteriors.com/kitchenandbathdesign","mainEntity":[{"@type":"Question","name":"Do you design kitchens and bathrooms?","acceptedAnswer":{"@type":"Answer","text":"MakeNest provides space planning, renderings and selection of finishes and fixtures. The contractor or other licensed professionals are responsible for overseeing manufacturing, fabrication and installation."}},{"@type":"Question","name":"How much does it cost to have someone design a kitchen?","acceptedAnswer":{"@type":"Answer","text":"Our hourly design fee is $170.00. The best way to plan for budgeting is to engage in a conversation with our designer to go over the scope of change you want to see and determine what costs may likely be associated with that."}}]}
+&lt;/script&gt;
+</code></pre>
+<h2>Commercial Design Services · FAQPage (3 pairs)</h2>
+<p>Page: <a href="https://www.makenestinteriors.com/commercialdesignservices" target="_blank" rel="noopener">Commercial Design Services</a>. Install only after these exact visible question-and-answer pairs appear on this page.</p>
+<p>Questions in this block:</p>
+<ul>
+<li>Do you take commercial and office projects?</li>
+<li>How much does a commercial interior designer cost?</li>
+<li>Do you design medical and dental offices?</li>
+</ul>
+<pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.makenestinteriors.com/commercialdesignservices#faq","url":"https://www.makenestinteriors.com/commercialdesignservices","mainEntity":[{"@type":"Question","name":"Do you take commercial and office projects?","acceptedAnswer":{"@type":"Answer","text":"We primarily focus on designing public-facing spaces like lobbies, sales and eating areas, and consultation offices. We can collaborate with outside, industry-specific sales and design teams to understand equipment needs for procedural spaces and how they would relate to the overall design."}},{"@type":"Question","name":"How much does a commercial interior designer cost?","acceptedAnswer":{"@type":"Answer","text":"Our hourly design fee is $170.00. The best way to plan for budgeting is to engage in a conversation with our designer to go over the scope of change you want to see and determine what costs may likely be associated with that."}},{"@type":"Question","name":"Do you design medical and dental offices?","acceptedAnswer":{"@type":"Answer","text":"We provide interior design services for public-facing spaces like reception areas, consultation and physician offices in medical and dental offices. For design in procedure spaces, we consult with outside, industry-specific sales and design teams to ensure that the physicians, technicians and/or office managers responsible for decision-making receive a workable and seamless design."}}]}
+&lt;/script&gt;
+</code></pre>
+<h2>Validation record</h2>
+<p>All 12 code blocks parse as JSON, and their types and properties were checked against the official Schema.org vocabulary. The five FAQPage blocks contain 19 pairs, identical to the visible copy proposed in the FAQ batch. This is prepared-code validation; no installed or rendered-page validation is claimed.</p><footer><p>No live-site deployment is claimed. <a href="https://calendly.com/sageharper/30min-chat" target="_blank" rel="noopener">Book your 30-minute session with Sage</a></p></footer></main></body></html>
